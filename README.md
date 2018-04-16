@@ -6,3 +6,4 @@ A collection of interactive sketches made with [P5.js](https://p5js.org/).
 3. [Hypno Ellipse](https://logikblok.github.io/sketches/hypellipse/)
 4. [Letter Rain](https://logikblok.github.io/sketches/letter%20rain/)
 5. [Dark was the night](https://logikblok.github.io/sketches/Dark%20was%20the%20night/)
+6. [Chroma Stalacites](https://logikblok.github.io/sketches/colour%20stalacites/)
