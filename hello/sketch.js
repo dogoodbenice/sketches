@@ -6,6 +6,6 @@ function setup() {
 function draw() {
   background(0);
   fill(mouseX,mouseY,mouseX-mouseY);
-  textSize(24);
+  textSize(100);
   text("Hello World",100,200);
 }
