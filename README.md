@@ -9,4 +9,7 @@ A collection of interactive sketches made with [P5.js](https://p5js.org/).
 7. [The rectangle and the mouse](https://logikblok.github.io/sketches/the%20rectangle%20and%20the%20mouse/)
 8. [Bad train simulator](https://logikblok.github.io/sketches/badtrainsimulator/)
 9. [Striped Flag Generator](https://logikblok.github.io/sketches/stripedflaggenerator/)
+10. [Prototypeface](https://logikblok.github.io/sketches/prototypeface/)
+11. [Fish Unerwater](https://logikblok.github.io/sketches/fishunderwater/)
+  
   
