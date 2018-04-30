@@ -10,6 +10,6 @@ A collection of interactive sketches made with [P5.js](https://p5js.org/).
 8. [Bad train simulator](https://logikblok.github.io/sketches/badtrainsimulator/)
 9. [Striped Flag Generator](https://logikblok.github.io/sketches/stripedflaggenerator/)
 10. [Prototypeface](https://logikblok.github.io/sketches/prototypeface/)
-11. [Fish Unerwater](https://logikblok.github.io/sketches/fishunderwater/)
+11. [Fish Underwater](https://logikblok.github.io/sketches/fishunderwater/)
   
   
