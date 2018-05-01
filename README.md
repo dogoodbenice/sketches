@@ -11,5 +11,6 @@ A collection of interactive sketches made with [P5.js](https://p5js.org/).
 9. [Striped Flag Generator](https://logikblok.github.io/sketches/stripedflaggenerator/)
 10. [Prototypeface](https://logikblok.github.io/sketches/prototypeface/)
 11. [Fish Underwater](https://logikblok.github.io/sketches/fishunderwater/)
+12. [Fast Forest Maker](https://logikblok.github.io/sketches/fastforestmaker/)
   
   
