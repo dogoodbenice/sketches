@@ -14,3 +14,4 @@ A collection of interactive sketches made with [P5.js](https://p5js.org/).
 12. [Fast Forest Maker](https://logikblok.github.io/sketches/fastforestmaker/)
 13. [Fictitious Figures](https://logikblok.github.io/sketches/fictitiousfigures/)
 14. [Put you in a better mood](https://logikblok.github.io/sketches/putyouinabettermood/)
+15. [Cubism](https://logikblok.github.io/sketches/cubism/)
