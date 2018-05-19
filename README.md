@@ -17,3 +17,5 @@ A collection of interactive sketches made with [P5.js](https://p5js.org/).
 15. [Cubism](https://logikblok.github.io/sketches/cubism/)
 16. [Spheres](https://logikblok.github.io/sketches/spheres/)
 17. [Infinity Cubes](https://logikblok.github.io/sketches/infinitycubes/)
+18. [Model Airplane](https://logikblok.github.io/sketches/modelairplane/)
+19. [Open Letter](https://logikblok.github.io/sketches/openletter/)
