@@ -7,7 +7,7 @@ function draw() {
   background(0);
   fill(255, 242, 124);
   ellipse(mouseX, height/2, 100, 100);
-  filter(BLUR, 3);
+  filter(BLUR);
   fill(255, 255, 0);
   ellipse(mouseX, height/2, 90, 90);
   fill(0);
