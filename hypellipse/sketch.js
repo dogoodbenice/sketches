@@ -3,7 +3,7 @@ var xsize = false;
 
 
 function setup() {
-createCanvas(600,600);
+createCanvas(1000,450);
 background(0);
 }
 
