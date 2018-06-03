@@ -22,3 +22,4 @@ A collection of interactive sketches made with [P5.js](https://p5js.org/).
 20. [Slider Says](https://logikblok.github.io/sketches/slidersays/)
 21. [Somewhere](https://logikblok.github.io/sketches/somewhere/)
 22. [It's nice to be nice](https://logikblok.github.io/sketches/nice/)
+23.	[Story Generator](https://logikblok.github.io/sketches/storygenerator/)
