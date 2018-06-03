@@ -52,7 +52,7 @@ function draw() {
     text('This is a short ' + title[int(random(0, title.length))]+' of a '+herocall1+' and a '+herocall2+'.',20,linepos);
     text('Our heroes were on a quest to find a '+ objectcall +' for '+questcall+'.',20,linepos*2);
     text('It had been a '+ daytype[int(random(0,daytype.length))] + ' day '+ 'and to complete their quest they decided to go through the '+ path[int(random(0, path.length))]+'.',20,linepos*3);
-    text('Suddenly, out of no where a '+ creature[int(random(0,creature.length))] + ' appeared ' + action[int(random(0,action.length))] +' at them!',20,linepos*4);
+    text('Suddenly, out of no where a '+ creaturecall + ' appeared ' + action[int(random(0,action.length))] +' at them!',20,linepos*4);
     text('The heroes were ' + caction[int(random(0,caction.length))] + ' but saw the ' + objectcall + ' they were searching for behind the ' + creaturecall +'.' ,20,linepos*5);
     text('The '+ herocall1 +' '+ haction[int(random(0,haction.length))] +' into action and threw a rock at the '+creaturecall+'!',20,linepos*6);
     text("The rock flew straight into it's " + body[int(random(0,body.length))] + ' causing the ' +creaturecall+ ' '  + cry[int(random(0,cry.length))] +' in pain.',20,linepos*7);
