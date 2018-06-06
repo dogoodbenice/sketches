@@ -17,7 +17,7 @@ function setup() {
 }
 
 //referesh function
-function mouseClicked() {
+function mousePressed() {
   background(random(100,200),random(100,200),255);
   fill(255);
   for (var i = 0; i < 5; i++) {

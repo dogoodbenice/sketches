@@ -187,6 +187,6 @@ function  combidesign(){
   };
 }
 
-function mouseClicked(){
+function mousePressed(){
   redraw();
 }

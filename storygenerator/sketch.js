@@ -63,6 +63,6 @@ function draw() {
     noLoop();
 }
 
-function mouseClicked(){
+function mousePressed(){
   redraw();
 }

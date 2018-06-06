@@ -35,7 +35,7 @@ var rw = 500;
   rect(xpos+spacex, ypos+(spacey*2), rw, rh);
 }
 
-function mouseClicked() {
+function mousePressed() {
   c1 = random(0, 150);
   c2 = random(0, 150);
   c3 = random(0, 255);
