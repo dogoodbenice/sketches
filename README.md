@@ -25,3 +25,4 @@ A collection of interactive sketches made with [P5.js](https://p5js.org/).
 23.	[Story Generator](https://logikblok.github.io/sketches/storygenerator/)
 24. [Bag Designer](https://logikblok.github.io/sketches/bagdesigngenerator/)
 25.	[Affable Alien](https://logikblok.github.io/sketches/affablealien/)
+26.	[Waving Cow Simulator](https://logikblok.github.io/sketches/wavingcowsimulator/)
