@@ -3,7 +3,7 @@ var design;
 var shapesize;
 
 function setup() {
-	createCanvas(windowWidth,windowHeight);
+	createCanvas(1200,500);
 	background(255);
 	noStroke();
 }
