@@ -29,3 +29,4 @@ A collection of interactive sketches made with [P5.js](https://p5js.org/).
 27. [Re: Draw](https://logikblok.github.io/sketches/redraw/)
 28. [Ice cream](https://logikblok.github.io/sketches/icecream/)
 29.	[Massive](https://logikblok.github.io/sketches/massive/)
+30. [Fixed String](https://logikblok.github.io/sketches/fixedstring/)
