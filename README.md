@@ -31,3 +31,7 @@ A collection of interactive sketches made with [P5.js](https://p5js.org/).
 29.	[Massive](https://logikblok.github.io/sketches/massive/)
 30. [Fixed String](https://logikblok.github.io/sketches/fixedstring/)
 31. [Prism](https://logikblok.github.io/sketches/prism/)
+32. [Crane System]
+34.
+35.
+36.
