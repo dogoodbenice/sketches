@@ -32,3 +32,4 @@ A collection of interactive sketches made with [P5.js](https://p5js.org/).
 30. [Fixed String](https://logikblok.github.io/sketches/fixedstring/)
 31. [Prism](https://logikblok.github.io/sketches/prism/)
 32. [Crane System](https://logikblok.github.io/sketches/cranesystem/)
+33. [Noughts and Crosses](https://logikblok.github.io/sketches/noughtscrosses/)
