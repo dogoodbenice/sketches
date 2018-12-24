@@ -33,3 +33,4 @@ A collection of interactive sketches made with [P5.js](https://p5js.org/).
 31. [Prism](https://logikblok.github.io/sketches/prism/)
 32. [Crane System](https://logikblok.github.io/sketches/cranesystem/)
 33. [Noughts and Crosses](https://logikblok.github.io/sketches/noughtscrosses/)
+34. [Profile Generator](https://logikblok.github.io/sketches/profilegen/)
