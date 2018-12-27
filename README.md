@@ -34,4 +34,3 @@ A collection of interactive sketches made with [P5.js](https://p5js.org/).
 32. [Crane System](https://logikblok.github.io/sketches/cranesystem/)
 33. [Noughts and Crosses](https://logikblok.github.io/sketches/noughtscrosses/)
 34. [Profile Generator](https://logikblok.github.io/sketches/profilegen/)
-35. [Photo Book Centrefold](https://logikblok.github.io/sketches/photobook/)
