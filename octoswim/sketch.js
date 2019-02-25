@@ -22,7 +22,7 @@ function setup() {
   bird = createSprite(width/3, height/3, 40, 40);
   bird.rotateToDirection = true;
   bird.velocity.x = 4;
-  bird.setCollider('circle', 0, 0, 40);
+  bird.setCollider('circle', 0, 0, 35);
   bird.addImage(birdImg);
   //ground = createSprite(800/2, GROUND_Y+100); //image 800x200
   //ground.addImage(groundImg);
