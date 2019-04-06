@@ -1,5 +1,5 @@
-A collection of interactive sketches made with [P5.js](https://p5js.org/).
-Latest at the bottom. 
+Hello, this is a collection of interactive sketches made with [P5.js](https://p5js.org/). 
+Latest at the bottom. [Home](https://logikblok.github.io/).
 
 1. [Hello](https://logikblok.github.io/sketches/hello/)
 2. [Circles](https://logikblok.github.io/sketches/circles/)
