@@ -1,4 +1,4 @@
-Hello, this is a collection of interactive sketches made with [P5.js](https://p5js.org/). 
+Hello, this is a collection of interactive sketches made with [P5.js](https://p5js.org/).
 Latest at the bottom. Return [home](https://logikblok.github.io/).
 
 1. [Hello](https://logikblok.github.io/sketches/hello/)
@@ -41,3 +41,4 @@ Latest at the bottom. Return [home](https://logikblok.github.io/).
 38. [Find me!](https://logikblok.github.io/sketches/findme/)
 39. [Passing Planets](https://logikblok.github.io/sketches/passingplanets/)
 40. [Car Jam](https://logikblok.github.io/sketches/carjam/)
+41. [Pulled Palette](https://logikblok.github.io/sketches/pulledpalette/)
