@@ -1,4 +1,4 @@
-var aslider,bslider,cslider;
+var aslider,bslider,cslider,savebutton;
 
 function setup() {
   let c = createCanvas(window.innerWidth,window.innerHeight);
@@ -11,11 +11,15 @@ function setup() {
   aslider.style('width', '80px');
   bslider.style('width', '80px');
   cslider.style('width', '80px');
-  noStroke();
+  noStroke()
+  //savebutton
+  savebutton = createButton('Download');
+  savebutton.position(300,130);
+  savebutton.mousePressed(savingpalette);
 }
 
-function mousePressed() {
-  saveCanvas('my_Pulled_pallete.jpg', 'jpg');
+function savingpalette() {
+  save('my_Pulled_pallete.png');
 }
 
 function draw() {
