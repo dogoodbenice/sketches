@@ -42,3 +42,4 @@ Latest at the bottom. Return [home](https://logikblok.github.io/).
 39. [Passing Planets](https://logikblok.github.io/sketches/passingplanets/)
 40. [Car Jam](https://logikblok.github.io/sketches/carjam/)
 41. [Pulled Palette](https://logikblok.github.io/sketches/pulledpalette/)
+42. [Wonderful Words](https://logikblok.github.io/sketches/wonderfulwords/)
