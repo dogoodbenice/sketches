@@ -14,8 +14,8 @@ function setup() {
   strength = 0.05; // the "strength" of the spring, out of 1
   r = 100;
   //object of the game
-  textypos = random(100,500)
-  textxpos = random(100,1000);
+  textypos = random(100,windowHeight)
+  textxpos = random(100,windowWidth);
   targetsize = 100;
   for (var i = 0; i < 25; i++) {
     notmes[i] = new notme;
@@ -50,8 +50,8 @@ function draw() {
 
 class notme {
   constructor() {
-    this.ntext = random(0,1500);
-    this.nteyt = random(0,900);
+    this.ntext = random(0,windowWidth);
+    this.nteyt = random(0,windowHeight);
   }
   show(){
     textSize(40);
