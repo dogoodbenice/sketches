@@ -35,5 +35,3 @@ function mousePressed(){
 function keyPressed(){
      background(0);
   }
-
-
