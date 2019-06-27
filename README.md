@@ -44,3 +44,4 @@ Latest at the bottom. Return [home](https://logikblok.github.io/).
 41. [Pulled Palette](https://logikblok.github.io/sketches/pulledpalette/)
 42. [Wonderful Words](https://logikblok.github.io/sketches/wonderfulwords/)
 43. [Aerial advertising](https://logikblok.github.io/sketches/aerialadvertising/)
+44. [Perpetual Poetry](https://logikblok.github.io/sketches/perpetualpoetry/)
