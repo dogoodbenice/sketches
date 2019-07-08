@@ -10,7 +10,7 @@ function setup() {
   noLoop();
 }
 
-function mouseClicked() {
+function mousePressed() {
   background(random(200,255), random(0,255), random(0,255));
   let p = new poem;
   poetry.push(p);
