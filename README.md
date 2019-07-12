@@ -46,3 +46,4 @@ Latest at the bottom. Return [home](https://logikblok.github.io/).
 43. [Aerial advertising](https://logikblok.github.io/sketches/aerialadvertising/)
 44. [Perpetual Poetry](https://logikblok.github.io/sketches/perpetualpoetry/)
 45. [Gradient Generator](https://logikblok.github.io/sketches/gradient/)
+46. [Dot or not](https://logikblok.github.io/sketches/dotornot/)
