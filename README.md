@@ -1,4 +1,4 @@
-Hello, this is a collection of interactive sketches made with [P5.js](https://p5js.org/).
+Hello, this is a collection of interactive sketches.
 Latest at the bottom. Return [home](https://logikblok.github.io/).
 
 1. [Hello](https://logikblok.github.io/sketches/hello/)
@@ -47,3 +47,4 @@ Latest at the bottom. Return [home](https://logikblok.github.io/).
 44. [Perpetual Poetry](https://logikblok.github.io/sketches/perpetualpoetry/)
 45. [Gradient Generator](https://logikblok.github.io/sketches/gradient/)
 46. [Dot or not](https://logikblok.github.io/sketches/dotornot/)
+47. [GreatBot](https://logikblok.github.io/sketches/greatbot/)
