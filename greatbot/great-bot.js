@@ -38,9 +38,14 @@ function opportunity() {
   }).then(function (){
     botui.message.add({
       delay: 1000,
-      content: "This can be accessed here, at [Export opportunities](https://www.great.gov.uk/export-opportunities/)"
+      content: "This can be accessed here, at [Export opportunities](https://www.great.gov.uk/export-opportunities/)^"
     })
+  }).then(function (){
+    botui.message.add({
+      delay: 2000,
+      content: "Was there anything else we could help with?"
     })
+  })
 };
 
 function other() {
