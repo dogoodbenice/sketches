@@ -30,14 +30,18 @@ botui.message.add({
   if (res.value === 'other') {
     other()
   } else if (res.value === 'findopportunity') {
-    opportunity()
+    findopportunity()
   } else if (res.value === 'moreaboutyourbusiness') {
     moreaboutyourbusiness()
   }
 });
 
+function moreaboutyourbusiness() {
+  
+}
+
 //Top level function for OTHER journey option
-function opportunity() {
+function findopportunity() {
   botui.message.add({
     delay: 1500,
     content: "Ok, the DIT offers an export opportunities service"
@@ -62,9 +66,66 @@ function opportunity() {
       value: 'nomore'
       }]
     })
+  }).then(function (res) {
+   if (res.value === 'yesmore' ) {
+     yesmore()
+   } else if (res.value === 'nomore'){
+     nomore()
+   }
   })
 };
 
+//Anchor function for yesmore to return a user this pretty much reuses the starting point journey to replay
+function yesmore() {
+  botui.message.add({
+    delay: 1500,
+    content: "What would you like to do?"
+  }).then(function () {
+    return botui.action.button({
+      delay: 1000,
+      action: [{
+        text: 'Just explore',
+        value: 'explore'
+      }, {
+        text: 'Find an opportunity',
+        value: 'findopportunity'
+      },{
+        text: 'Learn about exporting',
+        value: 'Learn'
+      },{
+        text: 'Find a new market',
+        value: 'findmarket'
+      },{
+        text: 'Tell us more about your business',
+        value: 'moreaboutyourbusiness'
+      },{
+        text: 'Other',
+        value: 'other'
+      }]
+    })
+  }).then(function (res) {
+    if (res.value === 'other') {
+      other()
+    } else if (res.value === 'findopportunity') {
+      findopportunity()
+    } else if (res.value === 'moreaboutyourbusiness') {
+      moreaboutyourbusiness()
+    }
+  });
+};
+
+//function for nomore to finish a user
+function nomore() {
+  botui.message.add({
+    delay: 1000,
+    content: "Ok, thank you. Feel free to browse our trade capability areas."
+  }).then(function () {
+   botui.message.add({
+    delay: 1000,
+    content: "Capability content can be accessed here, at [capability content.](https://www.great.gov.uk/advice/)^"
+    })
+  })
+};
 
 //Top level function for OTHER journey option
 function other() {
