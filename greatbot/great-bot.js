@@ -37,7 +37,7 @@ botui.message.add({
 });
 
 function moreaboutyourbusiness() {
-  
+
 }
 
 //Top level function for OTHER journey option
@@ -127,7 +127,7 @@ function nomore() {
   })
 };
 
-//Top level function for OTHER journey option
+//Top level function for OTHER journey options
 function other() {
   botui.message.add({
     delay: 1000,
