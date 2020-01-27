@@ -1,5 +1,6 @@
 var botui = new BotUI('great-bot');
 
+//starting point for journey
 botui.message.add({
   content: "Hello, what's your main goal today?"
 }).then(function () {
@@ -28,15 +29,14 @@ botui.message.add({
 }).then(function (res) {
   if (res.value === 'other') {
     other()
-  } else {
-  if (res.value === 'findopportunity')
+  } else if (res.value === 'findopportunity') {
     opportunity()
-  } else {
-  if (res.value === 'moreaboutyourbusiness')
+  } else if (res.value === 'moreaboutyourbusiness') {
     moreaboutyourbusiness()
   }
 });
 
+//Top level function for OTHER journey option
 function opportunity() {
   botui.message.add({
     delay: 1500,
@@ -66,7 +66,7 @@ function opportunity() {
 };
 
 
-//Top level function for other chat journey
+//Top level function for OTHER journey option
 function other() {
   botui.message.add({
     delay: 1000,
@@ -81,7 +81,7 @@ function other() {
     })
   })
 };
-
+//Top level function for moreaboutyourbusiness journey option
 function moreaboutyourbusiness() {
 
 }
