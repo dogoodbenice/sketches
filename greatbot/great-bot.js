@@ -18,6 +18,9 @@ botui.message.add({
       text: 'Find a new market',
       value: 'findmarket'
     },{
+      text: 'Tell us more about your business',
+      value: 'moreaboutyourbusiness'
+    },{
       text: 'Other',
       value: 'other'
     }]
@@ -28,6 +31,9 @@ botui.message.add({
   } else {
   if (res.value === 'findopportunity')
     opportunity()
+  } else {
+  if (res.value === 'moreaboutyourbusiness')
+    moreaboutyourbusiness()
   }
 });
 
@@ -59,6 +65,8 @@ function opportunity() {
   })
 };
 
+
+//Top level function for other chat journey
 function other() {
   botui.message.add({
     delay: 1000,
@@ -73,3 +81,7 @@ function other() {
     })
   })
 };
+
+function moreaboutyourbusiness() {
+
+}
