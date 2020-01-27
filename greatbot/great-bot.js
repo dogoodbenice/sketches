@@ -45,6 +45,17 @@ function opportunity() {
       delay: 2000,
       content: "Was there anything else we could help with?"
     })
+  }).then(function (){
+    return botui.action.button({
+      delay:3000,
+      action: [{
+        text: 'Yes',
+        value: 'yesmore'
+      }, {
+      text: 'No',
+      value: 'nomore'
+      }]
+    })
   })
 };
 
