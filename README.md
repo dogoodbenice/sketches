@@ -48,3 +48,4 @@ Latest at the bottom. Return [home](https://logikblok.github.io/).
 45. [Gradient Generator](https://logikblok.github.io/sketches/gradient/)
 46. [Dot or not](https://logikblok.github.io/sketches/dotornot/)
 47. [GreatBot](https://logikblok.github.io/sketches/greatbot/)
+48. [Great Lorem Ipsum](https://logikblok.github.io/sketches/greatloremipsum/)
