@@ -1,40 +1,49 @@
-var lines, data1, data2, x = 160, y = 240;
-var order = 3;
+var names;
+var order = 2;
 var ngrams = {};
+var beginnings = [];
+var button;
 
 function preload() {
-  data1 = loadStrings('data/researchinmarket.txt');
-  data2 = loadStrings('data/test.txt');
+  names = loadStrings('corpus.txt');
+  console.log(names);
 }
 
 function setup() {
-  createCanvas(window.width, window.height);
-  background(155);
-  textFont('times', 16);
-  textAlign(LEFT);
-  text(data1,10,10,80,80);
-  text(data2,100,100,100,100);
+  noCanvas();
+  for (var j = 0; j < names.length; j++) {
+    var txt = names[j];
+    for (var i = 0; i <= txt.length - order; i++) {
+      var gram = txt.substring(i, i + order);
+      if (i == 0) {
+        beginnings.push(gram);
+      }
 
-  for (var i = 0; i <= data1.length - order; i++) {
-    var gram = data1.substring(i,i + 3);
-    if (!ngrams[gram]){
-      ngrams[gram] = 1;
-    } else {
-      ngrams[gram]++;
+      if (!ngrams[gram]) {
+        ngrams[gram] = [];
+      }
+      ngrams[gram].push(txt.charAt(i + order));
     }
-    ngrams.push(gram);
   }
+  button = createButton('generate');
+  button.mousePressed(markovIt);
   console.log(ngrams);
 }
 
-function drawText() {
-  background(250);
-  text(data1,10,10,80,80);
-  //text(lines.join(' '), x, y, 400, 400);
-}
+function markovIt() {
+  var currentGram = random(beginnings);
+  var result = currentGram;
 
-// function mouseClicked() {
-//   x = y = 50;
-//   lines = markov.generateSentences(10);
-//   drawText();
-// }
+  for (var i = 0; i < 20; i++) {
+    var possibilities = ngrams[currentGram];
+    if (!possibilities) {
+      break;
+    }
+    var next = random(possibilities);
+    result += next;
+    var len = result.length;
+    currentGram = result.substring(len - order, len);
+  }
+
+  createP(result);
+}
