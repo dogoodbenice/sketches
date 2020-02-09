@@ -1,5 +1,5 @@
 var names;
-var order = 2;
+var order = 5;
 var ngrams = {};
 var beginnings = [];
 var button;
