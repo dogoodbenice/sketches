@@ -10,9 +10,9 @@ function setup() {
   createCanvas(500, 500);
   textFont('times', 16);
   textAlign(LEFT);
-  lines = ["click your mouse to generate and save some GREAT content!"];
+  lines = ["click to generate and save some GREAT content!"];
   // create a markov model w' n=3
-  markov = new RiMarkov(3);
+  markov = new RiMarkov(2);
   // load text into the model
   markov.loadText(data1.join(' '));
   markov.loadText(data2.join(' '));
