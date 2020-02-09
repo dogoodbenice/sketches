@@ -2,8 +2,8 @@ var lines, markov, data1, data2, x = 160, y = 240;
 
 function preload() {
 
-  data1 = loadStrings('../../data/wittgenstein.txt');
-  data2 = loadStrings('../../data/kafka.txt');
+  data1 = loadStrings('data/wittgenstein.txt');
+  data2 = loadStrings('data/kafka.txt');
 }
 
 function setup() {
