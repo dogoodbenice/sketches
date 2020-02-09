@@ -1,0 +1,70 @@
+International trade contracts and incoterms
+Using international commercial terms ensure properly written contracts.
+
+As an exporter, you need to make sure shipping and delivery responsibilities are written down and clearly understood. Using international commercial terms (known as incoterms) in contracts can help you do this.
+
+Incoterms are a set of internationally recognised 3-letter trade terms. They describe the practical arrangements for the delivery of goods from sellers to buyers and allocate the obligations, costs and risks between the 2 parties. They are produced by the International Chamber of Commerce (ICC) and updated periodically to reflect changing trade practices.
+
+Elements of a contract
+When you are negotiating a contract with a buyer, you’ll need to discuss and agree:
+
+where the goods will be delivered
+who arranges transport
+who handles and pays for insurance
+who handles customs procedures
+who pays any duties and taxes
+For example, an exporter might agree to deliver goods, at the exporter’s expense, to a port in the customer’s country. The customer might then take over responsibility, arranging and paying for customs clearance and delivery to their premises. The exporter might also be responsible for arranging insurance for the goods until they reach the port, but pass this cost on to the customer.
+
+Incoterms are used to ensure these responsibilities and handovers are clearly defined and agreed.
+
+As well as delivery details, the contract should cover payment. This should include what currency payment will be made in, how much will be paid, when payment is due and what payment method will be used.
+
+Contracts for service exporters
+Exporters in the services sector cannot use incoterms, as there is no physical product that has to be shipped.
+
+Therefore, when you are negotiating contracts for service provision it is important to define exactly what services you are providing and to what standards.
+
+Commonly used incoterms
+The latest version of incoterms, Incoterms 2020, came into effect on 1 January, 2020. The new version is similar to the previous one, Incoterms 2010, but it takes into account developments in commercial practice, and updates the rules to make them easier to use.
+
+There are 11 incoterms in Incoterms 2020. The most commonly used are:
+
+1. Ex Works (EXW)
+The seller makes the goods available at the seller’s location, so the buyer can take over all the transportation costs and also bears the risks of bringing the goods to their final destination.
+
+2. Free Carrier (FCA)
+The seller is responsible for delivery of goods to a named carrier. Responsibility for cost and risk then passes to the buyer.
+
+3. Free Alongside Ship (FAS)
+The seller must place the goods alongside the ship at the named UK port. The risk of loss or damage to the goods passes when the goods are alongside the ship, and the buyer bears all the costs from that moment on.
+
+4. Free on Board (FOB)
+The seller is responsible for all costs involved in the process up until the goods are loaded on to a vessel at the named UK port. Once goods have been loaded, the buyer is responsible for any costs and risks involved in the onward shipment.
+
+5. Cost and Freight (CFR)
+The seller must pay the costs and freight to bring the goods to the overseas port of destination. The buyer pays costs and takes risk from then on.
+
+6. Cost, Insurance and Freight (CIF)
+This is the same as CFR. However, the seller must also obtain and pay for the insurance.
+
+The default level of insurance cover under CIF is Institute Cargo Clauses (C). This applies to both 2010 and 2020 Incoterms.
+
+7. Carrier and Insurance Paid to (CIP)
+The seller pays for the carriage and insurance to the named overseas destination point, but risk passes when the goods are handed over to the first carrier.
+
+The default level of insurance cover under CIP is Institute Cargo Clauses (A). This is a higher level of cover for CIP than Incoterms 2010, which specified Institute Cargo Clauses (C).
+
+8. Delivered at Place Unloaded (DPU)
+The exporter arranges carriage and delivery of the goods, ready for unloading at the named place. The seller is required to unload the goods at this destination.
+
+After the goods’ arrival, the customs clearance in the importing country needs to be completed by the buyer at his own cost and risk, including payment of all customs duties and taxes.
+
+This is a retitling of the Incoterms 2010 term Delivered at Terminal (DAT), making it clear that delivery can happen anywhere, not just at a terminal.
+
+9. Delivered Duty Paid (DDP)
+The seller is responsible for delivering the goods to the named place in the country of the buyer, and pays all costs in bringing the goods to the destination.
+
+More information
+As of 1 January 2020, trading partners are free to adopt the incoterms revision of their choice. The version you are using should be clearly specified in any commercial contracts.
+
+Visit the International Chamber of Commerce website for more information.
