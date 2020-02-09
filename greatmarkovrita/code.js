@@ -3,7 +3,7 @@ var lines, markov, data1, data2, x = 160, y = 240;
 function preload() {
   data1 = loadStrings('data/research.txt');
   data2 = loadStrings('data/export.txt');
-  data3 = loadStrings('data/incoterms.txt')
+  data3 = loadStrings('data/incoterms.txt');
 }
 
 function setup() {
@@ -11,7 +11,7 @@ function setup() {
   textFont('times', 16);
   textAlign(LEFT);
   lines = ["click to generate and save some GREAT content!"];
-  // create a markov model w' n=3
+  // create a markov model w' n=2
   markov = new RiMarkov(2);
   // load text into the model
   markov.loadText(data1.join(' '));
