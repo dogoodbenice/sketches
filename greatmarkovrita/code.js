@@ -25,7 +25,7 @@ function drawText() {
   text(lines.join(' '), x, y, 400, 400);
 }
 
-function mouseClicked() {
+function mousePressed() {
   x = y = 50;
   lines = markov.generateSentences(10);
   drawText();
