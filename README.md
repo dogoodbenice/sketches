@@ -51,3 +51,4 @@ Latest at the bottom. Return [home](https://logikblok.github.io/).
 48. [Great Lorem Ipsum](https://logikblok.github.io/sketches/greatloremipsum/)
 49. [Great Markov Mash](https://logikblok.github.io/sketches/greatmarkovrita/)
 50. [Capable Content](https://logikblok.github.io/sketches/capablecontent/)
+51. [Treejacktest](https://logikblok.github.io/sketches/treejacktest/)
