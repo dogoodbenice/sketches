@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Exploring business in the UK</title>
+  <meta name="description" content="This is an interactive data article serving as a primer into the general business population of the UK.">
+  <meta name="author" content="logikblok">
+
+  <!-- Chart.js –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/skeleton.css">
+
+  <!-- Favicon –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="images/favicon.png">
+
+</head>
+
+<body>
+
+  <!-- Primary Page Layout –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <div class="container">
+    <section class="header">
+      <h1 class="title">Exploring business in the UK</h1>
+    </section>
+  </div>
+  <!-- Introduction –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <div class="container">
+    <section class="topic">
+      <p>This is aiming to be interactive article serving as a primer into the general business population of the UK. Please do explore and <a href="https://logikblok.com/#contact">feedback is always welcome</a>. The article uses the following data
+        sources:</p>
+      <table class="u-full-width">
+        <thead>
+          <tr>
+            <th>Source Name</th>
+            <th>Dataset</th>
+            <th>Link</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>NOMIS</td>
+            <td>UK Business counts</td>
+            <td><a href="https://www.nomisweb.co.uk/query/select/getdatasetbytheme.asp?theme=49">Source</a></td>
+          </tr>
+          <tr>
+            <td>ONS</td>
+            <td>UK business: activity, size and location</td>
+            <td><a href="https://www.ons.gov.uk/businessindustryandtrade/business/activitysizeandlocation/datasets/ukbusinessactivitysizeandlocation">Source</td>
+          </tr>
+          <tr>
+            <td>CDRC</td>
+            <td>Business Census</td>
+            <td><a href="https://data.cdrc.ac.uk/dataset/business-census">Source</td>
+          </tr>
+          <tr>
+            <td>Companies House</td>
+            <td>Free Company Data Product</td>
+            <td><a href="http://download.companieshouse.gov.uk/en_output.html">Source</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>Overview questions and charts are added below. Data cuts have been taken and comments added <a href="https://github.com/logikblok/sketches">in the</a> code for analysis</p>
+    </section>
+  </div>
+  <!-- What is a business in the UK? –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <div class="container">
+    <section class="topic">
+      <h4 class="title">1. What does it mean to be a business in the UK?</h4>
+      <p>Being a business first and foremost means you have registered with companies house..</p>
+      <canvas id="myChart" width="400" height="150"></canvas>
+      <script>
+        var ctx = document.getElementById('myChart').getContext('2d');
+        var myChart = new Chart(ctx, {
+          type: 'bar',
+          data: {
+            labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+            datasets: [{
+              label: '# of Votes',
+              data: [12, 19, 3, 5, 2, 3],
+              backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+              ],
+              borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+              ],
+              borderWidth: 1
+            }]
+          },
+          options: {
+            scales: {
+              yAxes: [{
+                ticks: {
+                  beginAtZero: true
+                }
+              }]
+            }
+          }
+        });
+      </script>
+    </section>
+  </div>
+  <!-- Where are they in the UK? –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <div class="container">
+    <section class="topic">
+      <h4 class="title">2. Where are businesses located in the UK?</h4>
+    </section>
+  </div>
+  <!-- What sorts of things do they do? –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <div class="container">
+    <section class="topic">
+      <h4 class="title">3. What sorts of things do they do?</h4>
+    </section>
+  </div>
+  <!-- What do these businesses look like? –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <div class="container">
+    <section class="topic">
+      <h4 class="title">4. What do these business look like?</h4>
+      <p>This is a more complex question to analyse</p>
+    </section>
+  </div>
+  <!-- What are some key takeaways? –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <div class="container">
+    <section class="topic">
+      <h4 class="title">5. What are some key takeaways?</h4>
+      <ul>
+        <li>Businesses have specific categories.</li>
+        <li>Business are spread across the UK with some regional concentrations.
+          <ul>
+            <li>Item 2.1</li>
+            <li>Item 2.2</li>
+          </ul>
+        </li>
+        <li>Businesses do all sorts of things and with the majority being</li>
+        <li>Businesses look like all sorts of things</li>
+      </ul>
+    </section>
+    <p>Thanks for reading, by logikblok</p>
+  </div>
+  <!-- End of article –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body>
+
+</html>
