@@ -52,3 +52,4 @@ Latest at the bottom. Return [home](https://logikblok.github.io/).
 49. [Great Markov Mash](https://logikblok.github.io/sketches/greatmarkovrita/)
 50. [Capable Content](https://logikblok.github.io/sketches/capablecontent/)
 51. [Treejacktest](https://logikblok.github.io/sketches/treejacktest/?utm_source=analytics_test&utm_medium=referral)
+52. [UK Business](https://logikblok.github.io/sketches/ukbusiness/)
