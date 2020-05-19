@@ -28,14 +28,16 @@
   <!-- Primary Page Layout –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <div class="container">
     <section class="header">
-      <h1 class="title">Exploring business in the UK</h1>
+      <h1 class="title">[D R A F T] Exploring business in the UK</h1>
     </section>
   </div>
   <!-- Introduction –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <div class="container">
     <section class="topic">
-      <p>This is aiming to be interactive article serving as a primer into the general business population of the UK. Please do explore and <a href="https://logikblok.com/#contact">feedback is always welcome</a>. The article uses the following data
-        sources:</p>
+      <p>This is aiming to be an interactive data article serving as a primer into business in the UK. It's inspired by the <a
+          href="https://www.ons.gov.uk/businessindustryandtrade/business/activitysizeandlocation/bulletins/businessdemography/2018">statistical bulletins from ONS</a> and is an exploration of <em>data, techniques and libraries as a proof of
+          concept</em>. Please do explore and <a href="https://logikblok.com/#contact">feedback is always welcome</a>.</p>
+      <p>This article makes use of the following data sources:</p>
       <table class="u-full-width">
         <thead>
           <tr>
@@ -56,6 +58,11 @@
             <td><a href="https://www.ons.gov.uk/businessindustryandtrade/business/activitysizeandlocation/datasets/ukbusinessactivitysizeandlocation">Source</td>
           </tr>
           <tr>
+            <td>ONS</td>
+            <td>Business demography, UK</td>
+            <td><a href="https://www.ons.gov.uk/businessindustryandtrade/business/activitysizeandlocation/datasets/businessdemographyreferencetable">Source</td>
+          </tr>
+          <tr>
             <td>CDRC</td>
             <td>Business Census</td>
             <td><a href="https://data.cdrc.ac.uk/dataset/business-census">Source</td>
@@ -72,14 +79,49 @@
           </tr>
         </tbody>
       </table>
-      <p>Overview questions and charts are added below. Data cuts have been taken and comments added <a href="https://github.com/logikblok/sketches">in the</a> code for analysis</p>
+      <p>Overview questions and charts are added below. Data cuts have been taken and comments will be added <a href="https://github.com/logikblok/sketches/tree/gh-pages/ukbusiness">in the code</a> for analysis.</p>
     </section>
   </div>
   <!-- What is a business in the UK? –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <div class="container">
     <section class="topic">
       <h4 class="title">1. What does it mean to be a business in the UK?</h4>
-      <p>Being a business is  means you have registered with companies house..</p>
+      <p>Being or doing business can mean varying things, there are primarily three ways people go about doing this in the UK:</p>
+      <ul>
+        <li>Individuals can do business by registering as a <em>sole trader</em>.</li>
+        <li>Individuals or groups can incorporate a <em>company</em>.</li>
+        <li>Groups can come together and register as a <em>partnership</em>.</li>
+      </ul>
+      <p>Because of the variety of structures businesses can have, the majority of data and statistics use the Inter-Departmental Business Register (<a
+          href="https://www.ons.gov.uk/aboutus/whatwedo/paidservices/interdepartmentalbusinessregisteridbr">IDBR</a>) and Standard Industrial Classification (<a
+          href="https://www.ons.gov.uk/methodology/classificationsandstandards/ukstandardindustrialclassificationofeconomicactivities/uksic2007">SIC</a>) codes to <em>count</em> and <em>categorise</em> businesses.</p>
+      <p>In a nutshell, the <em>IDBR</em> uses a variety of sources to create counts of businesses. Whilst <em>SIC</em> codes are used to categorise these businesses into an groups of activities.</p>
+      <canvas id="doughnut-chart" width="400" height="150"></canvas>
+      <script>
+        new Chart(document.getElementById("doughnut-chart"), {
+          type: 'doughnut',
+          data: {
+            labels: ["Agriculture, forestry & fishing", "Production", "Europe", "Latin America", "North America"],
+            datasets: [{
+              label: "Population (millions)",
+              backgroundColor: ["#3e95cd", "#8e5ea2", "#3cba9f", "#e8c3b9", "#c45850"],
+              data: [1, 5267, 734, 784, 433]
+            }]
+          },
+          options: {
+            title: {
+              display: true,
+              text: 'Broad industry structures'
+            }
+          }
+        });
+      </script>
+    </section>
+  </div>
+  <!-- Where are they in the UK? –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <div class="container">
+    <section class="topic">
+      <h4 class="title">2. Where are businesses located in the UK?</h4>
       <canvas id="myChart" width="400" height="150"></canvas>
       <script>
         var ctx = document.getElementById('myChart').getContext('2d');
@@ -120,12 +162,6 @@
           }
         });
       </script>
-    </section>
-  </div>
-  <!-- Where are they in the UK? –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <div class="container">
-    <section class="topic">
-      <h4 class="title">2. Where are businesses located in the UK?</h4>
     </section>
   </div>
   <!-- What sorts of things do they do? –––––––––––––––––––––––––––––––––––––––––––––––––– -->
