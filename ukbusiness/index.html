@@ -28,7 +28,7 @@
   <!-- Primary Page Layout –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <div class="container">
     <section class="header">
-      <h1 class="title">[D R A F T] Exploring business in the UK</h1>
+      <h1 class="title">[DRAFT] Exploring business in the UK</h1>
     </section>
   </div>
   <!-- Introduction –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -93,8 +93,20 @@
         <li>Groups can come together and register as a <em>partnership</em>.</li>
       </ul>
       <p>Because of the variety of structures businesses can have, the majority of statistics use the Inter-Departmental Business Register (<a href="https://www.ons.gov.uk/aboutus/whatwedo/paidservices/interdepartmentalbusinessregisteridbr">IDBR</a>)
-        to <em>count</em> businesses and the Standard Industrial Classification (<a href="https://www.ons.gov.uk/methodology/classificationsandstandards/ukstandardindustrialclassificationofeconomicactivities/uksic2007">SIC</a>) to <em>categorise</em> businesses.</p>
-        <p>The <em>SIC</em> codes are used to group businesses into key activities. These have been split in to sections, divisions and groups.</p>
+        to <em>count</em> businesses and the Standard Industrial Classification (<a href="https://www.ons.gov.uk/methodology/classificationsandstandards/ukstandardindustrialclassificationofeconomicactivities/uksic2007">SIC</a>) to <em>categorise</em>
+        businesses.</p>
+      <p><em>SIC</em> codes are varied and each one is usually self picked by the individual/group when registering their business.</p> <p>Click the button <em>here</em> for a random SIC code</p>
+      <pre>
+          <code>
+            10810	Manufacture of sugar
+          </code>
+          <script type="text/javascript">
+          const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+          const randomMonth = months[Math.floor(Math.random() * months.length)];
+          console.log("random month =>", randomMonth);
+          </script>
+        </pre>
+      <p>These SIC codes are also grouped into Broad Industry groups, sections, divisions, groups and classes.</p>
       <!--
   /* +-------------------------------+----------------------+--+---------------------+-------------------+ */
   /* |          Descriptio           |                      |  | UK SIC 2007 Section | Count of SIC code | */
@@ -120,20 +132,19 @@
   /* | Health                        |                      |  | Q                   |                 1 | */
   /* | Arts, entertainment, recreati | n and other services |  | R, S, T and U       |                 4 | */
   /* +-------------------------------+----------------------+--+---------------------+-------------------+ */ -->
-      <canvas id="doughnut-chart" width="400" height="180"></canvas>
+      <canvas id="BIG-chart" width="400" height="180"></canvas>
       <script>
-        new Chart(document.getElementById("doughnut-chart"), {
+        new Chart(document.getElementById("BIG-chart"), {
           type: 'doughnut',
           data: {
-            labels: ["Agriculture, forestry & fishing", "Production", "Construction", "Wholesale and retail trade; repair of motor vehicles and motorcycles","Transport & storage (inc postal)", "Accommodation & food services", "Information & communication", "Finance & insurance", "Property", "Professional, scientific & technical", "Business administration and support services",
-              "Public administration & defence", "Education", "Health", "Arts, entertainment, recreation and other services"
+            labels: ["Agriculture, forestry & fishing", "Production", "Construction", "Motor trades", "Wholesale", "Retail", "Transport & storage (inc postal)", "Accommodation & food services", "Information & communication",
+              "Finance & insurance", "Property",
+              "Professional, scientific & technical", " Business administration & support services", "Public administration & defence", "Education", "Health", "Arts, entertainment, recreation & other services"
             ],
             datasets: [{
-              label: "Broad industry Groups with numbers of SIC sections",
-              backgroundColor: ["#27ae60", "#8e5ea2", "#3cba9f", "#e8c3b9", "#c45850", "#81ecec", "#95a5a6", "#34495e", "#f39c12", "#3e95cd", "#fd79a8", "#6c5ce7", "#e84393", "#ff7675",
-                "#2d3436"
-              ],
-              data: [1, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,4]
+              label: "Broad Industry Groups with numbers of SIC sections",
+              backgroundColor: ["#27ae60", "#8e5ea2", "#a29bfe", "#e8c3b9", "#0652DD", "#81ecec", "#95a5a6", "#34495e", "#f39c12", "#d35400", "#fd79a8", "#6c5ce7", "#e84393", "#ff7675", "#2d3436", "#192a56", "#ff9ff3"],
+              data: [1, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 2, 10]
             }]
           },
           options: {
@@ -142,52 +153,68 @@
             },
             title: {
               display: true,
-              text: 'Broad industry Groups counting SIC sections in the group'
+              text: 'Broad industry Groups counting SIC sections in their group'
             }
           }
         });
       </script>
-      <p>The chart above shows Broad Industry Groups totalling the number of Standard Industrial Classifications attributed to them. The broad industry groups aren't highly used but are a helpful indication of how the UK economy is structured. Each of the SIC subsections can be explore <a href="https://onsdigital.github.io/dp-classification-tools/standard-industrial-classification/ONS_SIC_hierarchy_view.html">interactively here</a>.</p>
+      <p>The chart above shows Broad Industry Groups totalling the number of SIC sections attributed to them. The broad industry groups are are a helpful indication of how the UK economy is structured. Each of the SIC subsections can be explored <a href="https://onsdigital.github.io/dp-classification-tools/standard-industrial-classification/ONS_SIC_hierarchy_view.html">further here</a>.</p>
     </section>
   </div>
   <!-- What sorts of things do they do? –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <div class="container">
     <section class="topic">
-      <h4 class="title">2. What sorts of things do businesses do?</h4>
-      <p>What a business does is defined by their </p>
-
+      <h4 class="title">2. How many businesses are there?</h4>
+      <p>Building on those SIC codes and groupings, what businesses say they do can be analysed by the SIC data.</p>
+      <canvas id="BIGvsbusinesscount-chart" width="400" height="180"></canvas>
+      <script>
+        new Chart(document.getElementById("BIGvsbusinesscount-chart"), {
+          type: 'doughnut',
+          data: {
+            labels: ["Agriculture, forestry & fishing", "Production", "Construction", "Motor trades", "Wholesale", "Retail", "Transport & storage (inc postal)", "Accommodation & food services", "Information & communication",
+              "Finance & insurance", "Property",
+              "Professional, scientific & technical", " Business administration & support services", "Public administration & defence", "Education", "Health", "Arts, entertainment, recreation & other services"
+            ],
+            datasets: [{
+              label: "Broad Industry Groups with numbers of SIC sections",
+              backgroundColor: ["#27ae60", "#8e5ea2", "#a29bfe", "#e8c3b9", "#0652DD", "#81ecec", "#95a5a6", "#34495e", "#f39c12", "#d35400", "#fd79a8", "#6c5ce7", "#e84393", "#ff7675", "#2d3436", "#192a56", "#ff9ff3"],
+              data: [149540, 152015, 343715, 77200, 103145, 208760, 111360, 157035, 226215, 60630, 100340, 471715, 228750, 7505, 44490, 102000, 174020]
+            }]
+          },
+          options: {
+            legend: {
+              position: 'bottom',
+            },
+            title: {
+              display: true,
+              text: 'Number of Businesses per Industry group'
+            }
+          }
+        });
+      </script>
     </section>
   </div>
   <!-- Where are they in the UK? –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <div class="container">
     <section class="topic">
-      <h4 class="title">3. Where are businesses located in the UK?</h4>
+      <h4 class="title">3. What are the most popular business activities?</h4>
+    </section>
+  </div>
+  <!-- Where are they in the UK? –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <div class="container">
+    <section class="topic">
+      <h4 class="title">4. Where are businesses located in the UK?</h4>
       <canvas id="myChart" width="400" height="180"></canvas>
       <script>
         var ctx = document.getElementById('myChart').getContext('2d');
         var myChart = new Chart(ctx, {
           type: 'bar',
           data: {
-            labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+            labels: ['North East', 'North West', 'Yorkshire and the Humber', 'East Midlands', 'West Midlands', 'East', 'London', 'South East', 'South West', 'Wales', 'Scotland', 'Northern Ireland'],
             datasets: [{
-              label: '# of Votes',
-              data: [12, 19, 3, 5, 2, 3],
-              backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-                'rgba(255, 206, 86, 0.2)',
-                'rgba(75, 192, 192, 0.2)',
-                'rgba(153, 102, 255, 0.2)',
-                'rgba(255, 159, 64, 0.2)'
-              ],
-              borderColor: [
-                'rgba(255, 99, 132, 1)',
-                'rgba(54, 162, 235, 1)',
-                'rgba(255, 206, 86, 1)',
-                'rgba(75, 192, 192, 1)',
-                'rgba(153, 102, 255, 1)',
-                'rgba(255, 159, 64, 1)'
-              ],
+              label: '# of businesses',
+              data: [70460, 266810, 185795, 180450, 213915, 271715, 522240, 414975, 234420, 106015, 177075, 74565],
+              backgroundColor: '#0984e3',
               borderWidth: 1
             }]
           },
