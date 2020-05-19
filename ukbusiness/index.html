@@ -92,37 +92,77 @@
         <li>Individuals or groups can incorporate a <em>company</em>.</li>
         <li>Groups can come together and register as a <em>partnership</em>.</li>
       </ul>
-      <p>Because of the variety of structures businesses can have, the majority of data and statistics use the Inter-Departmental Business Register (<a
-          href="https://www.ons.gov.uk/aboutus/whatwedo/paidservices/interdepartmentalbusinessregisteridbr">IDBR</a>) and Standard Industrial Classification (<a
-          href="https://www.ons.gov.uk/methodology/classificationsandstandards/ukstandardindustrialclassificationofeconomicactivities/uksic2007">SIC</a>) codes to <em>count</em> and <em>categorise</em> businesses.</p>
-      <p>In a nutshell, the <em>IDBR</em> uses a variety of sources to create counts of businesses. Whilst <em>SIC</em> codes are used to categorise these businesses into an groups of activities.</p>
-      <canvas id="doughnut-chart" width="400" height="150"></canvas>
+      <p>Because of the variety of structures businesses can have, the majority of statistics use the Inter-Departmental Business Register (<a href="https://www.ons.gov.uk/aboutus/whatwedo/paidservices/interdepartmentalbusinessregisteridbr">IDBR</a>)
+        to <em>count</em> businesses and the Standard Industrial Classification (<a href="https://www.ons.gov.uk/methodology/classificationsandstandards/ukstandardindustrialclassificationofeconomicactivities/uksic2007">SIC</a>) to <em>categorise</em> businesses.</p>
+        <p>The <em>SIC</em> codes are used to group businesses into key activities. These have been split in to sections, divisions and groups.</p>
+      <!--
+  /* +-------------------------------+----------------------+--+---------------------+-------------------+ */
+  /* |          Descriptio           |                      |  | UK SIC 2007 Section | Count of SIC code | */
+  /* +-------------------------------+----------------------+--+---------------------+-------------------+ */
+  /* | Agriculture, forestry & fishi | g                    |  | A                   |                 1 | */
+  /* | Production                    |                      |  | B, C, D and E       |                 4 | */
+  /* | Mining, quarrying & utilities |                      |  | B, D and E          |                 3 | */
+  /* | Manufacturing                 |                      |  | C                   |                 1 | */
+  /* | Construction                  |                      |  | F                   |                 1 | */
+  /* | Wholesale and retail; repair  | f motor vehicles     |  | G                   |                 1 | */
+  /* | Motor trades                  |                      |  | G                   |                 1 | */
+  /* | Wholesale                     |                      |  | G                   |                 1 | */
+  /* | Retail                        |                      |  | G                   |                 1 | */
+  /* | Transport & storage (inc post | l)                   |  | H                   |                 1 | */
+  /* | Accommodation & food services |                      |  | I                   |                 1 | */
+  /* | Information & communication   |                      |  | J                   |                 1 | */
+  /* | Finance & insurance           |                      |  | K                   |                 1 | */
+  /* | Property                      |                      |  | L                   |                 1 | */
+  /* | Professional, scientific & te | hnical               |  | M                   |                 1 | */
+  /* | Business administration and s | pport services       |  | N                   |                 1 | */
+  /* | Public administration & defen | e                    |  | O                   |                 1 | */
+  /* | Education                     |                      |  | P                   |                 1 | */
+  /* | Health                        |                      |  | Q                   |                 1 | */
+  /* | Arts, entertainment, recreati | n and other services |  | R, S, T and U       |                 4 | */
+  /* +-------------------------------+----------------------+--+---------------------+-------------------+ */ -->
+      <canvas id="doughnut-chart" width="400" height="180"></canvas>
       <script>
         new Chart(document.getElementById("doughnut-chart"), {
           type: 'doughnut',
           data: {
-            labels: ["Agriculture, forestry & fishing", "Production", "Europe", "Latin America", "North America"],
+            labels: ["Agriculture, forestry & fishing", "Production", "Construction", "Wholesale and retail trade; repair of motor vehicles and motorcycles","Transport & storage (inc postal)", "Accommodation & food services", "Information & communication", "Finance & insurance", "Property", "Professional, scientific & technical", "Business administration and support services",
+              "Public administration & defence", "Education", "Health", "Arts, entertainment, recreation and other services"
+            ],
             datasets: [{
-              label: "Population (millions)",
-              backgroundColor: ["#3e95cd", "#8e5ea2", "#3cba9f", "#e8c3b9", "#c45850"],
-              data: [1, 5267, 734, 784, 433]
+              label: "Broad industry Groups with numbers of SIC sections",
+              backgroundColor: ["#27ae60", "#8e5ea2", "#3cba9f", "#e8c3b9", "#c45850", "#81ecec", "#95a5a6", "#34495e", "#f39c12", "#3e95cd", "#fd79a8", "#6c5ce7", "#e84393", "#ff7675",
+                "#2d3436"
+              ],
+              data: [1, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,4]
             }]
           },
           options: {
+            legend: {
+              position: 'bottom',
+            },
             title: {
               display: true,
-              text: 'Broad industry structures'
+              text: 'Broad industry Groups counting SIC sections in the group'
             }
           }
         });
       </script>
+      <p>The chart above shows Broad Industry Groups totalling the number of Standard Industrial Classifications attributed to them. The broad industry groups aren't highly used but are a helpful indication of how the UK economy is structured. Each of the SIC subsections can be explore <a href="https://onsdigital.github.io/dp-classification-tools/standard-industrial-classification/ONS_SIC_hierarchy_view.html">interactively here</a>.</p>
+    </section>
+  </div>
+  <!-- What sorts of things do they do? –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <div class="container">
+    <section class="topic">
+      <h4 class="title">2. What sorts of things do businesses do?</h4>
+      <p>What a business does is defined by their </p>
+
     </section>
   </div>
   <!-- Where are they in the UK? –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <div class="container">
     <section class="topic">
-      <h4 class="title">2. Where are businesses located in the UK?</h4>
-      <canvas id="myChart" width="400" height="150"></canvas>
+      <h4 class="title">3. Where are businesses located in the UK?</h4>
+      <canvas id="myChart" width="400" height="180"></canvas>
       <script>
         var ctx = document.getElementById('myChart').getContext('2d');
         var myChart = new Chart(ctx, {
@@ -164,12 +204,7 @@
       </script>
     </section>
   </div>
-  <!-- What sorts of things do they do? –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <div class="container">
-    <section class="topic">
-      <h4 class="title">3. What sorts of things do they do?</h4>
-    </section>
-  </div>
+
   <!-- What do these businesses look like? –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <div class="container">
     <section class="topic">
