@@ -1,4 +1,7 @@
-/* Page uses Skeleton with some minor tweaks /*
+/*
+* Page uses Skeleton CSS below with some minor tweaks
+* 24/05/2020
+/*
 
 /*
 * Skeleton V2.0.4
@@ -125,8 +128,8 @@ html {
 body {
   font-size: 1.8em; /* currently ems cause chrome bug misinterpreting rems on body element */
   line-height: 1.6;
-  font-weight: 400;
-  font-family: Helvetica, Arial, sans-serif;
+  font-weight: 405;
+  font-family: Arial, sans-serif;
   color: #222; }
 
 
@@ -315,13 +318,9 @@ li {
 /* Code
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 code {
-  padding: .2rem .5rem;
-  margin: 0 .2rem;
   font-size: 90%;
-  white-space: nowrap;
-  background: #F1F1F1;
   border: 1px solid #E1E1E1;
-  border-radius: 4px; }
+  border-radius: 1px; }
 pre > code {
   display: block;
   padding: 1rem 1.5rem;
