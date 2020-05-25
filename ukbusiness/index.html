@@ -7,8 +7,6 @@
   <meta name="description" content="This is an interactive data article serving as a primer into the general business population of the UK.">
   <meta name="author" content="logikblok">
 
-  <!-- Chart.js –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
   <!-- Mobile Specific Metas
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -17,6 +15,14 @@
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/skeleton.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin="" />
+  <link href='https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.css' rel='stylesheet' />
+
+  <!-- .js –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+  <script src='https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.js'></script>
+  <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js" integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew==" crossorigin=""></script>
+
 
   <!-- Favicon –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link rel="icon" type="image/png" href="images/favicon.png">
@@ -97,10 +103,11 @@
       <blockquote cite="https://www.ons.gov.uk/aboutus/whatwedo/paidservices/interdepartmentalbusinessregisteridbr" class="shadow ">
         <p>
           An Enterprise can be defined as the smallest combination of legal units (generally based on VAT and/or PAYE records) that is an organisational unit producing goods or services. <a
-             href="https://www.ons.gov.uk/aboutus/whatwedo/paidservices/interdepartmentalbusinessregisteridbr">via ONS</a>
-       </p>
+            href="https://www.ons.gov.uk/aboutus/whatwedo/paidservices/interdepartmentalbusinessregisteridbr">via ONS</a>
+        </p>
       </blockquote>
-      <p>At the same time we also need to consider Standard Industrial Classifications (<a href="https://www.ons.gov.uk/methodology/classificationsandstandards/ukstandardindustrialclassificationofeconomicactivities/uksic2007">SIC codes</a>). Similar to the variety of businesses structures there are a large number of things a business can do to meet the needs of it's customers. To capture all the variety activity the SIC was created and is used to group economic activites.</p>
+      <p>At the same time we also need to consider Standard Industrial Classifications (<a href="https://www.ons.gov.uk/methodology/classificationsandstandards/ukstandardindustrialclassificationofeconomicactivities/uksic2007">SIC codes</a>). Similar
+        to the variety of businesses structures there are a large number of things a business can do to meet the needs of it's customers. To capture all the variety activity the SIC was created and is used to group economic activites.</p>
       <blockquote cite="https://www.ons.gov.uk/methodology/classificationsandstandards/ukstandardindustrialclassificationofeconomicactivities/uksic2007" class="shadow ">
         <p>A Standard Industrial Classification (SIC) was first introduced into the UK in 1948 for use in classifying business establishments and other statistical units by the type of economic activity in which they are engaged.<a
             href="https://www.ons.gov.uk/methodology/classificationsandstandards/ukstandardindustrialclassificationofeconomicactivities/uksic2007">via ONS</a></p>
@@ -847,7 +854,8 @@
           document.getElementById("sicCode").innerHTML = random;
         }
       </script>
-      <p>As you can see the code and description is usually fairly self explanatory but also diverse. Complex businesses can apply multiple SICs to themselves. For example a software consulting firm might list themselves engaging in design, software development, professional services and more. Here's one more example:</p>
+      <p>As you can see the code and description is usually fairly self explanatory but also diverse. Complex businesses can apply multiple SICs to themselves. For example a software consulting firm might list themselves engaging in design, software
+        development, professional services and more. Here's one more example:</p>
       <blockquote cite="https://beta.companieshouse.gov.uk/company/00519500" class="shadow ">
         <p> <em>TESCO STORES LIMITED Company number 00519500</em></p>
         <p>
@@ -860,7 +868,8 @@
         </p>
       </blockquote>
       <p>Now that we have this understanding we can go one more step further and group SIC codes. These are termed <em>Broad Industry groups</em> they can be thought of as clusters of SICs in further manageable sectors.</p>
-      <p>The chart below shows Broad Industry Groups <em>totalling the number of SIC sections attributed inside them</em>. These are a helpful indication of how the UK economy is structured. Each of the SIC subsections can be explored <a href="https://onsdigital.github.io/dp-classification-tools/standard-industrial-classification/ONS_SIC_hierarchy_view.html">further here</a>.</p>
+      <p>The chart below shows Broad Industry Groups <em>totalling the number of SIC sections attributed inside them</em>. These are a helpful indication of how the UK economy is structured. Each of the SIC subsections can be explored <a
+          href="https://onsdigital.github.io/dp-classification-tools/standard-industrial-classification/ONS_SIC_hierarchy_view.html">further here</a>.</p>
       <canvas id="BIG-chart" width="400" height="200"></canvas>
       <script>
         new Chart(document.getElementById("BIG-chart"), {
@@ -933,6 +942,29 @@
   <div class="container">
     <section class="topic">
       <h4 class="title">4. Where are businesses located in the UK?</h4>
+      <p>The UK is </p>
+      <p>
+        <div id='map' style='width: 400px; height: 300px;'></div>
+        <script>
+          mapboxgl.accessToken = 'pk.eyJ1IjoibG9naWtibG9rIiwiYSI6ImNrYW16OHptdDA5Y2EydHFvZW03cDZvdTYifQ.Hl9sBC-ICNC_c7bsB0c3zA';
+          var map = new mapboxgl.Map({
+            container: 'map',
+            style: 'mapbox://styles/mapbox/streets-v11'
+          });
+        </script>
+        <div id="mapid"></div>
+        <script type="text/javascript">
+          var mymap = L.map('mapid').setView([51.505, -1.5], 4.5);
+          L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+            attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+            maxZoom: 18,
+            id: 'mapbox/streets-v11',
+            tileSize: 512,
+            zoomOffset: -1,
+            accessToken: 'pk.eyJ1IjoibG9naWtibG9rIiwiYSI6ImNrYW16OHptdDA5Y2EydHFvZW03cDZvdTYifQ.Hl9sBC-ICNC_c7bsB0c3zA'
+          }).addTo(mymap);
+        </script>
+      </p>
       <canvas id="myChart" width="400" height="180"></canvas>
       <script>
         var ctx = document.getElementById('myChart').getContext('2d');
