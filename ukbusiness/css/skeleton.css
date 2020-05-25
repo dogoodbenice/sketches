@@ -13,24 +13,6 @@
 */
 
 
-/* Table of contents
-––––––––––––––––––––––––––––––––––––––––––––––––––
-- Grid
-- Base Styles
-- Typography
-- Links
-- Buttons
-- Forms
-- Lists
-- Code
-- Tables
-- Spacing
-- Utilities
-- Clearing
-- Media Queries
-*/
-
-
 /* Grid
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .container {
@@ -157,8 +139,28 @@ h6 { font-size: 1.5rem; line-height: 1.6;  letter-spacing: 0; }
 }
 
 p {
-  margin-top: 0; }
+  margin-top: 0;
+  padding-top: 11px;
+ }
 
+
+  /* blockquote
+  –––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+  blockquote {
+    background: white;
+    padding: 20px 30px 20px 30px;
+    margin: 50px auto;
+    width: 50%;
+    max-width: 500px;
+  }
+
+  .shadow {
+    border: solid 2px;
+    border-color: #bdc3c7;
+    box-shadow: 15px 15px 0 0 #bdc3c7;
+    padding-bottom: 10px;
+  }
 
 /* Links
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
@@ -320,7 +322,8 @@ li {
 code {
   font-size: 90%;
   border: 1px solid #E1E1E1;
-  border-radius: 1px; }
+  border-radius: 1px;
+}
 pre > code {
   display: block;
   padding: 1rem 1.5rem;
