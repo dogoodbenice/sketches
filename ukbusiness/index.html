@@ -15,8 +15,6 @@
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/skeleton.css">
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin="" />
-  <link href='https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.css' rel='stylesheet' />
 
   <!-- .js –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
@@ -870,7 +868,7 @@
       <p>Now that we have this understanding we can go one more step further and group SIC codes. These are termed <em>Broad Industry groups</em> they can be thought of as clusters of SICs in further manageable sectors.</p>
       <p>The chart below shows Broad Industry Groups <em>totalling the number of SIC sections attributed inside them</em>. These are a helpful indication of how the UK economy is structured. Each of the SIC subsections can be explored <a
           href="https://onsdigital.github.io/dp-classification-tools/standard-industrial-classification/ONS_SIC_hierarchy_view.html">further here</a>.</p>
-      <canvas id="BIG-chart" width="400" height="200"></canvas>
+      <canvas id="BIG-chart" width="350" height="200"></canvas>
       <script>
         new Chart(document.getElementById("BIG-chart"), {
           type: 'doughnut',
@@ -903,32 +901,32 @@
     <section class="topic">
       <h4 class="title">2. How many businesses are there?</h4>
       <p>Building on those SIC codes groupings inside the broad industry group, what businesses do and how many of them can be analysed by the SIC data. The chart below shows the number of businesses per industry group.</p>
-      <canvas id="BIGvsbusinesscount-chart" width="400" height="180"></canvas>
-      <script>
-        new Chart(document.getElementById("BIGvsbusinesscount-chart"), {
-          type: 'doughnut',
-          data: {
-            labels: ["Agriculture, forestry & fishing", "Production", "Construction", "Motor trades", "Wholesale", "Retail", "Transport & storage (inc postal)", "Accommodation & food services", "Information & communication",
-              "Finance & insurance", "Property",
-              "Professional, scientific & technical", " Business administration & support services", "Public administration & defence", "Education", "Health", "Arts, entertainment, recreation & other services"
-            ],
-            datasets: [{
-              label: "Broad Industry Groups with numbers of SIC sections",
-              backgroundColor: ["#27ae60", "#8e5ea2", "#a29bfe", "#e8c3b9", "#0652DD", "#81ecec", "#95a5a6", "#34495e", "#f39c12", "#d35400", "#fd79a8", "#6c5ce7", "#e84393", "#ff7675", "#2d3436", "#192a56", "#ff9ff3"],
-              data: [149540, 152015, 343715, 77200, 103145, 208760, 111360, 157035, 226215, 60630, 100340, 471715, 228750, 7505, 44490, 102000, 174020]
-            }]
-          },
-          options: {
-            legend: {
-              position: 'bottom',
+        <canvas id="BIGvsbusinesscount-chart" width="350" height="200"</canvas>
+        <script>
+          new Chart(document.getElementById("BIGvsbusinesscount-chart"), {
+            type: 'doughnut',
+            data: {
+              labels: ["Agriculture, forestry & fishing", "Production", "Construction", "Motor trades", "Wholesale", "Retail", "Transport & storage (inc postal)", "Accommodation & food services", "Information & communication",
+                "Finance & insurance", "Property",
+                "Professional, scientific & technical", " Business administration & support services", "Public administration & defence", "Education", "Health", "Arts, entertainment, recreation & other services"
+              ],
+              datasets: [{
+                label: "Broad Industry Groups with numbers of SIC sections",
+                backgroundColor: ["#27ae60", "#8e5ea2", "#a29bfe", "#e8c3b9", "#0652DD", "#81ecec", "#95a5a6", "#34495e", "#f39c12", "#d35400", "#fd79a8", "#6c5ce7", "#e84393", "#ff7675", "#2d3436", "#192a56", "#ff9ff3"],
+                data: [149540, 152015, 343715, 77200, 103145, 208760, 111360, 157035, 226215, 60630, 100340, 471715, 228750, 7505, 44490, 102000, 174020]
+              }]
             },
-            title: {
-              display: true,
-              text: 'Number of Businesses per Industry group'
+            options: {
+              legend: {
+                position: 'bottom',
+              },
+              title: {
+                display: true,
+                text: 'Number of Businesses per Industry group'
+              }
             }
-          }
-        });
-      </script>
+          });
+        </script>
       <p>The data shows that the UK has a fairly</p>
     </section>
   </div>
@@ -944,26 +942,7 @@
       <h4 class="title">4. Where are businesses located in the UK?</h4>
       <p>The UK is </p>
       <p>
-        <div id='map' style='width: 400px; height: 300px;'></div>
-        <script>
-          mapboxgl.accessToken = 'pk.eyJ1IjoibG9naWtibG9rIiwiYSI6ImNrYW16OHptdDA5Y2EydHFvZW03cDZvdTYifQ.Hl9sBC-ICNC_c7bsB0c3zA';
-          var map = new mapboxgl.Map({
-            container: 'map',
-            style: 'mapbox://styles/mapbox/streets-v11'
-          });
-        </script>
-        <div id="mapid"></div>
-        <script type="text/javascript">
-          var mymap = L.map('mapid').setView([51.505, -1.5], 4.5);
-          L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
-            attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-            maxZoom: 18,
-            id: 'mapbox/streets-v11',
-            tileSize: 512,
-            zoomOffset: -1,
-            accessToken: 'pk.eyJ1IjoibG9naWtibG9rIiwiYSI6ImNrYW16OHptdDA5Y2EydHFvZW03cDZvdTYifQ.Hl9sBC-ICNC_c7bsB0c3zA'
-          }).addTo(mymap);
-        </script>
+        <iframe src="https://www.atlistmaps.com/map/d1d976c8-707b-400f-8779-d4b0015e57b7" width="100%" height="400px" frameborder="0" scrolling="no"></iframe>
       </p>
       <canvas id="myChart" width="400" height="180"></canvas>
       <script>
