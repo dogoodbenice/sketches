@@ -83,7 +83,7 @@
           </tr>
         </tbody>
       </table>
-      <p>Overview questions and charts are added below. Data cuts have been taken and comments will be added <a href="https://github.com/logikblok/sketches/tree/gh-pages/ukbusiness">in the code</a> for your own analysis.</p>
+      <p>Overview questions and charts are added below. Data is added directly into the charts so feel free to explore and inspect <a href="https://github.com/logikblok/sketches/tree/gh-pages/ukbusiness">in the code</a> for your own analysis.</p>
     </section>
   </div>
   <!-- What is a business in the UK? –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -96,21 +96,21 @@
         <li>Individuals or groups can incorporate a <em>company</em>.</li>
         <li>Groups can come together and register as a <em>partnership</em>.</li>
       </ul>
-      <p>There are lots more businesses structures and due to that variety the majority of UK statistics use a list called the Inter-Departmental Business Register (<a
-          href="https://www.ons.gov.uk/aboutus/whatwedo/paidservices/interdepartmentalbusinessregisteridbr">IDBR</a>) to <em>count</em> businesses. A singular business, for our needs, in this article refers to a single <em>enterprise</em>. </p>
+      <p>There are lots more businesses structures avaialable, and due to that variety the majority of UK statistics use a list called the Inter-Departmental Business Register (<a
+          href="https://www.ons.gov.uk/aboutus/whatwedo/paidservices/interdepartmentalbusinessregisteridbr">IDBR</a>) to <em>count</em> businesses. So when we are counting a singular business in this article we are refering to a single <em>enterprise</em>. </p>
       <blockquote cite="https://www.ons.gov.uk/aboutus/whatwedo/paidservices/interdepartmentalbusinessregisteridbr" class="shadow ">
         <p>
           An Enterprise can be defined as the smallest combination of legal units (generally based on VAT and/or PAYE records) that is an organisational unit producing goods or services. <a
             href="https://www.ons.gov.uk/aboutus/whatwedo/paidservices/interdepartmentalbusinessregisteridbr">via ONS</a>
         </p>
       </blockquote>
-      <p>At the same time we also need to consider Standard Industrial Classifications (<a href="https://www.ons.gov.uk/methodology/classificationsandstandards/ukstandardindustrialclassificationofeconomicactivities/uksic2007">SIC codes</a>). Similar
-        to the variety of businesses structures there are a large number of things a business can do to meet the needs of it's customers. To capture all the variety activity the SIC was created and is used to group economic activites.</p>
+      <p>We also need to consider Standard Industrial Classifications or (<a href="https://www.ons.gov.uk/methodology/classificationsandstandards/ukstandardindustrialclassificationofeconomicactivities/uksic2007">SIC codes</a>). Similar
+        to the variety of businesses structures there are a large number of things a business can do to meet the needs of it's customers. So to capture what businesses typically do the SIC is used to group economic activites.</p>
       <blockquote cite="https://www.ons.gov.uk/methodology/classificationsandstandards/ukstandardindustrialclassificationofeconomicactivities/uksic2007" class="shadow ">
         <p>A Standard Industrial Classification (SIC) was first introduced into the UK in 1948 for use in classifying business establishments and other statistical units by the type of economic activity in which they are engaged.<a
             href="https://www.ons.gov.uk/methodology/classificationsandstandards/ukstandardindustrialclassificationofeconomicactivities/uksic2007">via ONS</a></p>
       </blockquote>
-      <p>To explore this interactively, press the button below to see a SIC code and it's description.</p>
+      <p>The best way to explore this is interactively, press the button below to see a SIC code and it's description.</p>
       <p><button class="button-primary" onclick="GetSIC();">Click here for a random SIC & description</button></p>
       <code>
         <p id="sicCode">1110,Growing of cereals (except rice), leguminous crops and oil seeds</p>
@@ -852,8 +852,9 @@
           document.getElementById("sicCode").innerHTML = random;
         }
       </script>
-      <p>As you can see the code and description is usually fairly self explanatory but also diverse. Complex businesses can apply multiple SICs to themselves. For example a software consulting firm might list themselves engaging in design, software
-        development, professional services and more. Here's one more example:</p>
+      <p>As you can see there is number code and a description. Most are fairly self explanatory but the whole set is very diverse.</p>
+      <p>Complex businesses can apply multiple SICs to themselves. For example a software firm might list themselves engaging in design, software
+        development, professional services and more. Here's another example:</p>
       <blockquote cite="https://beta.companieshouse.gov.uk/company/00519500" class="shadow ">
         <p> <em>TESCO STORES LIMITED Company number 00519500</em></p>
         <p>
@@ -865,10 +866,11 @@
           <a href="https://beta.companieshouse.gov.uk/company/00519500">via Companies House</a>
         </p>
       </blockquote>
-      <p>Now that we have this understanding we can go one more step further and group SIC codes. These are termed <em>Broad Industry groups</em> they can be thought of as clusters of SICs in further manageable sectors.</p>
+      <p>Now that we have this understanding we can go a step further and <em>group</em> SIC codes. These are termed <em>Broad Industry groups</em> which are clustered into higher level sectors.</p>
       <p>The chart below shows Broad Industry Groups <em>totalling the number of SIC sections attributed inside them</em>. These are a helpful indication of how the UK economy is structured. Each of the SIC subsections can be explored <a
           href="https://onsdigital.github.io/dp-classification-tools/standard-industrial-classification/ONS_SIC_hierarchy_view.html">further here</a>.</p>
-      <canvas id="BIG-chart" width="350" height="200"></canvas>
+      <div id="chartcontainer" style="width: 100%;height: 70vh">
+      <canvas id="BIG-chart"></canvas>
       <script>
         new Chart(document.getElementById("BIG-chart"), {
           type: 'doughnut',
@@ -884,6 +886,8 @@
             }]
           },
           options: {
+            responsive: true,
+            maintainAspectRatio: false,
             legend: {
               position: 'bottom',
             },
@@ -894,6 +898,7 @@
           }
         });
       </script>
+      </div>
     </section>
   </div>
   <!-- How many businesses are there? –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -901,7 +906,8 @@
     <section class="topic">
       <h4 class="title">2. How many businesses are there?</h4>
       <p>Building on those SIC codes groupings inside the broad industry group, what businesses do and how many of them can be analysed by the SIC data. The chart below shows the number of businesses per industry group.</p>
-        <canvas id="BIGvsbusinesscount-chart" width="350" height="200"</canvas>
+      <div id="chartcontainer" style="width: 100%;height: 70vh">
+        <canvas id="BIGvsbusinesscount-chart"></canvas>
         <script>
           new Chart(document.getElementById("BIGvsbusinesscount-chart"), {
             type: 'doughnut',
@@ -917,6 +923,8 @@
               }]
             },
             options: {
+              responsive: true,
+              maintainAspectRatio: false,
               legend: {
                 position: 'bottom',
               },
@@ -927,6 +935,7 @@
             }
           });
         </script>
+        </div>
       <p>The data shows that the UK has a fairly</p>
     </section>
   </div>
@@ -944,9 +953,10 @@
       <p>
         <iframe src="https://www.atlistmaps.com/map/d1d976c8-707b-400f-8779-d4b0015e57b7" width="100%" height="400px" frameborder="0" scrolling="no"></iframe>
       </p>
-      <canvas id="myChart" width="400" height="180"></canvas>
+      <div id="chartcontainer" style="width: 100%;height: 70vh">
+      <canvas id="regionandbusiness-chart"></canvas>
       <script>
-        var ctx = document.getElementById('myChart').getContext('2d');
+        var ctx = document.getElementById('regionandbusiness-chart').getContext('2d');
         var myChart = new Chart(ctx, {
           type: 'bar',
           data: {
@@ -959,6 +969,8 @@
             }]
           },
           options: {
+            responsive: true,
+            maintainAspectRatio: false,
             scales: {
               yAxes: [{
                 ticks: {
@@ -969,6 +981,7 @@
           }
         });
       </script>
+      </div>
       <p></p>
     </section>
   </div>
@@ -984,10 +997,10 @@
   <div class="container">
     <section class="topic">
       <h4 class="title">5. What do businesses feel?</h4>
-      <p>To explore this we need to understand that businesses are made up of groups of people. can take a look at the FB </p>
+      <p>Obviously businesses aren't people, usually they are groups of individuals. However can take a look at the FB </p>
 
     </section>
-    <p>Thanks for reading, by logikblok</p>
+    <p>What</p>
   </div>
   <!-- What are some key takeaways? –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <div class="container">
@@ -1005,7 +1018,8 @@
         <li>Businesses look like all sorts of things</li>
       </ul>
     </section>
-    <p>Thanks for reading, by logikblok</p>
+    <p>That's it, thanks for reading. If you have <a href="https://logikblok.com/#contact">feedback please do share it</a>. You can follow me on twitter <a href="https://twitter.com/logikblok">@logikblok</a></p>
+    <p><a href="https://logikblok.com/">authors website</a>. <a href="https://logikblok.github.io/sketches/">other sketces</a></p>
   </div>
   <!-- End of article –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 </body>
