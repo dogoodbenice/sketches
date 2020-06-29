@@ -284,11 +284,13 @@ p {
 /* blockquote
   –––––––––––––––––––––––––––––––––––––––––––––––––– */
 blockquote {
-  background: white;
-  padding: 20px 30px 20px 30px;
+  padding: 20px 30px 10px 30px;
   margin: 50px auto;
-  width: 50%;
-  max-width: 500px;
+  width: 60%;
+}
+
+.nutshell {
+  background: #81ecec;
 }
 
 .shadow {
@@ -305,7 +307,7 @@ a {
 }
 
 a:hover {
-  color: #0FA0CE;
+  color: #064355;
 }
 
 /* Header
