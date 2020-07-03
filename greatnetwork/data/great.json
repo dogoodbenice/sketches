@@ -3,30 +3,22 @@
     {
       "id": "n0",
       "label": "Country",
-      "x": 0,
-      "y": 0,
       "size": 20
     },
     {
       "id": "n1",
       "label": "Sector",
-      "x": 3,
-      "y": 1,
-      "size": 5
+      "size": 20
     },
     {
       "id": "n2",
       "label": "Product",
-      "x": 1,
-      "y": 3,
-      "size": 5
+      "size": 20
     },
     {
       "id": "n3",
       "label": "Territory",
-      "x": 5,
-      "y": 3,
-      "size": 5
+      "size": 20
     }
   ],
   "edges": [
