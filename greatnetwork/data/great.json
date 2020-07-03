@@ -1,78 +1,196 @@
 {
   "nodes": [
-    {
-      "id": "n0",
-      "label": "Country",
-      "x": 0,
-      "y": 0,
-      "color": "#2ecc71",
-      "size": 10
-    },
-    {
-      "id": "n1",
-      "label": "Sector",
-      "x": 3,
-      "y": 1,
-      "color": "#2ecc71",
-      "size": 10
-    },
-    {
-      "id": "n2",
-      "label": "Food and Drink",
-      "x": 5,
-      "y": 4,
-      "size": 10
-    },
-    {
-      "id": "n3",
-      "label": "Product",
-      "x": 1,
-      "y": 3,
-      "size": 10
-    },
-    {
-      "id": "n4",
-      "label": "Gin and Geneva",
-      "x": 2,
-      "y": 3,
-      "size": 10
-    }
+   {
+     "Id": "n0",
+     "Label": "DIT",
+     "x": 0,
+     "y": 0,
+     "color": "#2ecc71",
+     "size": 10
+   },
+   {
+     "Id": "n1",
+     "Label": "Market",
+     "x": 3,
+     "y": 2,
+     "color": "#2ecc72",
+     "size": 10
+   },
+   {
+     "Id": "n2",
+     "Label": "Region",
+     "x": 6,
+     "y": 1,
+     "color": "#2ecc73",
+     "size": 10
+   },
+   {
+     "Id": "n3",
+     "Label": "Sector",
+     "x": 6,
+     "y": 3,
+     "color": "#2ecc74",
+     "size": 10
+   },
+   {
+     "Id": "n4",
+     "Label": "Product",
+     "x": 6,
+     "y": 2,
+     "color": "#2ecc75",
+     "size": 10
+   },
+   {
+     "Id": "n5",
+     "Label": "Service",
+     "x": 4,
+     "y": 3,
+     "color": "#2ecc75",
+     "size": 10
+   },
+   {
+     "Id": "n6",
+     "Label": "Middle East, Afghanistan and Pakistan",
+     "x": 7,
+     "y": 1,
+     "color": "#2ecc76",
+     "size": 10
+   },
+   {
+     "Id": "n7",
+     "Label": "Europe",
+     "x": 10,
+     "y": 1,
+     "color": "#2ecc77",
+     "size": 10
+   },
+   {
+     "Id": "n8",
+     "Label": "Africa",
+     "x": 9,
+     "y": 1,
+     "color": "#2ecc78",
+     "size": 10
+   },
+   {
+     "Id": "n9",
+     "Label": "Asia Pacific",
+     "x": 10,
+     "y": 1,
+     "color": "#2ecc79",
+     "size": 10
+   },
+   {
+     "Id": "n10",
+     "Label": "Latin America and Caribbean",
+     "x": 11,
+     "y": 1,
+     "color": "#2ecc80",
+     "size": 10
+   },
+   {
+     "Id": "n11",
+     "Label": "Eastern Europe and Central Asia",
+     "x": 12,
+     "y": 1,
+     "color": "#2ecc81",
+     "size": 10
+   },
+   {
+     "Id": "n12",
+     "Label": "North America",
+     "x": 13,
+     "y": 1,
+     "color": "#2ecc82",
+     "size": 10
+   },
+   {
+     "Id": "n13",
+     "Label": "South Asia",
+     "x": 14,
+     "y": 1,
+     "color": "#2ecc83",
+     "size": 10
+   },
+   {
+     "Id": "n14",
+     "Label": "China and Hong Kong",
+     "x": 15,
+     "y": 1,
+     "color": "#2ecc84",
+     "size": 10
+   }
   ],
   "edges": [
-    {
-      "id": "e0",
-      "source": "n0",
-      "target": "n1",
-      "type":"curve"
-    },
-    {
-      "id": "e1",
-      "source": "n1",
-      "target": "n2",
-      "type":"curve"
-    },
-    {
-      "id": "e2",
-      "source": "n2",
-      "target": "n3",
-      "type":"curve"
-    },
-    {
-      "id": "e3",
-      "source": "n3",
-      "target": "n4",
-      "type":"curve"
-    },
-    {
-      "id": "e4",
-      "source": "n2",
-      "target": "n4",
-      "type":"curve"
-    },
-    {
-      "id": "e5",
-      "source": "n2",
-      "target": "n1"
-    }
+ {
+   "id": "e0",
+   "source": "n0",
+   "target": "n1"
+ },
+ {
+   "id": "e1",
+   "source": "n0",
+   "target": "n2"
+ },
+ {
+   "id": "e2",
+   "source": "n0",
+   "target": "n3"
+ },
+ {
+   "id": "e3",
+   "source": "n0",
+   "target": "n4"
+ },
+ {
+   "id": "e4",
+   "source": "n0",
+   "target": "n5"
+ },
+ {
+   "id": "e5",
+   "source": "n2",
+   "target": "n6"
+ },
+ {
+   "id": "e6",
+   "source": "n2",
+   "target": "n7"
+ },
+ {
+   "id": "e7",
+   "source": "n2",
+   "target": "n8"
+ },
+ {
+   "id": "e8",
+   "source": "n2",
+   "target": "n9"
+ },
+ {
+   "id": "e9",
+   "source": "n2",
+   "target": "n10"
+ },
+ {
+   "id": "e10",
+   "source": "n2",
+   "target": "n11"
+ },
+ {
+   "id": "e11",
+   "source": "n2",
+   "target": "n12"
+ },
+ {
+   "id": "e12",
+   "source": "n2",
+   "target": "n13"
+ },
+ {
+   "id": "e13",
+   "source": "n2",
+   "target": "n14"
+ }
   ]
 }
