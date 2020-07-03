@@ -1,161 +1,196 @@
 {
   "nodes": [
     {
-   "id": "n0",
-   "label": "DIT",
-   "x": 0,
-   "y": 0,
-   "color": "#2ecc71",
-   "size": 10
- },
- {
-   "id": "n1",
-   "label": "Market",
-   "x": 3,
-   "y": 2,
-   "color": "#2ecc72",
-   "size": 10
- },
- {
-   "id": "n2",
-   "label": "Region",
-   "x": 6,
-   "y": 1,
-   "color": "#2ecc73",
-   "size": 10
- },
- {
-   "id": "n3",
-   "label": "Sector",
-   "x": 6,
-   "y": 3,
-   "color": "#2ecc74",
-   "size": 10
- },
- {
-   "id": "n4",
-   "label": "Product",
-   "x": 6,
-   "y": 2,
-   "color": "#2ecc75",
-   "size": 10
- },
- {
-   "id": "n5",
-   "label": "Service",
-   "x": 4,
-   "y": 3,
-   "color": "#2ecc75",
-   "size": 10
- },
- {
-   "id": "n6",
-   "label": "Middle East, Afghanistan and Pakistan",
-   "x": 7,
-   "y": 1,
-   "color": "#2ecc76",
-   "size": 10
- },
- {
-   "id": "n7",
-   "label": "Europe",
-   "x": 10,
-   "y": 1,
-   "color": "#2ecc77",
-   "size": 10
- },
- {
-   "id": "n8",
-   "label": "Africa",
-   "x": 9,
-   "y": 1,
-   "color": "#2ecc78",
-   "size": 10
- },
- {
-   "id": "n9",
-   "label": "Asia Pacific",
-   "x": 10,
-   "y": 1,
-   "color": "#2ecc79",
-   "size": 10
- },
- {
-   "id": "n10",
-   "label": "Latin America and Caribbean",
-   "x": 11,
-   "y": 1,
-   "color": "#2ecc80",
-   "size": 10
- },
- {
-   "id": "n11",
-   "label": "Eastern Europe and Central Asia",
-   "x": 12,
-   "y": 1,
-   "color": "#2ecc81",
-   "size": 10
- },
- {
-   "id": "n12",
-   "label": "North America",
-   "x": 13,
-   "y": 1,
-   "color": "#2ecc82",
-   "size": 10
- },
- {
-   "id": "n13",
-   "label": "South Asia",
-   "x": 14,
-   "y": 1,
-   "color": "#2ecc83",
-   "size": 10
- },
- {
-   "id": "n14",
-   "label": "China and Hong Kong",
-   "x": 15,
-   "y": 1,
-   "color": "#2ecc84",
-   "size": 10
- }
+      "id": "n0",
+      "label": "DIT",
+      "x": 0,
+      "y": 0,
+      "color": "#2ecc71",
+      "size": 10
+    },
+    {
+      "id": "n1",
+      "label": "Market",
+      "x": 3,
+      "y": 2,
+      "color": "#2ecc72",
+      "size": 10
+    },
+    {
+      "id": "n2",
+      "label": "Region",
+      "x": 6,
+      "y": 1,
+      "color": "#2ecc73",
+      "size": 10
+    },
+    {
+      "id": "n3",
+      "label": "Sector",
+      "x": 6,
+      "y": 3,
+      "color": "#2ecc74",
+      "size": 10
+    },
+    {
+      "id": "n4",
+      "label": "Product",
+      "x": 6,
+      "y": 2,
+      "color": "#2ecc75",
+      "size": 10
+    },
+    {
+      "id": "n5",
+      "label": "Service",
+      "x": 4,
+      "y": 3,
+      "color": "#2ecc75",
+      "size": 10
+    },
+    {
+      "id": "n6",
+      "label": "Middle East, Afghanistan and Pakistan",
+      "x": 7,
+      "y": 1,
+      "color": "#2ecc76",
+      "size": 10
+    },
+    {
+      "id": "n7",
+      "label": "Europe",
+      "x": 10,
+      "y": 1,
+      "color": "#2ecc77",
+      "size": 10
+    },
+    {
+      "id": "n8",
+      "label": "Africa",
+      "x": 9,
+      "y": 1,
+      "color": "#2ecc78",
+      "size": 10
+    },
+    {
+      "id": "n9",
+      "label": "Asia Pacific",
+      "x": 10,
+      "y": 1,
+      "color": "#2ecc79",
+      "size": 10
+    },
+    {
+      "id": "n10",
+      "label": "Latin America and Caribbean",
+      "x": 11,
+      "y": 1,
+      "color": "#2ecc80",
+      "size": 10
+    },
+    {
+      "id": "n11",
+      "label": "Eastern Europe and Central Asia",
+      "x": 12,
+      "y": 1,
+      "color": "#2ecc81",
+      "size": 10
+    },
+    {
+      "id": "n12",
+      "label": "North America",
+      "x": 13,
+      "y": 1,
+      "color": "#2ecc82",
+      "size": 10
+    },
+    {
+      "id": "n13",
+      "label": "South Asia",
+      "x": 14,
+      "y": 1,
+      "color": "#2ecc83",
+      "size": 10
+    },
+    {
+      "id": "n14",
+      "label": "China and Hong Kong",
+      "x": 15,
+      "y": 1,
+      "color": "#2ecc84",
+      "size": 10
+    }
   ],
   "edges": [
     {
       "id": "e0",
       "source": "n0",
-      "target": "n1",
-      "type":"curve"
+      "target": "n1"
     },
     {
       "id": "e1",
-      "source": "n1",
-      "target": "n2",
-      "type":"curve"
+      "source": "n0",
+      "target": "n2"
     },
     {
       "id": "e2",
-      "source": "n2",
-      "target": "n3",
-      "type":"curve"
+      "source": "n0",
+      "target": "n3"
     },
     {
       "id": "e3",
-      "source": "n3",
-      "target": "n4",
-      "type":"curve"
+      "source": "n0",
+      "target": "n4"
     },
     {
       "id": "e4",
-      "source": "n2",
-      "target": "n4",
-      "type":"curve"
+      "source": "n0",
+      "target": "n5"
     },
     {
       "id": "e5",
       "source": "n2",
-      "target": "n1"
+      "target": "n6"
+    },
+    {
+      "id": "e6",
+      "source": "n2",
+      "target": "n7"
+    },
+    {
+      "id": "e7",
+      "source": "n2",
+      "target": "n8"
+    },
+    {
+      "id": "e8",
+      "source": "n2",
+      "target": "n9"
+    },
+    {
+      "id": "e9",
+      "source": "n2",
+      "target": "n10"
+    },
+    {
+      "id": "e10",
+      "source": "n2",
+      "target": "n11"
+    },
+    {
+      "id": "e11",
+      "source": "n2",
+      "target": "n12"
+    },
+    {
+      "id": "e12",
+      "source": "n2",
+      "target": "n13"
+    },
+    {
+      "id": "e13",
+      "source": "n2",
+      "target": "n14"
     }
   ]
 }
