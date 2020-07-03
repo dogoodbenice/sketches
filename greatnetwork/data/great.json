@@ -2,22 +2,36 @@
   "nodes": [
     {
       "id": "n0",
-      "label": "A node",
+      "label": "Country",
       "x": 0,
       "y": 0,
       "size": 10
     },
     {
       "id": "n1",
-      "label": "Another node",
+      "label": "Sector",
       "x": 3,
       "y": 1,
       "size": 10
     },
     {
       "id": "n2",
-      "label": "And a last one",
+      "label": "Food and Drink",
+      "x": 5,
+      "y": 6,
+      "size": 10
+    },
+    {
+      "id": "n3",
+      "label": "Product",
       "x": 1,
+      "y": 3,
+      "size": 10
+    },
+    {
+      "id": "n4",
+      "label": "Gin and Geneva",
+      "x": 2,
       "y": 3,
       "size": 10
     }
@@ -37,6 +51,21 @@
       "id": "e2",
       "source": "n2",
       "target": "n0"
+    },
+    {
+      "id": "e3",
+      "source": "n3",
+      "target": "n4"
+    },
+    {
+      "id": "e4",
+      "source": "n2",
+      "target": "n4"
+    },
+    {
+      "id": "e5",
+      "source": "n2",
+      "target": "n1"
     }
   ]
 }
