@@ -74,20 +74,5 @@ sigma.parsers.json('data/great.json', {
     edgeHoverExtremities: true,
   }
 });
-
-// Initialize the dragNodes plugin:
-var dragListener = sigma.plugins.dragNodes();
-
-dragListener.bind('startdrag', function(event) {
-  console.log(event);
-});
-dragListener.bind('drag', function(event) {
-  console.log(event);
-});
-dragListener.bind('drop', function(event) {
-  console.log(event);
-});
-dragListener.bind('dragend', function(event) {
-  console.log(event);
 });
 </script>
