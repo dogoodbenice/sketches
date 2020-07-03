@@ -61,7 +61,17 @@
 </div>
 <script>
 sigma.parsers.json('data/great.json', {
-  container: 'graph-container'
+  container: 'graph-container',
+  settings: {
+    doubleClickEnabled: true,
+    minEdgeSize: 0.5,
+    maxEdgeSize: 4,
+    enableEdgeHovering: false,
+    edgeHoverColor: 'edge',
+    defaultEdgeHoverColor: '#000',
+    edgeHoverSizeRatio: 1,
+    edgeHoverExtremities: true,
+  }
 });
 
 // Initialize the dragNodes plugin:
