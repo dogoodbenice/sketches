@@ -1,196 +1,1002 @@
 {
   "nodes": [
     {
-      "id": "n0",
-      "label": "DIT",
-      "x": 0,
-      "y": 0,
-      "color": "#2ecc71",
-      "size": 10
-    },
-    {
-      "id": "n1",
-      "label": "Market",
-      "x": 3,
-      "y": 2,
-      "color": "#2ecc72",
-      "size": 10
-    },
-    {
-      "id": "n2",
-      "label": "Region",
-      "x": 6,
-      "y": 1,
-      "color": "#2ecc73",
-      "size": 10
-    },
-    {
-      "id": "n3",
-      "label": "Sector",
-      "x": 6,
-      "y": 3,
-      "color": "#2ecc74",
-      "size": 10
-    },
-    {
-      "id": "n4",
-      "label": "Product",
-      "x": 6,
-      "y": 2,
-      "color": "#2ecc75",
-      "size": 10
-    },
-    {
-      "id": "n5",
-      "label": "Service",
-      "x": 4,
-      "y": 3,
-      "color": "#2ecc75",
-      "size": 10
-    },
-    {
-      "id": "n6",
-      "label": "Middle East, Afghanistan and Pakistan",
-      "x": 7,
-      "y": 1,
-      "color": "#2ecc76",
-      "size": 10
-    },
-    {
-      "id": "n7",
-      "label": "Europe",
-      "x": 10,
-      "y": 1,
-      "color": "#2ecc77",
-      "size": 10
-    },
-    {
-      "id": "n8",
-      "label": "Africa",
-      "x": 9,
-      "y": 1,
-      "color": "#2ecc78",
-      "size": 10
-    },
-    {
-      "id": "n9",
-      "label": "Asia Pacific",
-      "x": 10,
-      "y": 1,
-      "color": "#2ecc79",
-      "size": 10
-    },
-    {
-      "id": "n10",
-      "label": "Latin America and Caribbean",
-      "x": 11,
-      "y": 1,
-      "color": "#2ecc80",
-      "size": 10
-    },
-    {
-      "id": "n11",
-      "label": "Eastern Europe and Central Asia",
-      "x": 12,
-      "y": 1,
-      "color": "#2ecc81",
-      "size": 10
-    },
-    {
-      "id": "n12",
-      "label": "North America",
-      "x": 13,
-      "y": 1,
-      "color": "#2ecc82",
-      "size": 10
-    },
-    {
-      "id": "n13",
-      "label": "South Asia",
-      "x": 14,
-      "y": 1,
-      "color": "#2ecc83",
-      "size": 10
-    },
-    {
-      "id": "n14",
-      "label": "China and Hong Kong",
-      "x": 15,
-      "y": 1,
-      "color": "#2ecc84",
-      "size": 10
-    }
+     "id": "n0",
+     "label": "DIT",
+     "x": 0,
+     "y": 0,
+     "color": "#2ecc71",
+     "size": 15
+   },
+   {
+     "id": "n1",
+     "label": "Market",
+     "x": -2,
+     "y": 2,
+     "color": "#2ecc72",
+     "size": 10
+   },
+   {
+     "id": "n2",
+     "label": "Region",
+     "x": 2,
+     "y": 2,
+     "color": "#f1c40f",
+     "size": 10
+   },
+   {
+     "id": "n3",
+     "label": "Sector",
+     "x": 6,
+     "y": 3,
+     "color": "#2ecc74",
+     "size": 10
+   },
+   {
+     "id": "n4",
+     "label": "Product",
+     "x": 6,
+     "y": 2,
+     "color": "#2ecc75",
+     "size": 10
+   },
+   {
+     "id": "n5",
+     "label": "Service",
+     "x": 4,
+     "y": 3,
+     "color": "#2ecc75",
+     "size": 10
+   },
+   {
+     "id": "n6",
+     "label": "Middle East, Afghanistan and Pakistan",
+     "x": 2,
+     "y": 2,
+     "color": "#f1c40f",
+     "size": 10
+   },
+   {
+     "id": "n7",
+     "label": "Europe",
+     "x": 2,
+     "y": 3,
+     "color": "#f1c40f",
+     "size": 10
+   },
+   {
+     "id": "n8",
+     "label": "Africa",
+     "x": 2,
+     "y": 4,
+     "color": "#f1c40f",
+     "size": 10
+   },
+   {
+     "id": "n9",
+     "label": "Asia Pacific",
+     "x": 2,
+     "y": 5,
+     "color": "#f1c40f",
+     "size": 10
+   },
+   {
+     "id": "n10",
+     "label": "Latin America and Caribbean",
+     "x": 2,
+     "y": 6,
+     "color": "#f1c40f",
+     "size": 10
+   },
+   {
+     "id": "n11",
+     "label": "Eastern Europe and Central Asia",
+     "x": 2,
+     "y": 7,
+     "color": "#f1c40f",
+     "size": 10
+   },
+   {
+     "id": "n12",
+     "label": "North America",
+     "x": 2,
+     "y": 8,
+     "color": "#f1c40f",
+     "size": 10
+   },
+   {
+     "id": "n13",
+     "label": "South Asia",
+     "x": 2,
+     "y": 9,
+     "color": "#f1c40f",
+     "size": 10
+   },
+   {
+     "id": "n14",
+     "label": "China and Hong Kong",
+     "x": 2,
+     "y": 10,
+     "color": "#f1c40f",
+     "size": 10
+   },
+   {
+     "id": "n15",
+     "label": "Algeria",
+     "x": -3,
+     "y": 3.1,
+     "color": "#9b59b6",
+     "size": 10
+   },
+   {
+     "id": "n16",
+     "label": "Angola",
+     "x": -3,
+     "y": 3.7,
+     "color": "#9b59b6",
+     "size": 10
+   },
+   {
+     "id": "n17",
+     "label": "Ascension",
+     "x": -3,
+     "y": 3.9,
+     "color": "#9b59b6",
+     "size": 10
+   },
+   {
+     "id": "n18",
+     "label": "Benin",
+     "x": -3,
+     "y": 3.1,
+     "color": "#9b59b6",
+     "size": 10
+   },
+   {
+     "id": "n19",
+     "label": "Botswana",
+     "x": -3,
+     "y": 3.8,
+     "color": "#9b59b6",
+     "size": 10
+   },
+   {
+     "id": "n20",
+     "label": "Burkina Faso",
+     "x": -3,
+     "y": 3.2,
+     "color": "#9b59b6",
+     "size": 10
+   },
+   {
+     "id": "n21",
+     "label": "Burundi",
+     "x": -3,
+     "y": 3.5,
+     "color": "#9b59b6",
+     "size": 10
+   },
+   {
+     "id": "n22",
+     "label": "Cameroon",
+     "x": -3,
+     "y": 3.9,
+     "color": "#9b59b6",
+     "size": 10
+   },
+   {
+     "id": "n23",
+     "label": "Cape Verde",
+     "x": -3,
+     "y": 3.4,
+     "color": "#9b59b6",
+     "size": 10
+   },
+   {
+     "id": "n24",
+     "label": "Central African Republic",
+     "x": -3,
+     "y": 3.7,
+     "color": "#9b59b6",
+     "size": 10
+   },
+   {
+     "id": "n25",
+     "label": "Ceuta",
+     "x": -3,
+     "y": 3.5,
+     "color": "#9b59b6",
+     "size": 10
+   },
+   {
+     "id": "n26",
+     "label": "Chad",
+     "x": -3,
+     "y": 3.9,
+     "color": "#9b59b6",
+     "size": 10
+   },
+   {
+     "id": "n27",
+     "label": "Comoros",
+     "x": -3,
+     "y": 3.6,
+     "color": "#9b59b6",
+     "size": 10
+   },
+   {
+     "id": "n28",
+     "label": "Congo",
+     "x": -3,
+     "y": 3.3,
+     "color": "#9b59b6",
+     "size": 10
+   },
+   {
+     "id": "n29",
+     "label": "Congo (Democratic Republic)",
+     "x": -3,
+     "y": 3,
+     "color": "#9b59b6",
+     "size": 10
+   },
+   {
+     "id": "n30",
+     "label": "Djibouti",
+     "x": -3,
+     "y": 3.5,
+     "color": "#9b59b6",
+     "size": 10
+   },
+   {
+     "id": "n31",
+     "label": "Egypt",
+     "x": -3,
+     "y": 3.6,
+     "color": "#9b59b6",
+     "size": 10
+   },
+   {
+     "id": "n32",
+     "label": "Equatorial Guinea",
+     "x": -3,
+     "y": 3.7,
+     "color": "#9b59b6",
+     "size": 10
+   },
+   {
+     "id": "n33",
+     "label": "Eritrea",
+     "x": -3,
+     "y": 3,
+     "color": "#9b59b6",
+     "size": 10
+   },
+   {
+     "id": "n34",
+     "label": "Eswatini",
+     "x": -3,
+     "y": 3.9,
+     "color": "#9b59b6",
+     "size": 10
+   },
+   {
+     "id": "n35",
+     "label": "Ethiopia",
+     "x": -3,
+     "y": 3.1,
+     "color": "#9b59b6",
+     "size": 10
+   },
+   {
+     "id": "n36",
+     "label": "Gabon",
+     "x": -3,
+     "y": 3.8,
+     "color": "#9b59b6",
+     "size": 10
+   },
+   {
+     "id": "n37",
+     "label": "Ghana",
+     "x": -3,
+     "y": 3.3,
+     "color": "#9b59b6",
+     "size": 10
+   },
+   {
+     "id": "n38",
+     "label": "Guinea",
+     "x": -3,
+     "y": 3.2,
+     "color": "#9b59b6",
+     "size": 10
+   },
+   {
+     "id": "n39",
+     "label": "Guinea-Bissau",
+     "x": -3,
+     "y": 3.5,
+     "color": "#9b59b6",
+     "size": 10
+   },
+   {
+     "id": "n40",
+     "label": "Ivory Coast",
+     "x": -3,
+     "y": 3.7,
+     "color": "#9b59b6",
+     "size": 10
+   },
+   {
+     "id": "n41",
+     "label": "Kenya",
+     "x": -3,
+     "y": 3,
+     "color": "#9b59b6",
+     "size": 10
+   },
+   {
+     "id": "n42",
+     "label": "Lesotho",
+     "x": -3,
+     "y": 4,
+     "color": "#9b59b6",
+     "size": 10
+   },
+   {
+     "id": "n43",
+     "label": "Liberia",
+     "x": -3,
+     "y": 3.5,
+     "color": "#9b59b6",
+     "size": 10
+   },
+   {
+     "id": "n44",
+     "label": "Libya",
+     "x": -3,
+     "y": 3.8,
+     "color": "#9b59b6",
+     "size": 10
+   },
+   {
+     "id": "n45",
+     "label": "Madagascar",
+     "x": -3,
+     "y": 4,
+     "color": "#9b59b6",
+     "size": 10
+   },
+   {
+     "id": "n46",
+     "label": "Malawi",
+     "x": -3,
+     "y": 3.4,
+     "color": "#9b59b6",
+     "size": 10
+   },
+   {
+     "id": "n47",
+     "label": "Mali",
+     "x": -3,
+     "y": 3.7,
+     "color": "#9b59b6",
+     "size": 10
+   },
+   {
+     "id": "n48",
+     "label": "Mauritania",
+     "x": -3,
+     "y": 3.6,
+     "color": "#9b59b6",
+     "size": 10
+   },
+   {
+     "id": "n49",
+     "label": "Mauritius",
+     "x": -3,
+     "y": 3.6,
+     "color": "#9b59b6",
+     "size": 10
+   },
+   {
+     "id": "n50",
+     "label": "Mayotte",
+     "x": -3,
+     "y": 3.4,
+     "color": "#9b59b6",
+     "size": 10
+   },
+   {
+     "id": "n51",
+     "label": "Melilla",
+     "x": -3,
+     "y": 3.6,
+     "color": "#9b59b6",
+     "size": 10
+   },
+   {
+     "id": "n52",
+     "label": "Morocco",
+     "x": -3,
+     "y": 4,
+     "color": "#9b59b6",
+     "size": 10
+   },
+   {
+     "id": "n53",
+     "label": "Mozambique",
+     "x": -3,
+     "y": 3.7,
+     "color": "#9b59b6",
+     "size": 10
+   },
+   {
+     "id": "n54",
+     "label": "Namibia",
+     "x": -3,
+     "y": 3.5,
+     "color": "#9b59b6",
+     "size": 10
+   },
+   {
+     "id": "n55",
+     "label": "Niger",
+     "x": -3,
+     "y": 4,
+     "color": "#9b59b6",
+     "size": 10
+   },
+   {
+     "id": "n56",
+     "label": "Nigeria",
+     "x": -3,
+     "y": 3.7,
+     "color": "#9b59b6",
+     "size": 10
+   },
+   {
+     "id": "n57",
+     "label": "Reunion",
+     "x": -3,
+     "y": 3.6,
+     "color": "#9b59b6",
+     "size": 10
+   },
+   {
+     "id": "n58",
+     "label": "Rwanda",
+     "x": -3,
+     "y": 3.5,
+     "color": "#9b59b6",
+     "size": 10
+   },
+   {
+     "id": "n59",
+     "label": "Saint Helena",
+     "x": -3,
+     "y": 3.5,
+     "color": "#9b59b6",
+     "size": 10
+   },
+   {
+     "id": "n60",
+     "label": "Sao Tome and Principe",
+     "x": -3,
+     "y": 3.8,
+     "color": "#9b59b6",
+     "size": 10
+   },
+   {
+     "id": "n61",
+     "label": "Senegal",
+     "x": -3,
+     "y": 3.4,
+     "color": "#9b59b6",
+     "size": 10
+   },
+   {
+     "id": "n62",
+     "label": "Seychelles",
+     "x": -3,
+     "y": 3.7,
+     "color": "#9b59b6",
+     "size": 10
+   },
+   {
+     "id": "n63",
+     "label": "Sierra Leone",
+     "x": -3,
+     "y": 3.7,
+     "color": "#9b59b6",
+     "size": 10
+   },
+   {
+     "id": "n64",
+     "label": "Somalia",
+     "x": -3,
+     "y": 3.4,
+     "color": "#9b59b6",
+     "size": 10
+   },
+   {
+     "id": "n65",
+     "label": "South Africa",
+     "x": -3,
+     "y": 4,
+     "color": "#9b59b6",
+     "size": 10
+   },
+   {
+     "id": "n66",
+     "label": "South Sudan",
+     "x": -3,
+     "y": 3.7,
+     "color": "#9b59b6",
+     "size": 10
+   },
+   {
+     "id": "n67",
+     "label": "Sudan",
+     "x": -3,
+     "y": 4,
+     "color": "#9b59b6",
+     "size": 10
+   },
+   {
+     "id": "n68",
+     "label": "Tanzania",
+     "x": -3,
+     "y": 3.4,
+     "color": "#9b59b6",
+     "size": 10
+   },
+   {
+     "id": "n69",
+     "label": "The Gambia",
+     "x": -3,
+     "y": 3.2,
+     "color": "#9b59b6",
+     "size": 10
+   },
+   {
+     "id": "n70",
+     "label": "Togo",
+     "x": -3,
+     "y": 3.3,
+     "color": "#9b59b6",
+     "size": 10
+   },
+   {
+     "id": "n71",
+     "label": "Tristan da Cunha",
+     "x": -3,
+     "y": 3.7,
+     "color": "#9b59b6",
+     "size": 10
+   },
+   {
+     "id": "n72",
+     "label": "Tunisia",
+     "x": -3,
+     "y": 3.8,
+     "color": "#9b59b6",
+     "size": 10
+   },
+   {
+     "id": "n73",
+     "label": "Uganda",
+     "x": -3,
+     "y": 3.3,
+     "color": "#9b59b6",
+     "size": 10
+   },
+   {
+     "id": "n74",
+     "label": "Western Sahara",
+     "x": -3,
+     "y": 3.5,
+     "color": "#9b59b6",
+     "size": 10
+   },
+   {
+     "id": "n75",
+     "label": "Zambia",
+     "x": -3,
+     "y": 3.4,
+     "color": "#9b59b6",
+     "size": 10
+   },
+   {
+     "id": "n76",
+     "label": "Zimbabwe",
+     "x": -3,
+     "y": 3.1,
+     "color": "#9b59b6",
+     "size": 10
+   }
   ],
   "edges": [
     {
-      "id": "e0",
-      "source": "n0",
-      "target": "n1"
-    },
-    {
-      "id": "e1",
-      "source": "n0",
-      "target": "n2"
-    },
-    {
-      "id": "e2",
-      "source": "n0",
-      "target": "n3"
-    },
-    {
-      "id": "e3",
-      "source": "n0",
-      "target": "n4"
-    },
-    {
-      "id": "e4",
-      "source": "n0",
-      "target": "n5"
-    },
-    {
-      "id": "e5",
-      "source": "n2",
-      "target": "n6"
-    },
-    {
-      "id": "e6",
-      "source": "n2",
-      "target": "n7"
-    },
-    {
-      "id": "e7",
-      "source": "n2",
-      "target": "n8"
-    },
-    {
-      "id": "e8",
-      "source": "n2",
-      "target": "n9"
-    },
-    {
-      "id": "e9",
-      "source": "n2",
-      "target": "n10"
-    },
-    {
-      "id": "e10",
-      "source": "n2",
-      "target": "n11"
-    },
-    {
-      "id": "e11",
-      "source": "n2",
-      "target": "n12"
-    },
-    {
-      "id": "e12",
-      "source": "n2",
-      "target": "n13"
-    },
-    {
-      "id": "e13",
-      "source": "n2",
-      "target": "n14"
-    }
+    "id": "e0",
+    "source": "n0",
+    "target": "n1"
+  },
+  {
+    "id": "e1",
+    "source": "n0",
+    "target": "n2"
+  },
+  {
+    "id": "e2",
+    "source": "n0",
+    "target": "n3"
+  },
+  {
+    "id": "e3",
+    "source": "n0",
+    "target": "n4"
+  },
+  {
+    "id": "e4",
+    "source": "n0",
+    "target": "n5"
+  },
+  {
+    "id": "e5",
+    "source": "n2",
+    "target": "n6"
+  },
+  {
+    "id": "e6",
+    "source": "n2",
+    "target": "n7"
+  },
+  {
+    "id": "e7",
+    "source": "n2",
+    "target": "n8"
+  },
+  {
+    "id": "e8",
+    "source": "n2",
+    "target": "n9"
+  },
+  {
+    "id": "e9",
+    "source": "n2",
+    "target": "n10"
+  },
+  {
+    "id": "e10",
+    "source": "n2",
+    "target": "n11"
+  },
+  {
+    "id": "e11",
+    "source": "n2",
+    "target": "n12"
+  },
+  {
+    "id": "e12",
+    "source": "n2",
+    "target": "n13"
+  },
+  {
+    "id": "e13",
+    "source": "n2",
+    "target": "n14"
+  },
+  {
+    "id": "e14",
+    "source": "n8",
+    "target": "n15"
+  },
+  {
+    "id": "e15",
+    "source": "n8",
+    "target": "n16"
+  },
+  {
+    "id": "e16",
+    "source": "n8",
+    "target": "n17"
+  },
+  {
+    "id": "e17",
+    "source": "n8",
+    "target": "n18"
+  },
+  {
+    "id": "e18",
+    "source": "n8",
+    "target": "n19"
+  },
+  {
+    "id": "e19",
+    "source": "n8",
+    "target": "n20"
+  },
+  {
+    "id": "e20",
+    "source": "n8",
+    "target": "n21"
+  },
+  {
+    "id": "e21",
+    "source": "n8",
+    "target": "n22"
+  },
+  {
+    "id": "e22",
+    "source": "n8",
+    "target": "n23"
+  },
+  {
+    "id": "e23",
+    "source": "n8",
+    "target": "n24"
+  },
+  {
+    "id": "e24",
+    "source": "n8",
+    "target": "n25"
+  },
+  {
+    "id": "e25",
+    "source": "n8",
+    "target": "n26"
+  },
+  {
+    "id": "e26",
+    "source": "n8",
+    "target": "n27"
+  },
+  {
+    "id": "e27",
+    "source": "n8",
+    "target": "n28"
+  },
+  {
+    "id": "e28",
+    "source": "n8",
+    "target": "n29"
+  },
+  {
+    "id": "e29",
+    "source": "n8",
+    "target": "n30"
+  },
+  {
+    "id": "e30",
+    "source": "n8",
+    "target": "n31"
+  },
+  {
+    "id": "e31",
+    "source": "n8",
+    "target": "n32"
+  },
+  {
+    "id": "e32",
+    "source": "n8",
+    "target": "n33"
+  },
+  {
+    "id": "e33",
+    "source": "n8",
+    "target": "n34"
+  },
+  {
+    "id": "e34",
+    "source": "n8",
+    "target": "n35"
+  },
+  {
+    "id": "e35",
+    "source": "n8",
+    "target": "n36"
+  },
+  {
+    "id": "e36",
+    "source": "n8",
+    "target": "n37"
+  },
+  {
+    "id": "e37",
+    "source": "n8",
+    "target": "n38"
+  },
+  {
+    "id": "e38",
+    "source": "n8",
+    "target": "n39"
+  },
+  {
+    "id": "e39",
+    "source": "n8",
+    "target": "n40"
+  },
+  {
+    "id": "e40",
+    "source": "n8",
+    "target": "n41"
+  },
+  {
+    "id": "e41",
+    "source": "n8",
+    "target": "n42"
+  },
+  {
+    "id": "e42",
+    "source": "n8",
+    "target": "n43"
+  },
+  {
+    "id": "e43",
+    "source": "n8",
+    "target": "n44"
+  },
+  {
+    "id": "e44",
+    "source": "n8",
+    "target": "n45"
+  },
+  {
+    "id": "e45",
+    "source": "n8",
+    "target": "n46"
+  },
+  {
+    "id": "e46",
+    "source": "n8",
+    "target": "n47"
+  },
+  {
+    "id": "e47",
+    "source": "n8",
+    "target": "n48"
+  },
+  {
+    "id": "e48",
+    "source": "n8",
+    "target": "n49"
+  },
+  {
+    "id": "e49",
+    "source": "n8",
+    "target": "n50"
+  },
+  {
+    "id": "e50",
+    "source": "n8",
+    "target": "n51"
+  },
+  {
+    "id": "e51",
+    "source": "n8",
+    "target": "n52"
+  },
+  {
+    "id": "e52",
+    "source": "n8",
+    "target": "n53"
+  },
+  {
+    "id": "e53",
+    "source": "n8",
+    "target": "n54"
+  },
+  {
+    "id": "e54",
+    "source": "n8",
+    "target": "n55"
+  },
+  {
+    "id": "e55",
+    "source": "n8",
+    "target": "n56"
+  },
+  {
+    "id": "e56",
+    "source": "n8",
+    "target": "n57"
+  },
+  {
+    "id": "e57",
+    "source": "n8",
+    "target": "n58"
+  },
+  {
+    "id": "e58",
+    "source": "n8",
+    "target": "n59"
+  },
+  {
+    "id": "e59",
+    "source": "n8",
+    "target": "n60"
+  },
+  {
+    "id": "e60",
+    "source": "n8",
+    "target": "n61"
+  },
+  {
+    "id": "e61",
+    "source": "n8",
+    "target": "n62"
+  },
+  {
+    "id": "e62",
+    "source": "n8",
+    "target": "n63"
+  },
+  {
+    "id": "e63",
+    "source": "n8",
+    "target": "n64"
+  },
+  {
+    "id": "e64",
+    "source": "n8",
+    "target": "n65"
+  },
+  {
+    "id": "e65",
+    "source": "n8",
+    "target": "n66"
+  },
+  {
+    "id": "e66",
+    "source": "n8",
+    "target": "n67"
+  },
+  {
+    "id": "e67",
+    "source": "n8",
+    "target": "n68"
+  },
+  {
+    "id": "e68",
+    "source": "n8",
+    "target": "n69"
+  },
+  {
+    "id": "e69",
+    "source": "n8",
+    "target": "n70"
+  },
+  {
+    "id": "e70",
+    "source": "n8",
+    "target": "n71"
+  },
+  {
+    "id": "e71",
+    "source": "n8",
+    "target": "n72"
+  },
+  {
+    "id": "e72",
+    "source": "n8",
+    "target": "n73"
+  },
+  {
+    "id": "e73",
+    "source": "n8",
+    "target": "n74"
+  },
+  {
+    "id": "e74",
+    "source": "n8",
+    "target": "n75"
+  },
+  {
+    "id": "e75",
+    "source": "n8",
+    "target": "n76"
+  }
   ]
 }
