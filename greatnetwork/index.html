@@ -63,10 +63,11 @@
 sigma.parsers.json('data/great.json', {
   container: 'graph-container',
   settings: {
-    doubleClickEnabled: true,
+    doubleClickEnabled: false,
     minEdgeSize: 0.5,
     maxEdgeSize: 4,
-    enableEdgeHovering: false,
+    enableEdgeHovering: true,
+    edgeColor: 'source',
     edgeHoverColor: 'edge',
     defaultEdgeHoverColor: '#000',
     edgeHoverSizeRatio: 1,
