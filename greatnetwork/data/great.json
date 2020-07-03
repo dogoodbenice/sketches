@@ -1,594 +1,1548 @@
 {
   "nodes": [
     {
-    "id": "e0",
-    "source": "n0",
-    "target": "n1"
-  },
-  {
-    "id": "e1",
-    "source": "n0",
-    "target": "n2"
-  },
-  {
-    "id": "e2",
-    "source": "n0",
-    "target": "n3"
-  },
-  {
-    "id": "e3",
-    "source": "n0",
-    "target": "n4"
-  },
-  {
-    "id": "e4",
-    "source": "n0",
-    "target": "n5"
-  },
-  {
-    "id": "e5",
-    "source": "n2",
-    "target": "n6"
-  },
-  {
-    "id": "e6",
-    "source": "n2",
-    "target": "n7"
-  },
-  {
-    "id": "e7",
-    "source": "n2",
-    "target": "n8"
-  },
-  {
-    "id": "e8",
-    "source": "n2",
-    "target": "n9"
-  },
-  {
-    "id": "e9",
-    "source": "n2",
-    "target": "n10"
-  },
-  {
-    "id": "e10",
-    "source": "n2",
-    "target": "n11"
-  },
-  {
-    "id": "e11",
-    "source": "n2",
-    "target": "n12"
-  },
-  {
-    "id": "e12",
-    "source": "n2",
-    "target": "n13"
-  },
-  {
-    "id": "e13",
-    "source": "n2",
-    "target": "n14"
-  },
-  {
-    "id": "e14",
-    "source": "n8",
-    "target": "n15"
-  },
-  {
-    "id": "e15",
-    "source": "n8",
-    "target": "n16"
-  },
-  {
-    "id": "e16",
-    "source": "n8",
-    "target": "n17"
-  },
-  {
-    "id": "e17",
-    "source": "n8",
-    "target": "n18"
-  },
-  {
-    "id": "e18",
-    "source": "n8",
-    "target": "n19"
-  },
-  {
-    "id": "e19",
-    "source": "n8",
-    "target": "n20"
-  },
-  {
-    "id": "e20",
-    "source": "n8",
-    "target": "n21"
-  },
-  {
-    "id": "e21",
-    "source": "n8",
-    "target": "n22"
-  },
-  {
-    "id": "e22",
-    "source": "n8",
-    "target": "n23"
-  },
-  {
-    "id": "e23",
-    "source": "n8",
-    "target": "n24"
-  },
-  {
-    "id": "e24",
-    "source": "n8",
-    "target": "n25"
-  },
-  {
-    "id": "e25",
-    "source": "n8",
-    "target": "n26"
-  },
-  {
-    "id": "e26",
-    "source": "n8",
-    "target": "n27"
-  },
-  {
-    "id": "e27",
-    "source": "n8",
-    "target": "n28"
-  },
-  {
-    "id": "e28",
-    "source": "n8",
-    "target": "n29"
-  },
-  {
-    "id": "e29",
-    "source": "n8",
-    "target": "n30"
-  },
-  {
-    "id": "e30",
-    "source": "n8",
-    "target": "n31"
-  },
-  {
-    "id": "e31",
-    "source": "n8",
-    "target": "n32"
-  },
-  {
-    "id": "e32",
-    "source": "n8",
-    "target": "n33"
-  },
-  {
-    "id": "e33",
-    "source": "n8",
-    "target": "n34"
-  },
-  {
-    "id": "e34",
-    "source": "n8",
-    "target": "n35"
-  },
-  {
-    "id": "e35",
-    "source": "n8",
-    "target": "n36"
-  },
-  {
-    "id": "e36",
-    "source": "n8",
-    "target": "n37"
-  },
-  {
-    "id": "e37",
-    "source": "n8",
-    "target": "n38"
-  },
-  {
-    "id": "e38",
-    "source": "n8",
-    "target": "n39"
-  },
-  {
-    "id": "e39",
-    "source": "n8",
-    "target": "n40"
-  },
-  {
-    "id": "e40",
-    "source": "n8",
-    "target": "n41"
-  },
-  {
-    "id": "e41",
-    "source": "n8",
-    "target": "n42"
-  },
-  {
-    "id": "e42",
-    "source": "n8",
-    "target": "n43"
-  },
-  {
-    "id": "e43",
-    "source": "n8",
-    "target": "n44"
-  },
-  {
-    "id": "e44",
-    "source": "n8",
-    "target": "n45"
-  },
-  {
-    "id": "e45",
-    "source": "n8",
-    "target": "n46"
-  },
-  {
-    "id": "e46",
-    "source": "n8",
-    "target": "n47"
-  },
-  {
-    "id": "e47",
-    "source": "n8",
-    "target": "n48"
-  },
-  {
-    "id": "e48",
-    "source": "n8",
-    "target": "n49"
-  },
-  {
-    "id": "e49",
-    "source": "n8",
-    "target": "n50"
-  },
-  {
-    "id": "e50",
-    "source": "n8",
-    "target": "n51"
-  },
-  {
-    "id": "e51",
-    "source": "n8",
-    "target": "n52"
-  },
-  {
-    "id": "e52",
-    "source": "n8",
-    "target": "n53"
-  },
-  {
-    "id": "e53",
-    "source": "n8",
-    "target": "n54"
-  },
-  {
-    "id": "e54",
-    "source": "n8",
-    "target": "n55"
-  },
-  {
-    "id": "e55",
-    "source": "n8",
-    "target": "n56"
-  },
-  {
-    "id": "e56",
-    "source": "n8",
-    "target": "n57"
-  },
-  {
-    "id": "e57",
-    "source": "n8",
-    "target": "n58"
-  },
-  {
-    "id": "e58",
-    "source": "n8",
-    "target": "n59"
-  },
-  {
-    "id": "e59",
-    "source": "n8",
-    "target": "n60"
-  },
-  {
-    "id": "e60",
-    "source": "n8",
-    "target": "n61"
-  },
-  {
-    "id": "e61",
-    "source": "n8",
-    "target": "n62"
-  },
-  {
-    "id": "e62",
-    "source": "n8",
-    "target": "n63"
-  },
-  {
-    "id": "e63",
-    "source": "n8",
-    "target": "n64"
-  },
-  {
-    "id": "e64",
-    "source": "n8",
-    "target": "n65"
-  },
-  {
-    "id": "e65",
-    "source": "n8",
-    "target": "n66"
-  },
-  {
-    "id": "e66",
-    "source": "n8",
-    "target": "n67"
-  },
-  {
-    "id": "e67",
-    "source": "n8",
-    "target": "n68"
-  },
-  {
-    "id": "e68",
-    "source": "n8",
-    "target": "n69"
-  },
-  {
-    "id": "e69",
-    "source": "n8",
-    "target": "n70"
-  },
-  {
-    "id": "e70",
-    "source": "n8",
-    "target": "n71"
-  },
-  {
-    "id": "e71",
-    "source": "n8",
-    "target": "n72"
-  },
-  {
-    "id": "e72",
-    "source": "n8",
-    "target": "n73"
-  },
-  {
-    "id": "e73",
-    "source": "n8",
-    "target": "n74"
-  },
-  {
-    "id": "e74",
-    "source": "n8",
-    "target": "n75"
-  },
-  {
-    "id": "e75",
-    "source": "n8",
-    "target": "n76"
-  },
-  {
-    "id": "e76",
-    "source": "n9",
-    "target": "n77"
-  },
-  {
-    "id": "e77",
-    "source": "n9",
-    "target": "n78"
-  },
-  {
-    "id": "e78",
-    "source": "n9",
-    "target": "n79"
-  },
-  {
-    "id": "e79",
-    "source": "n9",
-    "target": "n80"
-  },
-  {
-    "id": "e80",
-    "source": "n9",
-    "target": "n81"
-  },
-  {
-    "id": "e81",
-    "source": "n9",
-    "target": "n82"
-  },
-  {
-    "id": "e82",
-    "source": "n9",
-    "target": "n83"
-  },
-  {
-    "id": "e83",
-    "source": "n9",
-    "target": "n84"
-  },
-  {
-    "id": "e84",
-    "source": "n9",
-    "target": "n85"
-  },
-  {
-    "id": "e85",
-    "source": "n9",
-    "target": "n86"
-  },
-  {
-    "id": "e86",
-    "source": "n9",
-    "target": "n87"
-  },
-  {
-    "id": "e87",
-    "source": "n9",
-    "target": "n88"
-  },
-  {
-    "id": "e88",
-    "source": "n9",
-    "target": "n89"
-  },
-  {
-    "id": "e89",
-    "source": "n9",
-    "target": "n90"
-  },
-  {
-    "id": "e90",
-    "source": "n9",
-    "target": "n91"
-  },
-  {
-    "id": "e91",
-    "source": "n9",
-    "target": "n92"
-  },
-  {
-    "id": "e92",
-    "source": "n9",
-    "target": "n93"
-  },
-  {
-    "id": "e93",
-    "source": "n9",
-    "target": "n94"
-  },
-  {
-    "id": "e94",
-    "source": "n9",
-    "target": "n95"
-  },
-  {
-    "id": "e95",
-    "source": "n9",
-    "target": "n96"
-  },
-  {
-    "id": "e96",
-    "source": "n9",
-    "target": "n97"
-  },
-  {
-    "id": "e97",
-    "source": "n9",
-    "target": "n98"
-  },
-  {
-    "id": "e98",
-    "source": "n9",
-    "target": "n99"
-  },
-  {
-    "id": "e99",
-    "source": "n9",
-    "target": "n100"
-  },
-  {
-    "id": "e100",
-    "source": "n9",
-    "target": "n101"
-  },
-  {
-    "id": "e101",
-    "source": "n9",
-    "target": "n102"
-  },
-  {
-    "id": "e102",
-    "source": "n9",
-    "target": "n103"
-  },
-  {
-    "id": "e103",
-    "source": "n9",
-    "target": "n104"
-  },
-  {
-    "id": "e104",
-    "source": "n9",
-    "target": "n105"
-  },
-  {
-    "id": "e105",
-    "source": "n9",
-    "target": "n106"
-  },
-  {
-    "id": "e106",
-    "source": "n9",
-    "target": "n107"
-  },
-  {
-    "id": "e107",
-    "source": "n9",
-    "target": "n108"
-  },
-  {
-    "id": "e108",
-    "source": "n9",
-    "target": "n109"
-  },
-  {
-    "id": "e109",
-    "source": "n9",
-    "target": "n110"
-  },
-  {
-    "id": "e110",
-    "source": "n9",
-    "target": "n111"
-  },
-  {
-    "id": "e111",
-    "source": "n9",
-    "target": "n112"
-  },
-  {
-    "id": "e112",
-    "source": "n9",
-    "target": "n113"
-  },
-  {
-    "id": "e113",
-    "source": "n9",
-    "target": "n114"
-  },
-  {
-    "id": "e114",
-    "source": "n9",
-    "target": "n115"
-  },
-  {
-    "id": "e115",
-    "source": "n9",
-    "target": "n116"
-  },
-  {
-    "id": "e116",
-    "source": "n9",
-    "target": "n117"
-  },
-  {
-    "id": "e117",
-    "source": "n9",
-    "target": "n118"
-  }
+      "id": "n0",
+      "label": "DIT",
+      "x": 0,
+      "y": 0,
+      "color": "#2ecc71",
+      "size": 25
+    },
+    {
+      "id": "n1",
+      "label": "Market",
+      "x": -4.5,
+      "y": 5,
+      "color": "#9b59b6",
+      "size": 15
+    },
+    {
+      "id": "n2",
+      "label": "Region",
+      "x": -4.5,
+      "y": -5,
+      "color": "#f1c40f",
+      "size": 15
+    },
+    {
+      "id": "n3",
+      "label": "Sector",
+      "x": 4,
+      "y": -5,
+      "color": "#2ecc74",
+      "size": 15
+    },
+    {
+      "id": "n4",
+      "label": "Product",
+      "x": 2.1,
+      "y": 5,
+      "color": "#2ecc75",
+      "size": 15
+    },
+    {
+      "id": "n5",
+      "label": "Service",
+      "x": 2,
+      "y": 2,
+      "color": "#2ecc75",
+      "size": 15
+    },
+    {
+      "id": "n6",
+      "label": "Middle East, Afghanistan and Pakistan",
+      "x": -5.8,
+      "y": -8.5,
+      "color": "#f1c40f",
+      "size": 10
+    },
+    {
+      "id": "n7",
+      "label": "Europe",
+      "x": -9.7,
+      "y": -5.4,
+      "color": "#f1c40f",
+      "size": 10
+    },
+    {
+      "id": "n8",
+      "label": "Africa",
+      "x": -6.9,
+      "y": -9.1,
+      "color": "#f1c40f",
+      "size": 10
+    },
+    {
+      "id": "n9",
+      "label": "Asia Pacific",
+      "x": -9,
+      "y": -9.8,
+      "color": "#f1c40f",
+      "size": 10
+    },
+    {
+      "id": "n10",
+      "label": "Latin America and Caribbean",
+      "x": -5.3,
+      "y": -9.7,
+      "color": "#f1c40f",
+      "size": 10
+    },
+    {
+      "id": "n11",
+      "label": "Eastern Europe and Central Asia",
+      "x": -9.9,
+      "y": -5.4,
+      "color": "#f1c40f",
+      "size": 10
+    },
+    {
+      "id": "n12",
+      "label": "North America",
+      "x": -9.7,
+      "y": -5.8,
+      "color": "#f1c40f",
+      "size": 10
+    },
+    {
+      "id": "n13",
+      "label": "South Asia",
+      "x": -7.8,
+      "y": -9.8,
+      "color": "#f1c40f",
+      "size": 10
+    },
+    {
+      "id": "n14",
+      "label": "China and Hong Kong",
+      "x": -7.4,
+      "y": -9.8,
+      "color": "#f1c40f",
+      "size": 10
+    },
+    {
+      "id": "n15",
+      "label": "Algeria",
+      "x": -9,
+      "y": 6.4,
+      "color": "#9b59b6",
+      "size": 10
+    },
+    {
+      "id": "n16",
+      "label": "Angola",
+      "x": -9.5,
+      "y": 8.7,
+      "color": "#9b59b6",
+      "size": 10
+    },
+    {
+      "id": "n17",
+      "label": "Ascension",
+      "x": -7.3,
+      "y": 6.6,
+      "color": "#9b59b6",
+      "size": 10
+    },
+    {
+      "id": "n18",
+      "label": "Benin",
+      "x": -7,
+      "y": 7.9,
+      "color": "#9b59b6",
+      "size": 10
+    },
+    {
+      "id": "n19",
+      "label": "Botswana",
+      "x": -5.9,
+      "y": 9.2,
+      "color": "#9b59b6",
+      "size": 10
+    },
+    {
+      "id": "n20",
+      "label": "Burkina Faso",
+      "x": -5.1,
+      "y": 7.4,
+      "color": "#9b59b6",
+      "size": 10
+    },
+    {
+      "id": "n21",
+      "label": "Burundi",
+      "x": -7,
+      "y": 6.5,
+      "color": "#9b59b6",
+      "size": 10
+    },
+    {
+      "id": "n22",
+      "label": "Cameroon",
+      "x": -8,
+      "y": 8.8,
+      "color": "#9b59b6",
+      "size": 10
+    },
+    {
+      "id": "n23",
+      "label": "Cape Verde",
+      "x": -9.6,
+      "y": 6.1,
+      "color": "#9b59b6",
+      "size": 10
+    },
+    {
+      "id": "n24",
+      "label": "Central African Republic",
+      "x": -8.6,
+      "y": 10,
+      "color": "#9b59b6",
+      "size": 10
+    },
+    {
+      "id": "n25",
+      "label": "Ceuta",
+      "x": -5.1,
+      "y": 9.3,
+      "color": "#9b59b6",
+      "size": 10
+    },
+    {
+      "id": "n26",
+      "label": "Chad",
+      "x": -6.2,
+      "y": 9.9,
+      "color": "#9b59b6",
+      "size": 10
+    },
+    {
+      "id": "n27",
+      "label": "Comoros",
+      "x": -8.8,
+      "y": 8.6,
+      "color": "#9b59b6",
+      "size": 10
+    },
+    {
+      "id": "n28",
+      "label": "Congo",
+      "x": -5.1,
+      "y": 7.9,
+      "color": "#9b59b6",
+      "size": 10
+    },
+    {
+      "id": "n29",
+      "label": "Congo (Democratic Republic)",
+      "x": -5.4,
+      "y": 7.5,
+      "color": "#9b59b6",
+      "size": 10
+    },
+    {
+      "id": "n30",
+      "label": "Djibouti",
+      "x": -5.2,
+      "y": 9,
+      "color": "#9b59b6",
+      "size": 10
+    },
+    {
+      "id": "n31",
+      "label": "Egypt",
+      "x": -5,
+      "y": 7.8,
+      "color": "#9b59b6",
+      "size": 10
+    },
+    {
+      "id": "n32",
+      "label": "Equatorial Guinea",
+      "x": -9.9,
+      "y": 6.4,
+      "color": "#9b59b6",
+      "size": 10
+    },
+    {
+      "id": "n33",
+      "label": "Eritrea",
+      "x": -9.4,
+      "y": 6.6,
+      "color": "#9b59b6",
+      "size": 10
+    },
+    {
+      "id": "n34",
+      "label": "Eswatini",
+      "x": -5.3,
+      "y": 5.1,
+      "color": "#9b59b6",
+      "size": 10
+    },
+    {
+      "id": "n35",
+      "label": "Ethiopia",
+      "x": -9.6,
+      "y": 7.1,
+      "color": "#9b59b6",
+      "size": 10
+    },
+    {
+      "id": "n36",
+      "label": "Gabon",
+      "x": -5.6,
+      "y": 7.6,
+      "color": "#9b59b6",
+      "size": 10
+    },
+    {
+      "id": "n37",
+      "label": "Ghana",
+      "x": -6.3,
+      "y": 6.1,
+      "color": "#9b59b6",
+      "size": 10
+    },
+    {
+      "id": "n38",
+      "label": "Guinea",
+      "x": -8.3,
+      "y": 7.8,
+      "color": "#9b59b6",
+      "size": 10
+    },
+    {
+      "id": "n39",
+      "label": "Guinea-Bissau",
+      "x": -9.1,
+      "y": 7.1,
+      "color": "#9b59b6",
+      "size": 10
+    },
+    {
+      "id": "n40",
+      "label": "Ivory Coast",
+      "x": -7.7,
+      "y": 9.7,
+      "color": "#9b59b6",
+      "size": 10
+    },
+    {
+      "id": "n41",
+      "label": "Kenya",
+      "x": -8.6,
+      "y": 8,
+      "color": "#9b59b6",
+      "size": 10
+    },
+    {
+      "id": "n42",
+      "label": "Lesotho",
+      "x": -8.5,
+      "y": 8.6,
+      "color": "#9b59b6",
+      "size": 10
+    },
+    {
+      "id": "n43",
+      "label": "Liberia",
+      "x": -8.1,
+      "y": 5.9,
+      "color": "#9b59b6",
+      "size": 10
+    },
+    {
+      "id": "n44",
+      "label": "Libya",
+      "x": -6,
+      "y": 9.6,
+      "color": "#9b59b6",
+      "size": 10
+    },
+    {
+      "id": "n45",
+      "label": "Madagascar",
+      "x": -5.4,
+      "y": 7.3,
+      "color": "#9b59b6",
+      "size": 10
+    },
+    {
+      "id": "n46",
+      "label": "Malawi",
+      "x": -6.1,
+      "y": 6.1,
+      "color": "#9b59b6",
+      "size": 10
+    },
+    {
+      "id": "n47",
+      "label": "Mali",
+      "x": -5,
+      "y": 8.2,
+      "color": "#9b59b6",
+      "size": 10
+    },
+    {
+      "id": "n48",
+      "label": "Mauritania",
+      "x": -6.7,
+      "y": 8.5,
+      "color": "#9b59b6",
+      "size": 10
+    },
+    {
+      "id": "n49",
+      "label": "Mauritius",
+      "x": -7.7,
+      "y": 9.6,
+      "color": "#9b59b6",
+      "size": 10
+    },
+    {
+      "id": "n50",
+      "label": "Mayotte",
+      "x": -9.7,
+      "y": 9.6,
+      "color": "#9b59b6",
+      "size": 10
+    },
+    {
+      "id": "n51",
+      "label": "Melilla",
+      "x": -8.1,
+      "y": 5.7,
+      "color": "#9b59b6",
+      "size": 10
+    },
+    {
+      "id": "n52",
+      "label": "Morocco",
+      "x": -9.2,
+      "y": 6,
+      "color": "#9b59b6",
+      "size": 10
+    },
+    {
+      "id": "n53",
+      "label": "Mozambique",
+      "x": -6.2,
+      "y": 7.8,
+      "color": "#9b59b6",
+      "size": 10
+    },
+    {
+      "id": "n54",
+      "label": "Namibia",
+      "x": -9.1,
+      "y": 9.4,
+      "color": "#9b59b6",
+      "size": 10
+    },
+    {
+      "id": "n55",
+      "label": "Niger",
+      "x": -7,
+      "y": 5.4,
+      "color": "#9b59b6",
+      "size": 10
+    },
+    {
+      "id": "n56",
+      "label": "Nigeria",
+      "x": -8.5,
+      "y": 8.5,
+      "color": "#9b59b6",
+      "size": 10
+    },
+    {
+      "id": "n57",
+      "label": "Reunion",
+      "x": -6.6,
+      "y": 6.1,
+      "color": "#9b59b6",
+      "size": 10
+    },
+    {
+      "id": "n58",
+      "label": "Rwanda",
+      "x": -8.9,
+      "y": 9.6,
+      "color": "#9b59b6",
+      "size": 10
+    },
+    {
+      "id": "n59",
+      "label": "Saint Helena",
+      "x": -6.7,
+      "y": 8.2,
+      "color": "#9b59b6",
+      "size": 10
+    },
+    {
+      "id": "n60",
+      "label": "Sao Tome and Principe",
+      "x": -6.5,
+      "y": 9.5,
+      "color": "#9b59b6",
+      "size": 10
+    },
+    {
+      "id": "n61",
+      "label": "Senegal",
+      "x": -9.4,
+      "y": 6.7,
+      "color": "#9b59b6",
+      "size": 10
+    },
+    {
+      "id": "n62",
+      "label": "Seychelles",
+      "x": -9.9,
+      "y": 5,
+      "color": "#9b59b6",
+      "size": 10
+    },
+    {
+      "id": "n63",
+      "label": "Sierra Leone",
+      "x": -5,
+      "y": 5,
+      "color": "#9b59b6",
+      "size": 10
+    },
+    {
+      "id": "n64",
+      "label": "Somalia",
+      "x": -8.1,
+      "y": 9,
+      "color": "#9b59b6",
+      "size": 10
+    },
+    {
+      "id": "n65",
+      "label": "South Africa",
+      "x": -5.7,
+      "y": 9.7,
+      "color": "#9b59b6",
+      "size": 10
+    },
+    {
+      "id": "n66",
+      "label": "South Sudan",
+      "x": -8.6,
+      "y": 9.7,
+      "color": "#9b59b6",
+      "size": 10
+    },
+    {
+      "id": "n67",
+      "label": "Sudan",
+      "x": -5.8,
+      "y": 8.8,
+      "color": "#9b59b6",
+      "size": 10
+    },
+    {
+      "id": "n68",
+      "label": "Tanzania",
+      "x": -8.6,
+      "y": 5.9,
+      "color": "#9b59b6",
+      "size": 10
+    },
+    {
+      "id": "n69",
+      "label": "The Gambia",
+      "x": -8.4,
+      "y": 8.2,
+      "color": "#9b59b6",
+      "size": 10
+    },
+    {
+      "id": "n70",
+      "label": "Togo",
+      "x": -7.2,
+      "y": 8,
+      "color": "#9b59b6",
+      "size": 10
+    },
+    {
+      "id": "n71",
+      "label": "Tristan da Cunha",
+      "x": -9.5,
+      "y": 7.1,
+      "color": "#9b59b6",
+      "size": 10
+    },
+    {
+      "id": "n72",
+      "label": "Tunisia",
+      "x": -9.7,
+      "y": 7.5,
+      "color": "#9b59b6",
+      "size": 10
+    },
+    {
+      "id": "n73",
+      "label": "Uganda",
+      "x": -6.6,
+      "y": 7,
+      "color": "#9b59b6",
+      "size": 10
+    },
+    {
+      "id": "n74",
+      "label": "Western Sahara",
+      "x": -7.6,
+      "y": 7.6,
+      "color": "#9b59b6",
+      "size": 10
+    },
+    {
+      "id": "n75",
+      "label": "Zambia",
+      "x": -6.9,
+      "y": 7.2,
+      "color": "#9b59b6",
+      "size": 10
+    },
+    {
+      "id": "n76",
+      "label": "Zimbabwe",
+      "x": -6.8,
+      "y": 9.5,
+      "color": "#9b59b6",
+      "size": 10
+    },
+    {
+      "id": "n77",
+      "label": "American Samoa",
+      "x": -7,
+      "y": 6.9,
+      "color": "#9b59b6",
+      "size": 10
+    },
+    {
+      "id": "n78",
+      "label": "Australia",
+      "x": -8.1,
+      "y": 7.8,
+      "color": "#9b59b6",
+      "size": 10
+    },
+    {
+      "id": "n79",
+      "label": "Brunei",
+      "x": -7.1,
+      "y": 5,
+      "color": "#9b59b6",
+      "size": 10
+    },
+    {
+      "id": "n80",
+      "label": "Cambodia",
+      "x": -8.5,
+      "y": 7.7,
+      "color": "#9b59b6",
+      "size": 10
+    },
+    {
+      "id": "n81",
+      "label": "Christmas Island",
+      "x": -6.5,
+      "y": 8.7,
+      "color": "#9b59b6",
+      "size": 10
+    },
+    {
+      "id": "n82",
+      "label": "Cocos (Keeling) Islands",
+      "x": -6.3,
+      "y": 8.3,
+      "color": "#9b59b6",
+      "size": 10
+    },
+    {
+      "id": "n83",
+      "label": "Cook Islands",
+      "x": -6.3,
+      "y": 7.8,
+      "color": "#9b59b6",
+      "size": 10
+    },
+    {
+      "id": "n84",
+      "label": "East Timor",
+      "x": -9.7,
+      "y": 5.7,
+      "color": "#9b59b6",
+      "size": 10
+    },
+    {
+      "id": "n85",
+      "label": "Fiji",
+      "x": -8.7,
+      "y": 5.5,
+      "color": "#9b59b6",
+      "size": 10
+    },
+    {
+      "id": "n86",
+      "label": "French Polynesia",
+      "x": -9.7,
+      "y": 8.7,
+      "color": "#9b59b6",
+      "size": 10
+    },
+    {
+      "id": "n87",
+      "label": "Guam",
+      "x": -5.4,
+      "y": 8.8,
+      "color": "#9b59b6",
+      "size": 10
+    },
+    {
+      "id": "n88",
+      "label": "Indonesia",
+      "x": -6.6,
+      "y": 9.8,
+      "color": "#9b59b6",
+      "size": 10
+    },
+    {
+      "id": "n89",
+      "label": "Japan",
+      "x": -7.7,
+      "y": 5.4,
+      "color": "#9b59b6",
+      "size": 10
+    },
+    {
+      "id": "n90",
+      "label": "Kiribati",
+      "x": -7.1,
+      "y": 6.9,
+      "color": "#9b59b6",
+      "size": 10
+    },
+    {
+      "id": "n91",
+      "label": "Laos",
+      "x": -9,
+      "y": 6.7,
+      "color": "#9b59b6",
+      "size": 10
+    },
+    {
+      "id": "n92",
+      "label": "Malaysia",
+      "x": -5.2,
+      "y": 6.3,
+      "color": "#9b59b6",
+      "size": 10
+    },
+    {
+      "id": "n93",
+      "label": "Marshall Islands",
+      "x": -9.3,
+      "y": 5.2,
+      "color": "#9b59b6",
+      "size": 10
+    },
+    {
+      "id": "n94",
+      "label": "Micronesia",
+      "x": -6.9,
+      "y": 8.5,
+      "color": "#9b59b6",
+      "size": 10
+    },
+    {
+      "id": "n95",
+      "label": "Myanmar (Burma)",
+      "x": -7.8,
+      "y": 5.6,
+      "color": "#9b59b6",
+      "size": 10
+    },
+    {
+      "id": "n96",
+      "label": "Nauru",
+      "x": -6.6,
+      "y": 7.7,
+      "color": "#9b59b6",
+      "size": 10
+    },
+    {
+      "id": "n97",
+      "label": "New Caledonia",
+      "x": -6.3,
+      "y": 6.7,
+      "color": "#9b59b6",
+      "size": 10
+    },
+    {
+      "id": "n98",
+      "label": "New Zealand",
+      "x": -6.3,
+      "y": 9.9,
+      "color": "#9b59b6",
+      "size": 10
+    },
+    {
+      "id": "n99",
+      "label": "Niue",
+      "x": -5.8,
+      "y": 6.2,
+      "color": "#9b59b6",
+      "size": 10
+    },
+    {
+      "id": "n100",
+      "label": "Norfolk Island",
+      "x": -5.8,
+      "y": 6.4,
+      "color": "#9b59b6",
+      "size": 10
+    },
+    {
+      "id": "n101",
+      "label": "Northern Mariana Islands",
+      "x": -7.6,
+      "y": 9.1,
+      "color": "#9b59b6",
+      "size": 10
+    },
+    {
+      "id": "n102",
+      "label": "North Korea",
+      "x": -7.6,
+      "y": 8.1,
+      "color": "#9b59b6",
+      "size": 10
+    },
+    {
+      "id": "n103",
+      "label": "Palau",
+      "x": -5.4,
+      "y": 8.2,
+      "color": "#9b59b6",
+      "size": 10
+    },
+    {
+      "id": "n104",
+      "label": "Papua New Guinea",
+      "x": -8.9,
+      "y": 9.1,
+      "color": "#9b59b6",
+      "size": 10
+    },
+    {
+      "id": "n105",
+      "label": "Philippines",
+      "x": -6.9,
+      "y": 9.8,
+      "color": "#9b59b6",
+      "size": 10
+    },
+    {
+      "id": "n106",
+      "label": "Samoa",
+      "x": -9,
+      "y": 5.3,
+      "color": "#9b59b6",
+      "size": 10
+    },
+    {
+      "id": "n107",
+      "label": "Singapore",
+      "x": -5.2,
+      "y": 9.3,
+      "color": "#9b59b6",
+      "size": 10
+    },
+    {
+      "id": "n108",
+      "label": "Solomon Islands",
+      "x": -5.2,
+      "y": 9.9,
+      "color": "#9b59b6",
+      "size": 10
+    },
+    {
+      "id": "n109",
+      "label": "South Korea",
+      "x": -7.8,
+      "y": 5.4,
+      "color": "#9b59b6",
+      "size": 10
+    },
+    {
+      "id": "n110",
+      "label": "Taiwan",
+      "x": -6.5,
+      "y": 9.8,
+      "color": "#9b59b6",
+      "size": 10
+    },
+    {
+      "id": "n111",
+      "label": "Thailand",
+      "x": -9.4,
+      "y": 8.1,
+      "color": "#9b59b6",
+      "size": 10
+    },
+    {
+      "id": "n112",
+      "label": "Tokelau",
+      "x": -6.2,
+      "y": 8.9,
+      "color": "#9b59b6",
+      "size": 10
+    },
+    {
+      "id": "n113",
+      "label": "Tonga",
+      "x": -8.8,
+      "y": 10,
+      "color": "#9b59b6",
+      "size": 10
+    },
+    {
+      "id": "n114",
+      "label": "Tuvalu",
+      "x": -9.2,
+      "y": 6.1,
+      "color": "#9b59b6",
+      "size": 10
+    },
+    {
+      "id": "n115",
+      "label": "Vanuatu",
+      "x": -5.3,
+      "y": 10,
+      "color": "#9b59b6",
+      "size": 10
+    },
+    {
+      "id": "n116",
+      "label": "Vietnam",
+      "x": -7.3,
+      "y": 8.8,
+      "color": "#9b59b6",
+      "size": 10
+    },
+    {
+      "id": "n117",
+      "label": "Wake Island",
+      "x": -8.1,
+      "y": 5.1,
+      "color": "#9b59b6",
+      "size": 10
+    },
+    {
+      "id": "n118",
+      "label": "Wallis and Futuna",
+      "x": -5.6,
+      "y": 8.6,
+      "color": "#9b59b6",
+      "size": 10
+    }
+  ],
+  "edges": [
+    {
+      "id": "e0",
+      "source": "n0",
+      "target": "n1"
+    },
+    {
+      "id": "e1",
+      "source": "n0",
+      "target": "n2"
+    },
+    {
+      "id": "e2",
+      "source": "n0",
+      "target": "n3"
+    },
+    {
+      "id": "e3",
+      "source": "n0",
+      "target": "n4"
+    },
+    {
+      "id": "e4",
+      "source": "n0",
+      "target": "n5"
+    },
+    {
+      "id": "e5",
+      "source": "n2",
+      "target": "n6"
+    },
+    {
+      "id": "e6",
+      "source": "n2",
+      "target": "n7"
+    },
+    {
+      "id": "e7",
+      "source": "n2",
+      "target": "n8"
+    },
+    {
+      "id": "e8",
+      "source": "n2",
+      "target": "n9"
+    },
+    {
+      "id": "e9",
+      "source": "n2",
+      "target": "n10"
+    },
+    {
+      "id": "e10",
+      "source": "n2",
+      "target": "n11"
+    },
+    {
+      "id": "e11",
+      "source": "n2",
+      "target": "n12"
+    },
+    {
+      "id": "e12",
+      "source": "n2",
+      "target": "n13"
+    },
+    {
+      "id": "e13",
+      "source": "n2",
+      "target": "n14"
+    },
+    {
+      "id": "e14",
+      "source": "n8",
+      "target": "n15"
+    },
+    {
+      "id": "e15",
+      "source": "n8",
+      "target": "n16"
+    },
+    {
+      "id": "e16",
+      "source": "n8",
+      "target": "n17"
+    },
+    {
+      "id": "e17",
+      "source": "n8",
+      "target": "n18"
+    },
+    {
+      "id": "e18",
+      "source": "n8",
+      "target": "n19"
+    },
+    {
+      "id": "e19",
+      "source": "n8",
+      "target": "n20"
+    },
+    {
+      "id": "e20",
+      "source": "n8",
+      "target": "n21"
+    },
+    {
+      "id": "e21",
+      "source": "n8",
+      "target": "n22"
+    },
+    {
+      "id": "e22",
+      "source": "n8",
+      "target": "n23"
+    },
+    {
+      "id": "e23",
+      "source": "n8",
+      "target": "n24"
+    },
+    {
+      "id": "e24",
+      "source": "n8",
+      "target": "n25"
+    },
+    {
+      "id": "e25",
+      "source": "n8",
+      "target": "n26"
+    },
+    {
+      "id": "e26",
+      "source": "n8",
+      "target": "n27"
+    },
+    {
+      "id": "e27",
+      "source": "n8",
+      "target": "n28"
+    },
+    {
+      "id": "e28",
+      "source": "n8",
+      "target": "n29"
+    },
+    {
+      "id": "e29",
+      "source": "n8",
+      "target": "n30"
+    },
+    {
+      "id": "e30",
+      "source": "n8",
+      "target": "n31"
+    },
+    {
+      "id": "e31",
+      "source": "n8",
+      "target": "n32"
+    },
+    {
+      "id": "e32",
+      "source": "n8",
+      "target": "n33"
+    },
+    {
+      "id": "e33",
+      "source": "n8",
+      "target": "n34"
+    },
+    {
+      "id": "e34",
+      "source": "n8",
+      "target": "n35"
+    },
+    {
+      "id": "e35",
+      "source": "n8",
+      "target": "n36"
+    },
+    {
+      "id": "e36",
+      "source": "n8",
+      "target": "n37"
+    },
+    {
+      "id": "e37",
+      "source": "n8",
+      "target": "n38"
+    },
+    {
+      "id": "e38",
+      "source": "n8",
+      "target": "n39"
+    },
+    {
+      "id": "e39",
+      "source": "n8",
+      "target": "n40"
+    },
+    {
+      "id": "e40",
+      "source": "n8",
+      "target": "n41"
+    },
+    {
+      "id": "e41",
+      "source": "n8",
+      "target": "n42"
+    },
+    {
+      "id": "e42",
+      "source": "n8",
+      "target": "n43"
+    },
+    {
+      "id": "e43",
+      "source": "n8",
+      "target": "n44"
+    },
+    {
+      "id": "e44",
+      "source": "n8",
+      "target": "n45"
+    },
+    {
+      "id": "e45",
+      "source": "n8",
+      "target": "n46"
+    },
+    {
+      "id": "e46",
+      "source": "n8",
+      "target": "n47"
+    },
+    {
+      "id": "e47",
+      "source": "n8",
+      "target": "n48"
+    },
+    {
+      "id": "e48",
+      "source": "n8",
+      "target": "n49"
+    },
+    {
+      "id": "e49",
+      "source": "n8",
+      "target": "n50"
+    },
+    {
+      "id": "e50",
+      "source": "n8",
+      "target": "n51"
+    },
+    {
+      "id": "e51",
+      "source": "n8",
+      "target": "n52"
+    },
+    {
+      "id": "e52",
+      "source": "n8",
+      "target": "n53"
+    },
+    {
+      "id": "e53",
+      "source": "n8",
+      "target": "n54"
+    },
+    {
+      "id": "e54",
+      "source": "n8",
+      "target": "n55"
+    },
+    {
+      "id": "e55",
+      "source": "n8",
+      "target": "n56"
+    },
+    {
+      "id": "e56",
+      "source": "n8",
+      "target": "n57"
+    },
+    {
+      "id": "e57",
+      "source": "n8",
+      "target": "n58"
+    },
+    {
+      "id": "e58",
+      "source": "n8",
+      "target": "n59"
+    },
+    {
+      "id": "e59",
+      "source": "n8",
+      "target": "n60"
+    },
+    {
+      "id": "e60",
+      "source": "n8",
+      "target": "n61"
+    },
+    {
+      "id": "e61",
+      "source": "n8",
+      "target": "n62"
+    },
+    {
+      "id": "e62",
+      "source": "n8",
+      "target": "n63"
+    },
+    {
+      "id": "e63",
+      "source": "n8",
+      "target": "n64"
+    },
+    {
+      "id": "e64",
+      "source": "n8",
+      "target": "n65"
+    },
+    {
+      "id": "e65",
+      "source": "n8",
+      "target": "n66"
+    },
+    {
+      "id": "e66",
+      "source": "n8",
+      "target": "n67"
+    },
+    {
+      "id": "e67",
+      "source": "n8",
+      "target": "n68"
+    },
+    {
+      "id": "e68",
+      "source": "n8",
+      "target": "n69"
+    },
+    {
+      "id": "e69",
+      "source": "n8",
+      "target": "n70"
+    },
+    {
+      "id": "e70",
+      "source": "n8",
+      "target": "n71"
+    },
+    {
+      "id": "e71",
+      "source": "n8",
+      "target": "n72"
+    },
+    {
+      "id": "e72",
+      "source": "n8",
+      "target": "n73"
+    },
+    {
+      "id": "e73",
+      "source": "n8",
+      "target": "n74"
+    },
+    {
+      "id": "e74",
+      "source": "n8",
+      "target": "n75"
+    },
+    {
+      "id": "e75",
+      "source": "n8",
+      "target": "n76"
+    },
+    {
+      "id": "e76",
+      "source": "n9",
+      "target": "n77"
+    },
+    {
+      "id": "e77",
+      "source": "n9",
+      "target": "n78"
+    },
+    {
+      "id": "e78",
+      "source": "n9",
+      "target": "n79"
+    },
+    {
+      "id": "e79",
+      "source": "n9",
+      "target": "n80"
+    },
+    {
+      "id": "e80",
+      "source": "n9",
+      "target": "n81"
+    },
+    {
+      "id": "e81",
+      "source": "n9",
+      "target": "n82"
+    },
+    {
+      "id": "e82",
+      "source": "n9",
+      "target": "n83"
+    },
+    {
+      "id": "e83",
+      "source": "n9",
+      "target": "n84"
+    },
+    {
+      "id": "e84",
+      "source": "n9",
+      "target": "n85"
+    },
+    {
+      "id": "e85",
+      "source": "n9",
+      "target": "n86"
+    },
+    {
+      "id": "e86",
+      "source": "n9",
+      "target": "n87"
+    },
+    {
+      "id": "e87",
+      "source": "n9",
+      "target": "n88"
+    },
+    {
+      "id": "e88",
+      "source": "n9",
+      "target": "n89"
+    },
+    {
+      "id": "e89",
+      "source": "n9",
+      "target": "n90"
+    },
+    {
+      "id": "e90",
+      "source": "n9",
+      "target": "n91"
+    },
+    {
+      "id": "e91",
+      "source": "n9",
+      "target": "n92"
+    },
+    {
+      "id": "e92",
+      "source": "n9",
+      "target": "n93"
+    },
+    {
+      "id": "e93",
+      "source": "n9",
+      "target": "n94"
+    },
+    {
+      "id": "e94",
+      "source": "n9",
+      "target": "n95"
+    },
+    {
+      "id": "e95",
+      "source": "n9",
+      "target": "n96"
+    },
+    {
+      "id": "e96",
+      "source": "n9",
+      "target": "n97"
+    },
+    {
+      "id": "e97",
+      "source": "n9",
+      "target": "n98"
+    },
+    {
+      "id": "e98",
+      "source": "n9",
+      "target": "n99"
+    },
+    {
+      "id": "e99",
+      "source": "n9",
+      "target": "n100"
+    },
+    {
+      "id": "e100",
+      "source": "n9",
+      "target": "n101"
+    },
+    {
+      "id": "e101",
+      "source": "n9",
+      "target": "n102"
+    },
+    {
+      "id": "e102",
+      "source": "n9",
+      "target": "n103"
+    },
+    {
+      "id": "e103",
+      "source": "n9",
+      "target": "n104"
+    },
+    {
+      "id": "e104",
+      "source": "n9",
+      "target": "n105"
+    },
+    {
+      "id": "e105",
+      "source": "n9",
+      "target": "n106"
+    },
+    {
+      "id": "e106",
+      "source": "n9",
+      "target": "n107"
+    },
+    {
+      "id": "e107",
+      "source": "n9",
+      "target": "n108"
+    },
+    {
+      "id": "e108",
+      "source": "n9",
+      "target": "n109"
+    },
+    {
+      "id": "e109",
+      "source": "n9",
+      "target": "n110"
+    },
+    {
+      "id": "e110",
+      "source": "n9",
+      "target": "n111"
+    },
+    {
+      "id": "e111",
+      "source": "n9",
+      "target": "n112"
+    },
+    {
+      "id": "e112",
+      "source": "n9",
+      "target": "n113"
+    },
+    {
+      "id": "e113",
+      "source": "n9",
+      "target": "n114"
+    },
+    {
+      "id": "e114",
+      "source": "n9",
+      "target": "n115"
+    },
+    {
+      "id": "e115",
+      "source": "n9",
+      "target": "n116"
+    },
+    {
+      "id": "e116",
+      "source": "n9",
+      "target": "n117"
+    },
+    {
+      "id": "e117",
+      "source": "n9",
+      "target": "n118"
+    }
   ]
 }
