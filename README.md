@@ -54,4 +54,4 @@ Latest at the bottom. Return [home](https://logikblok.github.io/).
 51. [Treejacktest](https://logikblok.github.io/sketches/treejacktest/?utm_source=analytics_test&utm_medium=referral)
 52. [UK Business](https://logikblok.github.io/sketches/ukbusiness/)
 53. [Great Network](https://logikblok.github.io/sketches/greatnetwork/)
-53. 
+53. [Great Network v2](https://logikblok.github.io/sketches/greatnetworkv2/)
