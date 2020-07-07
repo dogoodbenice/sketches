@@ -1,6 +1,6 @@
 <html>
 <body>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
 <script src="springy.js"></script>
 <script src="springyui.js"></script>
 
@@ -13,7 +13,7 @@ var Region =graph.newNode({label:"Region",});
 var Sector =graph.newNode({label:"Sector",});
 var Product =graph.newNode({label:"Product",});
 var Service =graph.newNode({label:"Service",});
-var MiddleEast,AfghanistanandPakistan =graph.newNode({label:"Middle East, Afghanistan and Pakistan",});
+var MiddleEastAfghanistanandPakistan =graph.newNode({label:"Middle East, Afghanistan and Pakistan",});
 var Europe =graph.newNode({label:"Europe",});
 var Africa =graph.newNode({label:"Africa",});
 var AsiaPacific =graph.newNode({label:"Asia Pacific",});
@@ -305,6 +305,7 @@ graph.newEdge(dit,Service,{color:'#00A0B0'});
 graph.newEdge(Region,Europe,{color:'#00A0B0'});
 graph.newEdge(Region,Africa,{color:'#00A0B0'});
 graph.newEdge(Region,AsiaPacific,{color:'#00A0B0'});
+graph.newEdge(Region,MiddleEastAfghanistanandPakistan,{color:'#00A0B0'});
 graph.newEdge(Region,LatinAmericaandCaribbean,{color:'#00A0B0'});
 graph.newEdge(Region,EasternEuropeandCentralAsia,{color:'#00A0B0'});
 graph.newEdge(Region,NorthAmerica,{color:'#00A0B0'});
