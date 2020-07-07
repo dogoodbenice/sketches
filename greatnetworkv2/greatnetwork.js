@@ -1,5 +1,4 @@
 var cy = cytoscape({
-
   container: document.getElementById('cy'), // container to render in
 
   elements: [ // Nodes
@@ -590,7 +589,7 @@ var cy = cytoscape({
     {
       selector: 'edge',
       style: {
-        'width': 2,
+        'width': 1,
         'line-color': '#ccc',
         'target-arrow-color': '#ccc',
         'target-arrow-shape': 'triangle',
@@ -600,8 +599,8 @@ var cy = cytoscape({
   ],
 
   layout: {
-    name: 'random',
-    rows: 1
-  }
-
+    name: 'cose',
+    padding: 0,
+    rows: 10
+  },
 });
