@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title>GREAT Product Search</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+  #result {
+   position: absolute;
+   width: 100%;
+   max-width:870px;
+   cursor: pointer;
+   overflow-y: auto;
+   max-height: 400px;
+   box-sizing: border-box;
+   z-index: 1001;
+  }
+  .link-class:hover{
+   background-color:#f1f1f1;
+  }
+  </style>
+ </head>
+ <body>
+  <br /><br />
+  <div class="container" style="width:900px;">
+   <h2 align="center">🇬🇧 Great Product Search v1</h2>
+   <h3 align="center">Find your product and feedback on your experience</h3>
+   <p>We are looking for feedback particularly on </p>
+   <br /><br />
+   <div align="center">
+    <input type="text" name="search" id="search" placeholder="Search for your product by typing here" class="form-control" />
+   </div>
+   <ul class="list-group" id="result"></ul>
+   <br />
+  </div>
+  <div class="container">
+    <h3>Things to try out</h3>
+    <ol>
+      How did you find the readable inputs?
+    </ol>
+    <ol>
+      Was there anything missing?
+    </ol>
+  </div>
+ </body>
+</html>
+
+<script>
+  $(document).ready(function() {
+    $.ajaxSetup({
+      cache: false
+    });
+    $('#search').keyup(function() {
+      $('#result').html('');
+      $('#state').val('');
+      var searchField = $('#search').val();
+      var expression = new RegExp(searchField, "i");
+      $.getJSON('data.json', function(data) {
+        $.each(data, function(key, value) {
+          if (value.Contents.search(expression) != -1 || value.HS4Code.search(expression) != -1) {
+            $('#result').append('<li class="list-group-item link-class"><img src="' + value.image + '" height="40" width="40" class="img-thumbnail" /> ' + value.Contents + ' | <span class="text-muted">' + value.HS4Code +
+              '</span></li>');
+          }
+        });
+      });
+    });
+
+    $('#result').on('click', 'li', function() {
+      var click_text = $(this).text().split('|');
+      $('#search').val($.trim(click_text[0]));
+      $("#result").html('');
+    });
+  });
+</script>
