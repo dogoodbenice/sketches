@@ -55,5 +55,5 @@ Latest at the bottom. Return [home](https://logikblok.github.io/).
 52. [UK Business](https://logikblok.github.io/sketches/ukbusiness/)
 53. [Great Network](https://logikblok.github.io/sketches/greatnetwork/)
 53. [Great Network v2](https://logikblok.github.io/sketches/greatnetworkv2/)
-54. [Great Network v3](https://logikblok.github.io/sketches/greatnetworkv3/)
+54. [Great Taxonomy](https://logikblok.github.io/sketches/greattaxonomy/)
 55. [Great Product Search V1](https://logikblok.github.io/sketches/greatproductsearchv1/)
