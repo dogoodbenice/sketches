@@ -17,7 +17,8 @@
   <link rel="stylesheet" href="css/skeleton.css">
 
   <!-- .js –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script> -->
   <script src='https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.js'></script>
   <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js" integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew==" crossorigin=""></script>
 
@@ -39,9 +40,9 @@
   <div class="container">
     <section class="topic">
       <p>This aims to be an interactive data article serving as a primer into business in the UK. It's inspired by the <a
-          href="https://www.ons.gov.uk/businessindustryandtrade/business/activitysizeandlocation/bulletins/businessdemography/2018">statistical bulletins from ONS</a> and is an exploration of open data, techniques and libraries. Please do explore and
+          href="https://www.ons.gov.uk/businessindustryandtrade/business/activitysizeandlocation/bulletins/businessdemography/2018">statistical bulletins from ONS</a> and is an exploration of open data, content and libraries. Please do explore and
         <a href="https://logikblok.com/#contact">feedback is always welcome</a>.</p>
-      <p>This article makes use of the following data sources:</p>
+      <p>This article makes use of the following data:</p>
       <table class="u-full-width">
         <thead>
           <tr>
@@ -78,7 +79,7 @@
           </tr>
         </tbody>
       </table>
-      <p>Core questions are below. Data has been added directly into this page so feel free to explore and inspect <a href="https://github.com/logikblok/sketches/blob/gh-pages/ukbusiness/index.html">into the code</a> for your own
+      <p>Core questions are below. Data has been added directly so feel free to explore and inspect <a href="https://github.com/logikblok/sketches/blob/gh-pages/ukbusiness/index.html">the code</a> for your own
         analysis.</p>
       <table>
         <thead>
@@ -92,6 +93,9 @@
           </tr>
           <tr>
             <td>2. <a href="#question2">How many businesses are there?</a></td>
+          </tr>
+          <tr>
+            <td>2. <a href="#question3">Where are they?</a></td>
           </tr>
         </tbody>
       </table>
@@ -107,14 +111,14 @@
           <b>In summary:</b> A business is a legally recognised unit producing goods or services and usually paying taxes. They are categorised by a series of defined codes.
         </p>
       </blockquote>
-      <p>Being a business first invovles a type of registration or formation. There are primarily three ways people go about doing this in the UK:</p>
+      <p>Being a business first invovles a type of registration or formation. There are three commons ways people go about doing this in the UK:</p>
       <ul>
         <li>Individuals can do business by registering as a <em>sole trader</em>.</li>
         <li>Individuals or groups can incorporate a <em>company</em>.</li>
         <li>Groups can come together and register as a <em>partnership</em>.</li>
       </ul>
-      <p>There are lots more businesses structures available, each business can choose a structure that works best for their legal needs, how they operate and how many people are responsible.</p>
-      <p>Due to the variety of ways a business can operate and the need for alignment to the same concepts the majority of UK statistics use a list called the Inter-Departmental Business Register (<a href="https://www.ons.gov.uk/aboutus/whatwedo/paidservices/interdepartmentalbusinessregisteridbr">IDBR</a>) to <em>analyse</em> businesses as a whole.</p>
+      <p>There are lots more businesses structures available. People choose a structure that works best for their legal needs, how they plan to operate and how many people are responsible.</p>
+      <p>Due to the variety of ways a business can operate and the need for alignment to the same concepts, the majority of UK statistics use a list called the Inter-Departmental Business Register (<a href="https://www.ons.gov.uk/aboutus/whatwedo/paidservices/interdepartmentalbusinessregisteridbr">IDBR</a>) to <em>analyse</em> businesses as a whole.</p>
 
       <p>Using a number of data sources, two of the main being tax, the Office for National statistics create categories of <em>units</em>. As all of our data makes use of the IDBR, when we are refering to a single business in the UK we are actually refering to an <em>enterprise unit</em>.</p>
       <blockquote cite="https://www.ons.gov.uk/aboutus/whatwedo/paidservices/interdepartmentalbusinessregisteridbr" class="shadow">
@@ -124,12 +128,12 @@
         </p>
       </blockquote>
       <p>Next we also need to consider Standard Industrial Classifications or (<a href="https://www.ons.gov.uk/methodology/classificationsandstandards/ukstandardindustrialclassificationofeconomicactivities/uksic2007">SIC codes</a>). Similar
-        to the variety of structures there are a large number of things a business can do to meet the needs of it's customers. So to capture what businesses typically do the SIC codes are used to group economic activites.</p>
+        to the variety of structures there are a large number of things a business can do to meet the needs of it's customers. So to capture what businesses typically do, the SIC codes are used to group economic activites.</p>
       <blockquote cite="https://www.ons.gov.uk/methodology/classificationsandstandards/ukstandardindustrialclassificationofeconomicactivities/uksic2007" class="shadow ">
         <p>A Standard Industrial Classification (SIC) was first introduced into the UK in 1948 for use in classifying business establishments and other statistical units by the type of economic activity in which they are engaged.<a
             href="https://www.ons.gov.uk/methodology/classificationsandstandards/ukstandardindustrialclassificationofeconomicactivities/uksic2007">via ONS</a></p>
       </blockquote>
-      <p>The best way to explore is interactively, press the button below to see an example SIC code and it's description.</p>
+      <p>Let's explore some of these now. Press the button below to see an example SIC code and it's description.</p>
       <p><button class="button-primary" onclick="GetSIC();">Click for a random SIC & description</button></p>
       <code>
         <p id="sicCode">1110,Growing of cereals (except rice), leguminous crops and oil seeds</p>
@@ -871,9 +875,9 @@
           document.getElementById("sicCode").innerHTML = random;
         }
       </script>
-      <p>As you can see there is a number and a description. There is a great variety in the codes and the descriptions tend to be fairly self explanatory.</p>
-      <p>Complex businesses can apply multiple SICs to themselves. For example a software firm might list themselves engaging in design, software
-        development, professional services and more. Here's another example using a popular super market store:</p>
+      <p>As you can see there is a number and a description. These are organised into sections, divisions, groups and classes. The descriptions tend to be fairly self explanatory.</p>
+      <p>Complex businesses can apply multiple SICs to themselves. For example, a software firm might list themselves engaging in design, software
+        development, professional services and more. Here's another example using a popular UK super market store:</p>
       <blockquote cite="https://beta.companieshouse.gov.uk/company/00519500" class="shadow ">
         <p> <em>TESCO STORES LIMITED Company number 00519500</em></p>
         <p>
@@ -1027,11 +1031,97 @@
   <!-- What do businesses feel? –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <div class="container">
     <section class="topic">
-      <h4 class="title">6. What do businesses feel?</h4>
-      <p>Obviously businesses aren't people, usually they are groups of individuals. However can take a look at the FB </p>
-
+      <h4 class="title">6. What do businesses in the UK feel?</h4>
+      <p>Businesses aren't people, usually they are groups of individuals working together. However we can utilise data from the OECD and Facebook in their survey of businesses (2019). <a href="https://datacatalog.worldbank.org/dataset/future-business-survey-aggregated-data/resource/fce29d6c-4102-4a37-b9ab-30634e62a571">preview</a>. This is </p>
+      <p>We have a few more details</p>
+      <div id="chartcontainer" style="width: 100%;height: 70vh">
+      <canvas id="currentevaluation-chart"></canvas>
+      <script>
+        var ctx = document.getElementById('currentevaluation-chart').getContext('2d');
+        var myChart = new Chart(ctx, {
+          type: 'bar',
+          data: {
+            labels: ['Negative' , 'Neutral', 'Positive', 'NA'],
+            datasets: [{
+              label: '# Owners/Managers of Businesses',
+              data: [25, 147, 366, 187],
+              backgroundColor: '#0984e3',
+              borderWidth: 1
+            }]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+              yAxes: [{
+                ticks: {
+                  beginAtZero: true
+                }
+              }]
+            }
+          }
+        });
+      </script>
+      </div>
+      <div id="chartcontainer" style="width: 100%;height: 70vh">
+      <canvas id="businessoutlook-chart"></canvas>
+      <script>
+        var ctx = document.getElementById('businessoutlook-chart').getContext('2d');
+        var myChart = new Chart(ctx, {
+          type: 'bar',
+          data: {
+            labels: ['Negative' , 'Neutral', 'Positive', 'NA'],
+            datasets: [{
+              label: '# Owners/Managers of Businesses',
+              data: [24, 94, 418, 189],
+              backgroundColor: '#0984e3',
+              borderWidth: 1
+            }]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+              yAxes: [{
+                ticks: {
+                  beginAtZero: true
+                }
+              }]
+            }
+          }
+        });
+      </script>
+      </div>
+      <div id="chartcontainer" style="width: 100%;height: 70vh">
+      <canvas id="businessjobsatisfaction-chart"></canvas>
+      <script>
+        var ctx = document.getElementById('businessjobsatisfaction-chart').getContext('2d');
+        var myChart = new Chart(ctx, {
+          type: 'bar',
+          data: {
+            labels: ['Completely dissatisfied', 'Moderately dissatisfied' , 'Slightly dissatisfied' , 'Neutral', 'Slightly satisfied', 'Moderately satisfied', 'Completely satisfied', 'NA'],
+            datasets: [{
+              label: '# Owners/Managers of Businesses',
+              data: [10, 17, 22, 44, 31, 206, 347, 48],
+              backgroundColor: '#0984e3',
+              borderWidth: 1
+            }]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+              yAxes: [{
+                ticks: {
+                  beginAtZero: true
+                }
+              }]
+            }
+          }
+        });
+      </script>
+      </div>
     </section>
-    <p>What</p>
   </div>
   <!-- What are some key takeaways? –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <div class="container">
