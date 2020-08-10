@@ -42,6 +42,37 @@
       <p>This aims to be an interactive data article serving as a primer into business in the UK. It's inspired by the <a
           href="https://www.ons.gov.uk/businessindustryandtrade/business/activitysizeandlocation/bulletins/businessdemography/2018">statistical bulletins from ONS</a> and is an exploration of open data, content and libraries. Please do explore and
         <a href="https://logikblok.com/#contact">feedback is always welcome</a>.</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Contents</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1. <a href="#datatable">Data Sources Table</a></td>
+          </tr>
+          <tr>
+            <td>2. <a href="#question1">What does it mean to be a business in the UK?</a></td>
+          </tr>
+          <tr>
+            <td>3. <a href="#question2">How many businesses are there?</a></td>
+          </tr>
+          <tr>
+            <td>4. <a href="#question3">Where are they?</a></td>
+          </tr>
+          <tr>
+            <td>5. <a href="#question3">Where are they?</a></td>
+          </tr>
+          <tr>
+            <td>6. <a href="#question3">Where are they?</a></td>
+          </tr>
+          <tr>
+            <td>7. <a href="#summary">Summary takeaways</a></td>
+          </tr>
+        </tbody>
+      </table>
+      <a name="datatable"></a>
       <p>This article makes use of the following data:</p>
       <table class="u-full-width">
         <thead>
@@ -79,26 +110,9 @@
           </tr>
         </tbody>
       </table>
-      <p>Core questions are below. Data has been added directly so feel free to explore and inspect <a href="https://github.com/logikblok/sketches/blob/gh-pages/ukbusiness/index.html">the code</a> for your own
+      <p>Data has been added directly so feel free to explore and inspect <a href="https://github.com/logikblok/sketches/blob/gh-pages/ukbusiness/index.html">the code</a> for your own
         analysis.</p>
-      <table>
-        <thead>
-          <tr>
-            <th>Contents</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>1. <a href="#question1">What does it mean to be a business in the UK?</a></td>
-          </tr>
-          <tr>
-            <td>2. <a href="#question2">How many businesses are there?</a></td>
-          </tr>
-          <tr>
-            <td>2. <a href="#question3">Where are they?</a></td>
-          </tr>
-        </tbody>
-      </table>
+
     </section>
   </div>
   <!-- What is a business in the UK? –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -118,9 +132,11 @@
         <li>Groups can come together and register as a <em>partnership</em>.</li>
       </ul>
       <p>There are lots more businesses structures available. People choose a structure that works best for their legal needs, how they plan to operate and how many people are responsible.</p>
-      <p>Due to the variety of ways a business can operate and the need for alignment to the same concepts, the majority of UK statistics use a list called the Inter-Departmental Business Register (<a href="https://www.ons.gov.uk/aboutus/whatwedo/paidservices/interdepartmentalbusinessregisteridbr">IDBR</a>) to <em>analyse</em> businesses as a whole.</p>
+      <p>Due to the variety of ways a business can operate and the need for alignment to the same concepts, the majority of UK statistics use a list called the Inter-Departmental Business Register (<a
+          href="https://www.ons.gov.uk/aboutus/whatwedo/paidservices/interdepartmentalbusinessregisteridbr">IDBR</a>) to <em>analyse</em> businesses as a whole.</p>
 
-      <p>Using a number of data sources, two of the main being tax, the Office for National statistics create categories of <em>units</em>. As all of our data makes use of the IDBR, when we are refering to a single business in the UK we are actually refering to an <em>enterprise unit</em>.</p>
+      <p>Using a number of data sources, two of the main being tax, the Office for National statistics create categories of <em>units</em>. As all of our data makes use of the IDBR, when we are refering to a single business in the UK we are actually
+        refering to an <em>enterprise unit</em>.</p>
       <blockquote cite="https://www.ons.gov.uk/aboutus/whatwedo/paidservices/interdepartmentalbusinessregisteridbr" class="shadow">
         <p>
           An Enterprise can be defined as the smallest combination of legal units (generally based on VAT and/or PAYE records) that is an organisational unit producing goods or services. <a
@@ -890,7 +906,7 @@
         </p>
       </blockquote>
       <p>Now that we have this understanding we can go a step further and <em>group</em> SIC codes. These are termed <em>Broad Industry groups</em> which are clustered into higher level sectors.</p>
-      <p>The chart below shows Broad Industry Groups <em>totalling the number of SIC sections attributed inside them</em>. These is an indication of how the UK business landscape is structured.  The SIC heirarchy can be explored <a
+      <p>The chart below shows Broad Industry Groups <em>totalling the number of SIC sections attributed inside them</em>. These is an indication of how the UK business landscape is structured. The SIC heirarchy can be explored <a
           href="https://onsdigital.github.io/dp-classification-tools/standard-industrial-classification/ONS_SIC_hierarchy_view.html">further here</a>.</p>
       <div id="chartcontainer" style="width: 100%;height: 70vh">
         <canvas id="BIG-chart"></canvas>
@@ -1032,103 +1048,106 @@
   <div class="container">
     <section class="topic">
       <h4 class="title">6. What do businesses in the UK feel?</h4>
-      <p>Businesses aren't people, usually they are groups of individuals working together. However we can utilise data from the OECD and Facebook in their survey of businesses (2019). <a href="https://datacatalog.worldbank.org/dataset/future-business-survey-aggregated-data/resource/fce29d6c-4102-4a37-b9ab-30634e62a571">preview</a>. This is </p>
+      <p>Businesses aren't people, usually they are groups of individuals working together. However we can utilise data from the OECD and Facebook in their survey of businesses (2019). <a
+          href="https://datacatalog.worldbank.org/dataset/future-business-survey-aggregated-data/resource/fce29d6c-4102-4a37-b9ab-30634e62a571">preview</a>. This is </p>
       <p>We have a few more details</p>
-      <div id="chartcontainer" style="width: 100%;height: 70vh">
-      <canvas id="currentevaluation-chart"></canvas>
-      <script>
-        var ctx = document.getElementById('currentevaluation-chart').getContext('2d');
-        var myChart = new Chart(ctx, {
-          type: 'bar',
-          data: {
-            labels: ['Negative' , 'Neutral', 'Positive', 'NA'],
-            datasets: [{
-              label: '# Owners/Managers of Businesses',
-              data: [25, 147, 366, 187],
-              backgroundColor: '#0984e3',
-              borderWidth: 1
-            }]
-          },
-          options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            scales: {
-              yAxes: [{
-                ticks: {
-                  beginAtZero: true
-                }
+      <div id="chartcontainer" style="width: 100%;height: 50vh">
+        <canvas id="currentevaluation-chart"></canvas>
+        <script>
+          var ctx = document.getElementById('currentevaluation-chart').getContext('2d');
+          var myChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+              labels: ['Negative', 'Neutral', 'Positive', 'NA'],
+              datasets: [{
+                label: '# Owners/Managers of Businesses',
+                data: [25, 147, 366, 187],
+                backgroundColor: '#0984e3',
+                borderWidth: 1
               }]
+            },
+            options: {
+              responsive: true,
+              maintainAspectRatio: false,
+              scales: {
+                yAxes: [{
+                  ticks: {
+                    beginAtZero: true
+                  }
+                }]
+              }
             }
-          }
-        });
-      </script>
+          });
+        </script>
       </div>
-      <div id="chartcontainer" style="width: 100%;height: 70vh">
-      <canvas id="businessoutlook-chart"></canvas>
-      <script>
-        var ctx = document.getElementById('businessoutlook-chart').getContext('2d');
-        var myChart = new Chart(ctx, {
-          type: 'bar',
-          data: {
-            labels: ['Negative' , 'Neutral', 'Positive', 'NA'],
-            datasets: [{
-              label: '# Owners/Managers of Businesses',
-              data: [24, 94, 418, 189],
-              backgroundColor: '#0984e3',
-              borderWidth: 1
-            }]
-          },
-          options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            scales: {
-              yAxes: [{
-                ticks: {
-                  beginAtZero: true
-                }
+      <div id="chartcontainer" style="width: 100%;height: 50vh">
+        <canvas id="businessoutlook-chart"></canvas>
+        <script>
+          var ctx = document.getElementById('businessoutlook-chart').getContext('2d');
+          var myChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+              labels: ['Negative', 'Neutral', 'Positive', 'NA'],
+              datasets: [{
+                label: '# Owners/Managers of Businesses',
+                data: [24, 94, 418, 189],
+                backgroundColor: '#0984e3',
+                borderWidth: 1
               }]
+            },
+            options: {
+              responsive: true,
+              maintainAspectRatio: false,
+              scales: {
+                yAxes: [{
+                  ticks: {
+                    beginAtZero: true
+                  }
+                }]
+              }
             }
-          }
-        });
-      </script>
+          });
+        </script>
       </div>
-      <div id="chartcontainer" style="width: 100%;height: 70vh">
-      <canvas id="businessjobsatisfaction-chart"></canvas>
-      <script>
-        var ctx = document.getElementById('businessjobsatisfaction-chart').getContext('2d');
-        var myChart = new Chart(ctx, {
-          type: 'bar',
-          data: {
-            labels: ['Completely dissatisfied', 'Moderately dissatisfied' , 'Slightly dissatisfied' , 'Neutral', 'Slightly satisfied', 'Moderately satisfied', 'Completely satisfied', 'NA'],
-            datasets: [{
-              label: '# Owners/Managers of Businesses',
-              data: [10, 17, 22, 44, 31, 206, 347, 48],
-              backgroundColor: '#0984e3',
-              borderWidth: 1
-            }]
-          },
-          options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            scales: {
-              yAxes: [{
-                ticks: {
-                  beginAtZero: true
-                }
+      <div id="chartcontainer" style="width: 100%;height: 50vh">
+        <canvas id="businessjobsatisfaction-chart"></canvas>
+        <script>
+          var ctx = document.getElementById('businessjobsatisfaction-chart').getContext('2d');
+          var myChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+              labels: ['Completely dissatisfied', 'Moderately dissatisfied', 'Slightly dissatisfied', 'Neutral', 'Slightly satisfied', 'Moderately satisfied', 'Completely satisfied', 'NA'],
+              datasets: [{
+                label: '# Owners/Managers of Businesses',
+                data: [10, 17, 22, 44, 31, 206, 347, 48],
+                backgroundColor: '#0984e3',
+                borderWidth: 1
               }]
+            },
+            options: {
+              responsive: true,
+              maintainAspectRatio: false,
+              scales: {
+                yAxes: [{
+                  ticks: {
+                    beginAtZero: true
+                  }
+                }]
+              }
             }
-          }
-        });
-      </script>
+          });
+        </script>
       </div>
     </section>
   </div>
   <!-- What are some key takeaways? –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <div class="container">
     <section class="topic">
+      <a name="summary"></a>
       <h4 class="title">7. What are some key takeaways?</h4>
       <ul>
-        <li>Businesses have specific categories.</li>
+        <li>Businesses are often categorised using specific codes.</li>
+        <li>There a larger number of businesses</li>
         <li>Business are spread across the UK with some regional concentrations.
           <ul>
             <li>Item 2.1</li>
@@ -1137,10 +1156,13 @@
         </li>
         <li>Businesses do all sorts of things and with the majority being</li>
         <li>Businesses look like all sorts of things</li>
+        <li>Businesses (as surveyed by FB and OECD) tend to feel quite positive about their business, role and outlook</li>
       </ul>
     </section>
-    <p>That's it, thanks for reading. If you have <a href="https://logikblok.com/#contact">feedback please do share it</a>. You can follow me on twitter <a href="https://twitter.com/logikblok">@logikblok</a></p>
-    <p><a href="https://logikblok.com/">authors website</a>. <a href="https://logikblok.github.io/sketches/">other sketces</a></p>
+    <p>That's it, thanks for reading. If you have <a href="https://logikblok.com/#contact">feedback, please do share it</a>. You can follow me on twitter <a href="https://twitter.com/logikblok">@logikblok</a> or you could <a
+        href="https://www.buymeacoffee.com/logikblok">buy me a coffee</a>.
+    </p>
+    <p><a href="https://logikblok.com/">logikblok.com</a>. <a href="https://logikblok.github.io/sketches/">Other sketches</a></p>
   </div>
   <!-- End of article –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 </body>
