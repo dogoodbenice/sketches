@@ -936,14 +936,9 @@
               ['B', 'Z', 4]
             ]);
 
-            // Sets chart options.
-            var options = {
-              width: 600,
-            };
-
             // Instantiates and draws our chart, passing in some options.
             var chart = new google.visualization.Sankey(document.getElementById('sankey_basic'));
-            chart.draw(data, options);
+            chart.draw(data);
           }
         </script>
       </div>
