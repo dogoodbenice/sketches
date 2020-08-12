@@ -40,8 +40,8 @@
   <!-- Introduction –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <div class="container">
     <section class="topic">
-      <p>This aims to be an article serving as a primer into business in the UK. It's inspired by the <a
-          href="https://www.ons.gov.uk/businessindustryandtrade/business/activitysizeandlocation/bulletins/businessdemography/2018">statistical bulletins from ONS</a> and is an exploration of open data, content and libraries. Please do explore and
+      <p>This aims to be an article serving as a primer into business in the UK. It's inspired by the <a href="https://www.ons.gov.uk/businessindustryandtrade/business/activitysizeandlocation/bulletins/businessdemography/2018">statistical bulletins
+          from ONS</a> and is an exploration of open data, content and libraries. Please do explore and
         <a href="https://logikblok.com/#contact">feedback is always welcome</a>.</p>
       <table>
         <thead>
@@ -905,36 +905,46 @@
         </p>
       </blockquote>
       <p>Now that we have this understanding we can go a step further and <em>group</em> SIC codes. These are termed <em>Broad Industry groups</em> which are clustered into higher level sectors.</p>
-      <p>The chart below shows Broad Industry Groups <em>totalling the number of SIC sections attributed inside them</em>. These is an indication of how the UK business landscape is structured. The SIC heirarchy can be explored <a
+      <p>The chart below shows Broad Industry Groups and their breakdown <em>totalling the number of SIC sections attributed inside them</em>. These is an indication of how the UK business landscape is structured. The SIC heirarchy can be explored <a
           href="https://onsdigital.github.io/dp-classification-tools/standard-industrial-classification/ONS_SIC_hierarchy_view.html">further here</a>.</p>
       <div id="chartcontainer" style="width: 100%;height: 70vh">
-        <canvas id="BIG-chart"></canvas>
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <div id="sankey_basic" style="width: 100%; height: 70vh;"></div>
         <script>
-          new Chart(document.getElementById("BIG-chart"), {
-            type: 'doughnut',
-            data: {
-              labels: ["Agriculture, forestry & fishing", "Production", "Construction", "Motor trades", "Wholesale", "Retail", "Transport & storage (inc postal)", "Accommodation & food services", "Information & communication",
-                "Finance & insurance", "Property",
-                "Professional, scientific & technical", " Business administration & support services", "Public administration & defence", "Education", "Health", "Arts, entertainment, recreation & other services"
-              ],
-              datasets: [{
-                label: "Broad Industry Groups and the total number of SIC divisions in the group",
-                backgroundColor: ["#27ae60", "#8e5ea2", "#a29bfe", "#e8c3b9", "#0652DD", "#81ecec", "#95a5a6", "#34495e", "#f39c12", "#d35400", "#fd79a8", "#6c5ce7", "#e84393", "#ff7675", "#2d3436", "#192a56", "#ff9ff3"],
-                data: [3, 35, 3, 1, 1, 1, 5, 2, 6, 3, 1, 7, 6, 1, 1, 3, 10]
-              }]
-            },
-            options: {
-              responsive: true,
-              maintainAspectRatio: false,
-              legend: {
-                position: 'bottom',
-              },
-              title: {
-                display: true,
-                text: 'Broad Industry Groups and the total number of SIC divisions in the group'
-              }
-            }
+          google.charts.load('current', {
+            'packages': ['sankey']
           });
+          google.charts.setOnLoadCallback(drawChart);
+          function drawChart() {
+            var data = new google.visualization.DataTable();
+            data.addColumn('string', 'From');
+            data.addColumn('string', 'To');
+            data.addColumn('number', 'Number of groups in the division');
+            data.addRows([
+              ['Agriculture, forestry & fishing', 'Forestry and logging', 4],
+              ['Agriculture, forestry & fishing', 'Crop and animal production, hunting and related service activities', 7],
+              ['Agriculture, forestry & fishing', 'Fishing and aquaculture', 2],
+              ['Growing of non-perennial crops', 'Crop and animal production, hunting and related service activities', 5],
+              ['A', 'X', 5],
+              ['A', 'X', 5],
+              ['A', 'X', 5],
+              ['A', 'X', 5],
+              ['A', 'Y', 7],
+              ['A', 'Z', 6],
+              ['B', 'X', 2],
+              ['B', 'Y', 9],
+              ['B', 'Z', 4]
+            ]);
+
+            // Sets chart options.
+            var options = {
+              width: 600,
+            };
+
+            // Instantiates and draws our chart, passing in some options.
+            var chart = new google.visualization.Sankey(document.getElementById('sankey_basic'));
+            chart.draw(data, options);
+          }
         </script>
       </div>
     </section>
@@ -1050,7 +1060,7 @@
       <p>Businesses aren't people, usually they are groups of individuals working together. However we can utilise data from the OECD and Facebook in their survey of businesses (2019). <a
           href="https://datacatalog.worldbank.org/dataset/future-business-survey-aggregated-data/resource/fce29d6c-4102-4a37-b9ab-30634e62a571">preview</a>. This is </p>
       <p>We have a few more details</p>
-      <p>Current evaluation of their  business</p>
+      <p>Current evaluation of their business</p>
       <div id="chartcontainer" style="width: 100%;height: 50vh">
         <canvas id="currentevaluation-chart"></canvas>
         <script>
