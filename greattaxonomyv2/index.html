@@ -19,7 +19,8 @@
         {id: 2, label: 'Markets'},
         {id: 3, label: 'Regions'},
         {id: 4, label: 'Sectors'},
-        {id: 5, label: 'Products'}
+        {id: 5, label: 'Services'},
+        {id: 6, label: 'Products'}
     ]);
 
     // create an array with edges
@@ -28,9 +29,10 @@
         {from: 1, to: 3},
         {from: 1, to: 4},
         {from: 1, to: 5},
-        {from: 4, to: 2},
-        {from: 2, to: 4},
-        {from: 2, to: 5}
+        {from: 1, to: 6},
+        {from: 4, to: 5},
+        {from: 6, to: 4},
+        {from: 2, to: 3}
     ]);
 
     // create a network
