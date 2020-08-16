@@ -4,15 +4,13 @@
 <head>
   <meta charset="utf-8">
   <title>Exploring business in the UK</title>
-  <meta name="description" content="This is an interactive data article serving as a primer into the business in the UK.">
+  <meta name="description" content="This aims to be a primer into business in the UK. It's inspired by the statistical bulletins from ONS and is an exploration of open data, content and libraries. Do explore and feedback is always welcome.">
   <meta name="author" content="logikblok">
 
-  <!-- Mobile Specific Metas
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <!-- Mobile Specific Metas –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- CSS
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <!-- CSS –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/skeleton.css">
 
@@ -22,7 +20,7 @@
   <script src='https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.js'></script>
   <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js" integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew==" crossorigin=""></script>
   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-
+  <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
 
   <!-- Favicon –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link rel="icon" type="image/png" href="images/favicon.png">
@@ -42,7 +40,8 @@
     <section class="topic">
       <p>This aims to be a primer into business in the UK. It's inspired by the <a href="https://www.ons.gov.uk/businessindustryandtrade/business/activitysizeandlocation/bulletins/businessdemography/2018">statistical bulletins
           from ONS</a> and is an exploration of open data, content and libraries. Do explore and
-        <a href="https://logikblok.com/#contact">feedback is always welcome</a>.</p>
+        <a href="https://logikblok.com/#contact">feedback is always welcome</a>.
+      </p>
       <table>
         <thead>
           <tr>
@@ -908,11 +907,11 @@
         <p> <em>TESCO STORES LIMITED Company number 00519500</em></p>
         <p>
           Nature of business (SIC):
-          <ul> 47110 - Retail sale in non-specialised stores with food, beverages or tobacco predominating </ul>
-          <ul>47290 - Other retail sale of food in specialised stores</ul>
-          <ul>47710 - Retail sale of clothing in specialised stores</ul>
-          <ul>47750 - Retail sale of cosmetic and toilet articles in specialised stores</ul>
-          <a href="https://beta.companieshouse.gov.uk/company/00519500">via Companies House</a>
+        <ul> 47110 - Retail sale in non-specialised stores with food, beverages or tobacco predominating </ul>
+        <ul>47290 - Other retail sale of food in specialised stores</ul>
+        <ul>47710 - Retail sale of clothing in specialised stores</ul>
+        <ul>47750 - Retail sale of cosmetic and toilet articles in specialised stores</ul>
+        <a href="https://beta.companieshouse.gov.uk/company/00519500">via Companies House</a>
         </p>
       </blockquote>
       <p>Now that we have this understanding we can go a step further and <em>group</em> SIC codes. These are termed <em>Broad Industry groups</em> which are clustered into higher level sectors.</p>
@@ -926,6 +925,7 @@
             'packages': ['sankey']
           });
           google.charts.setOnLoadCallback(drawChart);
+
           function drawChart() {
             var data = new google.visualization.DataTable();
             data.addColumn('string', 'From');
@@ -1050,6 +1050,102 @@
     <section class="topic">
       <a name="question4"></a>
       <h4 class="title">4. What are the most popular business activities?</h4>
+      <blockquote class="nutshell">
+        <p>
+          <b>In summary:</b> The UK has .
+        </p>
+      </blockquote>
+      <p>words</p>
+      <div id="chart" style="width: 100%;height: 100%">
+          <script>
+            var options = {
+              series: [{
+                  name: "NORTH EAST",
+                  data: [{
+                    x: 'Agriculture,forestry & fishing',
+                    y: 3965
+                  }, {
+                    x: 'Production',
+                    y: 29
+                  }, {
+                    x: 'Construction',
+                    y: 13
+                  },{
+                    x: 'Motor trades',
+                    y: 13
+                  },{
+                    x: 'Wholesale	Retail',
+                    y: 13
+                  },{
+                    x: 'Transport & Storage (inc postal)',
+                    y: 13
+                  },{
+                    x: 'Accommodation & food services',
+                    y: 13
+                  },{
+                    x: 'Information & communication',
+                    y: 13
+                  },{
+                    x: 'Finance & insurance',
+                    y: 13
+                  },{
+                    x: 'Property',
+                    y: 13
+                  },{
+                    x: 'Professional, scientific & technical',
+                    y: 13
+                  },{
+                    x: 'Business administration & support services',
+                    y: 13
+                  },{
+                    x: 'Public administration & defence',
+                    y: 235
+                  },{
+                    x: 'Property',
+                    y: 1260
+                  },{
+                    x: 'Education',
+                    y: 2985
+                  },{
+                    x: 'Arts, entertainment, recreation & other services',
+                    y: 5150
+                  }]
+                },
+                {
+                  name: "NORTH WEST",
+                  data: [{
+                    x: 'W1',
+                    y: 43
+                  }, {
+                    x: 'W2',
+                    y: 43
+                  }, {
+                    x: 'W3',
+                    y: 43
+                  }, {
+                    x: 'W4',
+                    y: 43
+                  }]
+                }
+              ],
+              chart: {
+                height: 350,
+                type: 'heatmap',
+              },
+              dataLabels: {
+                enabled: false
+              },
+              colors: ["#008FFB"],
+              title: {
+                text: 'HeatMap Chart (Single color)'
+              },
+            };
+
+            var chart = new ApexCharts(document.querySelector("#chart"), options);
+            chart.render();
+          </script>
+      </div>
+      <p>Some more words</p>
     </section>
   </div>
   <!-- What do these businesses look like? –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -1164,7 +1260,7 @@
   </div>
   <!-- How were businesses affected by COVID-19? –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <div class="container">
-  <p>Responses from the new voluntary fortnightly business survey, which captures businesses responses on how their turnover, workforce prices, trade and business resilience have been affected in the two week reference period.</p>
+    <p>Responses from the new voluntary fortnightly business survey, which captures businesses responses on how their turnover, workforce prices, trade and business resilience have been affected in the two week reference period.</p>
   </div>
   <!-- What are some key takeaways? –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <div class="container">
