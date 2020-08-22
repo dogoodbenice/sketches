@@ -1817,9 +1817,75 @@
   <div class="container">
     <section class="topic">
       <h4 class="title">5. What do these business look like?</h4>
-      <p>This is a more complex question to analyse and we can break this into factors like size, number of employees and their survival rates.</p>
+      <blockquote class="nutshell">
+        <p>
+          <b>In summary:</b> The majority are small, .
+        </p>
+      </blockquote>
+      <p>This is a more complex question to analyse and we can break this into factors like number of employees, turnover and their survival rates.</p>
+      <p>Employment Size Band UK</p>
+      <div id="chartcontainer" style="width: 100%;height: 70vh">
+        <canvas id="employmentsize-chart"></canvas>
+        <script>
+          var ctx = document.getElementById('employmentsize-chart').getContext('2d');
+          var myChart = new Chart(ctx, {
+            type: 'horizontalBar',
+            data: {
+              labels: ['0-4', '5-9', '10-19', '20-49', '50-99', '100-249', '250+'],
+              datasets: [{
+                label: '# of businesses',
+                data: [2125520,	306475, 152985, 80975, 26940, 15060, 10480],
+                backgroundColor: '#0984e3',
+                borderWidth: 1
+              }]
+            },
+            options: {
+              responsive: true,
+              maintainAspectRatio: false,
+              scales: {
+                yAxes: [{
+                  ticks: {
+                    beginAtZero: true
+                  }
+                }]
+              }
+            }
+          });
+        </script>
+      </div>
+      <p>turnover UK</p>
+      <div id="chartcontainer" style="width: 100%;height: 70vh">
+        <canvas id="turnoversize-chart"></canvas>
+        <script>
+          var ctx = document.getElementById('turnoversize-chart').getContext('2d');
+          var myChart = new Chart(ctx, {
+            type: 'horizontalBar',
+            data: {
+              labels: ['0-49','50-99','100-249','250-499','500-999','1000-1999','2000-4999','5000-9999','10000-49999','50000+'],
+              datasets: [{
+                label: '# of businesses',
+                data: [424335, 629405, 875410, 341245, 195520, 111655, 76830, 29340, 26205, 8490],
+                backgroundColor: '#0984e3',
+                borderWidth: 1
+              }]
+            },
+            options: {
+              responsive: true,
+              maintainAspectRatio: false,
+              scales: {
+                yAxes: [{
+                  ticks: {
+                    beginAtZero: true
+                  }
+                }]
+              }
+            }
+          });
+        </script>
+      </div>
+      <p>Employment turnover regions</p>
+
       <p>Survival rates</p>
-      <p>Sizes</p>
     </section>
   </div>
   <!-- What do businesses feel? –––––––––––––––––––––––––––––––––––––––––––––––––– -->
