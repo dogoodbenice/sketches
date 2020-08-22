@@ -284,7 +284,7 @@ p {
 /* blockquote
   –––––––––––––––––––––––––––––––––––––––––––––––––– */
 blockquote {
-  padding: 20px 30px 10px 30px;
+  padding: 1em;
   margin: 50px auto;
   width: 60%;
 }
