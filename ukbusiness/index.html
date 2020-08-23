@@ -1815,7 +1815,7 @@
         </ol>
         </p>
       </blockquote>
-      <p>Zooming out a little, if we consider the spectrum of activity.</p>
+      <p>Similar to our heatmap, if we consider our approach as a type of spectrum of activity. The chart below shows the total numbers of the </p>
       <div id="regionemploy-chart" style="width: 100%;height: 70vh">
         <script>
           var options = {
@@ -2490,7 +2490,7 @@
               show: true,
             },
             chart: {
-              stacked: true,
+              stacked: false,
             },
             plotOptions: {
 
@@ -2500,15 +2500,13 @@
             },
             colors: ["#27ae60", "#8e5ea2", "#a29bfe", "#e8c3b9", "#0652DD", "#81ecec", "#95a5a6", "#34495e", "#f39c12", "#d35400", "#fd79a8", "#6c5ce7", "#e84393", "#ff7675", "#2d3436", "#192a56", "#ff9ff3"],
             title: {
-              text: 'Area chart '
+              text: 'Area chart for business activity'
             },
           };
           var chart = new ApexCharts(document.querySelector("#regionemploy-chart"), options);
           chart.render();
         </script>
       </div>
-      <p>Some more words</p>
-
       <p>Some more words</p>
     </section>
   </div>
@@ -2729,7 +2727,6 @@
           });
         </script>
       </div>
-      <p>https://www.ons.gov.uk/economy/economicoutputandproductivity/output/datasets/businessimpactofcovid19surveybicsresults</p>
     </section>
   </div>
   <!-- How were businesses affected by COVID-19? –––––––––––––––––––––––––––––––––––––––––––––––––– -->
