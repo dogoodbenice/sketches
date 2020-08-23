@@ -1037,7 +1037,7 @@
       </blockquote>
       <p>As a quick reminder the UK is shaped liked this and split into 12 regions.</p>
       <p>
-        <iframe src="https://www.atlistmaps.com/map/d1d976c8-707b-400f-8779-d4b0015e57b7" width="100%" height="400px" frameborder="0" scrolling="no"></iframe>
+        <iframe src="https://www.atlistmaps.com/map/d1d976c8-707b-400f-8779-d4b0015e57b7?share=true" allow="geolocation" width="100%" height="400px" frameborder="0" scrolling="no"></iframe>
       </p>
       <p>The total</p>
       <div id="chartcontainer" style="width: 100%;height: 70vh">
@@ -1092,25 +1092,7 @@
       <div id="siccount-chart" style="width: 100%;height: 70vh">
         <script>
           var options = {
-            series: [6.4, 4.2,
-              3.8,
-              3.3,
-              2.8,
-              2.3,
-              2.1,
-              1.9,
-              1.7,
-              1.7,
-              1.6,
-              1.6,
-              1.6,
-              1.5,
-              1.4,
-              1.4,
-              1.4,
-              1.2,
-              1.2
-            ],
+            series: [64, 4.2,3.8,3.3,2.8,6,9,10,1,2],
             chart: {
               height: 350,
               type: 'radialBar',
@@ -1127,15 +1109,11 @@
                   total: {
                     show: true,
                     label: 'Total',
-                    formatter: function(w) {
-                      // By default this function returns the average of all series. The below is just an example to show the use of custom formatter function
-                      return 100
-                    }
                   }
                 }
               }
             },
-            labels: ['A','2','3','4','1','2','3','4','1','2','3','4','1','2','3','4','1','2','3','4'],
+            labels: ['A','2','3','4','1','6','2','1','3'],
           };
           var chart = new ApexCharts(document.querySelector("#siccount-chart"), options);
           chart.render();
