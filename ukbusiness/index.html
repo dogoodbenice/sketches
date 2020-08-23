@@ -17,8 +17,6 @@
   <!-- .js –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
   <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script> -->
-  <script src='https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.js'></script>
-  <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js" integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew==" crossorigin=""></script>
   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
 
@@ -74,7 +72,10 @@
             <td>8. <a href="#question3">How do businesses feel affected by COVID-19? </a></td>
           </tr>
           <tr>
-            <td>9. <a href="#summary">Summary & experimental insights</a></td>
+            <td>9. <a href="#summary">Experimental insights</a></td>
+          </tr>
+          <tr>
+            <td>10. <a href="#summary">Summary takeaways</a></td>
           </tr>
         </tbody>
       </table>
@@ -118,6 +119,11 @@
             <td>ONS</td>
             <td>Business Impact of COVID-19 Survey results</td>
             <td><a href="https://www.ons.gov.uk/economy/economicoutputandproductivity/output/datasets/businessimpactofcovid19surveybicsresults">Source</td>
+          </tr>
+          <tr>
+            <td>ONS</td>
+            <td>Annual Population Survey estimates by region</td>
+            <td><a href="https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/internationalmigration/adhocs/11230annualpopulationsurveyestimatesofthecountryofbirthandnationalityofresidentsintheukbyregionandagegroup2004to2018">Source</td>
           </tr>
         </tbody>
       </table>
@@ -1076,7 +1082,6 @@
       </div>
       <p></p>
       <p>The chart below shows the number of enterprises by Region and broad industry group </p>
-      <div id="regionbig-chart" style="width: 100%;height: 70vh">
         <script>
           var options = {
             series: [{
@@ -2734,11 +2739,148 @@
     <h4 class="title">7. How are businesses affected by COVID?</h4>
     <p>Responses from the new voluntary fortnightly business survey, which captures businesses responses on how their turnover, workforce prices, trade and business resilience have been affected in the two week reference period.</p>
   </div>
+  <!-- Experimental Charts –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <div class="container">
+    <section class="topic">
+      <a name="summary"></a>
+      <h4 class="title">8. Experimental Insights</h4>
+      <p>This has been</p>
+      <p></p>
+      <div id="chartcontainer" style="width: 100%;height: 70vh">
+        <canvas id="experimental1-chart"></canvas>
+        <script>
+          new Chart(document.getElementById("experimental1-chart"), {
+            type: 'bubble',
+            data: {
+              datasets: [{
+                label: ["North East"],
+                backgroundColor: "#3498db",
+                data: [{
+                  x: 2616000,
+                  y: 41.1,
+                  r: 7
+                }]
+              },{
+                label: ["NORTH WEST"],
+                backgroundColor: "#9b59b6",
+                data: [{
+                  x: 7194000,
+                  y: 41.9,
+                  r: 27
+                }]
+              },{
+                label: ["YORKS AND HUMBER"],
+                backgroundColor: "#EE5A24",
+                data: [{
+                  x: 5404000,
+                  y: 43.4,
+                  r: 19
+                }]
+              },{
+                label: ["EAST MIDLANDS"],
+                backgroundColor: "#a29bfe",
+                data: [{
+                  x: 4723000,
+                  y: 42.6,
+                  r: 18
+                }]
+              },{
+                label: ["WEST MIDLANDS"],
+                backgroundColor: "#ff7675",
+                data: [{
+                  x: 5811000,
+                  y: 43.0,
+                  r: 21
+                }]
+              },{
+                label: ["EAST"],
+                backgroundColor: "#00cec9",
+                data: [{
+                  x: 6144000,
+                  y: 44.7,
+                  r: 27
+                }]
+              },{
+                label: ["LONDON"],
+                backgroundColor: "rgba(193,46,12,0.2)",
+                data: [{
+                  x: 8896000,
+                  y: 39.3,
+                  r: 52
+                }]
+              },{
+                label: ["SOUTH EAST"],
+                backgroundColor: "#c23616",
+                data: [{
+                  x: 9005000,
+                  y: 44.6,
+                  r: 41
+                }]
+              },{
+                label: ["SOUTH WEST"],
+                backgroundColor: "#D980FA",
+                data: [{
+                  x: 5495000,
+                  y: 45.6,
+                  r: 23
+                }]
+              },{
+                label: ["WALES"],
+                backgroundColor: "#0652DD",
+                data: [{
+                  x: 3104000,
+                  y: 42.1,
+                  r: 11
+                }]
+              },{
+                label: ["SCOTLAND"],
+                backgroundColor: "#16a085",
+                data: [{
+                  x: 5364000,
+                  y: 41.7,
+                  r: 18
+                }]
+              },{
+                label: ["NORTHERN IRELAND"],
+                backgroundColor: "#f1c40f",
+                data: [{
+                  x: 1856000,
+                  y: 43.0,
+                  r: 7
+                }]
+              }]
+            },
+            options: {
+              title: {
+                display: true,
+                text: 'Comparing buisness survival, regional population and buisness numbers'
+              },
+              scales: {
+                yAxes: [{
+                  scaleLabel: {
+                    display: true,
+                    labelString: "Survival Rate"
+                  }
+                }],
+                xAxes: [{
+                  scaleLabel: {
+                    display: true,
+                    labelString: "Regional UK Population"
+                  }
+                }]
+              }
+            }
+          });
+        </script>
+      </div>
+      <p>That's it, thanks for reading. If you have any <a href="https://logikblok.com/#contact">feedback, requests or thoughts please do share it with me</a>.</p>
+    </section>
+  </div>
   <!-- What are some key takeaways? –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <div class="container">
     <section class="topic">
       <a name="summary"></a>
-      <h4 class="title">8. What are some key takeaways?</h4>
+      <h4 class="title">9. What are some key takeaways?</h4>
       <ul>
         <li>Businesses are often categorised using specific codes.</li>
         <li>There a larger number of businesses</li>
@@ -2752,83 +2894,7 @@
         <li>Businesses look like all sorts of things</li>
         <li>Businesses (as surveyed by FB and OECD) tend to feel quite positive about their business, role and outlook</li>
       </ul>
-      <p><b>Experimental Charts</b></p>
-      <div id="chartcontainer" style="width: 100%;height: 70vh">
-        <canvas id="experimental1-chart"></canvas>
-        <script>
-          new Chart(document.getElementById("experimental1-chart"), {
-            type: 'bubble',
-            data: {
-              datasets: [{
-                label: ["North East"],
-                backgroundColor: "rgba(255,221,50,0.2)",
-                borderColor: "rgba(255,221,50,1)",
-                data: [{
-                  x: 21269017,
-                  y: 5.245,
-                  r: 15
-                }]
-              }, {
-                label: ["Suraj"],
-                backgroundColor: "rgba(60,186,159,0.2)",
-                borderColor: "rgba(60,186,159,1)",
-                data: [{
-                  x: 238238,
-                  y: 8,
-                  r: 10
-                }]
-              }, {
-                label: ["Denmark"],
-                backgroundColor: "rgba(60,186,159,0.2)",
-                borderColor: "rgba(60,186,159,1)",
-                data: [{
-                  x: 258702,
-                  y: 7.526,
-                  r: 10
-                }]
-              }, {
-                label: ["Germany"],
-                backgroundColor: "rgba(0,0,0,0.2)",
-                borderColor: "#000",
-                data: [{
-                  x: 3979083,
-                  y: 6.994,
-                  r: 15
-                }]
-              }, {
-                label: ["Japan"],
-                backgroundColor: "rgba(193,46,12,0.2)",
-                borderColor: "rgba(193,46,12,1)",
-                data: [{
-                  x: 4931877,
-                  y: 5.921,
-                  r: 15
-                }]
-              }]
-            },
-            options: {
-              title: {
-                display: true,
-                text: 'Comparing buisness survival, turnover and numbers'
-              },
-              scales: {
-                yAxes: [{
-                  scaleLabel: {
-                    display: true,
-                    labelString: "Survival"
-                  }
-                }],
-                xAxes: [{
-                  scaleLabel: {
-                    display: true,
-                    labelString: "Turnover"
-                  }
-                }]
-              }
-            }
-          });
-        </script>
-      </div>
+      <p><b></b></p>
       <p>That's it, thanks for reading. If you have any <a href="https://logikblok.com/#contact">feedback, requests or thoughts please do share it with me</a>.</p>
       <p>You can follow me on twitter <a href="https://twitter.com/logikblok">@logikblok</a> or you could <a href="https://www.buymeacoffee.com/logikblok">buy me a coffee</a>.</p>
       <p><a href="https://logikblok.com/">logikblok.com</a>. <a href="https://logikblok.github.io/sketches/">Other sketches</a></p>
