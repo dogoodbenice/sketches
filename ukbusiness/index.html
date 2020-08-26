@@ -1050,7 +1050,7 @@
       <p>
         <iframe src="https://www.atlistmaps.com/map/d1d976c8-707b-400f-8779-d4b0015e57b7?share=true" allow="geolocation" width="100%" height="400px" frameborder="0" scrolling="no"></iframe>
       </p>
-      <p>The total</p>
+      <p>The chart below shows the number of businesses by region.</p>
       <div id="chartcontainer" style="width: 100%;height: 70vh">
         <canvas id="regionandbusiness-chart"></canvas>
         <script>
@@ -1068,6 +1068,9 @@
             },
             options: {
               responsive: true,
+              legend: {
+                display: false,
+              },
               maintainAspectRatio: false,
               scales: {
                 yAxes: [{
@@ -1080,8 +1083,8 @@
           });
         </script>
       </div>
-      <p></p>
       <p>The chart below shows the number of enterprises by Region and broad industry group </p>
+      <div id="regionandbusiness-chart" style="width: 100%;height: 70vh">
         <script>
           var options = {
             series: [{
@@ -1800,7 +1803,6 @@
           chart.render();
         </script>
       </div>
-      <p>Some more words</p>
     </section>
   </div>
   <!-- Where are the most popular business activites? –––––––––––––––––––––––––––––––––––––––––––––––––– -->
