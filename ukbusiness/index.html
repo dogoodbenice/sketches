@@ -2700,7 +2700,7 @@
       <a name="summary"></a>
       <h4 class="title">8. Experimental Insights</h4>
       <p>This secton takes a few different data sets to see if there are any interesting patterns that emerge.</p>
-      <p></p>
+      <p>This chart shows the </p>
       <div id="chartcontainer" style="width: 100%;height: 70vh">
         <canvas id="experimental1-chart"></canvas>
         <script>
@@ -2808,7 +2808,7 @@
             options: {
               title: {
                 display: true,
-                text: 'Comparing buisness survival, regional population and buisness numbers'
+                text: 'Correlation between buisness survival, regional population and buisness numbers'
               },
               scales: {
                 yAxes: [{
@@ -2826,6 +2826,52 @@
               }
             }
           });
+        </script>
+      </div>
+      <p></p>
+      <div id="chartcontainer" style="width: 100%;height: 70vh">
+        <div id="series_chart_div" style="width: 100%; height: 70vh;"></div>
+        <script type="text/javascript">
+          google.charts.load('current', {
+            'packages': ['corechart']
+          });
+          google.charts.setOnLoadCallback(drawSeriesChart);
+
+          function drawSeriesChart() {
+
+            var data = google.visualization.arrayToDataTable([
+              ['Industry', 'Employees', 'Employees Pay', 'BIG','Number of businesses'],
+              ['Agriculture, Forestry & Fishing', 226000, 24988, 'Agriculture, Forestry & Fishing', 149540],
+              ['Mining and quarrying', 413100, 39959, 'Production',152015],
+              ['Manufacturing', 2491400, 30637,'Production', 81307],
+              ['Electricity, gas, steam and air conditioning supply', 78.6, 1000,'Production', 595],
+              ['Water supply; sewerage, waste management and remediation activities', 72.73, 2000, 'Production',716203],
+              ['Construction', 1437800, 33703, 'Construction',343715],
+              ['IRN', 72.49, 100000, 'Production',77148],
+              ['IRQ', 68.09, 40000, 'Production',363],
+              ['ISR', 81.55, 2000, 'Production', 7600],
+              ['RUS', 68.6, 10000, 'Production',1000],
+              ['USA', 78.09, 200, 'Production',07000]
+            ]);
+
+            var options = {
+              title: 'Correlation between employee numbers, employees pay and numbers of businesses',
+              hAxis: {
+                title: 'Employees'
+              },
+              vAxis: {
+                title: 'Employees Pay'
+              },
+              bubble: {
+                textStyle: {
+                  fontSize: 12
+                }
+              }
+            };
+
+            var chart = new google.visualization.BubbleChart(document.getElementById('series_chart_div'));
+            chart.draw(data, options);
+          }
         </script>
       </div>
     </section>
