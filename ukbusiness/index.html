@@ -77,7 +77,8 @@
         </tbody>
       </table>
       <a name="datatable"></a>
-      <p>This article makes use of the following <a href="data.html">data sources</a>. The data for the charts has been added directly so feel free to <a href="https://github.com/logikblok/sketches/blob/gh-pages/ukbusiness/index.html">explore and inspect</a> for your own analysis.</p>
+      <p>This article makes use of the following <a href="data.html">data sources</a>. The data for the charts has been added directly so feel free to <a href="https://github.com/logikblok/sketches/blob/gh-pages/ukbusiness/index.html">explore and
+          inspect</a> for your own analysis.</p>
     </section>
   </div>
   <!-- What is a business in the UK? –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -857,7 +858,8 @@
         }
       </script>
       <p>As you can see there is a number and a description. The number code can be used to identify the businesses activities into an area and the descriptions provide further context.</p>
-      <p>These activities are organised into <em>classes or subclasses</em>, <em>groups</em>, <em>divisions</em>, <em>sections</em> and <em>broad industry groups (BIG)</em>. The chart below provides an outline of the breakdown with the number of each categorisation level and an example
+      <p>These activities are organised into <em>classes or subclasses</em>, <em>groups</em>, <em>divisions</em>, <em>sections</em> and <em>broad industry groups (BIG)</em>. The chart below provides an outline of the breakdown with the number of each
+        categorisation level and an example
         using <em>25.91 Manufacture of steel drums and similar containers</em>.</p>
       <p></p>
       <div id="chartcontainer" style="width: 100%;height: 70vh">
@@ -904,8 +906,8 @@
         </p>
       </blockquote>
       <p>For our purposes, we'll mainly be dealing at the <em>Broad Industry group</em> level.</p>
-      <p>The chart below shows the Broad Industry Groups and their breakdown <em>totalling the number of SIC sections attributed inside them</em>. These is an overall indication of how the UK business landscape is structured, statistically speaking. The SIC heirarchy can be explored <a
-          href="https://onsdigital.github.io/dp-classification-tools/standard-industrial-classification/ONS_SIC_hierarchy_view.html">further here</a>.</p>
+      <p>The chart below shows the Broad Industry Groups and their breakdown <em>totalling the number of SIC sections attributed inside them</em>. These is an overall indication of how the UK business landscape is structured, statistically speaking.
+        The SIC heirarchy can be explored <a href="https://onsdigital.github.io/dp-classification-tools/standard-industrial-classification/ONS_SIC_hierarchy_view.html">further here</a>.</p>
       <div id="chartcontainer" style="width: 100%;height: 70vh">
         <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
         <div id="sankey_basic" style="width: 100%; height: 70vh;"></div>
@@ -990,6 +992,7 @@
   <!-- Where are they in the UK? –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <div class="container">
     <section class="topic">
+      <a name="question3"></a>
       <h4 class="title">3. Where are businesses located in the UK?</h4>
       <blockquote class="nutshell">
         <p>
@@ -1034,7 +1037,7 @@
         </script>
       </div>
       <p>The chart below shows the number of enterprises by Region and broad industry group </p>
-      <div id="regionandbusiness-chart" style="width: 100%;height: 70vh">
+      <div id="regionbig-chart" style="width: 100%;height: 70vh">
         <script>
           var options = {
             series: [{
@@ -1710,7 +1713,7 @@
                   ranges: [{
                       from: 0,
                       to: 8125,
-                      color: '#313695',
+                      color: '#981D2B',
                       name: 'V Diluted',
                     },
                     {
@@ -1734,7 +1737,7 @@
                     {
                       from: 65001,
                       to: 130000,
-                      color: '#276419',
+                      color: '#2B663C',
                       name: 'V Concentratated',
                     }
                   ]
@@ -2443,7 +2446,7 @@
               height: 600,
               type: 'area',
             },
-            legend:{
+            legend: {
               show: true,
             },
             chart: {
@@ -2696,7 +2699,7 @@
     <section class="topic">
       <a name="summary"></a>
       <h4 class="title">8. Experimental Insights</h4>
-      <p>This secton takes a few </p>
+      <p>This secton takes a few different data sets to see if there are any interesting patterns that emerge.</p>
       <p></p>
       <div id="chartcontainer" style="width: 100%;height: 70vh">
         <canvas id="experimental1-chart"></canvas>
@@ -2712,7 +2715,7 @@
                   y: 41.1,
                   r: 7
                 }]
-              },{
+              }, {
                 label: ["NORTH WEST"],
                 backgroundColor: "#9b59b6",
                 data: [{
@@ -2720,7 +2723,7 @@
                   y: 41.9,
                   r: 27
                 }]
-              },{
+              }, {
                 label: ["YORKS AND HUMBER"],
                 backgroundColor: "#EE5A24",
                 data: [{
@@ -2728,7 +2731,7 @@
                   y: 43.4,
                   r: 19
                 }]
-              },{
+              }, {
                 label: ["EAST MIDLANDS"],
                 backgroundColor: "#a29bfe",
                 data: [{
@@ -2736,7 +2739,7 @@
                   y: 42.6,
                   r: 18
                 }]
-              },{
+              }, {
                 label: ["WEST MIDLANDS"],
                 backgroundColor: "#ff7675",
                 data: [{
@@ -2744,7 +2747,7 @@
                   y: 43.0,
                   r: 21
                 }]
-              },{
+              }, {
                 label: ["EAST"],
                 backgroundColor: "#00cec9",
                 data: [{
@@ -2752,7 +2755,7 @@
                   y: 44.7,
                   r: 27
                 }]
-              },{
+              }, {
                 label: ["LONDON"],
                 backgroundColor: "rgba(193,46,12,0.2)",
                 data: [{
@@ -2760,7 +2763,7 @@
                   y: 39.3,
                   r: 52
                 }]
-              },{
+              }, {
                 label: ["SOUTH EAST"],
                 backgroundColor: "#c23616",
                 data: [{
@@ -2768,7 +2771,7 @@
                   y: 44.6,
                   r: 41
                 }]
-              },{
+              }, {
                 label: ["SOUTH WEST"],
                 backgroundColor: "#D980FA",
                 data: [{
@@ -2776,7 +2779,7 @@
                   y: 45.6,
                   r: 23
                 }]
-              },{
+              }, {
                 label: ["WALES"],
                 backgroundColor: "#0652DD",
                 data: [{
@@ -2784,7 +2787,7 @@
                   y: 42.1,
                   r: 11
                 }]
-              },{
+              }, {
                 label: ["SCOTLAND"],
                 backgroundColor: "#16a085",
                 data: [{
@@ -2792,7 +2795,7 @@
                   y: 41.7,
                   r: 18
                 }]
-              },{
+              }, {
                 label: ["NORTHERN IRELAND"],
                 backgroundColor: "#f1c40f",
                 data: [{
@@ -2825,7 +2828,6 @@
           });
         </script>
       </div>
-      <p>That's it, thanks for reading. If you have any <a href="https://logikblok.com/#contact">feedback, requests or thoughts please do share it with me</a>.</p>
     </section>
   </div>
   <!-- What are some key takeaways? –––––––––––––––––––––––––––––––––––––––––––––––––– -->
