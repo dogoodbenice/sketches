@@ -77,7 +77,7 @@
         </tbody>
       </table>
       <a name="datatable"></a>
-      <p>This article makes use of the following <a href="data.html">data sources</a>. The data for the charts has been added directly so feel free to <a href="https://github.com/logikblok/sketches/blob/gh-pages/ukbusiness/index.html">explore and
+      <p>This article makes use of the following <a href="data.html">data sources and libraries</a>. The data for the charts has been added directly so feel free to <a href="https://github.com/logikblok/sketches/blob/gh-pages/ukbusiness/index.html">explore and
           inspect</a> for your own analysis.</p>
     </section>
   </div>
@@ -906,7 +906,7 @@
         </p>
       </blockquote>
       <p>For our purposes, we'll mainly be dealing at the <em>Broad Industry group</em> level.</p>
-      <p>The chart below shows the Broad Industry Groups and their breakdown <em>totalling the number of SIC sections attributed inside them</em>. These is an overall indication of how the UK business landscape is structured, statistically speaking.
+      <p>The chart below shows the Broad Industry Groups and their breakdown <em>totalling the number of SIC Divisions attributed inside them</em>. These is an overall indication of how the UK business landscape is structured, statistically speaking.
         The SIC heirarchy can be explored <a href="https://onsdigital.github.io/dp-classification-tools/standard-industrial-classification/ONS_SIC_hierarchy_view.html">further here</a>.</p>
       <div id="chartcontainer" style="width: 100%;height: 70vh">
         <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -923,19 +923,31 @@
             data.addColumn('string', 'To');
             data.addColumn('number', 'Number of groups in the division');
             data.addRows([
-              ['Agriculture, forestry & fishing', 'Forestry and logging', 4],
-              ['Agriculture, forestry & fishing', 'Crop and animal production, hunting and related service activities', 7],
-              ['Agriculture, forestry & fishing', 'Fishing and aquaculture', 2],
-              ['Growing of non-perennial crops', 'Crop and animal production, hunting and related service activities', 5],
-              ['A', 'X', 5],
-              ['A', 'X', 5],
-              ['A', 'X', 5],
-              ['A', 'X', 5],
-              ['A', 'Y', 7],
-              ['A', 'Z', 6],
-              ['B', 'X', 2],
-              ['B', 'Y', 9],
-              ['B', 'Z', 4]
+              ['AGRICULTURE, FORESTRY AND FISHING', 'Agriculture, forestry & fishing', 3],
+              ['Mining, quarrying & utilities', 'Production', 5],
+              ['WATER SUPPLY; SEWERAGE, WASTE MANAGEMENT AND REMEDIATION ACTIVITIES', 'Mining, quarrying & utilities', 4],
+              ['ELECTRICITY, GAS, STEAM AND AIR CONDITIONING SUPPLY', 'Mining, quarrying & utilities', 1],
+              ['MINING AND QUARRYING', 'Mining, quarrying & utilities', 5],
+              ['Manufacturing', 'Production', 5],
+              ['MANUFACTURING', 'Manufacturing', 24],
+              ['CONSTRUCTION', 'Construction', 4],
+              ['Motor trades', 'Wholesale and retail; repair of motor vehicles', 1],
+              ['Wholesale', 'Wholesale and retail; repair of motor vehicles', 1],
+              ['Retail', 'Wholesale and retail; repair of motor vehicles', 1],
+              ['TRANSPORTATION AND STORAGE', 'Transport & storage (inc postal)', 5],
+              ['ACCOMMODATION AND FOOD SERVICE ACTIVITIES', 'Accommodation & food services', 2],
+              ['INFORMATION AND COMMUNICATION', 'Information & communication', 6],
+              ['FINANCIAL AND INSURANCE ACTIVITIES', 'Finance & insurance', 3],
+              ['REAL ESTATE ACTIVITIES', 'Property', 1],
+              ['PROFESSIONAL, SCIENTIFIC AND TECHNICAL ACTIVITIES', 'Professional, scientific & technical', 7],
+              ['ADMINISTRATIVE AND SUPPORT SERVICE ACTIVITIES', 'Business administration and support services', 6],
+              ['PUBLIC ADMINISTRATION AND DEFENCE; COMPULSORY SOCIAL SECURITY', 'Public administration & defence', 1],
+              ['EDUCATION', 'Education', 1],
+              ['HUMAN HEALTH AND SOCIAL WORK ACTIVITIES', 'Health', 3],
+              ['ARTS, ENTERTAINMENT AND RECREATION', 'Arts, entertainment, recreation and other services', 4],
+              ['OTHER SERVICE ACTIVITIES', 'Arts, entertainment, recreation and other services', 3],
+              ['ACTIVITIES OF HOUSEHOLDS AS EMPLOYERS; UNDIFFERENTIATED GOODS-AND SERVICES-PRODUCING ACTIVITIES OF HOUSEHOLDS FOR OWN USE', 'Arts, entertainment, recreation and other services', 2],
+              ['ACTIVITIES OF EXTRATERRITORIAL ORGANISATIONS AND BODIES', 'Arts, entertainment, recreation and other services', 1]
             ]);
             var chart = new google.visualization.Sankey(document.getElementById('sankey_basic'));
             chart.draw(data);
@@ -999,7 +1011,8 @@
           <b>In summary:</b> There is a concentration of businesses towards the south of the UK. The highest number in London with the lowest in North East.
         </p>
       </blockquote>
-      <p>As a quick reminder the The United Kingdom of Great Britain and Northern Ireland (UK) is shaped liked this. The UK actually consists of four countries: England, Scotland, Wales and Northern Ireland. The UK has a population of 66 million: 55.6 million in England, 5.4 million in Scotland, 3.1 million in Wales and 1.9 million in Northern Ireland. At the time of writing the total population is <a href="https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/overviewoftheukpopulation/august2019">estimated to be 66.4 million</a>.</p>
+      <p>As a quick reminder the The United Kingdom of Great Britain and Northern Ireland (UK) is shaped liked this. The UK actually consists of four countries: England, Scotland, Wales and Northern Ireland.</p>
+      <p>Statistically speaking, England is split into smaller 9 regions and Scotland, Wales and Northern Ireland are treated as individual regions, bringing up the total number of regions to be <em>12</em>. At the time of writing the total population is <a href="https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/overviewoftheukpopulation/august2019">estimated to be 66.4 million</a>.</p>
       <p>
         <iframe src="https://www.atlistmaps.com/map/d1d976c8-707b-400f-8779-d4b0015e57b7?share=true" allow="geolocation" width="100%" height="400px" frameborder="0" scrolling="no"></iframe>
       </p>
@@ -2476,11 +2489,11 @@
       <h4 class="title">5. What do these business look like?</h4>
       <blockquote class="nutshell">
         <p>
-          <b>In summary:</b> The majority are small, .
+          <b>In summary:</b> The majority are small, turning over less than £250,000 a year and if they have been around for >5 years are hardy survivors.
         </p>
       </blockquote>
-      <p>This is a more complex question to analyse and we can break this into factors like number of employees, turnover and their survival rates.</p>
-      <p>Employment Size Band UK</p>
+      <p>Overall, this is a more complex question to analyse and we can break this into factors like number of employees, turnover and their survival rates.</p>
+      <p>The chart below shows the numbers of business by their Employment Size Band, as you can see the vast majority of businesses employ between 0-4 people, larger businesses are really quite rare.</p>
       <div id="chartcontainer" style="width: 100%;height: 70vh">
         <canvas id="employmentsize-chart"></canvas>
         <script>
@@ -2510,7 +2523,7 @@
           });
         </script>
       </div>
-      <p>turnover UK</p>
+      <p>The chart below shows the numbers of businesses by their turnover band, there is a slightly more centered distribution. Businesses earning £100-249 are the most frequent.</p>
       <div id="chartcontainer" style="width: 100%;height: 70vh">
         <canvas id="turnoversize-chart"></canvas>
         <script>
@@ -2540,9 +2553,10 @@
           });
         </script>
       </div>
-      <p>Employment turnover regions</p>
-      <p>Survival rates</p>
-      <p>A business is deemed to have survived if having been a birth in year t or having survived to year t; it is active in terms of employment and/or turnover in any part of t+1</p>
+      <p>Businesses are competing all the time so survival rates are also an interesting indicator on businesses.</p>
+      <p>Quoting the ONS data <em>"a business is deemed to have survived if having been a birth in year t or having survived to year t; it is active in terms of employment and/or turnover in any part of t+1</em></p>
+      <p>By that we mean a buisness would have been born in 2013, is still present at 2013 and or has active turnover or employment in 2014 for example.</p>
+      <p>The chart below shows the overall survival rates of businesses <em>"born"</em> in 2013.</p>
       <div id="businesssurvival-chart" style="width: 100%;height: 70vh">
         <script>
           var options = {
@@ -2593,11 +2607,15 @@
   <div class="container">
     <section class="topic">
       <h4 class="title">6. What do businesses in the UK feel?</h4>
-      <p>This section was started before COVID so perhaps could be considered as a general look on the overall feeling for businesses.</p>
-      <p>Businesses aren't people, usually they are groups of individuals working together. However we can utilise data from the OECD and Facebook in their survey of businesses (2019). <a
-          href="https://datacatalog.worldbank.org/dataset/future-business-survey-aggregated-data/resource/fce29d6c-4102-4a37-b9ab-30634e62a571">preview</a>. This is </p>
-      <p>We have a few more details</p>
-      <p>Current evaluation of their business</p>
+      <blockquote class="nutshell">
+        <p>
+          <b>In summary:</b> Most businesses feel quite possitive about their business, outlook and job satisfaction overall.
+        </p>
+            <p>This section was started before COVID, so perhaps could be considered as a general insight into the overall businesses sentiment.</p>
+      </blockquote>
+      <p>Of course, businesses aren't people, usually they are groups of individuals working together. However we can utilise data from the OECD and Facebook in their survey of businesses (2019). <a
+          href="https://datacatalog.worldbank.org/dataset/future-business-survey-aggregated-data/resource/fce29d6c-4102-4a37-b9ab-30634e62a571">preview</a>.</p>
+      <p>This chart below asks the respondents about how they feel about the current evaluation of their business. The majority are positive towards this.</p>
       <div id="chartcontainer" style="width: 100%;height: 50vh">
         <canvas id="currentevaluation-chart"></canvas>
         <script>
@@ -2627,7 +2645,7 @@
           });
         </script>
       </div>
-      <p>Next 6 month outlook</p>
+      <p>This chart below asks the respondents about how they feel about their Next 6 month outlook for their business, again the majority are positive.</p>
       <div id="chartcontainer" style="width: 100%;height: 50vh">
         <canvas id="businessoutlook-chart"></canvas>
         <script>
@@ -2657,7 +2675,7 @@
           });
         </script>
       </div>
-      <p>Job satisfaction</p>
+      <p>This chart below asks the respondents about how they feel about their Job satisfaction levels, again the majority are positive.</p>
       <div id="chartcontainer" style="width: 100%;height: 50vh">
         <canvas id="businessjobsatisfaction-chart"></canvas>
         <script>
@@ -2700,7 +2718,8 @@
       <a name="summary"></a>
       <h4 class="title">8. Experimental Insights</h4>
       <p>This secton takes a few different data sets to see if there are any interesting patterns that emerge.</p>
-      <p>This chart shows the </p>
+      <p>This chart plots the 5 year survival rate (2013 onwards), the regional population numbers and the numbers of businesses for that region.</p>
+      <p>London is interesting to compare to the other regions. Whilst we can see that the business numbers are large it has a very low survival rate in comparison to other regions. Perhaps a cumulation of density, population numbers and general culture of the region could be attributed.</p>
       <div id="chartcontainer" style="width: 100%;height: 70vh">
         <canvas id="experimental1-chart"></canvas>
         <script>
@@ -2854,13 +2873,13 @@
               ['Accommodation & Food Services', 2282200, 2000, 'Accommodation & food services', 7600],
               ['Information & Communication', 1278700, 10000, 'Information & communication',1000],
               ['Finance & Insurance', 1041200, 42696, 'Finance & insurance',7000]
-              ['Property', 515600, 200, 'Property',7000],
               ['Professional, Scientific & Technical', 2606000, 200, 'Professional, scientific & technical',7000],
+              ['Property', 515600, 200, 'Property',7000],
               ['Business Administration and Support Services', 2733800, 200, 'Business administration and support services',7000],
               ['Education', 2691100, 200, 'Education',7000],
               ['Health', 4037800, 26864, 'Health',7000],
               ['Public Administration', 1325500, 200, 'Public administration & defence',7000],
-              ['Other', 1361900, 200, 'Arts, entertainment, recreation and other services',7000]
+              ['Other', 1361900, 200, 'Arts, entertainment, recreation and other services',7000],
             ]);
 
             var options = {
