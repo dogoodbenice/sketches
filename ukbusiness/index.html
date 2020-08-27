@@ -2913,51 +2913,6 @@
           });
         </script>
       </div>
-      <p>This chart compares the total Foreign Direct Investment by continent </p>
-      <div id="chartcontainer" style="width: 100%;height: 70vh">
-        <div id="series_chart_div" style="width: 100%; height: 70vh;"></div>
-        <script type="text/javascript">
-          google.charts.load('current', {
-            'packages': ['corechart']
-          });
-          google.charts.setOnLoadCallback(drawSeriesChart);
-
-          function drawSeriesChart() {
-
-            var data = google.visualization.arrayToDataTable([
-              ['Industry', 'FDI in Milions','~Number of businesses'],
-              ['Agriculture, Forestry & Fishing', 88, 149540 'Agriculture, Forestry & Fishing'],
-              ['Mining and quarrying', 413100, 152015 'Production'],
-              ['Manufacturing', 2491400,81307'Production'],
-              ['Electricity, gas, steam and air conditioning supply', 78,595'Production'],
-              ['Water supply; sewerage, waste management and remediation activities', 72,716203 'Production'],
-              ['Construction', 1437800, 343715'Construction'],
-              ['Motor Trades', 546800,77148 'Wholesale and retail; repair of motor vehicles'],
-              ['Wholesale', 1213200, 77148'Wholesale and retail; repair of motor vehicles'],
-              ['Retail', 2871000,77148 'Wholesale and retail; repair of motor vehicles'],
-              ['Transport & Storage (inc Postal)', 1456400, 363 'Transport & storage (inc postal)'],
-            ]);
-
-            var options = {
-              title: 'Correlation between employee numbers, employees pay and numbers of businesses',
-              hAxis: {
-                title: 'Employees'
-              },
-              vAxis: {
-                title: 'Employees Pay'
-              },
-              bubble: {
-                textStyle: {
-                  fontSize: 12
-                }
-              }
-            };
-
-            var chart = new google.visualization.BubbleChart(document.getElementById('series_chart_div'));
-            chart.draw(data, options);
-          }
-        </script>
-      </div>
     </section>
   </div>
   <!-- What are some key takeaways? –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -2967,6 +2922,7 @@
       <h4 class="title">9. What are some key takeaways?</h4>
       <ul>
         <li>Businesses are often categorised using specific codes.</li>
+        <li>There a larger number of businesses</li>
         <li>There a larger number of businesses</li>
         <li>Business are spread across the UK with some regional concentrations.
           <ul>
