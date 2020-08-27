@@ -2483,6 +2483,72 @@
       <p>Some more words</p>
     </section>
   </div>
+  <!-- Who invests in these businesses? –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <div class="container">
+    <section class="topic">
+      <a name="question4"></a>
+      <h4 class="title">5. Who invests in these businesses (Internationally)?</h4>
+      <blockquote class="nutshell">
+        <p>
+          <b>In summary:</b> Our largest amount of investment comes from Europe as contient, .
+        </p>
+      </blockquote>
+      <p>Businesses can take on debt or investment or alternative financial approaches to meet their needs. Here we're looking at Foreign Direct Investment (FDI) as a whole.</p>
+      <p>The chart below shows the amount of FDI by continent. It highlights the shift of FDI source from Europe to increaingly that from the Americas.</p>
+      <div id="chartcontainer" style="width: 100%;height: 70vh">
+        <canvas id="FDIinvestment-chart"></canvas>
+        <script>
+          new Chart(document.getElementById("FDIinvestment-chart"), {
+            type: 'radar',
+            data: {
+              labels: ["Europe","The Americas","Asia","Australasia","Africa"
+              ],
+              datasets: [
+                {
+          label: "2016",
+          fill: true,
+          backgroundColor: "rgba(179,255,198,0.2)",
+          borderColor: "rgba(179,255,198,1)",
+          pointBorderColor: "#E0F3F8",
+          pointBackgroundColor: "rgba(179,255,198,1)",
+          data: [135463,29096,28651,-1256,-2]
+        },{
+          label: "2017",
+          fill: true,
+          backgroundColor: "rgba(25,181,255,0.2)",
+          borderColor: "rgba(25,181,255,1)",
+          pointBorderColor: "#fff",
+          pointBackgroundColor: "rgba(25,181,255,1)",
+          data: [37953,22879,11325,2775,-48]
+        },{
+          label: "2018",
+          fill: true,
+          backgroundColor: "rgba(255,99,132,0.2)",
+          borderColor: "rgba(255,99,132,1)",
+          pointBorderColor: "#fff",
+          pointBackgroundColor: "rgba(255,99,132,1)",
+          pointBorderColor: "#fff",
+          data: [831,45537,2156,723,-176]
+        }
+      ]
+            },
+            options: {
+              responsive: true,
+              maintainAspectRatio: false,
+              legend: {
+                display: false,
+              },
+              title: {
+                display: true,
+                text: 'Amount of FDI in millions by continent 2018'
+              }
+            }
+          });
+        </script>
+      </div>
+      <p>The data shows that the UK has prominent proffesional services, construction and ICT sectors.</p>
+    </section>
+  </div>
   <!-- What do these businesses look like? –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <div class="container">
     <section class="topic">
@@ -2847,7 +2913,7 @@
           });
         </script>
       </div>
-      <p></p>
+      <p>This chart compares the total Foreign Direct Investment by continent </p>
       <div id="chartcontainer" style="width: 100%;height: 70vh">
         <div id="series_chart_div" style="width: 100%; height: 70vh;"></div>
         <script type="text/javascript">
@@ -2859,27 +2925,17 @@
           function drawSeriesChart() {
 
             var data = google.visualization.arrayToDataTable([
-              ['Industry', 'Employees', 'Employees Pay', 'BIG','Number of businesses'],
-              ['Agriculture, Forestry & Fishing', 226000, 24988, 'Agriculture, Forestry & Fishing', 149540],
-              ['Mining and quarrying', 413100, 39959, 'Production',152015],
-              ['Manufacturing', 2491400, 30637,'Production', 81307],
-              ['Electricity, gas, steam and air conditioning supply', 78, 1000,'Production', 595],
-              ['Water supply; sewerage, waste management and remediation activities', 72, 2000, 'Production',716203],
-              ['Construction', 1437800, 33703, 'Construction',343715],
-              ['Motor Trades', 546800, 25294, 'Wholesale and retail; repair of motor vehicles',77148],
-              ['Wholesale', 1213200, 25294, 'Wholesale and retail; repair of motor vehicles',77148],
-              ['Retail', 2871000, 25294, 'Wholesale and retail; repair of motor vehicles',77148],
-              ['Transport & Storage (inc Postal)', 1456400, 40000, 'Transport & storage (inc postal)',363],
-              ['Accommodation & Food Services', 2282200, 2000, 'Accommodation & food services', 7600],
-              ['Information & Communication', 1278700, 10000, 'Information & communication',1000],
-              ['Finance & Insurance', 1041200, 42696, 'Finance & insurance',7000]
-              ['Professional, Scientific & Technical', 2606000, 200, 'Professional, scientific & technical',7000],
-              ['Property', 515600, 200, 'Property',7000],
-              ['Business Administration and Support Services', 2733800, 200, 'Business administration and support services',7000],
-              ['Education', 2691100, 200, 'Education',7000],
-              ['Health', 4037800, 26864, 'Health',7000],
-              ['Public Administration', 1325500, 200, 'Public administration & defence',7000],
-              ['Other', 1361900, 200, 'Arts, entertainment, recreation and other services',7000],
+              ['Industry', 'FDI in Milions','~Number of businesses'],
+              ['Agriculture, Forestry & Fishing', 88, 149540 'Agriculture, Forestry & Fishing'],
+              ['Mining and quarrying', 413100, 152015 'Production'],
+              ['Manufacturing', 2491400,81307'Production'],
+              ['Electricity, gas, steam and air conditioning supply', 78,595'Production'],
+              ['Water supply; sewerage, waste management and remediation activities', 72,716203 'Production'],
+              ['Construction', 1437800, 343715'Construction'],
+              ['Motor Trades', 546800,77148 'Wholesale and retail; repair of motor vehicles'],
+              ['Wholesale', 1213200, 77148'Wholesale and retail; repair of motor vehicles'],
+              ['Retail', 2871000,77148 'Wholesale and retail; repair of motor vehicles'],
+              ['Transport & Storage (inc Postal)', 1456400, 363 'Transport & storage (inc postal)'],
             ]);
 
             var options = {
