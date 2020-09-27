@@ -1020,7 +1020,7 @@
       <p>
         <iframe src="https://www.atlistmaps.com/map/d1d976c8-707b-400f-8779-d4b0015e57b7?share=true" allow="geolocation" width="100%" height="400px" frameborder="0" scrolling="no"></iframe>
       </p>
-      <p>The chart below shows the number of businesses by region. It highlights the higher number of businesses towards the south of the UK with London having the highest followed by South East and the North West.</p>
+      <p>The chart below shows the number of businesses by region. It highlights the higher number of businesses towards the south of the UK with London having the highest followed by South East and the East of England.</p>
       <div id="chartcontainer" style="width: 100%;height: 50vh">
         <canvas id="regionandbusiness-chart"></canvas>
         <script>
@@ -1053,6 +1053,125 @@
           });
         </script>
       </div>
+      <p>The chart below shows a time series of the numbers of businesses by their region.</p>
+      <div id="chartcontainer" style="width: 100%;height: 60vh">
+        <canvas id="UK Regional Time series-chart"></canvas>
+        <script>
+          new Chart(document.getElementById("UK Regional Time series-chart"), {
+            type: 'line',
+            data: {
+              labels: [2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019],
+              datasets: [{
+                data: [132300,	134500,	150600,	135000,	146400,	142500,	162800,	151500],
+                label: "North East",
+                borderColor: "#27ae60",
+                fill: false
+              }, {
+                data: [437500,	485400,506800,	531200,521700,529800,	544800,578700],
+                label: "North West",
+                borderColor: "#8e5ea2",
+                fill: false
+              }, {
+                data: [343000,	349900,	353200,	380900,	391300,	419200,	400700,	428700],
+                label: "Yorkshire and the Humber",
+                borderColor: "#a29bfe",
+                fill: false
+              }, {
+                data: [324900,	315700,	330900,	356400,	370300,	370800,	367700,	356400],
+                label: "East Midlands",
+                borderColor: "#81ecec",
+                fill: false
+              }, {
+                data: [373500,386200,	412600,	399700,	412600,	449800,	448200,	479500],
+                label: "West Midlands",
+                borderColor: "#0652DD",
+                fill: false
+              }, {
+                data: [507400,	499000,	549000,	529100,	554900,	572400,	564800,	598800],
+                label: "East",
+                borderColor: "#81ecec",
+                fill: false
+              }, {
+                data: [820900,	857900,	939300,	987400,	1016600,	1062300,	1096100,	1091900],
+                label: "London",
+                borderColor: "#95a5a6",
+                fill: false
+              }, {
+                data: [771600,	792400,	837300,	879200,	899000,	928900,	873600,	940300],
+                label: "South East",
+                borderColor: "#34495e",
+                fill: false
+              }, {
+                data: [478200,	467600,	513000,	531900,	514900,	532000,	546300,	561600],
+                label: "South West",
+                borderColor: "#f39c12",
+                fill: false
+              }, {
+                data: [195000, 189500, 213200, 212800, 221500, 209000, 198600, 222200],
+                label: "Wales",
+                borderColor: "#d35400",
+                fill: false
+              }, {
+                data: [319100, 326100, 322700, 341000, 324800, 346200, 331400, 333900],
+                label: "Scotland",
+                borderColor: "#fd79a8",
+                fill: false
+              }, {
+                data: [114500,	110200,	118500,	116700,	124000,	131700,	132700,	124200],
+                label: "Northern Ireland",
+                borderColor: "#6c5ce7",
+                fill: false
+              }]
+            },
+            options: {
+              responsive: true,
+              maintainAspectRatio: false,
+              legend: {
+                display: true,
+                position: 'bottom',
+              },
+              scales: {
+                xAxes: [{
+                  display: true,
+                  scaleLabel: {
+                    display: true,
+                    labelString: 'Year'
+                  }
+                }],
+                yAxes: [{
+                  display: true,
+                  scaleLabel: {
+                    display: true,
+                    labelString: 'Number of businesses'
+                  }
+                }]
+              },
+              title: {
+                display: true,
+                text: 'Number of businesses by regions, 2012 - 2019'
+              }
+            }
+          });
+        </script>
+      </div>
+    <p>It highlights further the long term consistency in those regions have the highest number of businesses in the UK.</p>
+    </section>
+  </div>
+  <!-- 4. What are the most popular business activites? –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <div class="container">
+    <section class="topic">
+      <a name="question4"></a>
+      <h4 class="title">4. What are the most popular business activities?</h4>
+      <blockquote class="nutshell">
+        <p>
+          <b>In summary:</b> The UK's highest buisness activities are typically those related to construction or proffesional activites. In order at the SIC Division level they are:
+          <li>43 Specialised construction activities</li>
+          <li>41 Construction of buildings</li>
+          <li>85 Education</li>
+          <li>47 Retail trade, except of motor vehicles and motorcycles</li>
+          <li>81 Services to buildings and landscape activities</li>
+        </p>
+      </blockquote>
       <p>The chart below shows the number of <em>enterprises</em> from the IDBR rather than estimated businesses by Region and broad industry group. It highlights the concentration where the largest businesses that can qualify are located.</p>
       <p>Again London and the South East come out first with the highest concentration or number of enterprises, it also highlights the presence of larger enterprises in the East particulalry for construction.</p>
       <div id="regionbig-chart" style="width: 100%;height: 70vh">
@@ -1776,719 +1895,6 @@
       </div>
     </section>
   </div>
-  <!-- 4. What are the most popular business activites? –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <div class="container">
-    <section class="topic">
-      <a name="question4"></a>
-      <h4 class="title">4. What are the most popular business activities?</h4>
-      <blockquote class="nutshell">
-        <p>
-          <b>In summary:</b> The UK's highest buisness activities are typically those related to construction or proffesional activites. In order at the SIC Division level they are:
-        <ul>
-          <li>43 Specialised construction activities</li>
-          <li>41 Construction of buildings</li>
-          <li>85 Education</li>
-          <li>47 Retail trade, except of motor vehicles and motorcycles</li>
-          <li>81 Services to buildings and landscape activities</li>
-        </ul>
-        </p>
-      </blockquote>
-      <p>Similar to our heatmap, if we consider business as a spectrum of activity we can see clear spikes in density across all regions. The chart below shows the total numbers of the businesses by ther region, we see consistent similar patterns of
-        peaks across each reagion.</p>
-      <div id="regionemploy-chart" style="width: 100%;height: 70vh">
-        <script>
-          var options = {
-            series: [{
-                name: "NORTH EAST",
-                data: [{
-                  x: 'Agriculture,forestry & fishing',
-                  y: 3965
-                }, {
-                  x: 'Production',
-                  y: 4825
-                }, {
-                  x: 'Construction',
-                  y: 9135
-                }, {
-                  x: 'Motor trades',
-                  y: 2420
-                }, {
-                  x: 'Wholesale',
-                  y: 2185
-                }, {
-                  x: 'Retail',
-                  y: 5860
-                }, {
-                  x: 'Transport & Storage (inc postal)',
-                  y: 2515
-                }, {
-                  x: 'Accommodation & food services',
-                  y: 6205
-                }, {
-                  x: 'Information & communication',
-                  y: 3350
-                }, {
-                  x: 'Finance & insurance',
-                  y: 1135
-                }, {
-                  x: 'Property',
-                  y: 2175
-                }, {
-                  x: 'Professional, scientific & technical',
-                  y: 11365
-                }, {
-                  x: 'Business administration & support services',
-                  y: 5700
-                }, {
-                  x: 'Public administration & defence',
-                  y: 235
-                }, {
-                  x: 'Education',
-                  y: 1260
-                }, {
-                  x: 'Health',
-                  y: 2985
-                }, {
-                  x: 'Arts, entertainment, recreation & other services',
-                  y: 5150
-                }]
-              },
-              {
-                name: "NORTH WEST",
-                data: [{
-                  x: 'Agriculture,forestry & fishing',
-                  y: 11700
-                }, {
-                  x: 'Production',
-                  y: 16270
-                }, {
-                  x: 'Construction',
-                  y: 31110
-                }, {
-                  x: 'Motor trades',
-                  y: 8310
-                }, {
-                  x: 'Wholesale',
-                  y: 11205
-                }, {
-                  x: 'Retail',
-                  y: 25790
-                }, {
-                  x: 'Transport & Storage (inc postal)',
-                  y: 13310
-                }, {
-                  x: 'Accommodation & food services',
-                  y: 16950
-                }, {
-                  x: 'Information & communication',
-                  y: 15745
-                }, {
-                  x: 'Finance & insurance',
-                  y: 7410
-                }, {
-                  x: 'Property',
-                  y: 9740
-                }, {
-                  x: 'Professional, scientific & technical',
-                  y: 43250
-                }, {
-                  x: 'Business administration & support services',
-                  y: 23355
-                }, {
-                  x: 'Public administration & defence',
-                  y: 560
-                }, {
-                  x: 'Education',
-                  y: 4405
-                }, {
-                  x: 'Health',
-                  y: 11255
-                }, {
-                  x: 'Arts, entertainment, recreation & other services',
-                  y: 16445
-                }]
-              }, {
-                name: "YORKS & HUMBER",
-                data: [{
-                  x: 'Agriculture,forestry & fishing',
-                  y: 11615
-                }, {
-                  x: 'Production',
-                  y: 13255
-                }, {
-                  x: 'Construction',
-                  y: 23495
-                }, {
-                  x: 'Motor trades',
-                  y: 6825
-                }, {
-                  x: 'Wholesale',
-                  y: 7870
-                }, {
-                  x: 'Retail',
-                  y: 15485
-                }, {
-                  x: 'Transport & Storage (inc postal)',
-                  y: 10360
-                }, {
-                  x: 'Accommodation & food services',
-                  y: 13210
-                }, {
-                  x: 'Information & communication',
-                  y: 10050
-                }, {
-                  x: 'Finance & insurance',
-                  y: 3635
-                }, {
-                  x: 'Property',
-                  y: 6775
-                }, {
-                  x: 'Professional, scientific & technical',
-                  y: 26345
-                }, {
-                  x: 'Business administration & support services',
-                  y: 13675
-                }, {
-                  x: 'Public administration & defence',
-                  y: 635
-                }, {
-                  x: 'Education',
-                  y: 3130
-                }, {
-                  x: 'Health',
-                  y: 7670
-                }, {
-                  x: 'Arts, entertainment, recreation & other services',
-                  y: 11760
-                }]
-              },
-              {
-                name: "EAST MIDLANDS",
-                data: [{
-                  x: 'Agriculture,forestry & fishing',
-                  y: 11085
-                }, {
-                  x: 'Production',
-                  y: 13060
-                }, {
-                  x: 'Construction',
-                  y: 23130
-                }, {
-                  x: 'Motor trades',
-                  y: 6775
-                }, {
-                  x: 'Wholesale',
-                  y: 7675
-                }, {
-                  x: 'Retail',
-                  y: 13570
-                }, {
-                  x: 'Transport & Storage (inc postal)',
-                  y: 11255
-                }, {
-                  x: 'Accommodation & food services',
-                  y: 10340
-                }, {
-                  x: 'Information & communication',
-                  y: 10160
-                }, {
-                  x: 'Finance & insurance',
-                  y: 4910
-                }, {
-                  x: 'Property',
-                  y: 6375
-                }, {
-                  x: 'Professional, scientific & technical',
-                  y: 25585
-                }, {
-                  x: 'Business administration & support services',
-                  y: 13500
-                }, {
-                  x: 'Public administration & defence',
-                  y: 910
-                }, {
-                  x: 'Education',
-                  y: 3185
-                }, {
-                  x: 'Health',
-                  y: 6785
-                }, {
-                  x: 'Arts, entertainment, recreation & other services',
-                  y: 12150
-                }]
-              }, {
-                name: "WEST MIDLANDS",
-                data: [{
-                  x: 'Agriculture,forestry & fishing',
-                  y: 12475
-                }, {
-                  x: 'Production',
-                  y: 15645
-                }, {
-                  x: 'Construction',
-                  y: 25530
-                }, {
-                  x: 'Motor trades',
-                  y: 7750
-                }, {
-                  x: 'Wholesale',
-                  y: 9940
-                }, {
-                  x: 'Retail',
-                  y: 16700
-                }, {
-                  x: 'Transport & Storage (inc postal)',
-                  y: 13295
-                }, {
-                  x: 'Accommodation & food services',
-                  y: 11935
-                }, {
-                  x: 'Information & communication',
-                  y: 12745
-                }, {
-                  x: 'Finance & insurance',
-                  y: 3585
-                }, {
-                  x: 'Property',
-                  y: 7635
-                }, {
-                  x: 'Professional, scientific & technical',
-                  y: 31545
-                }, {
-                  x: 'Business administration & support services',
-                  y: 19735
-                }, {
-                  x: 'Public administration & defence',
-                  y: 690
-                }, {
-                  x: 'Education',
-                  y: 3630
-                }, {
-                  x: 'Health',
-                  y: 8735
-                }, {
-                  x: 'Arts, entertainment, recreation & other services',
-                  y: 12345
-                }]
-              },
-              {
-                name: "EAST",
-                data: [{
-                  x: 'Agriculture,forestry & fishing',
-                  y: 11960
-                }, {
-                  x: 'Production',
-                  y: 15655
-                }, {
-                  x: 'Construction',
-                  y: 42465
-                }, {
-                  x: 'Motor trades',
-                  y: 8725
-                }, {
-                  x: 'Wholesale',
-                  y: 10780
-                }, {
-                  x: 'Retail',
-                  y: 19060
-                }, {
-                  x: 'Transport & Storage (inc postal)',
-                  y: 13680
-                }, {
-                  x: 'Accommodation & food services',
-                  y: 13025
-                }, {
-                  x: 'Information & communication',
-                  y: 22645
-                }, {
-                  x: 'Finance & insurance',
-                  y: 5140
-                }, {
-                  x: 'Property',
-                  y: 9365
-                }, {
-                  x: 'Professional, scientific & technical',
-                  y: 45180
-                }, {
-                  x: 'Business administration & support services',
-                  y: 22645
-                }, {
-                  x: 'Public administration & defence',
-                  y: 1330
-                }, {
-                  x: 'Education',
-                  y: 4745
-                }, {
-                  x: 'Health',
-                  y: 9375
-                }, {
-                  x: 'Arts, entertainment, recreation & other services',
-                  y: 15935
-                }]
-              }, {
-                name: "LONDON",
-                data: [{
-                  x: 'Agriculture,forestry & fishing',
-                  y: 765
-                }, {
-                  x: 'Production',
-                  y: 16625
-                }, {
-                  x: 'Construction',
-                  y: 55615
-                }, {
-                  x: 'Motor trades',
-                  y: 6660
-                }, {
-                  x: 'Wholesale',
-                  y: 19540
-                }, {
-                  x: 'Retail',
-                  y: 38670
-                }, {
-                  x: 'Transport & Storage (inc postal)',
-                  y: 13345
-                }, {
-                  x: 'Accommodation & food services',
-                  y: 23680
-                }, {
-                  x: 'Information & communication',
-                  y: 72170
-                }, {
-                  x: 'Finance & insurance',
-                  y: 15495
-                }, {
-                  x: 'Property',
-                  y: 24800
-                }, {
-                  x: 'Professional, scientific & technical',
-                  y: 120935
-                }, {
-                  x: 'Business administration & support services',
-                  y: 51340
-                }, {
-                  x: 'Public administration & defence',
-                  y: 90
-                }, {
-                  x: 'Education',
-                  y: 8615
-                }, {
-                  x: 'Health',
-                  y: 18200
-                }, {
-                  x: 'Arts, entertainment, recreation & other services',
-                  y: 35695
-                }]
-              },
-              {
-                name: "SOUTH EAST",
-                data: [{
-                  x: 'Agriculture,forestry & fishing',
-                  y: 11880
-                }, {
-                  x: 'Production',
-                  y: 20555
-                }, {
-                  x: 'Construction',
-                  y: 56640
-                }, {
-                  x: 'Motor trades',
-                  y: 11205
-                }, {
-                  x: 'Wholesale',
-                  y: 14940
-                }, {
-                  x: 'Retail',
-                  y: 29640
-                }, {
-                  x: 'Transport & Storage (inc postal)',
-                  y: 13180
-                }, {
-                  x: 'Accommodation & food services',
-                  y: 19390
-                }, {
-                  x: 'Information & communication',
-                  y: 45945
-                }, {
-                  x: 'Finance & insurance',
-                  y: 8455
-                }, {
-                  x: 'Property',
-                  y: 13985
-                }, {
-                  x: 'Professional, scientific & technical',
-                  y: 81990
-                }, {
-                  x: 'Business administration & support services',
-                  y: 37550
-                }, {
-                  x: 'Public administration & defence',
-                  y: 1220
-                }, {
-                  x: 'Education',
-                  y: 7520
-                }, {
-                  x: 'Health',
-                  y: 14680
-                }, {
-                  x: 'Arts, entertainment, recreation & other services',
-                  y: 26200
-                }]
-              }, {
-                name: "SOUTH WEST",
-                data: [{
-                  x: 'Agriculture,forestry & fishing',
-                  y: 24205
-                }, {
-                  x: 'Production',
-                  y: 13680
-                }, {
-                  x: 'Construction',
-                  y: 31905
-                }, {
-                  x: 'Motor trades',
-                  y: 7520
-                }, {
-                  x: 'Wholesale',
-                  y: 7390
-                }, {
-                  x: 'Retail',
-                  y: 15950
-                }, {
-                  x: 'Transport & Storage (inc postal)',
-                  y: 7485
-                }, {
-                  x: 'Accommodation & food services',
-                  y: 15340
-                }, {
-                  x: 'Information & communication',
-                  y: 16280
-                }, {
-                  x: 'Finance & insurance',
-                  y: 4570
-                }, {
-                  x: 'Property',
-                  y: 8485
-                }, {
-                  x: 'Professional, scientific & technical',
-                  y: 35900
-                }, {
-                  x: 'Business administration & support services',
-                  y: 17325
-                }, {
-                  x: 'Public administration & defence',
-                  y: 1225
-                }, {
-                  x: 'Education',
-                  y: 3970
-                }, {
-                  x: 'Health',
-                  y: 8720
-                }, {
-                  x: 'Arts, entertainment, recreation & other services',
-                  y: 14475
-                }]
-              },
-              {
-                name: "WALES",
-                data: [{
-                  x: 'Agriculture,forestry & fishing',
-                  y: 13935
-                }, {
-                  x: 'Production',
-                  y: 6510
-                }, {
-                  x: 'Construction',
-                  y: 13490
-                }, {
-                  x: 'Motor trades',
-                  y: 3740
-                }, {
-                  x: 'Wholesale',
-                  y: 3180
-                }, {
-                  x: 'Retail',
-                  y: 8895
-                }, {
-                  x: 'Transport & Storage (inc postal)',
-                  y: 4905
-                }, {
-                  x: 'Accommodation & food services',
-                  y: 8660
-                }, {
-                  x: 'Information & communication',
-                  y: 4600
-                }, {
-                  x: 'Finance & insurance',
-                  y: 1855
-                }, {
-                  x: 'Property',
-                  y: 2885
-                }, {
-                  x: 'Professional, scientific & technical',
-                  y: 12185
-                }, {
-                  x: 'Business administration & support services',
-                  y: 8185
-                }, {
-                  x: 'Public administration & defence',
-                  y: 515
-                }, {
-                  x: 'Education',
-                  y: 1365
-                }, {
-                  x: 'Health',
-                  y: 4350
-                }, {
-                  x: 'Arts, entertainment, recreation & other services',
-                  y: 6760
-                }]
-              }, {
-                name: "SCOTLAND",
-                data: [{
-                  x: 'Agriculture,forestry & fishing',
-                  y: 17440
-                }, {
-                  x: 'Production',
-                  y: 10740
-                }, {
-                  x: 'Construction',
-                  y: 20680
-                }, {
-                  x: 'Motor trades',
-                  y: 4635
-                }, {
-                  x: 'Wholesale',
-                  y: 5285
-                }, {
-                  x: 'Retail',
-                  y: 13310
-                }, {
-                  x: 'Transport & Storage (inc postal)',
-                  y: 5615
-                }, {
-                  x: 'Accommodation & food services',
-                  y: 14175
-                }, {
-                  x: 'Information & communication',
-                  y: 10560
-                }, {
-                  x: 'Finance & insurance',
-                  y: 3240
-                }, {
-                  x: 'Property',
-                  y: 5725
-                }, {
-                  x: 'Professional, scientific & technical',
-                  y: 31470
-                }, {
-                  x: 'Business administration & support services',
-                  y: 13095
-                }, {
-                  x: 'Public administration & defence',
-                  y: 55
-                }, {
-                  x: 'Education',
-                  y: 2000
-                }, {
-                  x: 'Health',
-                  y: 6505
-                }, {
-                  x: 'Arts, entertainment, recreation & other services',
-                  y: 12545
-                }]
-              }, {
-                name: "NORTHERN IRELAND",
-                data: [{
-                  x: 'Agriculture,forestry & fishing',
-                  y: 18515
-                }, {
-                  x: 'Production',
-                  y: 5195
-                }, {
-                  x: 'Construction',
-                  y: 10520
-                }, {
-                  x: 'Motor trades',
-                  y: 2635
-                }, {
-                  x: 'Wholesale',
-                  y: 3155
-                }, {
-                  x: 'Retail',
-                  y: 5830
-                }, {
-                  x: 'Transport & Storage (inc postal)',
-                  y: 2415
-                }, {
-                  x: 'Accommodation & food services',
-                  y: 4125
-                }, {
-                  x: 'Information & communication',
-                  y: 1965
-                }, {
-                  x: 'Finance & insurance',
-                  y: 1200
-                }, {
-                  x: 'Property',
-                  y: 2395
-                }, {
-                  x: 'Professional, scientific & technical',
-                  y: 5965
-                }, {
-                  x: 'Business administration & support services',
-                  y: 2645
-                }, {
-                  x: 'Public administration & defence',
-                  y: 40
-                }, {
-                  x: 'Education',
-                  y: 665
-                }, {
-                  x: 'Health',
-                  y: 2740
-                }, {
-                  x: 'Arts, entertainment, recreation & other services',
-                  y: 4560
-                }]
-              }
-            ],
-            xaxis: {
-              labels: {
-                show: true,
-                maxHeight: 600,
-                hideOverlappingLabels: false,
-                rotate: -45,
-              }
-            },
-            chart: {
-              height: 700,
-              type: 'scatter',
-            },
-            legend: {
-              show: true,
-            },
-            chart: {
-              stacked: true,
-            },
-            plotOptions: {
-
-            },
-            dataLabels: {
-              enabled: false,
-            },
-            colors: ["#27ae60", "#8e5ea2", "#a29bfe", "#e8c3b9", "#0652DD", "#81ecec", "#95a5a6", "#34495e", "#f39c12", "#d35400", "#fd79a8", "#6c5ce7", "#e84393", "#ff7675", "#2d3436", "#192a56", "#ff9ff3"],
-            title: {
-              text: 'Regional similarity trends for business activity'
-            },
-          };
-          var chart = new ApexCharts(document.querySelector("#regionemploy-chart"), options);
-          chart.render();
-        </script>
-      </div>
-      <p>This further emphasises how top core activities are spread in similarity across all UK regions.</p>
-    </section>
-  </div>
   <!-- 5. Who invests in these businesses? –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <div class="container">
     <section class="topic">
@@ -2563,7 +1969,7 @@
         </p>
       </blockquote>
       <p>Overall, this is a more complex question to analyse and we can break this into factors like number of employees, turnover and their survival rates.</p>
-      <p>The chart below shows the numbers of business by their Employment Size Band, as you can see the vast majority of businesses employ between 0-4 people, larger businesses are really quite rare.</p>
+      <p>The chart below shows the numbers of business by their Employment Size Band, as you can see the vast majority of businesses employ between 1-9 employees, larger businesses are really quite small in number.</p>
       <div id="chartcontainer" style="width: 100%;height: 70vh">
         <canvas id="employmentsize-chart"></canvas>
         <script>
@@ -2571,11 +1977,11 @@
           var myChart = new Chart(ctx, {
             type: 'horizontalBar',
             data: {
-              labels: ['0-4', '5-9', '10-19', '20-49', '50-99', '100-249', '250+'],
+              labels: ['1-9', '10-49', '50-249', '250+'],
               datasets: [{
                 label: '# of businesses',
-                data: [2125520, 306475, 152985, 80975, 26940, 15060, 10480],
-                backgroundColor: '#0984e3',
+                data: [1155385,211295,35585,7685],
+                backgroundColor: '#686de0',
                 borderWidth: 1
               }]
             },
@@ -2593,7 +1999,7 @@
           });
         </script>
       </div>
-      <p>The chart below shows </p>
+      <p>The chart follows up exploring the employment by aligning the below shows the </p>
       <div id="chartcontainer" style="width: 100%;height: 60vh">
         <canvas id="Employeepay-chart"></canvas>
         <script>
@@ -3032,6 +2438,127 @@
       </div>
       <p>On the whole the visual trend appears to be that survival rates are highest London is interesting to compare to the other regions. Whilst we can see that the business numbers are large it has a very low survival rate in comparison to other
         regions. Perhaps a cumulation of density, population numbers and rent costs of the region could be attributed.</p>
+        <div id="chartcontainer" style="width: 100%;height: 55vh">
+          <canvas id="experimental2-chart"></canvas>
+          <script>
+            new Chart(document.getElementById("experimental2-chart"), {
+              type: 'bubble',
+              data: {
+                datasets: [{
+                  label: ["1"],
+                  backgroundColor: "#3498db",
+                  data: [{
+                    x: 319000,
+                    y: 143135,
+                    r: 26
+                  }]
+                }, {
+                  label: ["2-4"],
+                  backgroundColor: "#9b59b6",
+                  data: [{
+                    x: 7194000,
+                    y: 41.9,
+                    r: 27
+                  }]
+                }, {
+                  label: ["5-9"],
+                  backgroundColor: "#EE5A24",
+                  data: [{
+                    x: 5404000,
+                    y: 43.4,
+                    r: 19
+                  }]
+                }, {
+                  label: ["10-19"],
+                  backgroundColor: "#a29bfe",
+                  data: [{
+                    x: 4723000,
+                    y: 42.6,
+                    r: 18
+                  }]
+                }, {
+                  label: ["20-49"],
+                  backgroundColor: "#ff7675",
+                  data: [{
+                    x: 5811000,
+                    y: 43.0,
+                    r: 21
+                  }]
+                }, {
+                  label: ["50-99"],
+                  backgroundColor: "#00cec9",
+                  data: [{
+                    x: 6144000,
+                    y: 44.7,
+                    r: 27
+                  }]
+                }, {
+                  label: ["100-199"],
+                  backgroundColor: "rgba(193,46,12,0.2)",
+                  data: [{
+                    x: 8896000,
+                    y: 39.3,
+                    r: 52
+                  }]
+                }, {
+                  label: ["200-249"],
+                  backgroundColor: "#c23616",
+                  data: [{
+                    x: 9005000,
+                    y: 44.6,
+                    r: 41
+                  }]
+                }, {
+                  label: ["250-499"],
+                  backgroundColor: "#D980FA",
+                  data: [{
+                    x: 5495000,
+                    y: 45.6,
+                    r: 23
+                  }]
+                }, {
+                  label: ["500+"],
+                  backgroundColor: "#0652DD",
+                  data: [{
+                    x: 3104000,
+                    y: 42.1,
+                    r: 11
+                  }]
+                }, {
+                  label: ["NORTHERN IRELAND"],
+                  backgroundColor: "#f1c40f",
+                  data: [{
+                    x: 1856000,
+                    y: 43.0,
+                    r: 7
+                  }]
+                }]
+              },
+              options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                title: {
+                  display: true,
+                  text: 'Correlation between businesses employees, number and turnover'
+                },
+                scales: {
+                  yAxes: [{
+                    scaleLabel: {
+                      display: true,
+                      labelString: "Employment"
+                    }
+                  }],
+                  xAxes: [{
+                    scaleLabel: {
+                      display: true,
+                      labelString: "Number of UK Businesses"
+                    }
+                  }]
+                }
+              }
+            });
+          </script>
+        </div>
     </section>
   </div>
   <!-- 9. Summary takeaways? –––––––––––––––––––––––––––––––––––––––––––––––––– -->
