@@ -1,0 +1,92 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Password Generator</title>
+  <meta name="description" content="A password generator">
+  <meta name="author" content="logikblok">
+  </ /link rel="stylesheet" href="css/styles.css">
+</head>
+<style media="screen">
+  body {
+    margin: 0 auto;
+    max-width: 50em;
+  }
+
+  body {
+    font-family: "Helvetica", "Arial", sans-serif;
+  }
+
+  body {
+    line-height: 1.5;
+    padding: 4em 1em;
+  }
+
+  h1 {
+    margin-top: 1em;
+    padding-top: 1em;
+  }
+
+  h2 {
+    font-size: 5vw;
+    color: #ffc107;
+    margin: 30px;
+  }
+
+  .z-text {
+    transform: rotateX(30deg) rotateY(-30deg);
+    transition: transform 1s;
+  }
+
+  [data-z]:hover .z-text {
+    transform: rotateX(-30deg) rotateY(30deg)
+  }
+
+  .z-layer:not(:first-child) {
+    color: #bf9105;
+  }
+</style>
+
+<body>
+  <h3>Work in progress</h3>
+  <h3>Use the buttons to generate a new password:</h3>
+  <!-- Generate Password -->
+  <button type='button' onclick="generatePassword()">Generate Password</button>
+  <!-- Copy Password -->
+    <button class="btn">Copy Password</button>
+    <div class="">
+      words
+    </div>
+  <h2>
+    <span data-z>
+      <p id='generatedPassword'>words
+      </p>
+    </span>
+  </h2>
+  <script src="libraries/clipboard.min.js"></script>
+  <script>
+    function generatePassword() {
+      const password = ["asdfkj2dsafdf3if", "b3jddsaffsdfds", "c3kjsdafdsfn", "dsdfkdssdffm3", "e3kdfsdfk212", "fsdfsdfndfm", "gsdjfsadffkjk32j411"];
+      const random = Math.floor(Math.random() * password.length);
+      document.getElementById("generatedPassword").innerHTML = (random, password[random]);
+    }
+    var clipboard = new ClipboardJS('.btn', {
+        text: function() {
+            return document.querySelector('div');
+        }
+    });
+
+    clipboard.on('success', function(e) {
+        console.log(e);
+    });
+
+    clipboard.on('error', function(e) {
+        console.log(e);
+    });
+  </script>
+  <script src="libraries/ztext.min.js"></script>
+</body>
+
+</html>
