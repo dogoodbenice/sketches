@@ -63,13 +63,10 @@
             <td>7. <a href="#question7">How do businesses feel?</a></td>
           </tr>
           <tr>
-            <td>8. <a href="#question8">How are businesses affected by COVID-19?</a></td>
+            <td>8. <a href="#experimental">Experimental insights</a></td>
           </tr>
           <tr>
-            <td>9. <a href="#experimental">Experimental insights</a></td>
-          </tr>
-          <tr>
-            <td>10. <a href="#summary">Summary takeaways</a></td>
+            <td>9. <a href="#summary">Summary takeaways</a></td>
           </tr>
         </tbody>
       </table>
@@ -905,9 +902,8 @@
         <a href="https://beta.companieshouse.gov.uk/company/00519500">via Companies House</a>
         </p>
       </blockquote>
-      <p>For our purposes, we'll mainly be dealing at the <em>Broad Industry group</em> level.</p>
-      <p>The chart below shows the Broad Industry Groups and their breakdown <em>totalling the number of SIC Divisions attributed inside them</em>. These is an overall indication of how the UK business landscape is structured, statistically speaking.
-        The SIC hierarchy can be explored <a href="https://onsdigital.github.io/dp-classification-tools/standard-industrial-classification/ONS_SIC_hierarchy_view.html">further here</a>.</p>
+      <p>For the majority of our purposes, we'll mainly be working at the <em>Broad Industry group</em> level which is the highest categorisation of codes.</p>
+      <p>The chart below shows those Broad Industry Groups and their composition that are below them. Most BIGs have one <em>section</em> and a number of <em>divisions</em> below them, as you can see Production is often the most complex, with two layers structured below it.</p>
       <div id="chartcontainer" style="width: 100%;height: 70vh">
         <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
         <div id="sankey_basic" style="width: 100%; height: 70vh;"></div>
@@ -925,7 +921,7 @@
             data.addRows([
               ['AGRICULTURE, FORESTRY AND FISHING', 'Agriculture, forestry & fishing', 3],
               ['Mining, quarrying & utilities', 'Production', 5],
-              ['WATER SUPPLY; SEWERAGE, WASTE MANAGEMENT AND REMEDIATION ACTIVITIES', 'Mining, quarrying & utilities', 4],
+              ['WATER SUPPLY; ...REMEDIATION ACTIVITIES', 'Mining, quarrying & utilities', 4],
               ['ELECTRICITY, GAS, STEAM AND AIR CONDITIONING SUPPLY', 'Mining, quarrying & utilities', 1],
               ['MINING AND QUARRYING', 'Mining, quarrying & utilities', 5],
               ['Manufacturing', 'Production', 5],
@@ -954,6 +950,8 @@
           }
         </script>
       </div>
+      <p>This is an overall indication of how the UK business landscape is structured, statistically speaking.
+        The SIC hierarchy can be explored <a href="https://onsdigital.github.io/dp-classification-tools/standard-industrial-classification/ONS_SIC_hierarchy_view.html">further here</a>.</p>
     </section>
   </div>
   <!-- 2. How many businesses are there? –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -966,7 +964,7 @@
           <b>In summary:</b> Over 5.8 million. Somewhere between 5.7 - 5.9 million.
         </p>
       </blockquote>
-      <p>The approximation is due to some of the registers used as there are are a vast number of businesses too small to make their way onto the IDBR.</p>
+      <p>The approximation is due to some of the registers used as there are are a vast number of businesses too small to be registered.</p>
       <blockquote cite="https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/836574/METHODOLOGY___QUALITY_NOTE_BPE.pdf" class="shadow ">
         <p> [The BPE] is the only official source for data on the total business
   population for the UK, and the employment and turnover of those businesses.</p>
@@ -2595,7 +2593,123 @@
           });
         </script>
       </div>
-      <p>The chart below shows the numbers of businesses by their turnover band, there is a slightly more centered distribution. Businesses earning £100-249 are the most frequent.</p>
+      <p>The chart below shows </p>
+      <div id="chartcontainer" style="width: 100%;height: 60vh">
+        <canvas id="Employeepay-chart"></canvas>
+        <script>
+          new Chart(document.getElementById("Employeepay-chart"), {
+            type: 'line',
+            data: {
+              labels: [2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019],
+              datasets: [{
+                data: [20453, 21499, 21708, 21500, 22145, 23093, 23978, 24988],
+                label: "Agriculture, forestry and fishing",
+                borderColor: "#3e95cd",
+                fill: false
+              }, {
+                data: [32152, 33109, 33190, 34130, 33567, 34652, 35453, 36404],
+                label: "Production",
+                borderColor: "#8e5ea2",
+                fill: false
+              }, {
+                data: [28394, 28721, 29281, 29432, 30350, 31200, 32610, 33703],
+                label: "Construction",
+                borderColor: "#3cba9f",
+                fill: false
+              }, {
+                data: [20731, 21207, 21675, 22196, 23075, 23794, 24591, 25294],
+                label: "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+                borderColor: "#f368e0",
+                fill: false
+              }, {
+                data: [26433, 28008, 27542, 28347, 28784, 29234, 29028, 30831],
+                label: "Transportation and storage",
+                borderColor: "#e8c3b9",
+                fill: false
+              }, {
+                data: [16155, 16432, 16588, 17436, 18206, 19034, 19757, 21007],
+                label: "Accommodation and food service activities",
+                borderColor: "#2f3542",
+                fill: false
+              }, {
+                data: [35685, 36317, 36722, 36855, 38001, 39048, 40484, 40675],
+                label: "Information and Communication",
+                borderColor: "#341f97",
+                fill: false
+              }, {
+                data: [35120, 37330, 37865, 38081, 38886, 40612, 41799, 42696],
+                label: "Financial and insurance activities",
+                borderColor: "#e8c3e9",
+                fill: false
+              }, {
+                data: [25389, 25452, 26011, 26635, 27170, 27445, 28483, 29166],
+                label: "Real estate activities",
+                borderColor: "#786fa6",
+                fill: false
+              }, {
+                data: [32422, 32800, 32915, 34000, 34426, 35356, 36464, 37097],
+                label: "Professional, scientific and technical activities",
+                borderColor: "#a5c3b9",
+                fill: false
+              }, {
+                data: [21984, 22716, 22524, 23309, 24109, 24610, 25569, 26692],
+                label: "Administrative and support service activities",
+                borderColor: "#ea8685",
+                fill: false
+              }, {
+                data: [30188, 30426, 31085, 31653, 31914, 32366, 33666, 33738],
+                label: "Public administration and defence; compulsory social security",
+                borderColor: "#0abde3",
+                fill: false
+              }, {
+                data: [28702, 29109, 29399, 29699, 30347, 30691, 31308, 31932],
+                label: "Education",
+                borderColor: "#833471",
+                fill: false
+              }, {
+                data: [24703, 24876, 24799, 24856, 25363, 25412, 26372, 26864],
+                label: "Health",
+                borderColor: "#ED4C67",
+                fill: false
+              }, {
+                data: [21926, 22284, 22735, 23096, 24021, 24410, 25187, 25986],
+                label: "Arts, entertainment, recreation and other services",
+                borderColor: "#c45850",
+                fill: false
+              }]
+            },
+            options: {
+              responsive: true,
+              maintainAspectRatio: false,
+              legend: {
+                display: true,
+                position: 'bottom',
+              },
+              scales: {
+                xAxes: [{
+                  display: true,
+                  scaleLabel: {
+                    display: true,
+                    labelString: 'Year'
+                  }
+                }],
+                yAxes: [{
+                  display: true,
+                  scaleLabel: {
+                    display: true,
+                    labelString: 'Median gross annual earnings (£)'
+                  }
+                }]
+              },
+              title: {
+                display: true,
+                text: 'Full-time employees pay by Broad Industry Group 2012 - 2019'
+              }
+            }
+          });
+        </script>
+      </div>
+      <p>The chart below shows the numbers of enterprises by their turnover band using the IDBR, there is a slightly more centered distribution. enterprises earning £100-249 are the most frequent.</p>
       <div id="chartcontainer" style="width: 100%;height: 70vh">
         <canvas id="turnoversize-chart"></canvas>
         <script>
@@ -2780,29 +2894,13 @@
       </div>
     </section>
   </div>
-  <!-- 8. How were businesses affected by COVID-19? –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <div class="container">
-    <section class="topic">
-      <a name="question8"></a>
-      <h4 class="title">8. How are businesses affected by COVID?</h4>
-      <p>Responses from the new voluntary fortnightly business survey, which captures businesses responses on how their turnover, workforce prices, trade and business resilience have been affected in the two week reference period.</p>
-      <p>Work force demands, wave 1,2,3,4,5. The majority of those surveyed reported that their workforce was able meet the demands.</p>
-      <p>Business confidence </p>
-      <p>Financial performance</p>
-      <p>Importing and exporting</p>
-      <p>Exporting effect, 12</p>
-      <p>Access to goods and materials, all 4,12,10,11</p>
-    </section>
-  </div>
-  <!-- 9. Experimental Charts –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <!-- 8. Experimental Charts –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <div class="container">
     <section class="topic">
       <a name="experimental"></a>
-      <h4 class="title">9. Experimental Insights</h4>
+      <h4 class="title">8. Experimental Insights</h4>
       <p>This secton takes a few different data sets to see if there are any interesting patterns that emerge.</p>
       <p>This chart plots the 5 year survival rate (2013 onwards), the regional population numbers and the numbers of businesses by their tens of thousands for that region.</p>
-      <p>On the whole the visual trend appears to be that survival rates are highest London is interesting to compare to the other regions. Whilst we can see that the business numbers are large it has a very low survival rate in comparison to other
-        regions. Perhaps a cumulation of density, population numbers and rent costs of the region could be attributed.</p>
       <div id="chartcontainer" style="width: 100%;height: 55vh">
         <canvas id="experimental1-chart"></canvas>
         <script>
@@ -2932,124 +3030,11 @@
           });
         </script>
       </div>
-      <div id="chartcontainer" style="width: 100%;height: 60vh">
-        <canvas id="Employeepay-chart"></canvas>
-        <script>
-          new Chart(document.getElementById("Employeepay-chart"), {
-            type: 'line',
-            data: {
-              labels: [2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019],
-              datasets: [{
-                data: [20453, 21499, 21708, 21500, 22145, 23093, 23978, 24988],
-                label: "Agriculture, forestry and fishing",
-                borderColor: "#3e95cd",
-                fill: false
-              }, {
-                data: [32152, 33109, 33190, 34130, 33567, 34652, 35453, 36404],
-                label: "Production",
-                borderColor: "#8e5ea2",
-                fill: false
-              }, {
-                data: [28394, 28721, 29281, 29432, 30350, 31200, 32610, 33703],
-                label: "Construction",
-                borderColor: "#3cba9f",
-                fill: false
-              }, {
-                data: [20731, 21207, 21675, 22196, 23075, 23794, 24591, 25294],
-                label: "Wholesale and retail trade; repair of motor vehicles and motorcycles",
-                borderColor: "#f368e0",
-                fill: false
-              }, {
-                data: [26433, 28008, 27542, 28347, 28784, 29234, 29028, 30831],
-                label: "Transportation and storage",
-                borderColor: "#e8c3b9",
-                fill: false
-              }, {
-                data: [16155, 16432, 16588, 17436, 18206, 19034, 19757, 21007],
-                label: "Accommodation and food service activities",
-                borderColor: "#2f3542",
-                fill: false
-              }, {
-                data: [35685, 36317, 36722, 36855, 38001, 39048, 40484, 40675],
-                label: "Information and Communication",
-                borderColor: "#341f97",
-                fill: false
-              }, {
-                data: [35120, 37330, 37865, 38081, 38886, 40612, 41799, 42696],
-                label: "Financial and insurance activities",
-                borderColor: "#e8c3e9",
-                fill: false
-              }, {
-                data: [25389, 25452, 26011, 26635, 27170, 27445, 28483, 29166],
-                label: "Real estate activities",
-                borderColor: "#786fa6",
-                fill: false
-              }, {
-                data: [32422, 32800, 32915, 34000, 34426, 35356, 36464, 37097],
-                label: "Professional, scientific and technical activities",
-                borderColor: "#a5c3b9",
-                fill: false
-              }, {
-                data: [21984, 22716, 22524, 23309, 24109, 24610, 25569, 26692],
-                label: "Administrative and support service activities",
-                borderColor: "#ea8685",
-                fill: false
-              }, {
-                data: [30188, 30426, 31085, 31653, 31914, 32366, 33666, 33738],
-                label: "Public administration and defence; compulsory social security",
-                borderColor: "#0abde3",
-                fill: false
-              }, {
-                data: [28702, 29109, 29399, 29699, 30347, 30691, 31308, 31932],
-                label: "Education",
-                borderColor: "#833471",
-                fill: false
-              }, {
-                data: [24703, 24876, 24799, 24856, 25363, 25412, 26372, 26864],
-                label: "Health",
-                borderColor: "#ED4C67",
-                fill: false
-              }, {
-                data: [21926, 22284, 22735, 23096, 24021, 24410, 25187, 25986],
-                label: "Arts, entertainment, recreation and other services",
-                borderColor: "#c45850",
-                fill: false
-              }]
-            },
-            options: {
-              responsive: true,
-              maintainAspectRatio: false,
-              legend: {
-                display: true,
-                position: 'bottom',
-              },
-              scales: {
-                xAxes: [{
-                  display: true,
-                  scaleLabel: {
-                    display: true,
-                    labelString: 'Year'
-                  }
-                }],
-                yAxes: [{
-                  display: true,
-                  scaleLabel: {
-                    display: true,
-                    labelString: 'Median gross annual earnings (£)'
-                  }
-                }]
-              },
-              title: {
-                display: true,
-                text: 'Full-time employees pay by Broad Industry Group 2012 - 2019'
-              }
-            }
-          });
-        </script>
-      </div>
+      <p>On the whole the visual trend appears to be that survival rates are highest London is interesting to compare to the other regions. Whilst we can see that the business numbers are large it has a very low survival rate in comparison to other
+        regions. Perhaps a cumulation of density, population numbers and rent costs of the region could be attributed.</p>
     </section>
   </div>
-  <!-- 10. Summary takeaways? –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <!-- 9. Summary takeaways? –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <div class="container">
     <section class="topic">
       <a name="summary"></a>
