@@ -56,3 +56,4 @@ Latest at the bottom. Return [home](https://logikblok.github.io/).
 53. [Great Taxonomy](https://logikblok.github.io/sketches/greattaxonomy/)
 54. [Great Product Search V1](https://logikblok.github.io/sketches/greatproductsearchv1/)
 55. [Great Taxonomy v2](https://logikblok.github.io/sketches/greattaxonomyv2/)
+56. [Password Generator](https://logikblok.github.io/sketches/passwordgenerator/)
