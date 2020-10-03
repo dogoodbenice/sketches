@@ -82,13 +82,13 @@
           <b>In summary:</b> A business is a legally recognised unit producing goods or services and usually paying taxes. They are categorised by a series of defined codes.
         </p>
       </blockquote>
-      <p>Being a business first invovles a type of registration or formation. There are three commons ways people go about doing this in the UK:</p>
+      <p>Being a business first invovles a type of registration or formation. There are three common ways people go about doing this in the UK:</p>
       <ul>
         <li>Individuals can do business by registering as a <em>sole trader</em>.</li>
         <li>Individuals or groups can incorporate a <em>company</em>.</li>
         <li>Groups can come together and register as a <em>partnership</em>.</li>
       </ul>
-      <p>There are lots more businesses structures available. People choose a structure that works best how they plan to operate, how many people are responsible and other legal needs.</p>
+      <p>There are lots more business structures available. People choose a structure that works best how they plan to operate, how many people are responsible and other legal needs.</p>
       <p>Due to the variety of ways a business can operate and the need for alignment to the same concepts, the majority of UK statistics use a list called the Inter-Departmental Business Register (<a
           href="https://www.ons.gov.uk/aboutus/whatwedo/paidservices/interdepartmentalbusinessregisteridbr">IDBR</a>) to <em>analyse</em> businesses as a whole.</p>
       <p>When we are refering to a single business in the UK, using the IDBR we are
@@ -1902,11 +1902,11 @@
       <h4 class="title">5. Who is investing into the UK?</h4>
       <blockquote class="nutshell">
         <p>
-          <b>In summary:</b> Our largest amount of investment historically has come from Europe, however as of 2018 the largest amount of investment comes from the Amercias, wtih the US being the highest source.
+          <b>In summary:</b> Overall the largest amount of investment into the UK has come from Europe followed by the Americas. The overall net flow of investment has decreased from Europe with the Americas taking the lead.
         </p>
       </blockquote>
       <p>Businesses can take on debt or investment or alternative financial approaches to meet their needs. Here we're looking at Foreign Direct Investment (FDI) as a whole.</p>
-      <p>The chart below shows the amount of FDI by continent. It highlights the shift of FDI source from Europe to the Americas. Speaking hypothetically this could possibly be attributed to Brexit.</p>
+      <p>The chart below shows the net flow of FDI by continent. These are net values showing investments minus disinvestments. It highlights a shift from Europe to the Americas between 2016-2018.</p>
       <div id="chartcontainer" style="width: 100%;height: 70vh">
         <canvas id="FDIinvestment-chart"></canvas>
         <script>
@@ -1949,13 +1949,143 @@
               },
               title: {
                 display: true,
-                text: 'Amount of FDI in millions by continent 2018'
+                text: 'Net foreign direct investment flows into the UK in millions by continent 2018'
               }
             }
           });
         </script>
       </div>
-      <p>The data shows that the UK has reduced in terms of FDI overall and shifted in source.</p>
+      <p>Considering overall positions, which we mean to be the value of a stock of investment held at a point in time, the UK continues to see an increase overall. The chart below shows the World Total of International investment positions in the United Kingdom by industrial activity apart from Financial services. Aside from major shifts in food and mining activites most sectors show a steady increase.</p>
+      <div id="chartcontainer" style="width: 100%;height: 70vh">
+        <canvas id="canvas"></canvas>
+        <script>
+          new Chart(document.getElementById("canvas"), {
+            type: 'line',
+            data: {
+              labels: [2015, 2016, 2017, 2018],
+              datasets: [{
+                data: [1157,1082,1002,1146],
+                label: "Agriculture, forestry and fishing",
+                borderColor: "#3e95cd",
+                fill: false
+              }, {
+                data: [80951,105170,82996,62701],
+                label: "Mining & quarrying",
+                borderColor: "#8e5ea2",
+                fill: false
+              }, {
+                data: [45913,132066,77419,80519],
+                label: "Food ... & tobacco products",
+                borderColor: "#3cba9f",
+                fill: false
+              }, {
+                data: [7570,5355,5284,3915],
+                label: "Textiles & wood activities",
+                borderColor: "#f368e0",
+                fill: false
+              }, {
+                data: [36239,40932,55803,57738],
+                label: "Petroleum ... plastic products",
+                borderColor: "#e8c3b9",
+                fill: false
+              }, {
+                data: [24792,21621,26767,22449],
+                label: "Metal & machinery products",
+                borderColor: "#2f3542",
+                fill: false
+              }, {
+                data: [21194,24623,25006,24429],
+                label: "Computer, electronics & optical products",
+                borderColor: "#341f97",
+                fill: false
+              }, {
+                data: [15050,15873,22327,30749],
+                label: "Transport equipment",
+                borderColor: "#e8c3e9",
+                fill: false
+              }, {
+                data: [35778,30159,36719,34747],
+                label: "Other manufacturing",
+                borderColor: "#e74c3c",
+                fill: false
+              }, {
+                data: [47819,47683,55658,51471],
+                label: "Electricity, gas, water & waste",
+                borderColor: "#a5c3b9",
+                fill: false
+              }, {
+                data: [7767,9374,8932,9815],
+                label: "Construction",
+                borderColor: "#ea8685",
+                fill: false
+              }, {
+                data: [125065,119401,121612,125302],
+                label: "Retail & ... repair of motor vehicles",
+                borderColor: "#0abde3",
+                fill: false
+              },{
+                data: [38481,49665,55426,72265],
+                label: "Transportation & storage",
+                borderColor: "#833471",
+                fill: false
+              },{
+                data: [86119,72625,102126,140695],
+                label: "Information & communication",
+                borderColor: "#40739e",
+                fill: false
+              },{
+                data: [322022,358893,426151,438382],
+                label: "Financial services",
+                borderColor: "#192a56",
+                fill: false
+              },{
+                data: [63599,72758,120221,152483],
+                label: "Professional, scientific & technical services",
+                borderColor: "#ED4C67",
+                fill: false
+              },{
+                data: [27851,28735,30532,45076],
+                label: "Administrative and support service activities",
+                borderColor: "#f1c40f",
+                fill: false
+              },{
+                data: [32040,36884,123534,151166],
+                label: "Other services",
+                borderColor: "#c45850",
+                fill: false
+              }]
+            },
+            options: {
+              responsive: true,
+              maintainAspectRatio: false,
+              legend: {
+                display: true,
+                position: 'bottom',
+              },
+              scales: {
+                xAxes: [{
+                  display: true,
+                  scaleLabel: {
+                    display: false,
+                    labelString: 'Year'
+                  }
+                }],
+                yAxes: [{
+                  display: true,
+                  scaleLabel: {
+                    display: true,
+                    labelString: 'Millions (£)'
+                  }
+                }]
+              },
+              title: {
+                display: true,
+                text: 'International investment positions in the United Kingdom analysed by industrial activity of UK affiliates, 2015 to 2018'
+              }
+            }
+          });
+        </script>
+      </div>
     </section>
   </div>
   <!-- 6. What do businesses look like? –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -1969,7 +2099,7 @@
         </p>
       </blockquote>
       <p>Overall, this is a more complex question to analyse and we can break this into factors like number of employees, turnover and their survival rates.</p>
-      <p>The chart below shows the numbers of business by their Employment Size Band, as you can see the vast majority of businesses employ between 1-9 employees, larger businesses are really quite small in number.</p>
+      <p>The chart below shows the numbers of businesses by their Employment Size Band, as you can see the vast majority of businesses employ between 1-9 employees, larger businesses are really quite small in number.</p>
       <div id="chartcontainer" style="width: 100%;height: 70vh">
         <canvas id="employmentsize-chart"></canvas>
         <script>
@@ -1994,122 +2124,6 @@
                     beginAtZero: true
                   }
                 }]
-              }
-            }
-          });
-        </script>
-      </div>
-      <p>The chart follows up exploring the employment by aligning the below shows the </p>
-      <div id="chartcontainer" style="width: 100%;height: 60vh">
-        <canvas id="Employeepay-chart"></canvas>
-        <script>
-          new Chart(document.getElementById("Employeepay-chart"), {
-            type: 'line',
-            data: {
-              labels: [2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019],
-              datasets: [{
-                data: [20453, 21499, 21708, 21500, 22145, 23093, 23978, 24988],
-                label: "Agriculture, forestry and fishing",
-                borderColor: "#3e95cd",
-                fill: false
-              }, {
-                data: [32152, 33109, 33190, 34130, 33567, 34652, 35453, 36404],
-                label: "Production",
-                borderColor: "#8e5ea2",
-                fill: false
-              }, {
-                data: [28394, 28721, 29281, 29432, 30350, 31200, 32610, 33703],
-                label: "Construction",
-                borderColor: "#3cba9f",
-                fill: false
-              }, {
-                data: [20731, 21207, 21675, 22196, 23075, 23794, 24591, 25294],
-                label: "Wholesale and retail trade; repair of motor vehicles and motorcycles",
-                borderColor: "#f368e0",
-                fill: false
-              }, {
-                data: [26433, 28008, 27542, 28347, 28784, 29234, 29028, 30831],
-                label: "Transportation and storage",
-                borderColor: "#e8c3b9",
-                fill: false
-              }, {
-                data: [16155, 16432, 16588, 17436, 18206, 19034, 19757, 21007],
-                label: "Accommodation and food service activities",
-                borderColor: "#2f3542",
-                fill: false
-              }, {
-                data: [35685, 36317, 36722, 36855, 38001, 39048, 40484, 40675],
-                label: "Information and Communication",
-                borderColor: "#341f97",
-                fill: false
-              }, {
-                data: [35120, 37330, 37865, 38081, 38886, 40612, 41799, 42696],
-                label: "Financial and insurance activities",
-                borderColor: "#e8c3e9",
-                fill: false
-              }, {
-                data: [25389, 25452, 26011, 26635, 27170, 27445, 28483, 29166],
-                label: "Real estate activities",
-                borderColor: "#786fa6",
-                fill: false
-              }, {
-                data: [32422, 32800, 32915, 34000, 34426, 35356, 36464, 37097],
-                label: "Professional, scientific and technical activities",
-                borderColor: "#a5c3b9",
-                fill: false
-              }, {
-                data: [21984, 22716, 22524, 23309, 24109, 24610, 25569, 26692],
-                label: "Administrative and support service activities",
-                borderColor: "#ea8685",
-                fill: false
-              }, {
-                data: [30188, 30426, 31085, 31653, 31914, 32366, 33666, 33738],
-                label: "Public administration and defence; compulsory social security",
-                borderColor: "#0abde3",
-                fill: false
-              }, {
-                data: [28702, 29109, 29399, 29699, 30347, 30691, 31308, 31932],
-                label: "Education",
-                borderColor: "#833471",
-                fill: false
-              }, {
-                data: [24703, 24876, 24799, 24856, 25363, 25412, 26372, 26864],
-                label: "Health",
-                borderColor: "#ED4C67",
-                fill: false
-              }, {
-                data: [21926, 22284, 22735, 23096, 24021, 24410, 25187, 25986],
-                label: "Arts, entertainment, recreation and other services",
-                borderColor: "#c45850",
-                fill: false
-              }]
-            },
-            options: {
-              responsive: true,
-              maintainAspectRatio: false,
-              legend: {
-                display: true,
-                position: 'bottom',
-              },
-              scales: {
-                xAxes: [{
-                  display: true,
-                  scaleLabel: {
-                    display: true,
-                    labelString: 'Year'
-                  }
-                }],
-                yAxes: [{
-                  display: true,
-                  scaleLabel: {
-                    display: true,
-                    labelString: 'Median gross annual earnings (£)'
-                  }
-                }]
-              },
-              title: {
-                display: true,
-                text: 'Full-time employees pay by Broad Industry Group 2012 - 2019'
               }
             }
           });
@@ -2202,7 +2216,7 @@
       <h4 class="title">7. How do businesses in the UK feel?</h4>
       <blockquote class="nutshell">
         <p>
-          <b>In summary:</b> Most businesses feel quite possitive about their business, outlook and job satisfaction overall.
+          <b>In summary:</b> Most businesses feel quite positive about their business, outlook and job satisfaction overall.
         </p>
         <p>This section was started before COVID, so perhaps could be considered as a general insight into the overall businesses sentiment.</p>
       </blockquote>
@@ -2436,7 +2450,7 @@
           });
         </script>
       </div>
-      <p>On the whole the visual trend appears to be that survival rates are highest London is interesting to compare to the other regions. Whilst we can see that the business numbers are large it has a very low survival rate in comparison to other
+      <p>On the whole the visual trend appears to be that survival rates could be linked to the density of both people and other businesses. London is interesting to compare to the other regions as the highest in buisness count and population. Whilst we can see that the business numbers are large it has a very low survival rate in comparison to other
         regions. Perhaps a cumulation of density, population numbers and rent costs of the region could be attributed.</p>
         <div id="chartcontainer" style="width: 100%;height: 55vh">
           <canvas id="experimental2-chart"></canvas>
