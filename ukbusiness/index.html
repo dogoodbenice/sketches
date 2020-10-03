@@ -1053,7 +1053,7 @@
           });
         </script>
       </div>
-      <p>The chart below shows a time series of the numbers of businesses by their region.</p>
+      <p>The chart below shows a time series of the numbers of businesses by their region. Click on any of legend items to hide them on the chart.</p>
       <div id="chartcontainer" style="width: 100%;height: 60vh">
         <canvas id="UK Regional Time series-chart"></canvas>
         <script>
@@ -1949,7 +1949,7 @@
               },
               title: {
                 display: true,
-                text: 'Net foreign direct investment flows into the UK in millions by continent 2018'
+                text: 'Net investment flows into the UK in millions by continent 2018'
               }
             }
           });
@@ -2080,7 +2080,7 @@
               },
               title: {
                 display: true,
-                text: 'International investment positions in the United Kingdom analysed by industrial activity of UK affiliates, 2015 to 2018'
+                text: 'International investment positions in the United Kingdom analysed by industrial activity, 2015 to 2018'
               }
             }
           });
@@ -2321,7 +2321,7 @@
       <h4 class="title">8. Experimental Insights</h4>
       <p>This secton takes a few different data sets to see if there are any interesting patterns that emerge.</p>
       <p>This chart plots the 5 year survival rate (2013 onwards), the regional population numbers and the numbers of businesses by their tens of thousands for that region.</p>
-      <div id="chartcontainer" style="width: 100%;height: 55vh">
+      <div id="chartcontainer" style="width: 100%;height: 70vh">
         <canvas id="experimental1-chart"></canvas>
         <script>
           new Chart(document.getElementById("experimental1-chart"), {
@@ -2333,15 +2333,15 @@
                 data: [{
                   x: 2616000,
                   y: 41.1,
-                  r: 7
+                  r: 15
                 }]
               }, {
                 label: ["NORTH WEST"],
-                backgroundColor: "#9b59b6",
+                backgroundColor: "rgba(93, 140, 255, 0.43)",
                 data: [{
                   x: 7194000,
                   y: 41.9,
-                  r: 27
+                  r: 58
                 }]
               }, {
                 label: ["YORKS AND HUMBER"],
@@ -2349,7 +2349,7 @@
                 data: [{
                   x: 5404000,
                   y: 43.4,
-                  r: 19
+                  r: 43
                 }]
               }, {
                 label: ["EAST MIDLANDS"],
@@ -2357,7 +2357,7 @@
                 data: [{
                   x: 4723000,
                   y: 42.6,
-                  r: 18
+                  r: 36
                 }]
               }, {
                 label: ["WEST MIDLANDS"],
@@ -2365,7 +2365,7 @@
                 data: [{
                   x: 5811000,
                   y: 43.0,
-                  r: 21
+                  r: 48
                 }]
               }, {
                 label: ["EAST"],
@@ -2373,7 +2373,7 @@
                 data: [{
                   x: 6144000,
                   y: 44.7,
-                  r: 27
+                  r: 60
                 }]
               }, {
                 label: ["LONDON"],
@@ -2381,23 +2381,23 @@
                 data: [{
                   x: 8896000,
                   y: 39.3,
-                  r: 52
+                  r: 109
                 }]
               }, {
                 label: ["SOUTH EAST"],
-                backgroundColor: "#c23616",
+                backgroundColor: "rgba(11, 251, 84, 0.75)",
                 data: [{
                   x: 9005000,
                   y: 44.6,
-                  r: 41
+                  r: 94
                 }]
               }, {
                 label: ["SOUTH WEST"],
-                backgroundColor: "#D980FA",
+                backgroundColor: "rgba(251, 69, 255, 0.64)",
                 data: [{
                   x: 5495000,
                   y: 45.6,
-                  r: 23
+                  r: 56
                 }]
               }, {
                 label: ["WALES"],
@@ -2405,7 +2405,7 @@
                 data: [{
                   x: 3104000,
                   y: 42.1,
-                  r: 11
+                  r: 22
                 }]
               }, {
                 label: ["SCOTLAND"],
@@ -2413,7 +2413,7 @@
                 data: [{
                   x: 5364000,
                   y: 41.7,
-                  r: 18
+                  r: 33
                 }]
               }, {
                 label: ["NORTHERN IRELAND"],
@@ -2421,7 +2421,7 @@
                 data: [{
                   x: 1856000,
                   y: 43.0,
-                  r: 7
+                  r: 12
                 }]
               }]
             },
@@ -2430,7 +2430,7 @@
               maintainAspectRatio: false,
               title: {
                 display: true,
-                text: 'Correlation between buisness survival, regional population and buisness numbers (10k)'
+                text: 'Correlation between regional population, buisness survival and buisness numbers (10k)'
               },
               scales: {
                 yAxes: [{
@@ -2452,99 +2452,108 @@
       </div>
       <p>On the whole the visual trend appears to be that survival rates could be linked to the density of both people and other businesses. London is interesting to compare to the other regions as the highest in buisness count and population. Whilst we can see that the business numbers are large it has a very low survival rate in comparison to other
         regions. Perhaps a cumulation of density, population numbers and rent costs of the region could be attributed.</p>
-        <div id="chartcontainer" style="width: 100%;height: 55vh">
+      <p>In the chart below we are repeating the main points but swapping the regional population with the Median gross annual earnings of full time employees for that region.</p>
+        <div id="chartcontainer" style="width: 100%;height: 70vh">
           <canvas id="experimental2-chart"></canvas>
           <script>
             new Chart(document.getElementById("experimental2-chart"), {
               type: 'bubble',
               data: {
                 datasets: [{
-                  label: ["1"],
+                  label: ["NORTH EAST"],
                   backgroundColor: "#3498db",
                   data: [{
-                    x: 319000,
-                    y: 143135,
-                    r: 26
+                    x: 27187,
+                    y: 41.1,
+                    r: 15
                   }]
                 }, {
-                  label: ["2-4"],
-                  backgroundColor: "#9b59b6",
+                  label: ["NORTH WEST"],
+                  backgroundColor: "rgba(93, 140, 255, 0.43)",
                   data: [{
-                    x: 7194000,
+                    x: 28137,
                     y: 41.9,
-                    r: 27
+                    r: 58
                   }]
                 }, {
-                  label: ["5-9"],
+                  label: ["YORKS AND HUMBER"],
                   backgroundColor: "#EE5A24",
                   data: [{
-                    x: 5404000,
+                    x: 27835,
                     y: 43.4,
-                    r: 19
+                    r: 43
                   }]
                 }, {
-                  label: ["10-19"],
+                  label: ["EAST MIDLANDS"],
                   backgroundColor: "#a29bfe",
                   data: [{
-                    x: 4723000,
+                    x: 28000,
                     y: 42.6,
-                    r: 18
+                    r: 36
                   }]
                 }, {
-                  label: ["20-49"],
+                  label: ["WEST MIDLANDS"],
                   backgroundColor: "#ff7675",
                   data: [{
-                    x: 5811000,
+                    x: 28536,
                     y: 43.0,
-                    r: 21
+                    r: 48
                   }]
                 }, {
-                  label: ["50-99"],
+                  label: ["EAST"],
                   backgroundColor: "#00cec9",
                   data: [{
-                    x: 6144000,
+                    x: 30345,
                     y: 44.7,
-                    r: 27
+                    r: 60
                   }]
                 }, {
-                  label: ["100-199"],
+                  label: ["LONDON"],
                   backgroundColor: "rgba(193,46,12,0.2)",
                   data: [{
-                    x: 8896000,
+                    x: 38992,
                     y: 39.3,
-                    r: 52
+                    r: 109
                   }]
                 }, {
-                  label: ["200-249"],
-                  backgroundColor: "#c23616",
+                  label: ["SOUTH EAST"],
+                  backgroundColor: "rgba(11, 251, 84, 0.75)",
                   data: [{
-                    x: 9005000,
+                    x: 32120,
                     y: 44.6,
-                    r: 41
+                    r: 94
                   }]
                 }, {
-                  label: ["250-499"],
-                  backgroundColor: "#D980FA",
+                  label: ["SOUTH WEST"],
+                  backgroundColor: "rgba(251, 69, 255, 0.64)",
                   data: [{
-                    x: 5495000,
+                    x: 28654,
                     y: 45.6,
-                    r: 23
+                    r: 56
                   }]
                 }, {
-                  label: ["500+"],
+                  label: ["WALES"],
                   backgroundColor: "#0652DD",
                   data: [{
-                    x: 3104000,
+                    x: 27500,
                     y: 42.1,
-                    r: 11
+                    r: 22
+                  }]
+                }, {
+                  label: ["SCOTLAND"],
+                  backgroundColor: "#16a085",
+                  data: [{
+                    x: 30000,
+                    y: 41.7,
+                    r: 33
                   }]
                 }, {
                   label: ["NORTHERN IRELAND"],
                   backgroundColor: "#f1c40f",
                   data: [{
-                    x: 1856000,
+                    x: 27434,
                     y: 43.0,
-                    r: 7
+                    r: 12
                   }]
                 }]
               },
@@ -2553,19 +2562,19 @@
                 maintainAspectRatio: false,
                 title: {
                   display: true,
-                  text: 'Correlation between businesses employees, number and turnover'
+                  text: 'Correlation between regional median pay, buisness survival and business numbers (10k)'
                 },
                 scales: {
                   yAxes: [{
                     scaleLabel: {
                       display: true,
-                      labelString: "Employment"
+                      labelString: "Survival Rate"
                     }
                   }],
                   xAxes: [{
                     scaleLabel: {
                       display: true,
-                      labelString: "Number of UK Businesses"
+                      labelString: "Median gross annual earnings of full-time employees 2019"
                     }
                   }]
                 }
@@ -2573,7 +2582,8 @@
             });
           </script>
         </div>
-    </section>
+        <p>Here again London appears as a bit of an outlier with the highest gross earnings, again the whole the visual trend appears to be that survival rates could be linked to the overall earnings and density of other businesses.</p>
+        </section>
   </div>
   <!-- 9. Summary takeaways? –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <div class="container">
