@@ -1,6 +1,5 @@
 /*
 * Page uses Skeleton CSS below with some minor tweaks
-* 24/05/2020
 /*
 
 /*
@@ -281,7 +280,7 @@ p {
   padding-top: 11px;
 }
 
-/* blockquote
+/* blockquote + more mods
   –––––––––––––––––––––––––––––––––––––––––––––––––– */
 blockquote {
   padding: 1em;
@@ -298,6 +297,13 @@ blockquote {
   border-color: #bdc3c7;
   box-shadow: 15px 15px 0 0 #bdc3c7;
   padding-bottom: 10px;
+}
+
+.chart-container {
+  position: relative;
+  margin: auto;
+  height: 70vh;
+  width: 60vw;
 }
 
 /* Links

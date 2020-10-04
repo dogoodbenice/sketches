@@ -1049,6 +1049,10 @@
                     beginAtZero: true
                   }
                 }]
+              },
+              title: {
+                display: true,
+                text: 'Estimated business counts region'
               }
             }
           });
@@ -2160,7 +2164,7 @@
                   x: '75 Veterinary activities',
                   y: 14850
                 }]
-              },{
+              }, {
                 name: 'Business administration and support services',
                 color: "#6D214F",
                 data: [{
@@ -2182,14 +2186,14 @@
                   x: '82 Office administrative, office support and other business support activities',
                   y: 117605
                 }]
-              },{
+              }, {
                 name: 'Education',
                 color: "#ff3838",
                 data: [{
                   x: '85 Education',
                   y: 306915
                 }]
-              },{
+              }, {
                 name: 'Health',
                 color: "#18dcff",
                 data: [{
@@ -2202,7 +2206,7 @@
                   x: '88 Social work activities without accommodation',
                   y: 129655
                 }]
-              },{
+              }, {
                 name: 'Arts, entertainment, recreation and other services',
                 color: "#cc8e35",
                 data: [{
@@ -2214,16 +2218,16 @@
                 }, {
                   x: '92 Gambling and betting activities',
                   y: 3145
-                },{
+                }, {
                   x: '93 Sports activities and amusement and recreation activities',
                   y: 114710
-                },{
+                }, {
                   x: '94 Activities of membership organisations',
                   y: 46610
-                },{
+                }, {
                   x: '95 Repair of computers and personal and household goods',
                   y: 33145
-                },{
+                }, {
                   x: '96 Other personal service activities',
                   y: 260070
                 }]
@@ -2315,9 +2319,9 @@
       <p>Click on any of the items in the legend to hide them from view.</p>
       <p>Financial services continues to be the highest, food and drink along with mining activites have seen the largest changes in international investment positions.</p>
       <div id="chartcontainer" style="width: 100%;height: 70vh">
-        <canvas id="canvas"></canvas>
+        <canvas id="investment-position-chart"></canvas>
         <script>
-          new Chart(document.getElementById("canvas"), {
+          new Chart(document.getElementById("investment-position-chart"), {
             type: 'line',
             data: {
               labels: [2015, 2016, 2017, 2018],
@@ -2415,7 +2419,7 @@
             },
             options: {
               responsive: true,
-              maintainAspectRatio: false,
+              maintainAspectRatio: true,
               legend: {
                 display: true,
                 position: 'bottom',
@@ -2453,10 +2457,12 @@
       <h4 class="title">6. How are UK business trading internationally?</h4>
       <blockquote class="nutshell">
         <p>
-          <b>In summary:</b> Businesses carry out export and imports of goods, services and both goods and services.
+          <b>In summary:</b> An estimated total of 2,424,700 enterprises carried out exporting or importing activity, with a slightly larger number importing. For most it's either exporting or importing rather than doing both activities.
+        </p>
+        <p>The largest number of enterprises trading internationally was seen in Wholesale and Retail Trade; Repair of Motor Vehicles and Motorcycles.
         </p>
       </blockquote>
-      <p>The chart below shows estimated total counts of export and import enterprises in the UK. </p>
+      <p>The chart below shows estimated total counts of export and import enterprises in the UK. The number of importers are slightly higher than exporters with the most significant being in goods.</p>
       <div id="chartcontainer" style="width: 100%;height: 70vh">
         <canvas id="international-trade-chart"></canvas>
         <script>
@@ -2466,17 +2472,17 @@
               labels: ["Exporters", "Importers"],
               datasets: [{
                 data: [233900, 245600],
-                label: "2018 Goods and Services",
+                label: "Goods and Services",
                 backgroundColor: "#3e95cd",
                 fill: true
               }, {
                 data: [116500, 173000],
-                label: "2018 Goods",
+                label: "Goods",
                 backgroundColor: "#8e5ea2",
                 fill: true
               }, {
                 data: [77419, 80519],
-                label: "2018 Services",
+                label: "Services",
                 backgroundColor: "#3cba9f",
                 fill: true
               }]
@@ -2508,13 +2514,129 @@
               },
               title: {
                 display: true,
-                text: 'Enterprise counts of Exporters and importers 2018'
+                text: 'Enterprise counts of Exporters and importers in 2018'
               }
             }
           });
         </script>
       </div>
-      <p></p>
+      <p>The chart below shows whether the enterprises are doing both exporting and importing or only one of the main actions. Overall it's more likely that enterprises are only doing one of the activity rather than both.</p>
+      <div id="chartcontainer" style="width: 100%;height: 70vh">
+        <canvas id="exporterorimporter-chart"></canvas>
+        <script>
+          new Chart(document.getElementById("exporterorimporter-chart"), {
+            type: 'bar',
+            data: {
+              labels: ["both Exporter and Importer", "either Exporter and/or Importer"],
+              datasets: [{
+                data: [139000, 340500],
+                label: "Goods and Services",
+                backgroundColor: "#3e95cd",
+                fill: true
+              }, {
+                data: [78400, 211100],
+                label: "Goods",
+                backgroundColor: "#8e5ea2",
+                fill: true
+              }, {
+                data: [69000, 188400],
+                label: "Services",
+                backgroundColor: "#3cba9f",
+                fill: true
+              }]
+            },
+            options: {
+              responsive: true,
+              maintainAspectRatio: false,
+              legend: {
+                display: true,
+                position: 'bottom',
+              },
+              scales: {
+                xAxes: [{
+                  stacked: true,
+                  display: true,
+                  scaleLabel: {
+                    display: false,
+                    labelString: 'Year'
+                  }
+                }],
+                yAxes: [{
+                  stacked: true,
+                  display: true,
+                  scaleLabel: {
+                    display: true,
+                    labelString: 'Enterprises'
+                  }
+                }]
+              },
+              title: {
+                display: true,
+                text: 'Enterprise counts by exporting or importing activity in 2018'
+              }
+            }
+          });
+        </script>
+      </div>
+      <p>The chart below shows the total count of internationally trading enterprises. </p>
+      <div class="chart-container">
+        <canvas id="exportorimport-SIC-chart"></canvas>
+        <script>
+          new Chart(document.getElementById("exportorimport-SIC-chart"), {
+            type: 'bar',
+            data: {
+              labels: ['Agriculture, Forestry and Fishing (part)', 'Mining and Quarrying ', 'Manufacturing ', 'Electricity, Gas, Steam and Air Conditioning ','Water Supply;Sewerage, Waste Management and Remediation Activities','Construction ','Wholesale and Retail Trade; Repair of Motor Vehicles and Motorcycles', 'Transportation and Storage', 'Accommodation and Food Service Activities',
+                'Information and Communication',
+                'Real Estate Activities',
+                'Professional, Scientific and Technical Activities',
+                'Administrative and Support Service Activities',
+                'Education', 'Human Health and Social Work Activities',
+                'Arts, Entertainment and Recreation',
+                'Other Service Activities',
+              ],
+              datasets: [{
+                label: "Exporters",
+                backgroundColor: "#16a085",
+                data: [200, 400, 74100, 0, 1400, 11500, 135700, 9900, 2100, 69000, 2800, 109000, 43200, 5500, 2500, 19500, 8800]
+              }, {
+                label: "Importers",
+                backgroundColor: "#f1c40f",
+                data: [2400,700,73800,2400,900,15400,202900,8100,10300,57000,3100,77800,41600,7000,4200,10700,12600]
+              }]
+            },
+            options: {
+              responsive: true,
+              maintainAspectRatio: true,
+              legend: {
+                display: true,
+                position: 'top',
+              },
+              scales: {
+                xAxes: [{
+                  stacked: false,
+                  display: true,
+                  scaleLabel: {
+                    display: false,
+                    labelString: 'Year'
+                  }
+                }],
+                yAxes: [{
+                  stacked: false,
+                  display: true,
+                  scaleLabel: {
+                    display: true,
+                    labelString: 'Enterprises'
+                  }
+                }]
+              },
+              title: {
+                display: true,
+                text: 'Total counts of enterprises by exporting or importing activity by SIC section 2018'
+              }
+            }
+          });
+        </script>
+      </div>
     </section>
   </div>
   <!-- 7. What do businesses look like? –––––––––––––––––––––––––––––––––––––––––––––––––– -->
