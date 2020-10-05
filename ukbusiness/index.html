@@ -2238,7 +2238,9 @@
               type: 'treemap',
             },
             legend: {
-              show: true
+              show: true,
+              position: 'top',
+              horizontalAlign: 'left'
             },
             dataLabels: {
               enabled: true,
@@ -2318,136 +2320,132 @@
         in the UK by industrial activity.</p>
       <p>Click on any of the items in the legend to hide them from view.</p>
       <p>Financial services continues to be the highest, food and drink along with mining activites have seen the largest changes in international investment positions.</p>
-      <div id="chartcontainer" style="width: 100%;height: 70vh">
-        <canvas id="investment-position-chart"></canvas>
+      <div id="investment-position-chart" style="width: 100%;height: 70vh">
         <script>
-          new Chart(document.getElementById("investment-position-chart"), {
-            type: 'line',
-            data: {
-              labels: [2015, 2016, 2017, 2018],
-              datasets: [{
-                data: [1157, 1082, 1002, 1146],
-                label: "Agriculture, forestry and fishing",
-                borderColor: "#3e95cd",
-                fill: false
-              }, {
-                data: [80951, 105170, 82996, 62701],
-                label: "Mining & quarrying",
-                borderColor: "#8e5ea2",
-                fill: false
-              }, {
-                data: [45913, 132066, 77419, 80519],
-                label: "Food ... & tobacco products",
-                borderColor: "#3cba9f",
-                fill: false
-              }, {
-                data: [7570, 5355, 5284, 3915],
-                label: "Textiles & wood activities",
-                borderColor: "#f368e0",
-                fill: false
-              }, {
-                data: [36239, 40932, 55803, 57738],
-                label: "Petroleum ... plastic products",
-                borderColor: "#e8c3b9",
-                fill: false
-              }, {
-                data: [24792, 21621, 26767, 22449],
-                label: "Metal & machinery products",
-                borderColor: "#2f3542",
-                fill: false
-              }, {
-                data: [21194, 24623, 25006, 24429],
-                label: "Computer, electronics & optical products",
-                borderColor: "#341f97",
-                fill: false
-              }, {
-                data: [15050, 15873, 22327, 30749],
-                label: "Transport equipment",
-                borderColor: "#e8c3e9",
-                fill: false
-              }, {
-                data: [35778, 30159, 36719, 34747],
-                label: "Other manufacturing",
-                borderColor: "#e74c3c",
-                fill: false
-              }, {
-                data: [47819, 47683, 55658, 51471],
-                label: "Electricity, gas, water & waste",
-                borderColor: "#a5c3b9",
-                fill: false
-              }, {
-                data: [7767, 9374, 8932, 9815],
-                label: "Construction",
-                borderColor: "#ea8685",
-                fill: false
-              }, {
-                data: [125065, 119401, 121612, 125302],
-                label: "Retail & ... repair of motor vehicles",
-                borderColor: "#0abde3",
-                fill: false
-              }, {
-                data: [38481, 49665, 55426, 72265],
-                label: "Transportation & storage",
-                borderColor: "#833471",
-                fill: false
-              }, {
-                data: [86119, 72625, 102126, 140695],
-                label: "Information & communication",
-                borderColor: "#40739e",
-                fill: false
-              }, {
-                data: [322022, 358893, 426151, 438382],
-                label: "Financial services",
-                borderColor: "#192a56",
-                fill: false
-              }, {
-                data: [63599, 72758, 120221, 152483],
-                label: "Professional, scientific & technical services",
-                borderColor: "#ED4C67",
-                fill: false
-              }, {
-                data: [27851, 28735, 30532, 45076],
-                label: "Administrative and support service activities",
-                borderColor: "#f1c40f",
-                fill: false
-              }, {
-                data: [32040, 36884, 123534, 151166],
-                label: "Other services",
-                borderColor: "#c45850",
-                fill: false
-              }]
+          var options = {
+            series: [{
+              name: 'Agriculture, forestry and fishing',
+              data: [1157, 1082, 1002, 1146]
+            }, {
+              name: 'Mining & quarrying',
+              data: [80951, 105170, 82996, 62701]
+            }, {
+              name: 'Food ... & tobacco products',
+              data: [45913, 132066, 77419, 80519]
+            }, {
+              name: 'Textiles & wood activities',
+              data: [7570, 5355, 5284, 3915]
+            }, {
+              name: 'Petroleum ... plastic products',
+              data: [36239, 40932, 55803, 57738]
+            }, {
+              name: 'Metal & machinery products',
+              data: [24792, 21621, 26767, 22449]
+            }, {
+              name: 'Computer, electronics & optical products',
+              data: [21194, 24623, 25006, 24429]
+            }, {
+              name: 'Transport equipment',
+              data: [15050, 15873, 22327, 30749]
+            }, {
+              name: 'Other manufacturing',
+              data: [35778, 30159, 36719, 34747]
+            }, {
+              name: 'Electricity, gas, water & waste',
+              data: [47819, 47683, 55658, 51471]
+            }, {
+              name: 'Construction',
+              data: [7767, 9374, 8932, 9815]
+            }, {
+              name: 'Retail & ... repair of motor vehicles',
+              data: [125065, 119401, 121612, 125302]
+            },{
+              name: 'Transportation & storage',
+              data: [38481, 49665, 55426, 72265]
+            },{
+              name: 'Information & communication',
+              data: [86119, 72625, 102126, 140695]
+            },{
+              name: 'Financial services',
+              data: [322022, 358893, 426151, 438382]
+            },{
+              name: 'Professional, scientific & technical services',
+              data: [63599, 72758, 120221, 152483]
+            },{
+              name: 'Administrative and support service activities',
+              data: [27851, 28735, 30532, 45076]
+            },{
+              name: 'Other services',
+              data: [32040, 36884, 123534, 151166]
+            }],
+            chart: {
+              height: 600,
+              stacked: true,
+              type: 'area'
             },
-            options: {
-              responsive: true,
-              maintainAspectRatio: true,
-              legend: {
-                display: true,
-                position: 'bottom',
-              },
-              scales: {
-                xAxes: [{
-                  display: true,
-                  scaleLabel: {
-                    display: false,
-                    labelString: 'Year'
-                  }
-                }],
-                yAxes: [{
-                  display: true,
-                  scaleLabel: {
-                    display: true,
-                    labelString: 'Millions (£)'
-                  }
-                }]
+            dataLabels: {
+              enabled: false
+            },
+            colors: [
+              '#2ecc71',
+              '#3498db',
+              '#9b59b6',
+              '#34495e',
+              '#e67e22',
+              '#c0392b',
+              '#7f8c8d',
+              '#2980b9',
+              '#ff7979',
+              '#f1c40f',
+              '#e056fd',
+              '#C1F666',
+              '#D43F97',
+              '#1E5D8C',
+              '#ff6b81',
+              '#7F94B0',
+              '#22a6b3',
+              '#27ae60'
+            ],
+            title: {
+              text: 'International investment positions in the UK by industrial activity, 2015 to 2018',
+              align: 'left'
+            },
+            stroke: {
+              curve: 'smooth'
+            },
+            fill: {
+              type: 'solid',
+              opacity: 0.8
+            },
+            legend: {
+              position: 'top',
+              horizontalAlign: 'left'
+            },
+            xaxis: {
+              type: 'category',
+              categories: ["2015", "2016", "2017", "2018"]
+            },
+            yaxis: {
+              labels: {
+                show: true,
               },
               title: {
-                display: true,
-                text: 'International investment positions in the United Kingdom analysed by industrial activity, 2015 to 2018'
-              }
-            }
-          });
+                text: 'Millions (£)'
+              },
+            },
+            tooltip: {
+              x: {
+                format: 'YYYY'
+              },
+            },
+          };
+          var chart = new ApexCharts(document.querySelector("#investment-position-chart"), options);
+          chart.render();
         </script>
       </div>
+      <p>Words</p>
+
+
     </section>
   </div>
   <!-- 6. UK businesses internationally? –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -2585,7 +2583,8 @@
           new Chart(document.getElementById("exportorimport-SIC-chart"), {
             type: 'bar',
             data: {
-              labels: ['Agriculture, Forestry and Fishing (part)', 'Mining and Quarrying ', 'Manufacturing ', 'Electricity, Gas, Steam and Air Conditioning ','Water Supply;Sewerage, Waste Management and Remediation Activities','Construction ','Wholesale and Retail Trade; Repair of Motor Vehicles and Motorcycles', 'Transportation and Storage', 'Accommodation and Food Service Activities',
+              labels: ['Agriculture, Forestry and Fishing (part)', 'Mining and Quarrying ', 'Manufacturing ', 'Electricity, Gas, Steam and Air Conditioning ', 'Water Supply;Sewerage, Waste Management and Remediation Activities', 'Construction ',
+                'Wholesale and Retail Trade; Repair of Motor Vehicles and Motorcycles', 'Transportation and Storage', 'Accommodation and Food Service Activities',
                 'Information and Communication',
                 'Real Estate Activities',
                 'Professional, Scientific and Technical Activities',
@@ -2601,7 +2600,7 @@
               }, {
                 label: "Importers",
                 backgroundColor: "#f1c40f",
-                data: [2400,700,73800,2400,900,15400,202900,8100,10300,57000,3100,77800,41600,7000,4200,10700,12600]
+                data: [2400, 700, 73800, 2400, 900, 15400, 202900, 8100, 10300, 57000, 3100, 77800, 41600, 7000, 4200, 10700, 12600]
               }]
             },
             options: {
