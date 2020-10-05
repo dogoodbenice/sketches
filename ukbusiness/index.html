@@ -2445,7 +2445,6 @@
       </div>
       <p>Words</p>
 
-
     </section>
   </div>
   <!-- 6. UK businesses internationally? –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -2576,7 +2575,7 @@
           });
         </script>
       </div>
-      <p>The chart below shows the total count of internationally trading enterprises. </p>
+      <p>The chart below shows the estimated counts of internationally trading enterprises by high level SIC sections. </p>
       <div id="exportandimport-chart" style="width: 100%;height: 70vh">
         <script>
           var options = {
@@ -2600,7 +2599,7 @@
               '#f1c40f',
             ],
             title: {
-              text: 'Total counts of enterprises by exporting or importing activity by SIC section 2018',
+              text: 'Estimated counts of enterprises by exporting or importing activity by SIC section 2018',
               align: 'left'
             },
             fill: {
@@ -2621,6 +2620,7 @@
               }
             },
             yaxis: {
+              max:220000,
               labels: {
                 show: true,
               },
@@ -2644,7 +2644,7 @@
   <div class="container">
     <section class="topic">
       <a name="question7"></a>
-      <h4 class="title">6. What do these business look like?</h4>
+      <h4 class="title">7. What do these business look like?</h4>
       <blockquote class="nutshell">
         <p>
           <b>In summary:</b> The majority are small, turning over less than £250,000 a year and if they have been around for >5 years are hardy survivors.
@@ -2659,7 +2659,7 @@
           var myChart = new Chart(ctx, {
             type: 'horizontalBar',
             data: {
-              labels: ['1-9', '10-49', '50-249', '250+'],
+              labels: ['Micro 1-9', 'Small 10-49', 'Medium 50-249', 'Large 250+'],
               datasets: [{
                 label: '# of businesses',
                 data: [1155385, 211295, 35585, 7685],
@@ -2668,6 +2668,11 @@
               }]
             },
             options: {
+              legend: { display: false },
+              title: {
+                display: true,
+                text: 'Numbers of business by employment size band'
+              },
               responsive: true,
               maintainAspectRatio: false,
               scales: {
@@ -2691,13 +2696,18 @@
             data: {
               labels: ['0-49', '50-99', '100-249', '250-499', '500-999', '1000-1999', '2000-4999', '5000-9999', '10000-49999', '50000+'],
               datasets: [{
-                label: '# of businesses',
+                label: '# of enterprises',
                 data: [424335, 629405, 875410, 341245, 195520, 111655, 76830, 29340, 26205, 8490],
                 backgroundColor: '#0984e3',
                 borderWidth: 1
               }]
             },
             options: {
+              legend: { display: false },
+              title: {
+                display: true,
+                text: 'Numbers of enterprises by turnover size band'
+              },
               responsive: true,
               maintainAspectRatio: false,
               scales: {
@@ -2761,7 +2771,7 @@
       </div>
     </section>
   </div>
-  <!-- 7. How do businesses feel? –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <!-- 8. How do businesses feel? –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <div class="container">
     <section class="topic">
       <a name="question8"></a>
