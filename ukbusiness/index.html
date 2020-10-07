@@ -2882,7 +2882,7 @@
       <a name="experimental"></a>
       <h4 class="title">9. Experimental Insights</h4>
       <p>This secton takes a few different data sets to see if there are any interesting patterns that emerge, mainly making use of survival rates.</p>
-      <p>This chart plots the 5 year survival rate (2013 onwards), the regional population numbers and the numbers of businesses by their tens of thousands for that region.</p>
+      <p>This chart plots the 5 year survival rate (2013 onwards), the regional population numbers and the numbers of businesses by tens of thousands for that region.</p>
       <div id="chartcontainer" style="width: 100%;height: 70vh">
         <canvas id="experimental1-chart"></canvas>
         <script>
@@ -2907,7 +2907,7 @@
                 }]
               }, {
                 label: ["YORKS AND HUMBER"],
-                backgroundColor: "#EE5A24",
+                backgroundColor: "rgba(255, 8, 0, 0.71)",
                 data: [{
                   x: 5404000,
                   y: 43.4,
@@ -2923,7 +2923,7 @@
                 }]
               }, {
                 label: ["WEST MIDLANDS"],
-                backgroundColor: "#ff7675",
+                backgroundColor: "rgba(200, 103, 173, 0.65)",
                 data: [{
                   x: 5811000,
                   y: 43.0,
@@ -3040,7 +3040,7 @@
                 }]
               }, {
                 label: ["YORKS AND HUMBER"],
-                backgroundColor: "#EE5A24",
+                backgroundColor: "rgba(255, 8, 0, 0.71)",
                 data: [{
                   x: 27835,
                   y: 43.4,
@@ -3056,7 +3056,7 @@
                 }]
               }, {
                 label: ["WEST MIDLANDS"],
-                backgroundColor: "#ff7675",
+                backgroundColor: "rgba(200, 103, 173, 0.65)",
                 data: [{
                   x: 28536,
                   y: 43.0,
@@ -3146,6 +3146,138 @@
         </script>
       </div>
       <p>Here again London appears as a bit of an outlier with the highest gross earnings, again the whole the visual trend appears to be that survival rates could be linked to the overall earnings and density of other businesses.</p>
+      <p></p>
+      <p>Output refers to gross value added (GVA), which is an estimate of the volume of goods and services produced by an industry within a geographic area, and in aggregate across industries for a geographic area.</p>
+      <div id="chartcontainer" style="width: 100%;height: 70vh">
+        <canvas id="experimental3-chart"></canvas>
+        <script>
+          new Chart(document.getElementById("experimental3-chart"), {
+            type: 'bubble',
+            data: {
+              datasets: [{
+                label: ["NORTH EAST"],
+                backgroundColor: "#3498db",
+                data: [{
+                  x: 84.2,
+                  y: 41.1,
+                  r: 15
+                }]
+              }, {
+                label: ["NORTH WEST"],
+                backgroundColor: "rgba(93, 140, 255, 0.43)",
+                data: [{
+                  x: 90.9,
+                  y: 41.9,
+                  r: 58
+                }]
+              }, {
+                label: ["YORKS AND HUMBER"],
+                backgroundColor: "rgba(255, 8, 0, 0.71)",
+                data: [{
+                  x: 83.2,
+                  y: 43.4,
+                  r: 43
+                }]
+              }, {
+                label: ["EAST MIDLANDS"],
+                backgroundColor: "#a29bfe",
+                data: [{
+                  x: 85.5,
+                  y: 42.6,
+                  r: 36
+                }]
+              }, {
+                label: ["WEST MIDLANDS"],
+                backgroundColor: "rgba(200, 103, 173, 0.65)",
+                data: [{
+                  x: 89.1,
+                  y: 43.0,
+                  r: 48
+                }]
+              }, {
+                label: ["EAST"],
+                backgroundColor: "#00cec9",
+                data: [{
+                  x: 94.7,
+                  y: 44.7,
+                  r: 60
+                }]
+              }, {
+                label: ["LONDON"],
+                backgroundColor: "rgba(193,46,12,0.2)",
+                data: [{
+                  x: 140.5,
+                  y: 39.3,
+                  r: 109
+                }]
+              }, {
+                label: ["SOUTH EAST"],
+                backgroundColor: "rgba(11, 251, 84, 0.75)",
+                data: [{
+                  x: 106.1,
+                  y: 44.6,
+                  r: 94
+                }]
+              }, {
+                label: ["SOUTH WEST"],
+                backgroundColor: "rgba(251, 69, 255, 0.64)",
+                data: [{
+                  x: 86.5,
+                  y: 45.6,
+                  r: 56
+                }]
+              }, {
+                label: ["WALES"],
+                backgroundColor: "#0652DD",
+                data: [{
+                  x: 81.8,
+                  y: 42.1,
+                  r: 22
+                }]
+              }, {
+                label: ["SCOTLAND"],
+                backgroundColor: "#16a085",
+                data: [{
+                  x: 96.4,
+                  y: 41.7,
+                  r: 33
+                }]
+              }, {
+                label: ["NORTHERN IRELAND"],
+                backgroundColor: "#f1c40f",
+                data: [{
+                  x: 88.6,
+                  y: 43.0,
+                  r: 12
+                }]
+              }]
+            },
+            options: {
+              responsive: true,
+              maintainAspectRatio: false,
+              title: {
+                display: true,
+                text: 'Correlation between productivity, buisness survival and business numbers (10k)'
+              },
+              scales: {
+                yAxes: [{
+                  scaleLabel: {
+                    display: true,
+                    labelString: "Survival Rate"
+                  }
+                }],
+                xAxes: [{
+                  scaleLabel: {
+                    display: true,
+                    labelString: "Output per Job"
+                  }
+                }]
+              }
+            }
+          });
+        </script>
+      </div>
+      <p></p>
     </section>
   </div>
   <!-- 10. Summary takeaways? –––––––––––––––––––––––––––––––––––––––––––––––––– -->
