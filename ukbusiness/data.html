@@ -127,9 +127,9 @@
       </table>
       <a name="IDBRandBPE"></a>
       <p>Throughout the article the difference between IDBR related data and estimated data is referenced. The chart below tries to highlight visually the differences, for more on the guidance <a href="https://www.gov.uk/government/statistics/guide-to-business-statistics">this guide</a> offers a good overview.</p>
-      <div id="chartcontainer" style="width: 100%;height: 40vh">
+      <div id="chartcontainer" style="width: 100%;height: 50vh">
         <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-        <div id="chart_structure" style="width: 100%; height: 40vh;"></div>
+        <div id="chart_structure" style="width: 100%; height: 50vh;"></div>
         <script>
           google.charts.load('current', {
             packages: ["orgchart"]
@@ -145,11 +145,8 @@
           ['This article', ''],
          ['BEIS BPE Data','This article'],
          ['ONS Data','This article'],
-         ['Business Demography','ONS Data'],
-         ['UK business...','ONS Data'],
          ['IDBR + Other Data sources','BEIS BPE Data'],
-         ['IDBR', 'Business Demography'],
-         ['IDBR', 'UK business...'],
+         ['IDBR', 'ONS Data'],
          ['VAT and/or PAYE registered businesses plus estimate of unregistered population.','IDBR + Other Data sources'],
          ['VAT and/or PAYE registered businesses','IDBR']
           ]);
@@ -169,7 +166,6 @@
       <a name="question2"></a>
       <h3 class="title">What libraries are used here?</h3>
       <p>This article makes use of the following libraries.</p>
-      <p>If I had to pick one charting library I think I'd lean towards Apex charts, something about it felt just a little bit more usable.</p>
       <table class="u-full-width">
         <thead>
           <tr>
@@ -215,11 +211,10 @@
       <h3 class="title">What did I learn when making this?</h3>
       <p>Aside from the <a href="https://logikblok.github.io/sketches/ukbusiness/#summary">main points</a>, I also picked up these reflections:</p>
       <ul>
-        <li>Making charts responsive has room for improvement. Apologies if you read this on a mobile device and didn't have a great time.</li>
-        <li>Colours on charts matter. I probably still haven't got this quite right just yet either. From accessibility to conveying the information colour on charts matters ans needs to be thought out further.</li>
+        <li>Colours on charts matter. I probably still haven't got this quite right just yet. From accessibility to conveying the information colour on charts matters ans needs to be thought out further.</li>
         <li>Data is, thankfully, everywhere. Once you start searching it makes me glad the UK publishes and shares so much data openly.</li>
-        <li>It takes time to understand underlying statistical complexity. Whilst data is accessible the items and structure behind the figures takes time and contextual understanding to unpick.</li>
-        <li>Charting libraries are really powerful. Big thanks to all the creators and maintainers of those libraries who make creating and iterating on these charts really fast. Additional thanks to <a href="https://tobiasahlin.com/blog/introduction-to-chartjs/">Tobias Ahlin</a> for the intros into charting.</li>
+        <li>It takes time to understand underlying complexity. Whilst data is accessible the context and structure behind the figures takes time to unpick.</li>
+        <li>Charting libraries are now really powerful. Big thanks to all the creators and maintainers of those libraries who make creating and iterating on these charts really fast. Additional thanks to <a href="https://tobiasahlin.com/blog/introduction-to-chartjs/">Tobias Ahlin</a> for the intros into charting.</li>
       </ul>
       <p>That's it, thanks for reading. If you have any <a href="https://logikblok.com/#contact">feedback, requests for future articles or thoughts please do share it with me</a>.</p>
       <p>You can follow me on twitter <a href="https://twitter.com/logikblok">@logikblok</a> or, if you liked this, you could <a href="https://www.buymeacoffee.com/logikblok">buy me a coffee</a>.</p>
