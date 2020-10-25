@@ -968,20 +968,20 @@
       <h3 class="title">2. How many businesses are there?</h3>
       <blockquote class="nutshell">
         <p>
-          <b>In summary:</b> Over 5.8 million are estimated.
+          <b>In summary:</b> As of 2019 over 5.8 million business are estimated to be present in the UK.
         </p>
       </blockquote>
-      <p>The estimation is because there are are a vast number of businesses too small to be registered using the IDBR, more detail on the data is available <a href="data.html">here</a></p>
-      <p>The chart below</p>
+      <p>The estimation is called out specifically because there are are a vast number of businesses too small to be registered using the IDBR, more detail on the data differences is available <a href="data.html#IDBRandBPE">here</a></p>
+      <p>The chart below shows the difference between the data sets of registered enterprises versus the estimated numbers by industry groups. </p>
       <div id="IDBRBPE-chart" style="width: 100%;height: 70vh">
         <script>
           var options = {
             series: [{
               name: 'Enterprises',
-              data: [149540, 152015, 343715, 77200, 103145, 208760, 111360, 157035, 226215, 60630, 100340, 471715, 228750, 7505, 44490, 102000, 174020]
+              data: [149540, 152015,343715,389105,111360,157035,226215,60630,100340,471715,228750,7505,44490,102000,174020]
             }, {
               name: 'Businesses',
-              data: [157595, 312475, 1037280, 547380, 360485, 201745, 369545, 90730, 113205, 867880, 3100, 77800, 41600, 7000, 306915, 360670, 629715]
+              data: [157595, 312475,1037280,547380,360485,201745,369545,90730,113205,867880,512160,null,306915,360670,629715]
             }],
             chart: {
               height: 600,
@@ -1004,17 +1004,15 @@
             },
             legend: {
               position: 'top',
-              horizontalAlign: 'left'
+              horizontalAlign: 'center'
             },
             xaxis: {
               type: 'category',
-              categories: ['Agriculture, Forestry & Fishing', 'Production', 'Construction', ['Wholesale & Retail Trade', 'Repair of Motor Vehicles & Motorcycles'], 'Transportation & Storage', 'Accommodation & Food Service Activities', 'Information & Communication','Finance & insurance', 'Property', 'Professional, Scientific & Technical', 'Administrative & Support Service Activities','Education', 'Health & Social Work Activities', 'Arts, Entertainment & Recreation'
-              ],
+              categories: [['Agriculture, Forestry,','& Fishing'], 'Production','Construction',['Wholesale and Retail Trade;','Repair of Motors'],['Transportation', 'and Storage'],['Accommodation &','food services'],'Information and Communication',['Financial and','Insurance Activities'],'Real Estate Activities',['Professional, Scientific','and Technical Activities'],'Administrative and Support Service Activities',['Public administration','& defence'],'Education','Health','Arts, entertainment,recreation and other services'],
               labels: {
                 show: true,
                 trim: true,
-                maxHeight: 120,
-                hideOverlappingLabels: true,
+                hideOverlappingLabels: false,
               }
             },
             yaxis: {
@@ -1022,31 +1020,31 @@
                 show: true,
               },
               title: {
-                text: 'Number'
+                text: 'Count'
               },
             },
             tooltip: {
+              x: {
+              },
             },
           };
           var chart = new ApexCharts(document.querySelector("#IDBRBPE-chart"), options);
           chart.render();
         </script>
       </div>
-      <p>We can use the estimated data to explore the total number of businesses by their broad industry groups. The chart below shows the number of businesses per broad industry group.</p>
-      <div id="chartcontainer" style="width: 100%;height: 60vh">
-        <canvas id="BIGvsbusinesscount-chart"></canvas>
+      <p>The differences above are expected as each data set serves different purposes. However overall both correlate to show similar patterns that the UK has prominent numbers of businesses in industries related to construction and proffesional services.</p>
+      <div id="chartcontainer" style="width: 100%;height: 40vh">
+        <canvas id="UKBusinessCountTimeseries-chart"></canvas>
         <script>
-          new Chart(document.getElementById("BIGvsbusinesscount-chart"), {
-            type: 'bar',
+          new Chart(document.getElementById("UKBusinessCountTimeseries-chart"), {
+            type: 'line',
             data: {
-              labels: ["Agriculture, forestry & fishing", "Production", "Construction", "Wholesale & Retail Trade; Repair of Motor Vehicles", "Transportation & Storage", "Accommodation & food services", "Information & communication",
-                "Finance & insurance", "Property",
-                "Professional, scientific & technical", " Business administration & support services", "Public administration & defence", "Education", "Health", "Arts, entertainment, recreation & other services"
-              ],
+              labels: [2013, 2014, 2015, 2016, 2017, 2018, 2019],
               datasets: [{
-                label: "Number of enterprises by broad industry group",
-                backgroundColor: ["#27ae60", "#8e5ea2", "#a29bfe", "#e8c3b9", "#0652DD", "#81ecec", "#95a5a6", "#34495e", "#f39c12", "#d35400", "#fd79a8", "#6c5ce7", "#e84393", "#ff7675", "#2d3436", "#192a56", "#ff9ff3"],
-                data: [157595, 312475, 1037280, 547380, 360485, 201745, 369545, 90730, 113205, 867880, 512160, 306915, 360670, 289885, 339830]
+                data: [4895655, 5243135, 5389450, 5497670, 5694515, 5667510, 5867770],
+                label: "Numbers of Businesses",
+                borderColor: "#5f27cd",
+                fill: false
               }]
             },
             options: {
@@ -1054,16 +1052,33 @@
               maintainAspectRatio: false,
               legend: {
                 display: false,
+                position: 'bottom',
+              },
+              scales: {
+                xAxes: [{
+                  display: true,
+                  scaleLabel: {
+                    display: true,
+                    labelString: 'Year'
+                  }
+                }],
+                yAxes: [{
+                  display: true,
+                  scaleLabel: {
+                    display: true,
+                    labelString: 'Number of businesses'
+                  }
+                }]
               },
               title: {
                 display: true,
-                text: 'Number of Businesses per broad industry group'
+                text: 'Number of businesses, 2013 - 2019'
               }
             }
           });
         </script>
       </div>
-      <p>The chart shows that the UK has prominent numbers of businesses in industries related to construction, proffesional services and retail. </p>
+      <p>The chart above shows the total estimated number of businesses highlighting the growth of the UK business population across.</p>
     </section>
   </div>
   <!-- 3. Where are they in the UK? –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -3225,9 +3240,9 @@
           });
         </script>
       </div>
-      <p>Here again London appears as an outlier with the highest gross earnings, again the visual trend appears to be that survival rates could be linked to the overall earnings and density of other businesses.</p>
+      <p>Here again London appears as an outlier with the highest gross earnings, the visual trend appears to be that survival rates could be linked to the overall earnings and density of other businesses.</p>
       <p></p>
-      <p>In the chart below we are repeating the points and now plotting the productivity of the regions. Productivty here is an estimate of the volume of goods and services produced by an industry within a geographic area, and in aggregate across industries for a geographic area. <a href="https://www.ons.gov.uk/economy/economicoutputandproductivity/productivitymeasures/bulletins/regionallabourproductivityincludingindustrybyregionuk/2018">source</a>.</p>
+      <p>In the chart below we are repeating the points and now plotting the productivity of the regions. Productivity here is an estimate of the volume of goods and services produced by an industry within a geographic area, and in aggregate across industries for a geographic area,<a href="https://www.ons.gov.uk/economy/economicoutputandproductivity/productivitymeasures/bulletins/regionallabourproductivityincludingindustrybyregionuk/2018">source</a>.</p>
       <div id="chartcontainer" style="width: 100%;height: 70vh">
         <canvas id="experimental3-chart"></canvas>
         <script>
@@ -3367,13 +3382,14 @@
       <h3 class="title">10. What are some key takeaways?</h3>
       <ul>
         <li>The analysis of business statistics is split into core data sets useful for <a href="data.html#IDBRandBPE">different purposes</a>.</li>
-        <li>Businesses are categorised using specific codes called SIC codes.</li>
-        <li>These specific codes follow a specific structure and hierarchy.</li>
-        <li>There a larger number of businesses concentrated towards the south of the UK.</li>
-        <li>The investment into the UK by continent has shifted</li>
-        <li>Most businesses tend to be small and if  </li>
-        <li>Businesses (as surveyed by FB and OECD) tend to feel quite positive about their business, role and outlook</li>
-        <li>There maybe some correlations between location and </li>
+        <li>Businesses are categorised using specific codes called SIC codes. These specific codes follow a specific structure and hierarchy.</li>
+        <li>There are a larger number of businesses concentrated towards the south of the UK.</li>
+        <li>The total population of UK businesses is continuing to grow.</li>
+        <li>There are strong regional concentrations of industries.</li>
+        <li>The investment into the UK by continent has shifted away from Europe.</li>
+        <li>Most businesses tend to be small and if they have existed for a number of years have survived strong seletcion.</li>
+        <li>Businesses (as surveyed by FB and OECD) tend to feel quite positive about their business, role and outlook.</li>
+        <li>There maybe some correlations between region, productivity and survival.</li>
       </ul>
       <p>That's it, thanks for reading. Feel free to explore the <a href="data.html">data sources and libraries here</a>. If you have any feedback, requests for future articles or thoughts <a href="https://logikblok.com/#contact">please do get in touch</a>.</p>
       <p>You can follow me on twitter <a href="https://twitter.com/logikblok">@logikblok</a> or, if you liked this, you could <a href="https://www.buymeacoffee.com/logikblok">buy me a coffee</a>.</p>
