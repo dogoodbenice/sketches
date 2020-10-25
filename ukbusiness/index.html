@@ -111,7 +111,7 @@
           business. The [BPE] takes data on businesses on the IDBR, and then <em>estimates the number of additional very small businesses
             unregistered for VAT or PAYE</em> <a href="https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/836574/METHODOLOGY___QUALITY_NOTE_BPE.pdf">via BEIS</a></p>
       </blockquote>
-      <p>So we can use <em>both</em> these data sets to get a general picture of what's happening in the UK. For more on the differences <a href="https://www.gov.uk/government/statistics/guide-to-business-statistics">this guide</a> offers a good overview. More on the data used is available <a href="data.html">here</a>.</p>
+      <p>So we can use <em>both</em> these data sets to get a general picture of what's happening in the UK. For more on the differences <a href="https://www.gov.uk/government/statistics/guide-to-business-statistics">this guide</a> offers a good overview. More detail on the data used is available <a href="data.html">here</a>.</p>
       <p>Next, we also need to consider Standard Industrial Classifications or (<a href="https://www.ons.gov.uk/methodology/classificationsandstandards/ukstandardindustrialclassificationofeconomicactivities/uksic2007">SIC codes</a>). Just like
         the variety of structures there are a large number of things a business can do to meet the needs of it's customers. So to capture what businesses typically do, SIC codes are used to classify economic activites.</p>
       <blockquote cite="https://www.ons.gov.uk/methodology/classificationsandstandards/ukstandardindustrialclassificationofeconomicactivities/uksic2007" class="shadow ">
@@ -860,7 +860,7 @@
           document.getElementById("sicCode").innerHTML = random;
         }
       </script>
-      <p>As you can see there is a number and a description. The number code can be used to identify the businesses activities into an area and the descriptions provide further context.</p>
+      <p>As you can see the codes have a number and a description. The number code can be used to identify the activities of a business into an area and the descriptions can provide further context.</p>
       <p>These activities are organised into <em>classes or subclasses</em>, <em>groups</em>, <em>divisions</em>, <em>sections</em> and <em>broad industry groups (BIG)</em>. The chart below provides an outline of the breakdown with the number of each
         categorisation level and an example
         using <em>25.91 Manufacture of steel drums and similar containers</em>.</p>
@@ -908,8 +908,8 @@
         <a href="https://beta.companieshouse.gov.uk/company/00519500">via Companies House</a>
         </p>
       </blockquote>
-      <p>For the majority of our purposes, we'll mainly be working at the <em>Broad Industry group</em> level which is the highest categorisation of codes.</p>
-      <p>The chart below shows those Broad Industry Groups and their composition that are below them. Most BIGs have one <em>section</em> and a number of <em>divisions</em> below them, as you can see Production is often the most complex, with two
+      <p>For the majority of our purposes, we'll mainly be looking at things at the <em>Broad Industry group</em> level which is the highest categorisation available.</p>
+      <p>The chart below shows all the Broad Industry Groups (BIG) and their breakdown composition below them. Most BIGs have one <em>section</em> and a number of <em>divisions</em> below them. As you can see Production is the most complex, with two
         layers structured below it.</p>
       <div id="chartcontainer" style="width: 100%;height: 70vh">
         <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -957,7 +957,7 @@
           }
         </script>
       </div>
-      <p>This is an overall indication of how the UK business landscape is structured, statistically speaking.
+      <p>This higlights an overall indication of how the UK business landscape is structured, at least statistically speaking.
         The SIC hierarchy can be explored <a href="https://onsdigital.github.io/dp-classification-tools/standard-industrial-classification/ONS_SIC_hierarchy_view.html">further here</a>.</p>
     </section>
   </div>
@@ -971,9 +971,9 @@
           <b>In summary:</b> Over 5.8 million are estimated.
         </p>
       </blockquote>
-      <p>The estimation is used because there are are a vast number of businesses too small to be registered using the IDBR.</p>
+      <p>The estimation is because there are are a vast number of businesses too small to be registered using the IDBR, more detail on the data is available <a href="data.html">here</a></p>
       <p>We can use the estimated data to explore the total number of businesses by their broad industry groups. The chart below shows the number of businesses per broad industry group.</p>
-      <div id="chartcontainer" style="width: 100%;height: 70vh">
+      <div id="chartcontainer" style="width: 100%;height: 60vh">
         <canvas id="BIGvsbusinesscount-chart"></canvas>
         <script>
           new Chart(document.getElementById("BIGvsbusinesscount-chart"), {
@@ -1003,7 +1003,7 @@
           });
         </script>
       </div>
-      <p>The chart shows that the UK has prominent businesses in industries related to construction, proffesional services and retail. </p>
+      <p>The chart shows that the UK has prominent numbers of businesses in industries related to construction, proffesional services and retail. </p>
     </section>
   </div>
   <!-- 3. Where are they in the UK? –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -1016,13 +1016,12 @@
           <b>In summary:</b> There is a concentration of businesses towards the south of the UK. The highest number in London with the lowest in Northern Ireland.
         </p>
       </blockquote>
-      <p>As a quick reminder the The United Kingdom of Great Britain and Northern Ireland (UK) is shaped liked the below. The UK actually consists of four countries: England, Scotland, Wales and Northern Ireland.</p>
-      <p>England is split into smaller 9 regions and Scotland, Wales and Northern Ireland are treated as individual regions, bringing up the total number of regions to be <em>12</em>. At the time of writing the total UK
-        population is <a href="https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/overviewoftheukpopulation/august2019">estimated to be 66.4 million</a>.</p>
+      <p>As a quick reminder the The United Kingdom of Great Britain and Northern Ireland (UK) is shaped liked the below. The UK consists of four countries: England, Scotland, Wales and Northern Ireland.</p>
+      <p>England is split into smaller 9 regions whilst Scotland, Wales and Northern Ireland are treated as individual regions, bringing up the total number of regions to be <em>12</em>.</p>
       <p>
         <iframe src="https://www.atlistmaps.com/map/d1d976c8-707b-400f-8779-d4b0015e57b7?share=true" allow="geolocation" width="100%" height="400px" frameborder="0" scrolling="no"></iframe>
       </p>
-      <p>The chart below shows the number of businesses by region. It highlights the higher number of businesses towards the south of the UK with London having the highest followed by South East and the East of England.</p>
+      <p>The chart below shows the number of businesses by region. It highlights the higher number of businesses towards the south of the UK with London having the highest number followed by South East and the East of England.</p>
       <div id="chartcontainer" style="width: 100%;height: 50vh">
         <canvas id="regionandbusiness-chart"></canvas>
         <script>
@@ -1160,7 +1159,7 @@
           });
         </script>
       </div>
-      <p>It highlights further, the long term consitent concentration in those regions having the highest number of businesses in the UK.</p>
+      <p>It highlights, the long term consitentcy of those regions having the highest number of businesses in the UK.</p>
     </section>
   </div>
   <!-- 4. What are the most popular business activites? –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -1178,8 +1177,9 @@
           <li>81 Services to buildings and landscape activities</li>
         </p>
       </blockquote>
-      <p>The chart below shows the number of <em>enterprises</em> from the IDBR by Region and broad industry group. It again highlights the concentration of activity in construction and professional services.</p>
-      <div id="regionbig-chart" style="width: 100%;height: 70vh">
+      <p>The chart below tries to show the regional differences in the concentraion of <em>enterprises</em>. It's using 2019 ONS data on activity and size.
+</p>
+      <div id="regionbig-chart" style="width: 100%;height: 60vh">
         <script>
           var options = {
             series: [{
@@ -1898,7 +1898,14 @@
           chart.render();
         </script>
       </div>
-      <p>The chart below shows a treemap of the number of businesses highlighted by their broad industry group and their SIC industry division, allowing us to see a little more detail of the most popular business activites.</p>
+      <p>Couple of interesting points above:
+        <ul>
+          <li>Construction and professional services are fairly consistently spread across the UK.</li>
+          <li>Notice the more common aspects for Northern Ireland and Scotland in Agriculture & Fishing.</li>
+          <li>Education and Arts concentraion in London.</li>
+        </ul>
+        </p>
+      <p>The chart below shows a treemap of the number of businesses highlighted by their broad industry group and their SIC industry division, allowing us to see a little more detail into the most popular business activites.</p>
       <div id="businessactivity-chart" style="width: 100%;height: 70vh">
         <script>
           var options = {
@@ -2254,7 +2261,6 @@
           chart.render();
         </script>
       </div>
-      <p>The chart highlights the high business counts in construction, retail trade, education and more.</p>
     </section>
   </div>
   <!-- 5. Who invests in these businesses? –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -2264,7 +2270,7 @@
       <h3 class="title">5. Who is investing into the UK?</h3>
       <blockquote class="nutshell">
         <p>
-          <b>In summary:</b> Overall the largest amount of investment into the UK has come from Europe followed by the Americas. The overall net flow of investment has decreased from Europe with the Americas taking the lead.
+          <b>In summary:</b>  Historically the largest amount of investment into the UK has come from Europe followed by the Americas, however in recent years the overall net flow of investment has decreased from Europe with the Americas taking the lead.
         </p>
       </blockquote>
       <p>Businesses can take on debt or investment or alternative financial approaches to meet their needs. Here we're looking at Foreign Direct Investment (FDI) as a whole.</p>
@@ -2444,8 +2450,6 @@
           chart.render();
         </script>
       </div>
-      <p>Words</p>
-
     </section>
   </div>
   <!-- 6. UK businesses internationally? –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -2518,7 +2522,7 @@
           });
         </script>
       </div>
-      <p>The chart below shows whether the enterprises are doing both exporting and importing or only one of the main actions. Overall it's more likely that enterprises are only doing one of the activity rather than both.</p>
+      <p>The chart below shows whether the enterprises are doing both exporting and importing or only one of those actions. Overall what the data shows are that far more enterprises are only doing one of the activity rather than both activites.</p>
       <div id="chartcontainer" style="width: 100%;height: 70vh">
         <canvas id="exporterorimporter-chart"></canvas>
         <script>
@@ -2576,7 +2580,7 @@
           });
         </script>
       </div>
-      <p>The chart below shows the estimated counts of internationally trading enterprises by high level SIC sections. </p>
+      <p>The chart below shows the estimated counts of internationally trading enterprises by high level SIC sections. It highlights the high activity in Motor vehicles, manufacturing and professional services.</p>
       <div id="exportandimport-chart" style="width: 100%;height: 70vh">
         <script>
           var options = {
@@ -2652,12 +2656,12 @@
       <h3 class="title">7. What do these business look like?</h3>
       <blockquote class="nutshell">
         <p>
-          <b>In summary:</b> The majority are small, turning over less than £250,000 a year and if they have been around for >5 years are hardy survivors.
+          <b>In summary:</b> The majority are small, turning over less than £250,000 a year and if they have been around for >5 years they are hardy survivors.
         </p>
       </blockquote>
       <p>Overall, this is a more complex question to analyse and we can break this into factors like number of employees, turnover and their survival rates.</p>
-      <p>The chart below shows the numbers of businesses by their Employment Size Band, as you can see the vast majority of businesses employ between 1-9 employees, larger businesses are really quite small in number.</p>
-      <div id="chartcontainer" style="width: 100%;height: 70vh">
+      <p>The chart below shows the numbers of businesses by their Employment Size Band, as you can see the vast majority of businesses employ between 1-9 employees, larger businesses are much lower in number.</p>
+      <div id="chartcontainer" style="width: 100%;height: 60vh">
         <canvas id="employmentsize-chart"></canvas>
         <script>
           var ctx = document.getElementById('employmentsize-chart').getContext('2d');
@@ -2693,7 +2697,7 @@
           });
         </script>
       </div>
-      <p>The chart below shows the numbers of enterprises by their turnover band using the IDBR, there is a slightly more centered distribution. enterprises earning £100-249 are the most frequent.</p>
+      <p>The chart below shows the numbers of enterprises by their turnover band using IDBR data, here there is a slightly more centered distribution. enterprises earning £100-249k are the most frequent.</p>
       <div id="chartcontainer" style="width: 100%;height: 70vh">
         <canvas id="turnoversize-chart"></canvas>
         <script>
@@ -2730,11 +2734,16 @@
           });
         </script>
       </div>
-      <p>Businesses are competing all the time so survival rates are also an interesting indicator on businesses.</p>
-      <p>Quoting the ONS data <em>"a business is deemed to have survived if having been a birth in year t or having survived to year t; it is active in terms of employment and/or turnover in any part of t+1</em></p>
+      <p>Businesses are competing all the time so survival rates are also an interesting factor on businesses.</p>
+      <blockquote cite="https://www.ons.gov.uk/businessindustryandtrade/business/activitysizeandlocation/bulletins/ukbusinessactivitysizeandlocation/2019" class="shadow">
+        <p>
+          A business is deemed to have survived if having been a birth in year t or having survived to year t; it is active in terms of employment and/or turnover in any part of t+1 <a
+            href="https://www.ons.gov.uk/businessindustryandtrade/business/activitysizeandlocation/datasets/businessdemographyreferencetable">via ONS</a>
+        </p>
+      </blockquote>
       <p>By that we mean a buisness would have been born in 2013, is still present at 2013 and or has active turnover or employment in 2014 for example.</p>
       <p>The chart below shows the overall survival rates of businesses <em>"born"</em> in 2013.</p>
-      <div id="businesssurvival-chart" style="width: 100%;height: 70vh">
+      <div id="businesssurvival-chart" style="width: 100%;height: 60vh">
         <script>
           var options = {
             series: [{
@@ -2778,6 +2787,7 @@
           chart.render();
         </script>
       </div>
+      <p>The chart shows significant drops in business survial year to year highlighting the difficulty businesses must face.</p>
     </section>
   </div>
   <!-- 8. How do businesses feel? –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -2789,7 +2799,7 @@
         <p>
           <b>In summary:</b> Most businesses feel quite positive about their business, outlook and job satisfaction overall.
         </p>
-        <p>This section was started before COVID, so perhaps could be considered as a general insight into the overall businesses sentiment.</p>
+        <p>This section makes use of data before the COVID pandemic, so perhaps could be considered as a general insight into overall UK businesses sentiment.</p>
       </blockquote>
       <p>Of course, businesses aren't people, usually they are groups of individuals working together. However we can utilise data from the OECD and Facebook in their survey of businesses (2019). <a
           href="https://datacatalog.worldbank.org/dataset/future-business-survey-aggregated-data/resource/fce29d6c-4102-4a37-b9ab-30634e62a571">preview</a>.</p>
@@ -2890,8 +2900,8 @@
     <section class="topic">
       <a name="experimental"></a>
       <h3 class="title">9. Experimental Insights</h3>
-      <p>This secton takes a few different data sets to see if there are any interesting patterns that emerge, mainly making use of survival rates.</p>
-      <p>This chart plots the 5 year survival rate (2013 onwards), the regional population numbers and the numbers of businesses by tens of thousands for that region.</p>
+      <p>This secton takes a few different data sets to see if there are any interesting patterns that emerge, mainly making use of the survival rate.</p>
+      <p>The chart below plots the 5 year survival rate (2013 onwards) with the regional population numbers and the numbers of businesses by tens of thousands for that region. Click on any of the legend items to hide them from view.</p>
       <div id="chartcontainer" style="width: 100%;height: 70vh">
         <canvas id="experimental1-chart"></canvas>
         <script>
@@ -3021,10 +3031,10 @@
           });
         </script>
       </div>
-      <p>On the whole the visual trend appears to be that survival rates could be linked to the density of both people and other businesses. London is interesting to compare to the other regions as the highest in buisness count and population. Whilst
-        we can see that the business numbers are large it has a very low survival rate in comparison to other
+      <p>On the whole the visual trend appears to be that survival rates could be linked to the density of both people and other businesses. London is interesting to compare to the other regions as it has the highest buisness count and population. Whilst
+        we can see that the business numbers are large it has a lower survival rate in comparison to other
         regions. Perhaps a cumulation of density, population numbers and rent costs of the region could be attributed.</p>
-      <p>In the chart below we are repeating the main points but swapping the regional population with the Median gross annual earnings of full time employees for that region.</p>
+      <p>In the chart below we are repeating the main points but swapping the regional population with the median gross annual earnings of full time employees for that region.</p>
       <div id="chartcontainer" style="width: 100%;height: 70vh">
         <canvas id="experimental2-chart"></canvas>
         <script>
@@ -3154,9 +3164,9 @@
           });
         </script>
       </div>
-      <p>Here again London appears as a bit of an outlier with the highest gross earnings, again the whole the visual trend appears to be that survival rates could be linked to the overall earnings and density of other businesses.</p>
+      <p>Here again London appears as an outlier with the highest gross earnings, again the visual trend appears to be that survival rates could be linked to the overall earnings and density of other businesses.</p>
       <p></p>
-      <p>Output refers to gross value added (GVA), which is an estimate of the volume of goods and services produced by an industry within a geographic area, and in aggregate across industries for a geographic area.</p>
+      <p>In the chart below we are repeating the points and now plotting the productivity of the regions. Productivty here is an estimate of the volume of goods and services produced by an industry within a geographic area, and in aggregate across industries for a geographic area. <a href="https://www.ons.gov.uk/economy/economicoutputandproductivity/productivitymeasures/bulletins/regionallabourproductivityincludingindustrybyregionuk/2018">source</a>.</p>
       <div id="chartcontainer" style="width: 100%;height: 70vh">
         <canvas id="experimental3-chart"></canvas>
         <script>
@@ -3286,7 +3296,7 @@
           });
         </script>
       </div>
-      <p></p>
+      <p>Considering all the trends perhaps there maybe an ideal balance between productivity, salary and population size that has an impact on the survival of a business.</p>
     </section>
   </div>
   <!-- 10. Summary takeaways? –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -3295,16 +3305,17 @@
       <a name="summary"></a>
       <h3 class="title">10. What are some key takeaways?</h3>
       <ul>
+        <li>The analysis of business statistics is split into core data sets useful for <a href="data.html#IDBRandBPE">different purposes</a>.</li>
         <li>Businesses are categorised using specific codes.</li>
         <li>These specific codes follow a structure and hierarchy.</li>
         <li>There a larger number of businesses concentrated towards the south of the UK.</li>
-        <li>There a larger number of businesses</li>
-        <li>The FDI into the UK has dramatically shifted, from </li>
+        <li>The FDI into the UK has shifted, from </li>
+        <li></li>
         <li>Businesses do all sorts of things and with the majority being</li>
-        <li>Businesses look like all sorts of things</li>
+        <li>Businesses tend to be small, </li>
         <li>Businesses (as surveyed by FB and OECD) tend to feel quite positive about their business, role and outlook</li>
       </ul>
-      <p>That's it, thanks for reading. If you have any <a href="https://logikblok.com/#contact">feedback, requests or thoughts please do share it with me</a>.</p>
+      <p>That's it, thanks for reading. Feel free to explore the <a href="data.html">data sources and libraries here</a>. If you have any feedback, requests for future articles or thoughts <a href="https://logikblok.com/#contact">please do get in touch</a>.</p>
       <p>You can follow me on twitter <a href="https://twitter.com/logikblok">@logikblok</a> or, if you liked this, you could <a href="https://www.buymeacoffee.com/logikblok">buy me a coffee</a>.</p>
       <p><a href="https://logikblok.com/">logikblok.com</a></p>
     </section>
