@@ -53,7 +53,3 @@ Latest at the bottom. Return [home](https://logikblok.github.io/).
 50. [Capable Content](https://logikblok.github.io/sketches/capablecontent/)
 51. [Treejacktest](https://logikblok.github.io/sketches/treejacktest/?utm_source=analytics_test&utm_medium=referral)
 52. [UK Business](https://logikblok.github.io/sketches/ukbusiness/)
-53. [Great Taxonomy](https://logikblok.github.io/sketches/greattaxonomy/)
-54. [Great Product Search V1](https://logikblok.github.io/sketches/greatproductsearchv1/)
-55. [Great Taxonomy v2](https://logikblok.github.io/sketches/greattaxonomyv2/)
-56. [Password Generator](https://logikblok.github.io/sketches/passwordgenerator/)
