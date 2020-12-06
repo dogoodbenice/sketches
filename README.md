@@ -55,3 +55,4 @@ Latest at the bottom. Return [home](https://logikblok.github.io/).
 52. [UK Business](https://logikblok.github.io/sketches/ukbusiness/)
 53. [Moonshot](https://logikblok.github.io/moonshot/)
 54. [Dreamcity](https://logikblok.github.io/sketches/dreamcity/)
+55. [Solar System V1](https://logikblok.github.io/sketches/solarsystemv1/)
