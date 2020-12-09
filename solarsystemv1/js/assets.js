@@ -1,0 +1,1 @@
+var SPLINE_ASSETS_LIST = { fonts: ['besley_book'], images: [], models: [], animations: [] }
