@@ -56,3 +56,4 @@ Latest at the bottom. Return [home](https://logikblok.github.io/).
 53. [Moonshot](https://logikblok.github.io/moonshot/)
 54. [Dreamcity](https://logikblok.github.io/sketches/dreamcity/)
 55. [Solar System V1](https://logikblok.github.io/sketches/solarsystemv1/)
+56. [Seen recently](https://logikblok.github.io/seenrecently/)
