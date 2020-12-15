@@ -57,3 +57,4 @@ Latest at the bottom. Return [home](https://logikblok.github.io/).
 54. [Dreamcity](https://logikblok.github.io/sketches/dreamcity/)
 55. [Solar System V1](https://logikblok.github.io/sketches/solarsystemv1/)
 56. [Seen recently](https://logikblok.github.io/seenrecently/)
+57. [Lava lamp studies](https://logikblok.github.io/sketches/lavalampstudies/)
