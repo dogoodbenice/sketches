@@ -4,44 +4,35 @@
 <head>
   <meta charset="utf-8">
   <title>Lava Lamp Studies</title>
+  <meta name="description" content="Experimenting with gradients and shape to create phone backgrounds.">
+  <meta name="author" content="logikblok">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Favicon –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="images/lamp3.png">
 </head>
 
 <body>
-  <div class="card">
-    <img src="assets/lamp1.png" alt="phot of lamp 1">
-  </div>
-  <div class="card">
-    <img src="assets/lamp2.png" alt="phot of lamp 1">
-  </div>
-  <div class="card">
-    <img src="assets/lamp3.png" alt="phot of lamp 1">
-  </div>
-  <div class="card">
-    <img src="assets/lamp4.png" alt="phot of lamp 1">
+  <div class="container">
+    <div><img src="images/lamp1.png" alt="a sketch of a lava lamp"></div>
+    <div><img src="images/lamp2.png" alt="a sketch of a lava lamp"></div>
+    <div><img src="images/lamp3.png" alt="a sketch of a lava lamp"></div>
+    <div><img src="images/lamp4.png" alt="a sketch of a lava lamp"></div>
   </div>
 </body>
+
 <style media="screen">
-  body {
+  .container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    grid-gap: 25px;
+    grid-gap: 10px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
   }
 
-  @media only screen and (min-width:480px) and (max-width:1023px){
- body{
-   grid-template-columns: repeat(2, auto);
-   margin: 3em 0.5em;
+  img {
+    width: 100%;
+    height: auto;
+    object-fit: scale-down;
   }
-
-
-}
-
-@media only screen and (min-width:0px) and (max-width:480px){
- body{
-   grid-template-columns: repeat(1, auto);
-   margin: 3em 0.1em;
-  }
-
 </style>
 
 </html>
