@@ -8,6 +8,10 @@
 var graph = new Springy.Graph();
 
 var DIT =graph.newNode({label:"DIT",});
+var MAGNA =graph.newNode({label:"MAGNA",});
+var MODULE1 =graph.newNode({label:"MODULE1",});
+var M1T1 =graph.newNode({label:"M1T1",});
+var Concept =graph.newNode({label:"Concept",});
 var Market =graph.newNode({label:"Market",});
 var Region =graph.newNode({label:"Region",});
 var Sector =graph.newNode({label:"Sector",});
@@ -112,6 +116,12 @@ var Technologyandsmartcities =graph.newNode({label:"Technology and smart cities"
 var Water =graph.newNode({label:"Water",});
 
 graph.newEdge(DIT,Market,{color:'#00A0B0'});
+graph.newEdge(DIT,MAGNA,{color:'#00A0B0'});
+graph.newEdge(DIT,Concept,{color:'#00A0B0'});
+graph.newEdge(MAGNA,Concept,{color:'#00A0B0'});
+graph.newEdge(MAGNA,MODULE1,{color:'#00A0B0'});
+graph.newEdge(MODULE1,M1T1,{color:'#00A0B0'});
+graph.newEdge(Concept,MAGNA,{color:'#00A0B0'});
 graph.newEdge(DIT,Region,{color:'#00A0B0'});
 graph.newEdge(DIT,Sector,{color:'#00A0B0'});
 graph.newEdge(Sector,Subsectorname,{color:'#00A0B0'});
