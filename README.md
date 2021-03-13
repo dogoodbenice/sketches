@@ -61,4 +61,4 @@ Latest at the bottom. Return [home](https://logikblok.github.io/).
 58. [Unstable Rectangles](https://logikblok.github.io/sketches/unstablerectangles/)
 59. [Little-forest](https://logikblok.github.io/sketches/little-forest/)
 60. [Little-rocket](https://logikblok.github.io/sketches/littlerocket/)
-60. [Little-regata](https://logikblok.github.io/sketches/littleregata/)
+60. [Little-regatta](https://logikblok.github.io/sketches/littleregatta/)
