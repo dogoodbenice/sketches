@@ -62,4 +62,4 @@ Latest at the bottom. Return [home](https://logikblok.github.io/).
 59. [Little-forest](https://logikblok.github.io/sketches/little-forest/)
 60. [Little-rocket](https://logikblok.github.io/sketches/littlerocket/)
 60. [Little-regatta](https://logikblok.github.io/sketches/littleregatta/)
-61. [Generative Art System - 1](https://logikblok.github.io/sketches//g-art-system-1)
+61. [Generative Art System - 1](https://logikblok.github.io/sketches/g-art-system-1)
