@@ -1,9 +1,9 @@
-const CRYSTAL_SIZE = 600
+const CRYSTAL_SIZE = 250
 const SIDES = 6
 let PALETTE = []
 
 function setup() {
-  createCanvas(800,800);
+  createCanvas(400,400);
   PALETTE = [
     color(46,204,113),
     color(142,68,173),
