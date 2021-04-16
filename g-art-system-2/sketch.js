@@ -1,17 +1,30 @@
-const CRYSTAL_SIZE = 250
-const SIDES = 8
-let PALETTE = []
+const CRYSTAL_SIZE = 150
+const SIDES = 6
 
+//LAYOUT IN THE GRID
+const MARGIN = CRYSTAL_SIZE / 2
+const COLUMNS = 4
+const ROWS = 4
+const PADDING = CRYSTAL_SIZE * 0.2
+const GRIDBOX = CRYSTAL_SIZE + PADDING
+const START = (CRYSTAL_SIZE / 2) + MARGIN
+
+let PALETTE = []
+ALL_CRYSTALS = []
 const layers = []
 
 function setup() {
-  createCanvas(500, 500)
+  const totalX = START + GRIDBOX * COLUMNS
+  const totalY = START + GRIDBOX * ROWS
+  createCanvas(totalX, totalY)
+  console.log(totalX)
+  console.log(totalY)
 
+  //This is our set of colours, amend these to define something new
   PALETTE = [
-    color('#E84393'), // pink
-    color('#0984e3'), // blue
-    color('#F95B02'), // orange
-    color('#00b894') // green
+    color('red'), // red
+    color('yellow'), // yellow
+    color('blue') // blue
   ]
 
   noLoop()
@@ -20,41 +33,25 @@ function setup() {
 }
 
 function draw() {
-  // const cirlces = new Circles()
-  // cirlces.render()
-  //
-  // const simpleLines = new SimpleLines()
-  // simpleLines.render()
-  //
-  // const outlineShape = new OutlineShape()
-  // outlineShape.render()
-  //testLines()
-
-  let picker = random(1)
-  if (picker > 0.3) {
-    layers.push(new OutlineShape())
+  for (var x = 0; x < COLUMNS; x++) {
+    for (var y = 0; y < ROWS; y++) {
+      const posX = START + (x * GRIDBOX)
+      const posY = START + (y * GRIDBOX)
+      new Crystal(posX,posY)
+      ALL_CRYSTALS.push(new Crystal(posX, posY))
+      background(255,255,255)
+    }
   }
 
-  picker = random(1)
-  if (picker > 0.3) {
-    layers.push(new SimpleLines())
-  }
-
-  picker = random(1)
-  if (picker > 0.3) {
-    layers.push(new Circles())
-  }
-
-  layers.forEach(layer => {
-    background(255, 255, 255);
-    layer.render()
+  ALL_CRYSTALS.forEach(Crystal => {
+    Crystal.render()
   });
 
 }
 
 function mouseClicked() {
+  background(255,255,255)
   redraw();
-
 }
 
 function keyTyped() {
