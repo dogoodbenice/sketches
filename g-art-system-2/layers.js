@@ -1,12 +1,12 @@
 class Layer {
   constructor() {
-    this.sides = int(random(2,5))
+    this.sides = SIDES //int(random(2,5)) //Vary up the number of sides
     this.numShapes = this.sides
     this.angle = 360 / this.numShapes
     this.stepsOut = 8
     this.singleStep = (CRYSTAL_SIZE / 2) / this.stepsOut
     this.thinStroke = 1
-    this.thickStroke = 3
+    this.thickStroke = 2
     this.strokeColor = getRandomFromPalette()
   }
 }
@@ -16,12 +16,15 @@ class Circles extends Layer {
     super()
     this.shapeSize = (CRYSTAL_SIZE / 2) * 0.93
     this.position = (CRYSTAL_SIZE / 2) - (this.shapeSize / 2)
+    //To vary up the number of circles drawn
+    //this.numShapes = randomSelectTwo() ? this.sides : this.sides / int(random(2,10))
+    this.weight = randomSelectTwo() ? this.thinStroke : this.thickStroke / int(random(2,5))
   }
 
   render() {
     noFill()
     stroke(this.strokeColor)
-    strokeWeight(1)
+    strokeWeight(this.weight)
     push()
     translate(width/2, height/2)
     for (let i = 0; i <= this.numShapes; i++) {
