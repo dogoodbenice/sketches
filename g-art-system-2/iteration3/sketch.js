@@ -48,8 +48,8 @@ function draw() {
 }
 
 function mouseClicked() {
-  background(255,255,255)
-  redraw();
+  clear()
+  draw()
 }
 
 function keyTyped() {
