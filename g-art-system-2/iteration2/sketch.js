@@ -22,9 +22,9 @@ function setup() {
 
   //This is our set of colours, amend these to define something new
   PALETTE = [
-    color('red'), // red
-    color('yellow'), // yellow
-    color('blue') // blue
+    color('#10efbd'),
+    color('#BD10EF'),
+    color('#EFBD10')
   ]
 
   noLoop()

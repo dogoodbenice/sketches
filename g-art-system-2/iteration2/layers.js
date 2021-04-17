@@ -1,9 +1,9 @@
 class Layer {
   constructor() {
-    this.sides = int(random(2,10)) //SIDES//Useful to play around with to create new shapes
+    this.sides = int(random(3,10)) //SIDES//Useful to play around with to create new shapes
     this.numShapes = this.sides
     this.angle = 360 / this.numShapes
-    this.stepsOut = 8
+    this.stepsOut = 6
     this.singleStep = (CRYSTAL_SIZE / 2) / this.stepsOut
     this.thinStroke = 1
     this.thickStroke = 3
