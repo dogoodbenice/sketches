@@ -1,6 +1,6 @@
 class Layer {
   constructor() {
-    this.sides = int(random(15,100)) //SIDES//Useful to play around with to create new shapes
+    this.sides = int(random(15,50)) //SIDES//Useful to play around with to create new shapes
     this.numShapes = this.sides
     this.angle = 360 / this.numShapes
     this.stepsOut = 8
