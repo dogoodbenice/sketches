@@ -38,13 +38,13 @@ function draw() {
       const posY = START + (y * GRIDBOX)
       new Crystal(posX,posY)
       ALL_CRYSTALS.push(new Crystal(posX, posY))
+      background(255,255,255)
     }
   }
 
   ALL_CRYSTALS.forEach(Crystal => {
     Crystal.render()
   });
-
 }
 
 function mouseClicked() {
