@@ -3,7 +3,7 @@ class Layer {
     this.sides = int(random(2,20)) //Useful to play around with to create new shapes
     this.numShapes = this.sides
     this.angle = 360 / this.numShapes
-    this.stepsOut = 8
+    this.stepsOut = 10
     this.singleStep = (CRYSTAL_SIZE / 2) / this.stepsOut
     this.thinStroke = 1
     this.thickStroke = 2
@@ -42,7 +42,7 @@ class CenteredShape extends Layer {
 
   render () {
     stroke(this.layerColor)
-    //fill(this.layerColor)
+    noFill()
     push()
     if (this.randomShape < 0.1) {
       hexagon(0, 0, this.shapeSize)
@@ -76,7 +76,7 @@ class SteppedHexagons extends Layer {
         if (this.randomShape < 0.1) {
           hexagon(0, 0, this.shapeSize)
         } else if (this.randomShape >= 0.1 && this.randomShape < 0.6) {
-          ellipse(0, 0, this.shapeSize * 2, this.shapeSize * 2)
+          //ellipse(0, 0, this.shapeSize * 2, this.shapeSize * 2)
         } else if (this.randomShape >= 0.6) {
           rotate(this.angle / 2)
           hexagon(0, 0, this.shapeSize)

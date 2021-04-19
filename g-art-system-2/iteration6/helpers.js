@@ -55,11 +55,11 @@ const layerConstructors = [
   {
     name: 'Outline Shape',
     init: () => new OutlineShape(),
-    weight: 0
+    weight: 0.4
   },
   {
     name: 'Stepped Hexagons',
     init: () => new SteppedHexagons(),
-    weight: 0
+    weight: 0.5
   }
 ]
