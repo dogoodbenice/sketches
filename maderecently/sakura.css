@@ -9,12 +9,12 @@ html {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif; }
 
 body {
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   line-height: 1.618;
   max-width: 38em;
   margin: auto;
   color: #4a4a4a;
-  background-color: #f9f9f9;
+  background-color: #f5f6fa;
   padding: 13px; }
 
 @media (max-width: 684px) {
@@ -66,12 +66,12 @@ hr {
 
 a {
   text-decoration: none;
-  color: #1d7484; }
+  color: #fd79a8; }
   a:hover {
-    color: #982c61;
+    color: #fd79a8;
     border-bottom: 2px solid #4a4a4a; }
   a:visited {
-    color: #144f5a; }
+    color: #fd79a8; }
 
 ul {
   padding-left: 1.4em;
