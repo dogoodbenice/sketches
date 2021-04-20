@@ -1,11 +1,11 @@
-const CRYSTAL_SIZE = 150
+const CRYSTAL_SIZE = 95
 const SIDES = 6
 
 //LAYOUT IN THE GRID
 const MARGIN = CRYSTAL_SIZE / 2
-const COLUMNS = 4
-const ROWS = 4
-const PADDING = CRYSTAL_SIZE * 0.2
+const COLUMNS = 10
+const ROWS = 10
+const PADDING = CRYSTAL_SIZE * 0.1
 const GRIDBOX = CRYSTAL_SIZE + PADDING
 const START = (CRYSTAL_SIZE / 2) + MARGIN
 
@@ -39,7 +39,7 @@ function draw() {
       const posY = START + (y * GRIDBOX)
       new Crystal(posX,posY)
       ALL_CRYSTALS.push(new Crystal(posX, posY))
-      background(255,255,255)
+      background(50)
     }
   }
 

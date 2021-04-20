@@ -1,5 +1,5 @@
 function hexagon (posX, posY, radius) {
-  const rotAngle = 360 / 6
+  const rotAngle = 360 / 5
   beginShape()
   for (let i = 0; i < 6; i++) {
     const thisVertex = pointOnCircle(posX, posY, radius, i * rotAngle)
@@ -29,35 +29,6 @@ function getRandomFromPalette () {
   return PALETTE[rando2]
 }
 
-function randomSelectTwo () {
-  const rando = random(2)
-  return rando > 1 ? true : false
-}
-
-function getRandomFromPalette () {
-  const rando = floor(random(0, PALETTE.length))
-  return PALETTE[rando]
-}
-
-function testLines () {
-  let numShapes = randomSelectTwo() ? SIDES : SIDES * 2
-  const strokeColor = getRandomFromPalette()
-
-  noFill()
-  stroke(PALETTE[0])
-  strokeWeight(1)
-  push()
-    translate(width/2, height/2)
-    ellipse(0, 0, CRYSTAL_SIZE, CRYSTAL_SIZE)
-    stroke(strokeColor)
-    const angle = 360 / numShapes
-    for (let i = 0; i < numShapes; i++) {
-      line(0, 0, 0, CRYSTAL_SIZE / 2)
-      rotate(angle)
-    }
-  pop()
-}
-
 function myTriangle (center, radius, direction) {
   if (direction) {
     beginShape();
@@ -79,12 +50,12 @@ const layerConstructors = [
   {
     name: 'Outline Shape',
     init: () => new OutlineShape(),
-    weight: 0.3
+    weight: 0
   },
   {
     name: 'Centered Shape',
     init: () => new CenteredShape(),
-    weight: 0.3
+    weight: 0.5
   },
   {
     name: 'Circles',
@@ -92,23 +63,18 @@ const layerConstructors = [
     weight: 0.3
   },
   {
+    name: 'Stepped Hexagons',
+    init: () => new SteppedHexagons(),
+    weight: 0.8
+  },
+  {
     name: 'Simple Lines',
     init: () => new SimpleLines(),
-    weight: 0.3
+    weight: 0.2
   },
   {
     name: 'Dotted Lines',
     init: () => new DottedLines(),
-    weight: 0.3
-  },
-  {
-    name: 'Ring of Shapes',
-    init: () => new RingOfShapes(),
-    weight: 1
-  },
-  {
-    name: 'Stepped Hexagons',
-    init: () => new SteppedHexagons(),
-    weight: 0.7
+    weight: 0.9
   }
 ]
