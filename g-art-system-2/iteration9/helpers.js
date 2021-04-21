@@ -1,5 +1,5 @@
 function hexagon (posX, posY, radius) {
-  const rotAngle = 360 / 5
+  const rotAngle = 360 / 4
   beginShape()
   for (let i = 0; i < 6; i++) {
     const thisVertex = pointOnCircle(posX, posY, radius, i * rotAngle)
@@ -29,6 +29,35 @@ function getRandomFromPalette () {
   return PALETTE[rando2]
 }
 
+function randomSelectTwo () {
+  const rando = random(2)
+  return rando > 1 ? true : false
+}
+
+function getRandomFromPalette () {
+  const rando = floor(random(0, PALETTE.length))
+  return PALETTE[rando]
+}
+
+function testLines () {
+  let numShapes = randomSelectTwo() ? SIDES : SIDES * 2
+  const strokeColor = getRandomFromPalette()
+
+  noFill()
+  stroke(PALETTE[0])
+  strokeWeight(1)
+  push()
+    translate(width/2, height/2)
+    ellipse(0, 0, CRYSTAL_SIZE, CRYSTAL_SIZE)
+    stroke(strokeColor)
+    const angle = 360 / numShapes
+    for (let i = 0; i < numShapes; i++) {
+      line(0, 0, 0, CRYSTAL_SIZE / 2)
+      rotate(angle)
+    }
+  pop()
+}
+
 function myTriangle (center, radius, direction) {
   if (direction) {
     beginShape();
@@ -48,18 +77,38 @@ function myTriangle (center, radius, direction) {
 //The weight and order of the below is used to define what users see.
 const layerConstructors = [
   {
-    name: 'Outline Shape',
-    init: () => new OutlineShape(),
-    weight: 0.6
+    name: 'Centered Shape',
+    init: () => new CenteredShape(),
+    weight: 0.3
   },
   {
-    name: 'Pentagons',
-    init: () => new Pentagons(),
-    weight: 0.8
+    name: 'Outline Shape',
+    init: () => new OutlineShape(),
+    weight: 0.3
+  },
+  {
+    name: 'Circles',
+    init: () => new Circles(),
+    weight: 0.3
+  },
+  {
+    name: 'Simple Lines',
+    init: () => new SimpleLines(),
+    weight: 0.3
+  },
+  {
+    name: 'Dotted Lines',
+    init: () => new DottedLines(),
+    weight: 0.3
+  },
+  {
+    name: 'Ring of Shapes',
+    init: () => new RingOfShapes(),
+    weight: 0.2
   },
   {
     name: 'Stepped Hexagons',
     init: () => new SteppedHexagons(),
-    weight: 0.1
+    weight: 0.7
   }
 ]
