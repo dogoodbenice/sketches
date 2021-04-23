@@ -68,7 +68,7 @@ const layerConstructors = [
     weight: 0
   },
   {
-    name: 'Ring of Shapes',
+    name: 'Circles',
     init: () => new Circles(),
     weight: 0.5
   }
