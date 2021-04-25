@@ -1,5 +1,5 @@
-Hello, this is a collection of interactive sketches.
-Latest at the bottom. Return [home](https://logikblok.github.io/).
+# Hello, this is a collection of interactive sketches.
+# Latest at the bottom. Return [home](https://logikblok.github.io/).
 
 1. [Hello](https://logikblok.github.io/sketches/hello/)
 2. [Circles](https://logikblok.github.io/sketches/circles/)
