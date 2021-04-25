@@ -64,4 +64,4 @@ Latest at the bottom. Return [home](https://logikblok.github.io/).
 61. [Little-regatta](https://logikblok.github.io/sketches/littleregatta/)
 62. [Generative Art System v1](https://logikblok.github.io/sketches/g-art-system-1.1)
 63. [Generative Art System v2](https://logikblok.github.io/sketches/g-art-system-2)
-64. [Made recently](https://logikblok.github.io/sketches/maderecently)
+64. [Generated recently](https://logikblok.github.io/sketches/generatedrecently)
