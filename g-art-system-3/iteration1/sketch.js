@@ -1,22 +1,38 @@
+
+const seedX = Math.random()
+const seedY = Math.random()
+const radX = 0.7
+const radY = 0.6
+let ampX
+let ampY
+
 function setup() {
-    createCanvas(800, 800)
-    angleMode(DEGREES)
-    noLoop()
+    createCanvas(600, 600)
+    colorMode(HSB, 1, 1, 1)
+    frameRate(30)
+    background(255)
+    noStroke()
+    createLoop({
+         gif: {
+             options: { quality: 5 },
+             fileName: "noiseLoop.gif",
+            startLoop: 1,
+             endLoop: 2
+         }
+    })
+    ampX = width / 2
+    ampY = height / 2
 }
 
 function draw() {
-    background(40)
-    noFill()
-    stroke(255)
+    //background(255)
+    //stroke(255)
+    fill(animLoop.progress, 0.5, 1)
+    translate(width / 2, height / 2)
+    const x = animLoop.noise({ radius: radX, seed: seedX }) * ampX
+    const y = animLoop.noise({ radius: radY, seed: seedY }) * ampY
 
-    translate(width / 4, height / 3)
-    // const x = cos(animLoop.theta) * width / 3
-    // const y = animLoop.noise() * height / 3
-    // ellipse(x, y, 50, 50)
-
-    for (var i = 0; i < 500; i++) {
-      var z = sin(frameCount) * (int(random(5,500)))
-      triangle(200, z, 100, 300, 300, 300);
-    }
-
+    //console.log(animLoop)
+    rect(x, y, 50, 50)
+    rect(y, x, 50, 50)
 }
