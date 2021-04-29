@@ -9,28 +9,27 @@ let ampY
 function setup() {
     createCanvas(500, 500)
     angleMode(DEGREES)
-    colorMode(HSB, 1, 1, 1)
-    frameRate(30)
+    frameRate(40)
     background(255)
     noStroke()
-    createLoop({
-         gif: {
-             options: { quality: 5 },
-             fileName: "iteration2.gif",
-             download: true,
-             startLoop: 0,
-             endLoop: 2
-         }
-    })
-    ampX = width / 3
-    ampY = height / 3
+   createLoop({
+     // framesPerSecond:40, gif:{
+     //        options: { quality: 5 }, //pixel sample interval, lower is better
+     //        fileName: "noiseLoop.gif",
+     //        startLoop: 1,
+     //        endLoop: 2
+        //}
+      })
+    ampX = width / 5
+    ampY = height / 5
 }
 
 function draw() {
     //background(animLoop.progress, 0.5, 1)
     //fill(animLoop.progress, 0.5, 1)
-    background(0)
-    stroke(255)
+    background(0,50)
+    //stroke(255)
+    fill(255,255,0)
 
     var z = sin(frameCount) * 45
 
