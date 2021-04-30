@@ -2,9 +2,9 @@
 
 function setup() {
   createCanvas(500, 500);
-  colorMode(HSB, 1, 1, 1)
+  colorMode(RGB)
   angleMode(DEGREES);
-  frameRate(30)
+  frameRate(100)
   noStroke()
   createLoop({
        // gif: {
@@ -19,7 +19,6 @@ function setup() {
 
 function draw() {
   background(255);
-  var numFrames = 60;
   var size = sin(frameCount) * 45
   var m = 20;
   fill(animLoop.progress, 0.5, 1)
@@ -34,12 +33,4 @@ function draw() {
     }
   }
   console.log(size)
-  // if(frameCount<=numFrames)
-  // {
-  //   saveCanvas("fr###.jpg");
-  // }
-  // if(frameCount==numFrames)
-  // {
-  //   console.log("All frames have been saved");
-  // }
 }
