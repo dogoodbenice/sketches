@@ -5,18 +5,18 @@ function setup() {
   angleMode(DEGREES);
   frameRate(40)
   createLoop({
-       gif: {
-           options: { quality: 6 },
-           fileName: "noiseLoop.gif",
-          startLoop: 1,
-           endLoop: 2
-       }
+       // gif: {
+       //     options: { quality: 6 },
+       //     fileName: "noiseLoop.gif",
+       //    startLoop: 0,
+       //     endLoop: 2
+       // }
   })
 }
 
 
 function draw() {
-  background(255,50);
+  background(255);
   var size = sin(frameCount) * 20;
   var m = 20;
   angle += 0.05;
