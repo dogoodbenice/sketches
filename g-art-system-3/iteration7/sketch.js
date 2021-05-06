@@ -1,40 +1,37 @@
-let angle = 0;
+let angle = 30;
 
 function setup() {
-  createCanvas(800, 800);
+  createCanvas(700, 700);
   angleMode(DEGREES);
-  frameRate(40)
-  noStroke();
+  frameRate(30)
+  noFill()
   createLoop({
-       // gif: {
-       //     options: { quality: 9 },
-       //     fileName: "solar.gif",
-       //     download: true,
-       //     startLoop: 1,
-       //     endLoop: 2
-       // }
-  })
+   //  duration: 3,
+   //     gif: {
+   //         options: { quality: 30},
+   //         fileName: "nofill.gif",
+   //         download: true,
+   //         startLoop: 1,
+   //         endLoop: 3
+   //     }
+   })
 }
 
 function draw() {
   background(30,80);
   var size = 4.5;
-  var m = 20;
-  angle += 0.025;
-
+  var m = 8;
+  angle += 0.035;
   translate(width / 2, height / 2);
   for (var i = 0; i < m; i++) {
     for (var j = 0; j < m; j++) {
       rotate(angle);
-        fill('#3b1ce3')
-        ellipse(20*i, 50*j, size)
-        //ellipse(40*i, 50*j, size)
-        //ellipse(60*i, 50*i, size)
-        //ellipse(80*i, 50*i, size)
+        stroke('white')
+        rect(30*i,75,20)
     }
   }
-  push()
-  fill(255, 204, 0); //yellow
-  ellipse(0,0, 20)
-  pop()
+}
+
+function mousePressed(){
+  console.log(angle);
 }
