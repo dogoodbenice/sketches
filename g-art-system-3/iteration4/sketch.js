@@ -20,7 +20,12 @@ function draw() {
   background(255);
   var size = sin(frameCount) * 10;
   var m = 25;
-  angle += 0.05;
+
+
+  var z = sin(frameCount) * 45
+
+  angle = z;
+
   fill(255, 204, 0);
   for (var i = 0; i < m; i++) {
     for (var j = 0; j < m; j++) {

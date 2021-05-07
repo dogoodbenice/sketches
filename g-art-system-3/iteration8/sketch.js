@@ -1,38 +1,32 @@
-let angle = 30;
+let angle;
 
 function setup() {
-  createCanvas(700, 700,WEBGL);
+  createCanvas(600, 600,WEBGL);
   angleMode(DEGREES);
-  frameRate(50)
+  frameRate(20)
   noFill()
   createLoop({
-   //  duration: 3,
-   //     gif: {
-   //         options: { quality: 30},
-   //         fileName: "nofill.gif",
-   //         download: true,
-   //         startLoop: 1,
-   //         endLoop: 3
-   //     }
+    duration: 15,
+       gif: {
+           options: { quality: 30},
+           fileName: "tumble.gif",
+           download: true,
+           startLoop: 1,
+           endLoop: 2
+       }
    })
 }
 
 function draw() {
-  background(30);
-  var size = 4.5;
+  background('#FBFEF9');
   var m = 10;
-  angle += 0.015;
+  let angle = sin(frameCount) * 11
+  translate(-130, 0);
   for (var i = 0; i < m; i++) {
     for (var j = 0; j < m; j++) {
-      rotateZ(angle);
       rotateX(angle);
-      rotateY(angle);
-        stroke('white')
-        rect(30*j,70*i,20)
+        stroke('#A63446')
+        rect(30*j,40*i,30)
     }
   }
-}
-
-function mousePressed(){
-  console.log(angle);
 }
