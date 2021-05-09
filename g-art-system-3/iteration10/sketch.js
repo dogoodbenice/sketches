@@ -14,30 +14,30 @@ function setup() {
     //        startLoop: 1,
     //        endLoop: 2
     //    }
-   })
+  })
 }
 
 function draw() {
   background('#FBD4FF');
-  var m = 3;
-  let angle = (second() * 2)
-  translate(-400, -200);
-  //for (var i = 0; i < m; i++) {
-    //for (var j = 0; j < m; j++) {
-
-        stroke('#20B812')
-        strokeWeight(4);
-        ellipse(300,300,100)
-        triangle(100,400,300,100,500,400)
-        ellipse(100,400,100)
-        ellipse(300,100,100)
-        push()
-        translate(0,0);
-        //rotate(radians(frameCount));
-        ellipseMode(CENTER);
-        ellipse(500,400,100)
-        pop()
+  translate(-250, -250);
+  for (var x = 1; x < 3; x++) {
+    //for (var y = 1; y < 50; y = y+50){
+    //rotateY(radians(frameCount));
+    push();
+    stroke('#20B812')
+    drawshape();
     //}
-  //}
+  }
   console.log(angle);
+}
+
+function drawshape() {
+  strokeWeight(4);
+  ellipse(300, 300, 100)
+  ellipse(300, 300, 300)
+  ellipse(100, 400, 10)
+  //triangle(100, 400, 300, 100, 500, 400)
+  ellipse(100, 400, 200)
+  ellipse(300, 100, 200)
+  ellipse(500, 400, 200)
 }
