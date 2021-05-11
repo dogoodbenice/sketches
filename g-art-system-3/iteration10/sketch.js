@@ -1,9 +1,8 @@
 let angle;
-
 function setup() {
-  createCanvas(600, 600, WEBGL);
-  //angleMode(DEGREES);
-  frameRate(100)
+  createCanvas(600, 600);
+  angleMode(DEGREES);
+  frameRate(40)
   noFill()
   createLoop({
     // duration: 15,
@@ -18,26 +17,30 @@ function setup() {
 }
 
 function draw() {
-  background('#FBD4FF');
-  translate(-250, -250);
-  for (var x = 1; x < 3; x++) {
-    //for (var y = 1; y < 50; y = y+50){
-    //rotateY(radians(frameCount));
-    push();
-    stroke('#20B812')
-    drawshape();
-    //}
+  background(30,80);
+  var size = 4.5;
+  var m = 8;
+  angle += 0.035;
+  translate(width / 2, height / 2);
+  for (var i = 0; i < m; i++) {
+    for (var j = 0; j < m; j++) {
+      rotate(angle);
+        stroke('white')
+        push();
+        translate(i,j)
+        strokeWeight(size);
+        drawshape();
+        pop()
+    }
   }
-  console.log(angle);
 }
 
 function drawshape() {
-  strokeWeight(4);
-  ellipse(300, 300, 100)
-  ellipse(300, 300, 300)
-  ellipse(100, 400, 10)
+  ellipse(30, 30, 10)
+  ellipse(30, 30, 30)
+  ellipse(10, 40, 10)
   //triangle(100, 400, 300, 100, 500, 400)
-  ellipse(100, 400, 200)
-  ellipse(300, 100, 200)
-  ellipse(500, 400, 200)
+  ellipse(10, 40, 20)
+  ellipse(30, 10, 20)
+  ellipse(50, 40, 20)
 }
