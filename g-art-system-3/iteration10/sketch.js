@@ -33,7 +33,7 @@ function draw() {
   push()
   translate(-200, 165);
   for (var i = 0; i < m; i++) {
-    for (var j = 0; j < 10; j++) {
+    for (var j = 0; j < 15; j=j+10) {
         rotateX(y2);
         stroke('#E3D985')
         point(200*i/2,50+j,10)
@@ -43,17 +43,17 @@ function draw() {
   push()
   translate(-200, 0);
   for (var i = 0; i < m; i++) {
-    for (var j = 0; j < 10; j++) {
-        rotateX(x);
+    for (var j = 0; j < 10; j=j+10) {
+        rotateX(y);
         stroke('#E3D985')
-        rect(200*i/2,50+j,10)
+        rect(200*i/2,50+j,50)
     }
   }
   pop()
   push()
   translate(-200, -165);
   for (var i = 0; i < m; i++) {
-    for (var j = 0; j < 10; j++) {
+    for (var j = 0; j < 20; j=j+10) {
         rotateX(y2);
         stroke('#E3D985')
         ellipse(200*i/2,50+j,10)
