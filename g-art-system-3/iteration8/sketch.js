@@ -6,14 +6,14 @@ function setup() {
   frameRate(20)
   noFill()
   createLoop({
-    duration: 15,
-       gif: {
-           options: { quality: 30},
-           fileName: "tumble.gif",
-           download: true,
-           startLoop: 1,
-           endLoop: 2
-       }
+    // duration: 15,
+    //    gif: {
+    //        options: { quality: 30},
+    //        fileName: "tumble.gif",
+    //        download: true,
+    //        startLoop: 1,
+    //        endLoop: 2
+    //    }
    })
 }
 
