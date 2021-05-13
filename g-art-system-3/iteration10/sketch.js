@@ -1,7 +1,7 @@
-let angle = 30
-let offset = 60
-let scalar = 5
-let speed = 2
+let angle = 50
+let offset = 1500000
+let scalar = 9
+let speed = 3
 
 function setup() {
   createCanvas(600, 600, WEBGL);
@@ -10,54 +10,68 @@ function setup() {
   frameRate(10)
   noFill()
   createLoop({
-    duration: 6,
-       gif: {
-           options: { quality: 30},
-           fileName: "circue.gif",
-           download: true,
-           startLoop: 1,
-           endLoop: 2
-       }
+    // duration: 6,
+    //    gif: {
+    //        options: { quality: 30},
+    //        fileName: "agon.gif",
+    //        download: true,
+    //        startLoop: 1,
+    //        endLoop: 2
+    //    }
   })
 }
 
 function draw() {
-  background('#3D65D4')
-  var m =6;
+  background('#4A1970')
+  var m = 9;
   angle += speed;
   var y = offset + sin(angle)
   var y1 = offset + cos(angle + 0.2) * scalar
-  var y2 = offset + sin(angle + 500) * scalar
-  //rotateZ(45)
+  var y2 = offset + sin(angle + 5000) * scalar
+  var y3 = offset + tan(angle + 0.2) * scalar
+  //var z = sin(frameCount) * 45
+  //rotateY(20)
+  rotateX(40)
 
   push()
-  translate(-160, -190);
+  translate(-400, -500);
   for (var i = 0; i < m; i++) {
     for (var j = 0; j < m; j++) {
         rotateX(y1);
-        stroke('#57F7BC')
-        hexagon((200*i)/3,(40+j),20)
+        stroke('#B98FD9')
+        ellipse((100*i),(40+j),30)
     }
   }
   pop()
   push()
-  translate(-160, -20);
+  translate(-400, -200);
   for (var i = 0; i < m; i++) {
     for (var j = 0; j < m; j++) {
         rotateX(y1);
-        stroke('#57F7BC')
-        pentagon((200*i)/3,(40+j),20)
-
+        stroke('#BC68FC')
+        hexagon((100*i),(40+j),20)
     }
   }
   pop()
   push()
-  translate(-160, 160);
+  translate(-400, 10);
   for (var i = 0; i < m; i++) {
     for (var j = 0; j < m; j++) {
         rotateX(y1);
-        stroke('#57F7BC')
-        rect((200*i)/3,(40+j),30)
+        stroke('#B98FD9')
+        pentagon((100*i),(40+j),20)
+
+    }
+  }
+  pop()
+
+  push()
+  translate(-400, 180);
+  for (var i = 0; i < m; i++) {
+    for (var j = 0; j < m; j++) {
+        rotateX(y1);
+        stroke('#B98FD9')
+        rect((100*i),(40+j),30)
     }
   }
   pop()
