@@ -21,42 +21,33 @@ function setup() {
 }
 
 function draw() {
-  background('#422040');
+  background('#02EDB2');
   var size = random(1,20);
-  var m = 5;
+  var m = 6;
   angle += speed;
-  var x = offset + cos(angle + 200) * scalar
   var y = offset + sin(angle) * scalar
-  var y1 = offset + sin(angle + 0.2) * scalar
+  var y1 = offset + cos(angle + 0.2) * scalar
   var y2 = offset + sin(angle + 100.8) * scalar
-
+  rotateZ(45)
   push()
-  translate(-200, 165);
-  for (var i = 0; i < m; i++) {
-    for (var j = 0; j < 15; j=j+10) {
-        rotateX(y2);
-        stroke('#E3D985')
-        point(200*i/2,50+j,10)
-    }
-  }
-  pop()
-  push()
-  translate(-200, 0);
+  translate(-125, 165);
   for (var i = 0; i < m; i++) {
     for (var j = 0; j < 10; j=j+10) {
         rotateX(y);
-        stroke('#E3D985')
-        rect(200*i/2,50+j,50)
+        stroke('#080304')
+        rect(50*i,50+j,15)
+        rect(60*i,60+j,15)
     }
   }
   pop()
+
   push()
-  translate(-200, -165);
+  translate(-225, -165);
   for (var i = 0; i < m; i++) {
-    for (var j = 0; j < 20; j=j+10) {
-        rotateX(y2);
-        stroke('#E3D985')
-        ellipse(200*i/2,50+j,10)
+    for (var j = 0; j < 10; j=j+10) {
+        rotateX(y);
+        stroke('#171113')
+        rect(200*i/2,50+j,25)
     }
   }
   pop()
