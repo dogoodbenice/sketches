@@ -1,6 +1,6 @@
-let angle = 30
-let offset = 60
-let scalar = 100000
+let angle = 10
+let offset = 5
+let scalar = 0.05
 let speed = 0.05
 
 function setup() {
@@ -11,46 +11,47 @@ function setup() {
   frameRate(10)
   noFill()
   createLoop({
-    duration: 7,
-       gif: {
-           options: { quality: 30},
-           fileName: "agon.gif",
-           download: true,
-           startLoop: 1,
-           endLoop: 2
-       }
+    // duration: 8,
+    //    gif: {
+    //        options: { quality: 30},
+    //        fileName: "agon.gif",
+    //        download: true,
+    //        startLoop: 1,
+    //        endLoop: 2
+    //    }
   })
 }
 
 function draw() {
   background('#DBCABD');
-  var size = random(1,20);
-  var m = 3;
   angle += speed;
   var y = sin(angle) * 10;
-  var y1 = offset - cos(angle - 500) * scalar
-  var y2 = offset + cos(angle + 500) * scalar
+  var y1 = offset - cos(angle) * scalar
+  // var y2 = rot++;
+  var y3 = offset + cos(angle + 5.2) * scalar
+  var size = y * 3;
   rotateZ(450)
 
   push()
   translate(-225, 0);
-  for (var i = 0; i < 25; i++) {
-    for (var j = 0; j < 10; j++) {
-        stroke('#0E609E')
-        rect(200*j/2,50+j,25)
+  for (var i = 0; i < 100; i++) {
+    for (var j = 0; j < 20; j++) {
         rotateX(y);
+        stroke('#0E609E')
+        //rect(200*j/2,50+j,20)
+        rect(10*i/2,50+j,20)
         stroke('#F26D61')
-        hexagon(200*j/2,150+j,25)
+        hexagon(200*j/2,150+j,5)
+        //hexagon(400*j/2,10+j,5)
         stroke('#99C6E8')
-        pentagon(200*j/2,300+j,25)
+        pentagon(200*j/2,300+j,20)
     }
   }
   pop()
-
 }
 
 function mousePressed() {
-  console.log(mouseX);
+  // console.log(y1);
 }
 
 function hexagon (posX, posY, radius) {
