@@ -1,6 +1,6 @@
 function setup() {
 	createCanvas(1000, 1000);
-	strokeCap(SQUARE);
+	strokeCap(PROJECT);
 	grid();
 }
 
