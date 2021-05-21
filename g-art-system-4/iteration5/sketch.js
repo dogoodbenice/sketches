@@ -1,6 +1,5 @@
 function setup() {
   createCanvas(1000, 1000);
-  strokeCap(PROJECT);
   grid1();
 }
 
@@ -13,10 +12,10 @@ function keyPressed() {
 }
 
 function grid1() {
-  const topColor = color('#9653DF');
-  const bottomColor = color('#23DCC1');
+  const topColor = color('#9381FF');
+  const bottomColor = color('#FFD8BE');
 
-  for(let y = 0; y < height; y++) {
+  for(let y = 0; y < 1000; y++) {
     const lineColor = lerpColor(topColor, bottomColor, y / height);
     stroke(lineColor);
     line(0, y, width, y);
@@ -28,30 +27,25 @@ function grid1() {
   for (let x = 0; x <= width + w; x += w) { // columns
     for (let y = 0; y <= height + h; y += h) { // rows
       noFill();
-      stroke('#bb95ef');
+      stroke('#EF9CDA');
       strokeWeight(5);
-
+			tsize = 10
       let r = random(4);
 
-      if (r < 1.2) {
+      if (r < 1) {
         // diagonal top-left to bottom-right
-        line(x, y, x + w, y + h);
-        push()
-        stroke(66, 191, 221, 100);
-        ellipse(x,y,20);
-        pop()
+        //triangle(x+tsize, y+tsize, x-tsize, y-tsize, x-tsize, y+tsize);
       } else if (r < 2) {
         // diagonal top-right to bottom-left
-        line(x + w, y, x, y + h);
-        push()
-        stroke(8, 75, 131, 100);
-        ellipse(x,y,10);
-        pop()
-      } else if (r < 3) {
+        triangle(x+tsize, y+tsize, x+tsize, y-tsize, x-tsize, y+tsize);
+      } else if (r < 3.5) {
         // straight across top
-        line(x, y, x + w, y + h);
+        triangle(x+tsize, y+tsize, x-tsize, y+tsize, x-tsize, y+tsize);
       } else {
-        rect(x, y, 15)
+				push()
+        stroke('#FFFFFF');
+				triangle(x+tsize, y+tsize, x-tsize, y-tsize, x-tsize, y+tsize);
+        pop()
       }
 
     }
