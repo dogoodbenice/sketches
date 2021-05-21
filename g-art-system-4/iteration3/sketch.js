@@ -28,7 +28,7 @@ function grid1() {
 
 			let r = random(4);
 
-			if (r < 1) {
+			if (r < 1.2) {
 				// diagonal top-left to bottom-right
 				line(x, y, x + w, y + h);
 				push()
