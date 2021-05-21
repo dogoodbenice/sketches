@@ -8,7 +8,7 @@ function mousePressed() {
 }
 
 function keyPressed() {
-  saveCanvas('grid', 'jpg');
+  saveCanvas('flock', 'jpg');
 }
 
 function grid1() {
@@ -37,8 +37,8 @@ function grid1() {
         //triangle(x+tsize, y+tsize, x-tsize, y-tsize, x-tsize, y+tsize);
       } else if (r < 2) {
         // diagonal top-right to bottom-left
-        triangle(x+tsize, y+tsize, x+tsize, y-tsize, x-tsize, y+tsize);
-      } else if (r < 3.5) {
+        triangle(x-tsize, y+tsize, x+tsize, y+tsize, x+tsize, y+tsize);
+      } else if (r < 3.6) {
         // straight across top
         triangle(x+tsize, y+tsize, x-tsize, y+tsize, x-tsize, y+tsize);
       } else {
