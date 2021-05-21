@@ -10,18 +10,20 @@ function mousePressed() {
 }
 
 function keyPressed() {
-  saveCanvas('c', 'jpg');
+  saveCanvas('grid', 'jpg');
 }
 
 function grid1() {
-	background('#272D2D');
+	let from = color('#e86973');
+	let to = color('#43efdc');
+	let interA = lerpColor(from, to, 0.5);
 	let w = 50;
 	let h = w;
-
+	background(interA);
 	for (let x = 0; x <= width + w; x += w) { // columns
 		for (let y = 0; y <= height + h; y += h) { // rows
 			noFill();
-			stroke(240,246,246);
+			stroke('#bb95ef');
 			strokeWeight(5);
 
 			let r = random(4);
