@@ -30,25 +30,34 @@ function grid1() {
       noFill();
       stroke('#EF9CDA');
       strokeWeight(5);
-			tsize = 40
-      let r = random(4);
+			tsize = 45
+      let r = random(6);
 
       if (r < 1) {
         // diagonal top-left to bottom-right
         push()
         fill('#EF9CDA')
-        rect(x,y,tsize)
+        //rect(x,y,tsize)
         pop()
       } else if (r < 2) {
         // diagonal top-right to bottom-left
         //line(x + w, y, x, y + h);
-        rect(x,y,tsize)
-      } else if (r < 3.5) {
+        //ellipse(x,y,tsize/2)
+        //rect(x,y,tsize)
+      } else if (r < 3) {
         // straight across top
-        rect(x,y,tsize)
+        //rect(x,y,tsize)
+      } else if (r < 4) {
+        //triangle(x-tsize, y+tsize, x+tsize, y+tsize, x+tsize, y+tsize);
+        push()
+        fill('#EF9CDA')
+        triangle(x+tsize/2, y+tsize/2, x-tsize/2, y-tsize/2, x-tsize/2, y+tsize/2);
+        pop()
       } else {
-        //line(x, y, x + w, y + h);
-				rect(x,y,tsize)
+        push()
+        fill('#EF9CDA')
+        triangle(x+tsize/2, y+tsize/2, x-tsize/2, y+tsize/2, x+tsize/2, y-tsize/2);
+        pop()
       }
 
     }
