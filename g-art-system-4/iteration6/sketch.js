@@ -8,9 +8,9 @@ function mousePressed() {
   grid1();
 }
 
-// function keyPressed() {
-//   saveCanvas('grid', 'jpg');
-// }
+function keyPressed() {
+  saveCanvas('grid', 'jpg');
+}
 
 function grid1() {
   const topColor = color('#9653DF');
@@ -40,13 +40,13 @@ function grid1() {
       } else if (r < 2) {
         // diagonal top-right to bottom-left
         //line(x + w, y, x, y + h);
-        rect(x,y,tsize)
+        //rect(x,y,tsize)
       } else if (r < 3.5) {
         // straight across top
         //line(x, y, x + w, y + h);
 				push()
 				stroke(8,75,131,100);
-				ellipse(x,y,tsize);
+				//ellipse(x,y,tsize);
 				pop()
       } else {
         //line(x, y, x + w, y + h);

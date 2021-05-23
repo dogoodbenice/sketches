@@ -8,9 +8,9 @@ function mousePressed() {
   grid1();
 }
 
-// function keyPressed() {
-//   saveCanvas('grid', 'jpg');
-// }
+function keyPressed() {
+  saveCanvas('grid', 'jpg');
+}
 
 function grid1() {
   const topColor = color('#9D7EF3');
