@@ -26,46 +26,85 @@ function grid1() {
 
   for (let x = 0; x <= width + w; x += w) { // columns
     for (let y = 0; y <= height + h; y += h) { // rows
-      strokeWeight(4);
-      tsize = 40
+      //strokeWeight(4);
+      tsize = 30
       let r = random(5);
 
       if (r < 1) {
-        // diagonal top-left to bottom-right
-        // push()
-        // noStroke();
-        // fill('#2720E8')
-        // triangle(x + tsize / 2, y + tsize / 2, x - tsize / 2, y - tsize / 2, x - tsize / 2, y + tsize / 2);
-        // pop()
-      } else if (r < 2) {
-        // diagonal top-right to bottom-left
-        //line(x + w, y, x, y + h);
-        noStroke();
-        fill('#0251f8')
-        rect(x, y, tsize)
-        triangle(x + tsize / 2, y + tsize / 2, x - tsize / 2, y - tsize / 2, x - tsize / 2, y + tsize / 2);
-      } else if (r < 3) {
-        // straight across top
         push()
         noStroke();
-        fill('#125A99')
+        fill('#E0655A')
         rect(x, y, tsize)
-        fill('#4F2078')
-        triangle(x + tsize / 2, y + tsize / 2, x - tsize / 2, y - tsize / 2, x - tsize / 2, y + tsize / 2);
+        fill('#0AE8FC')
+        //left to centre mid
+        triangle(x, y, x - tsize / 2, y - tsize / 2, x - tsize / 2, y + tsize / 2);
+        //right to centre mid
+        //triangle(x, y, x + tsize / 2, y - tsize / 2, x+ tsize / 2, y+ tsize / 2);
+        //bottom to centre mid
+        //triangle(x, y, x+tsize/2, y+tsize/2, x-tsize/2, y+tsize/2);
+        //top to centre mid
+        //triangle(x-tsize/2, y-tsize/2, x, y, x+tsize/2, y-tsize/2);
+        pop()
+      } else if (r < 2) {
+        push()
+        noStroke();
+        fill('#E0655A')
+        rect(x, y, tsize)
+        fill('#0AE8FC')
+        //left to centre mid
+        //triangle(x, y, x - tsize / 2, y - tsize / 2, x - tsize / 2, y + tsize / 2);
+        //right to centre mid
+        triangle(x, y, x + tsize / 2, y - tsize / 2, x+ tsize / 2, y+ tsize / 2);
+        //bottom to centre mid
+        //triangle(x, y, x+tsize/2, y+tsize/2, x-tsize/2, y+tsize/2);
+        //top to centre mid
+        //triangle(x-tsize/2, y-tsize/2, x, y, x+tsize/2, y-tsize/2);
+        pop()
+      } else if (r < 3) {
+        push()
+        noStroke();
+        fill('#E0655A')
+        rect(x, y, tsize)
+        fill('#0AE8FC')
+        //left to centre mid
+        //triangle(x, y, x - tsize / 2, y - tsize / 2, x - tsize / 2, y + tsize / 2);
+        //right to centre mid
+        //triangle(x, y, x + tsize / 2, y - tsize / 2, x+ tsize / 2, y+ tsize / 2);
+        //bottom to centre mid
+        triangle(x, y, x+tsize/2, y+tsize/2, x-tsize/2, y+tsize/2);
+        //top to centre mid
+        //triangle(x-tsize/2, y-tsize/2, x, y, x+tsize/2, y-tsize/2);
         pop()
       } else if (r < 4) {
-        //triangle(x-tsize, y+tsize, x+tsize, y+tsize, x+tsize, y+tsize);
-        // push()
-        // noStroke();
-        // fill('#385CB0')
-        // triangle(x + tsize / 2, y + tsize / 2, x - tsize / 2, y - tsize / 2, x - tsize / 2, y + tsize / 2);
-        // pop()
+        push()
+        noStroke();
+        fill('#E0655A')
+        rect(x, y, tsize)
+        fill('#0AE8FC')
+        //left to centre mid
+        //triangle(x, y, x - tsize / 2, y - tsize / 2, x - tsize / 2, y + tsize / 2);
+        //right to centre mid
+        //triangle(x, y, x + tsize / 2, y - tsize / 2, x+ tsize / 2, y+ tsize / 2);
+        //bottom to centre mid
+        //triangle(x, y, x+tsize/2, y+tsize/2, x-tsize/2, y+tsize/2);
+        //top to centre mid
+        triangle(x-tsize/2, y-tsize/2, x, y, x+tsize/2, y-tsize/2);
+        pop()
       } else {
-        // push()
-        // noStroke();
-        // fill('#02317D')
-        // triangle(x + tsize / 2, y + tsize / 2, x - tsize / 2, y + tsize / 2, x + tsize / 2, y - tsize / 2);
-        // pop()
+        push()
+        noStroke();
+        let picker = random(4);
+
+        if (picker > 2) {
+          //fill('#E0655A')
+          rect(x, y, tsize)
+        } else {
+          fill('#0AE8FC')
+          rect(x, y, tsize)
+        }
+        fill('#E0655A')
+        //rect(x, y, tsize)
+        pop()
       }
 
     }
