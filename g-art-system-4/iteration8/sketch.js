@@ -45,16 +45,16 @@ function grid1() {
       if (r < 1) {
         // diagonal top-left to bottom-right
         //rect(x,y,tsize)
-      } else if (r < 2) {
+      } else if (r < 2.2) {
         // diagonal top-right to bottom-left
         //line(x + w, y, x, y + h);
         noStroke();
-        ellipse(x,y,tsize/2)
+        fill('#e870ca')
         //rect(x,y,tsize)
       } else if (r < 3) {
         // straight across top
         fill('#ef9cda')
-        rect(x,y,tsize)
+        //rect(x,y,tsize)
       } else if (r < 4) {
         //triangle(x-tsize, y+tsize, x+tsize, y+tsize, x+tsize, y+tsize);
         push()
