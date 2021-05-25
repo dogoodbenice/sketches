@@ -10,7 +10,7 @@ function mousePressed() {
 }
 
 // function keyPressed() {
-//   saveCanvas('grid', 'jpg');
+//   saveCanvas('trigrid2', 'jpg');
 // }
 
 function grid1() {
@@ -20,17 +20,17 @@ function grid1() {
   for(let y = 0; y < 1000; y++) {
     const lineColor = lerpColor(topColor, bottomColor, y / height);
     stroke(lineColor);
-    //line(0, y, width, y);
-    line(0, y, height/2, y);
+    line(0, y, width, y);
+    //line(0, y, height/2, y);
   }
 
-  for(let y = 0; y < 1000; y++) {
-    const lineColor = lerpColor(bottomColor, topColor, y / width);
-    stroke(lineColor);
-    //line(0, y, width, y);
-    line(1000, y, height/2, y);
-  }
-  pop()
+  // for(let y = 0; y < 1000; y++) {
+  //   const lineColor = lerpColor(bottomColor, topColor, y / width);
+  //   stroke(lineColor);
+  //   //line(0, y, width, y);
+  //   line(1000, y, height/2, y);
+  // }
+  // pop()
   let w = 50;
   let h = w;
 
@@ -45,17 +45,17 @@ function grid1() {
       if (r < 1) {
         // diagonal top-left to bottom-right
         //rect(x,y,tsize)
-      } else if (r < 2.2) {
+      } else if (r < 4) {
         // diagonal top-right to bottom-left
         //line(x + w, y, x, y + h);
         noStroke();
         fill('#e870ca')
-        //rect(x,y,tsize)
+        rect(x,y,tsize)
       } else if (r < 3) {
         // straight across top
-        fill('#ef9cda')
+        //fill('#ef9cda')
         //rect(x,y,tsize)
-      } else if (r < 4) {
+      } else if (r < 6) {
         //triangle(x-tsize, y+tsize, x+tsize, y+tsize, x+tsize, y+tsize);
         push()
         fill('#ef9cda')
