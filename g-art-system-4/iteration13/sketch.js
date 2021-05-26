@@ -21,15 +21,14 @@ function grid1() {
     stroke(lineColor);
     line(0, y, height, y);
   }
-  let w = 40;
+  let w = 200;
   let h = w;
 
-  for (let x = 0; x <= width + w; x += w) { // columns
-    for (let y = 0; y <= height + h; y += h) { // rows
-      //strokeWeight(4);
-      tsize = 30
-      let r = random(5);
+  for (let x = 100; x <= 900 + w; x += w) { // columns
+    for (let y = 100; y <= 1000; y += h) { // rows
 
+      tsize = 200
+      let r = random(5);
       if (r < 1) {
         push()
         noStroke();
@@ -38,12 +37,6 @@ function grid1() {
         fill('#0AE8FC')
         //left to centre mid
         triangle(x, y, x - tsize / 2, y - tsize / 2, x - tsize / 2, y + tsize / 2);
-        //right to centre mid
-        //triangle(x, y, x + tsize / 2, y - tsize / 2, x+ tsize / 2, y+ tsize / 2);
-        //bottom to centre mid
-        //triangle(x, y, x+tsize/2, y+tsize/2, x-tsize/2, y+tsize/2);
-        //top to centre mid
-        //triangle(x-tsize/2, y-tsize/2, x, y, x+tsize/2, y-tsize/2);
         pop()
       } else if (r < 2) {
         push()
@@ -51,14 +44,7 @@ function grid1() {
         fill('#E0655A')
         rect(x, y, tsize)
         fill('#0AE8FC')
-        //left to centre mid
-        //triangle(x, y, x - tsize / 2, y - tsize / 2, x - tsize / 2, y + tsize / 2);
-        //right to centre mid
         triangle(x, y, x + tsize / 2, y - tsize / 2, x+ tsize / 2, y+ tsize / 2);
-        //bottom to centre mid
-        //triangle(x, y, x+tsize/2, y+tsize/2, x-tsize/2, y+tsize/2);
-        //top to centre mid
-        //triangle(x-tsize/2, y-tsize/2, x, y, x+tsize/2, y-tsize/2);
         pop()
       } else if (r < 3) {
         push()
@@ -66,14 +52,7 @@ function grid1() {
         fill('#E0655A')
         rect(x, y, tsize)
         fill('#0AE8FC')
-        //left to centre mid
-        //triangle(x, y, x - tsize / 2, y - tsize / 2, x - tsize / 2, y + tsize / 2);
-        //right to centre mid
-        //triangle(x, y, x + tsize / 2, y - tsize / 2, x+ tsize / 2, y+ tsize / 2);
-        //bottom to centre mid
         triangle(x, y, x+tsize/2, y+tsize/2, x-tsize/2, y+tsize/2);
-        //top to centre mid
-        //triangle(x-tsize/2, y-tsize/2, x, y, x+tsize/2, y-tsize/2);
         pop()
       } else if (r < 4) {
         push()
@@ -81,13 +60,6 @@ function grid1() {
         fill('#E0655A')
         rect(x, y, tsize)
         fill('#0AE8FC')
-        //left to centre mid
-        //triangle(x, y, x - tsize / 2, y - tsize / 2, x - tsize / 2, y + tsize / 2);
-        //right to centre mid
-        //triangle(x, y, x + tsize / 2, y - tsize / 2, x+ tsize / 2, y+ tsize / 2);
-        //bottom to centre mid
-        //triangle(x, y, x+tsize/2, y+tsize/2, x-tsize/2, y+tsize/2);
-        //top to centre mid
         triangle(x-tsize/2, y-tsize/2, x, y, x+tsize/2, y-tsize/2);
         pop()
       } else {
