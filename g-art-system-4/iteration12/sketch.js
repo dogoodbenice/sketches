@@ -9,13 +9,13 @@ function mousePressed() {
   grid1();
 }
 
-// function keyPressed() {
-//   saveCanvas('blokgrid', 'jpg');
-// }
+function keyPressed() {
+  saveCanvas('blokgrid', 'jpg');
+}
 
 function grid1() {
-  const topColor = color('#F5BFD7');
-  const bottomColor = color('#CAEFD7');
+  const topColor = color('#3D05DD');
+  const bottomColor = color('#3D05DD');
   for (let y = 0; y < 1000; y++) {
     const lineColor = lerpColor(topColor, bottomColor, y / height);
     stroke(lineColor);
