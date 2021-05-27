@@ -24,8 +24,8 @@ function grid1() {
   let w = 20;
   let h = w;
 
-  for (let x = 100; x <= 900 + w; x += w) { // columns
-    for (let y = 100; y <= 1000; y += h) { // rows
+  for (let x = 300; x <= 650 + w; x += w) { // columns
+    for (let y = 300; y <= 650; y += h) { // rows
 
       tsize = 200
       let r = random(5);
