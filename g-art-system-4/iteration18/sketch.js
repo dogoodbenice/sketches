@@ -3,6 +3,7 @@ const colors = ["#F075A2", "#BA3A69", "#02D688", "#f7941d","#FF4D8E","#81F0C7"];
 function setup() {
   createCanvas(1000,1000);
   rectMode(CENTER)
+  angleMode(DEGREES);
   grid1();
   noStroke();
 }
@@ -56,11 +57,11 @@ function grid1() {
 
       if (r < 1) {
         push()
-        noStroke();
+        stroke(colors[Math.floor(Math.random() * colors.length)]);
         fill(colors[Math.floor(Math.random() * colors.length)])
-        hexagon(x, y, 20)
+        hexagon(x, y, tsize)
         fill(colors[Math.floor(Math.random() * colors.length)])
-        //pentagon(x, y, 5)
+        pentagon(x, y, tsize)
         pop()
       } else if (r < 2) {
         // push()
