@@ -1,5 +1,5 @@
-var w = 600,
-    h = 600;
+var w = 1000,
+    h = 1000;
 
 const colors = ["#ed008c", "#3a3093", "#ffde17", "#f7941d"];
 

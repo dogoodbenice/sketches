@@ -1,3 +1,5 @@
+const colors = ["#ed008c", "#3a3093", "#ffde17", "#f7941d","#E0655A","#0AE8FC"];
+
 function setup() {
   createCanvas(1000,1000);
   rectMode(CENTER)
@@ -27,49 +29,46 @@ function grid1() {
       if (r < 1) {
         push()
         noStroke();
-        fill('#E0655A')
+        fill(colors[Math.floor(Math.random() * colors.length)])
         rect(x, y, tsize)
-        fill('#0AE8FC')
+        fill(colors[Math.floor(Math.random() * colors.length)])
         triangle(x, y, x - tsize / 2, y - tsize / 2, x - tsize / 2, y + tsize / 2);
         pop()
       } else if (r < 2) {
         push()
         noStroke();
-        fill('#E0655A')
+        fill(colors[Math.floor(Math.random() * colors.length)])
         rect(x, y, tsize)
-        fill('#0AE8FC')
+        fill(colors[Math.floor(Math.random() * colors.length)])
         triangle(x, y, x + tsize / 2, y - tsize / 2, x+ tsize / 2, y+ tsize / 2);
         pop()
       } else if (r < 3) {
         push()
         noStroke();
-        fill('#E0655A')
+        fill(colors[Math.floor(Math.random() * colors.length)])
         rect(x, y, tsize)
-        fill('#0AE8FC')
+        fill(colors[Math.floor(Math.random() * colors.length)])
         triangle(x, y, x+tsize/2, y+tsize/2, x-tsize/2, y+tsize/2);
         pop()
       } else if (r < 4) {
         push()
         noStroke();
-        fill('#E0655A')
+        fill(colors[Math.floor(Math.random() * colors.length)])
         rect(x, y, tsize)
-        fill('#0AE8FC')
+        fill(colors[Math.floor(Math.random() * colors.length)])
         triangle(x-tsize/2, y-tsize/2, x, y, x+tsize/2, y-tsize/2);
         pop()
       } else {
         push()
         noStroke();
-        let picker = random(4);
-
-        if (picker > 2) {
-          fill('#0AE8FC')
+        let picker = random(2);
+        if (picker > 1) {
+          fill(colors[Math.floor(Math.random() * colors.length)])
           rect(x, y, tsize)
         } else {
-          fill('#E0655A')
+          fill(colors[Math.floor(Math.random() * colors.length)])
           rect(x, y, tsize)
         }
-        fill('#E0655A')
-        //rect(x, y, tsize)
         pop()
       }
 
