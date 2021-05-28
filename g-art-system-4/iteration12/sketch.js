@@ -10,7 +10,7 @@ function mousePressed() {
 }
 
 // function keyPressed() {
-//   saveCanvas('blokgrid', 'jpg');
+//   saveCanvas('flagrid', 'jpg');
 // }
 
 function grid1() {
