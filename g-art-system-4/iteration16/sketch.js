@@ -1,60 +1,78 @@
-var w = 1000,
-    h = 1000;
-
-const colors = ["#ed008c", "#3a3093", "#ffde17", "#f7941d"];
+const colors = ["#ed008c", "#3a3093", "#ffde17", "#f7941d","#E0655A","#0AE8FC"];
 
 function setup() {
-    createCanvas(w, h);
-    stroke(255);
-    strokeWeight(3);
-    init();
+  createCanvas(1000,1000);
+  rectMode(CENTER)
+  grid1();
+  noStroke();
 }
 
 function mousePressed() {
-    init();
+  grid1();
 }
 
-function rand(max) {
-    return Math.round(Math.random() * (max - 1));
-}
+// function keyPressed() {
+//   saveCanvas('flagrid', 'jpg');
+// }
 
-function reset() {
-    clear();
-    background(0);
-    noFill();
+function grid1() {
+  background(240);
+  let w = 50;
+  let h = w;
 
-}
+  for (let x = 150; x <= 800 + w; x += w) { // columns
+    for (let y = 150; y <= 800 + h; y += h) { // rows
+      //strokeWeight(4);
+      tsize = 50
+      let r = random(5);
 
-function init() {
-    reset();
-    horizontalLines(16, 8);
-}
-
-function horizontalLines(xspacing, yspacing) {
-    var y = yspacing;
-    var v = 0.25 + Math.random(noise(y));
-    while (y < (height - yspacing)) {
-        beginShape();
-        for (var x = 0; x < width + xspacing; x += xspacing) {
-            stroke(colors[randomIndex(colors.length,noise(x*y))]);
-            if (noise(x) > 0.5) {
-                vertex(x, y + v * 10);
-            } else {
-                vertex(x, y);
-            }
+      if (r < 1) {
+        push()
+        noStroke();
+        fill(colors[Math.floor(Math.random() * colors.length)])
+        rect(x, y, tsize)
+        fill(colors[Math.floor(Math.random() * colors.length)])
+        triangle(x, y, x - tsize / 2, y - tsize / 2, x - tsize / 2, y + tsize / 2);
+        pop()
+      } else if (r < 2) {
+        push()
+        noStroke();
+        fill(colors[Math.floor(Math.random() * colors.length)])
+        rect(x, y, tsize)
+        fill(colors[Math.floor(Math.random() * colors.length)])
+        triangle(x, y, x + tsize / 2, y - tsize / 2, x+ tsize / 2, y+ tsize / 2);
+        pop()
+      } else if (r < 3) {
+        push()
+        noStroke();
+        fill(colors[Math.floor(Math.random() * colors.length)])
+        rect(x, y, tsize)
+        fill(colors[Math.floor(Math.random() * colors.length)])
+        triangle(x, y, x+tsize/2, y+tsize/2, x-tsize/2, y+tsize/2);
+        pop()
+      } else if (r < 4) {
+        push()
+        noStroke();
+        fill(colors[Math.floor(Math.random() * colors.length)])
+        rect(x, y, tsize)
+        fill(colors[Math.floor(Math.random() * colors.length)])
+        triangle(x-tsize/2, y-tsize/2, x, y, x+tsize/2, y-tsize/2);
+        pop()
+      } else {
+        push()
+        noStroke();
+        let picker = random(2);
+        if (picker > 1) {
+          fill(colors[Math.floor(Math.random() * colors.length)])
+          rect(x, y, tsize)
+        } else {
+          fill(colors[Math.floor(Math.random() * colors.length)])
+          rect(x, y, tsize)
         }
-        endShape();
+        pop()
+      }
 
-        y += yspacing;
     }
+  }
 
-}
-
-function variation(y) {
-    return map(random(noise(y)), 0, 1, 0, 8);
-
-}
-
-function randomIndex(max,noise){
-    return Math.round(Math.random()*(max-1));
 }
