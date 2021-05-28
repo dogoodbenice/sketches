@@ -1,4 +1,4 @@
-const colors = ["#F075A2", "#BA3A69", "#02D688", "#f7941d","#FF4D8E","#81F0C7"];
+const colors = ["#8649D1", "#2D818C", "#E0CB80", "#FCC705","#2F646B"];
 
 function setup() {
   createCanvas(1000,1000);
@@ -26,8 +26,8 @@ function hexagon (posX, posY, radius) {
   endShape(CLOSE)
 }
 
-function pentagon (posX, posY, radius) {
-  const rotAngle = 360 / 5
+function diamond (posX, posY, radius) {
+  const rotAngle = 360 / 4
   beginShape()
   for (let i = 0; i < 6; i++) {
     const thisVertex = pointOnCircle(posX, posY, radius, i * rotAngle)
@@ -46,20 +46,21 @@ function pointOnCircle (posX, posY, radius, angle) {
 
 function grid1() {
   background(240);
-  let w = 50;
+  let w = 30;
   let h = w;
 
-  for (let x = 150; x <= 800 + w; x += w) { // columns
-    for (let y = 150; y <= 800 + h; y += h) { // rows
+  for (let x = 140; x <= 850 + w; x += w) { // columns
+    for (let y = 140; y <= 850 + h; y += h) { // rows
       //strokeWeight(4);
-      tsize = 50
+      tsize = 25
       let r = random(5);
 
       if (r < 1) {
         push()
         noStroke();
         fill(colors[Math.floor(Math.random() * colors.length)])
-        hexagon(x, y, tsize/2)
+        //hexagon(x, y, tsize/2)
+        rect(x, y, tsize)
         fill(colors[Math.floor(Math.random() * colors.length)])
         rect(x, y, tsize/2)
         pop()
@@ -67,7 +68,8 @@ function grid1() {
         push()
         noStroke();
         fill(colors[Math.floor(Math.random() * colors.length)])
-        hexagon(x, y, tsize/2)
+        //hexagon(x, y, tsize/2)
+        rect(x, y, tsize)
         fill(colors[Math.floor(Math.random() * colors.length)])
         rect(x, y, tsize/2)
         pop()
@@ -75,17 +77,28 @@ function grid1() {
         push()
         noStroke();
         fill(colors[Math.floor(Math.random() * colors.length)])
-        hexagon(x, y, tsize/2)
+        //hexagon(x, y, tsize/2)
+        rect(x, y, tsize)
         fill(colors[Math.floor(Math.random() * colors.length)])
-        rect(x, y, tsize/2)
+         diamond(x, y, tsize/2)
         pop()
       } else if (r < 4) {
         push()
         noStroke();
-        fill(colors[Math.floor(Math.random() * colors.length)])
-        hexagon(x, y, tsize/2)
-        fill(colors[Math.floor(Math.random() * colors.length)])
-        rect(x, y, tsize/2)
+        let picker = random(2);
+        if (picker > 1) {
+          fill(colors[Math.floor(Math.random() * colors.length)])
+          //hexagon(x, y, tsize/2)
+          rect(x, y, tsize)
+          fill(colors[Math.floor(Math.random() * colors.length)])
+          ellipse(x, y, tsize/2)
+        } else {
+          fill(colors[Math.floor(Math.random() * colors.length)])
+          // diamond(x, y, tsize/2)
+          rect(x, y, tsize)
+          fill(colors[Math.floor(Math.random() * colors.length)])
+          hexagon(x, y, tsize/3)
+        }
         pop()
       } else {
         push()
@@ -96,7 +109,9 @@ function grid1() {
           rect(x, y, tsize)
         } else {
           fill(colors[Math.floor(Math.random() * colors.length)])
-          ellipse(x, y, tsize)
+          rect(x, y, tsize)
+          fill(colors[Math.floor(Math.random() * colors.length)])
+          ellipse(x, y, tsize/2)
         }
         pop()
       }

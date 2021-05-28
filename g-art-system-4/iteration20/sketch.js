@@ -1,7 +1,7 @@
 var w = 1000,
     h = 1000;
 
-const colors = ["#ed008c", "#3a3093", "#ffde17", "#f7941d"];
+const colors = ["#F27261", "#F59387", "#81CCD6", "#43A3B0","#C98279"];
 
 function setup() {
     createCanvas(w, h);
