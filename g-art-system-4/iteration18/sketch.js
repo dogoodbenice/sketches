@@ -52,53 +52,53 @@ function grid1() {
   for (let x = 150; x <= 800 + w; x += w) { // columns
     for (let y = 150; y <= 800 + h; y += h) { // rows
       //strokeWeight(4);
-      tsize = 100
+      tsize = 50
       let r = random(5);
 
       if (r < 1) {
         push()
-        stroke(colors[Math.floor(Math.random() * colors.length)]);
+        noStroke();
         fill(colors[Math.floor(Math.random() * colors.length)])
-        hexagon(x, y, tsize)
+        hexagon(x, y, tsize/2)
         fill(colors[Math.floor(Math.random() * colors.length)])
-        pentagon(x, y, tsize)
+        rect(x, y, tsize/2)
         pop()
       } else if (r < 2) {
-        // push()
-        // noStroke();
-        // fill(colors[Math.floor(Math.random() * colors.length)])
-        // rect(x, y, tsize)
-        // fill(colors[Math.floor(Math.random() * colors.length)])
-        // triangle(x, y, x + tsize / 2, y - tsize / 2, x+ tsize / 2, y+ tsize / 2);
-        // pop()
+        push()
+        noStroke();
+        fill(colors[Math.floor(Math.random() * colors.length)])
+        hexagon(x, y, tsize/2)
+        fill(colors[Math.floor(Math.random() * colors.length)])
+        rect(x, y, tsize/2)
+        pop()
       } else if (r < 3) {
-        // push()
-        // noStroke();
-        // fill(colors[Math.floor(Math.random() * colors.length)])
-        // rect(x, y, tsize)
-        // fill(colors[Math.floor(Math.random() * colors.length)])
-        // triangle(x, y, x+tsize/2, y+tsize/2, x-tsize/2, y+tsize/2);
-        // pop()
+        push()
+        noStroke();
+        fill(colors[Math.floor(Math.random() * colors.length)])
+        hexagon(x, y, tsize/2)
+        fill(colors[Math.floor(Math.random() * colors.length)])
+        rect(x, y, tsize/2)
+        pop()
       } else if (r < 4) {
-        // push()
-        // noStroke();
-        // fill(colors[Math.floor(Math.random() * colors.length)])
-        // rect(x, y, tsize)
-        // fill(colors[Math.floor(Math.random() * colors.length)])
-        // triangle(x-tsize/2, y-tsize/2, x, y, x+tsize/2, y-tsize/2);
-        // pop()
+        push()
+        noStroke();
+        fill(colors[Math.floor(Math.random() * colors.length)])
+        hexagon(x, y, tsize/2)
+        fill(colors[Math.floor(Math.random() * colors.length)])
+        rect(x, y, tsize/2)
+        pop()
       } else {
-        // push()
-        // noStroke();
-        // let picker = random(2);
-        // if (picker > 1) {
-        //   fill(colors[Math.floor(Math.random() * colors.length)])
-        //   rect(x, y, tsize)
-        // } else {
-        //   fill(colors[Math.floor(Math.random() * colors.length)])
-        //   rect(x, y, tsize)
-        // }
-        // pop()
+        push()
+        noStroke();
+        let picker = random(2);
+        if (picker > 1) {
+          fill(colors[Math.floor(Math.random() * colors.length)])
+          rect(x, y, tsize)
+        } else {
+          fill(colors[Math.floor(Math.random() * colors.length)])
+          ellipse(x, y, tsize)
+        }
+        pop()
       }
 
     }

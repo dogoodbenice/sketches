@@ -51,7 +51,7 @@ function horizontalLines(xspacing, yspacing) {
 }
 
 function variation(y) {
-    return map(random(noise(y)), 0, 1, 0, 8);
+    return map(random(noise(y)), 0, 100, 200, 20);
 
 }
 
