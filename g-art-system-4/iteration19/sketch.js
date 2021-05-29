@@ -26,17 +26,6 @@ function hexagon (posX, posY, radius) {
   endShape(CLOSE)
 }
 
-function pentagon (posX, posY, radius) {
-  const rotAngle = 360 / 5
-  beginShape()
-  for (let i = 0; i < 6; i++) {
-    const thisVertex = pointOnCircle(posX, posY, radius, i * rotAngle)
-    vertex(thisVertex.x, thisVertex.y)
-  }
-  endShape(CLOSE)
-}
-
-
 function pointOnCircle (posX, posY, radius, angle) {
   const x = posX + radius * cos(angle)
   const y = posY + radius * sin(angle)
@@ -49,10 +38,10 @@ function grid1() {
   let w = 30;
   let h = w;
 
-  for (let x = 100; x <= 845 + w; x += w) { // columns
-    for (let y = 100; y <= 900 + h; y += h) { // rows
+  for (let x = 150; x <= 845 + w; x += w) { // columns
+    for (let y = 150; y <= 845 + h; y += h) { // rows
       //strokeWeight(4);
-      tsize = 45
+      tsize = 30
       let r = random(5);
 
       if (r < 1) {
@@ -69,7 +58,7 @@ function grid1() {
         fill(colors[Math.floor(Math.random() * colors.length)])
         hexagon(x, y, tsize/2)
         fill(colors[Math.floor(Math.random() * colors.length)])
-        rect(x, y, tsize/2)
+        ellipse(x, y, tsize/4)
         pop()
       } else if (r < 3) {
         push()

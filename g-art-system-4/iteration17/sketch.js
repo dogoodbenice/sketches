@@ -10,7 +10,7 @@ function setup() {
 function mousePressed() {
   grid1();
 }
-
+// 
 // function keyPressed() {
 //   saveCanvas('flagrid', 'jpg');
 // }

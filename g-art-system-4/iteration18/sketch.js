@@ -12,9 +12,9 @@ function mousePressed() {
   grid1();
 }
 
-// function keyPressed() {
-//   saveCanvas('flagrid', 'jpg');
-// }
+function keyPressed() {
+  saveCanvas('sweets', 'jpg');
+}
 
 function hexagon (posX, posY, radius) {
   const rotAngle = 360 / 6
