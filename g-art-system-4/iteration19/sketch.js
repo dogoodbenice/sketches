@@ -46,13 +46,13 @@ function pointOnCircle (posX, posY, radius, angle) {
 
 function grid1() {
   background(240);
-  let w = 50;
+  let w = 30;
   let h = w;
 
-  for (let x = 0; x <= 1000 + w; x += w) { // columns
-    for (let y = 0; y <= 1000 + h; y += h) { // rows
+  for (let x = 100; x <= 845 + w; x += w) { // columns
+    for (let y = 100; y <= 900 + h; y += h) { // rows
       //strokeWeight(4);
-      tsize = 50
+      tsize = 45
       let r = random(5);
 
       if (r < 1) {
