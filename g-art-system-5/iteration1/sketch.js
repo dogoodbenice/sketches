@@ -1,46 +1,36 @@
+var points = []
+var mult = 0.005
+
 function setup() {
-  createCanvas(1000,1000);
-  rectMode(CENTER)
-  shape();
-  drawGrid();
+  createCanvas(1000,1000)
+  background('#E7E5DF')
+
+  var density = 20
+  var space = width / density
+
+  for (var x = 0; x < width; x += space) {
+    for (var y = 0; y < height; y += space) {
+      var p = createVector(x,y)
+      points.push(p)
+    }
+  }
 }
 
-function mousePressed() {
-  shape();
-  //drawGrid();
-  console.log(mouseX);
-  console.log(mouseY);
+function keyPressed() {
+  saveCanvas('topgraphy', 'jpg');
 }
 
-// function keyPressed() {
-//   saveCanvas('flagrid', 'jpg');
-// }
+function draw(){
+  noStroke()
+  for (var i = 0; i < points.length; i++) {
+    var angle = map(noise(points[i].x * mult,points[i].y * mult),0, 1, 0, 720)
+    points[i].add(createVector(cos(angle),sin(angle)))
 
-function shape() {
-  background(0);
-
-  push()
-  //strokeWeight(500)
-  fill(255)
-  let x1 = 140
-  let y1 = 900
-  let x2 = 520
-  let y2 = 120
-  let x3 = 900
-  let y3 = 900
-  triangle(x1, y1, x2, y2, x3, y3);
-  pop()
-}
-
-function drawGrid() {
-	stroke(200);
-	fill(120);
-	for (var x=-width; x < width; x+=50) {
-		line(x, -height, x, height);
-		text(x, x+1, 12);
-	}
-	for (var y=-height; y < height; y+=50) {
-		line(-width, y, width, y);
-		text(y, 1, y+12);
-	}
+    if (angle > 200) {
+      fill('#393E41')
+    } else {
+      fill('#D3D0CB')
+    }
+    ellipse(points[i].x,points[i].y,1)
+  }
 }

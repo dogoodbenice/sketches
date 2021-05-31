@@ -1,10 +1,11 @@
 var points = []
+var mult = 0.005
 
 function setup() {
-  createCanvas(1000,1000, WEBGL)
-  background(30)
+  createCanvas(1000,1000)
+  background('#E7E5DF')
 
-  var density = 50
+  var density = 20
   var space = width / density
 
   for (var x = 0; x < width; x += space) {
@@ -15,17 +16,21 @@ function setup() {
   }
 }
 
+function keyPressed() {
+  saveCanvas('topgraphy', 'jpg');
+}
+
 function draw(){
   noStroke()
-  fill(255)
-  background(30)
-  rotateZ(mouseX)
-
   for (var i = 0; i < points.length; i++) {
-    var angle = map(noise(points[i].x,points[i].y,0, 1, 0 , 720))
-
+    var angle = map(noise(points[i].x * mult,points[i].y * mult),0, 1, 0, 720)
     points[i].add(createVector(cos(angle),sin(angle)))
 
-    ellipse(points[i].x,points[i].y,1)
+    if (angle > 200) {
+      fill('#393E41')
+    } else {
+      fill('#D3D0CB')
+    }
+    rect(points[i].x,points[i].y,3)
   }
 }
