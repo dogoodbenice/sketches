@@ -1,7 +1,7 @@
 var points = []
 
 function setup() {
-  createCanvas(1000,1000)
+  createCanvas(1000,1000, WEBGL)
   background(30)
 
   var density = 50
@@ -18,10 +18,14 @@ function setup() {
 function draw(){
   noStroke()
   fill(255)
+  background(30)
+  rotateZ(mouseX)
 
   for (var i = 0; i < points.length; i++) {
-    var angle = map(noise)
+    var angle = map(noise(points[i].x,points[i].y,0, 1, 0 , 720))
 
-    ellipse(points[i].x,points[i].y,5)
+    points[i].add(createVector(cos(angle),sin(angle)))
+
+    ellipse(points[i].x,points[i].y,1)
   }
 }
