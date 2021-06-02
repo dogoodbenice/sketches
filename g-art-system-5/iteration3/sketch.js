@@ -29,7 +29,7 @@ function draw(){
     if (angle > 200) {
       fill('#393E41')
     } else {
-      fill('#D3D0CB')s
+      fill('#D3D0CB')
     }
     ellipse(points[i].x,points[i].y,1)
   }
