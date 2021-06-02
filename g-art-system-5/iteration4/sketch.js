@@ -3,8 +3,8 @@ var mult = 0.005
 
 function setup() {
   createCanvas(1000,1000)
-  background('#E7E5DF')
-
+  background('#009FB7')
+  frameRate(15)
   var density = 30
   var space = width / density
 
@@ -14,11 +14,21 @@ function setup() {
       points.push(p)
     }
   }
+  createLoop({
+    duration: 15,
+       gif: {
+           options: { quality: 30},
+           fileName: "topgraphy.gif",
+           download: true,
+           startLoop: 1,
+           endLoop: 2
+       }
+   })
 }
 
-function keyPressed() {
-  saveCanvas('topgraphy', 'jpg');
-}
+// function keyPressed() {
+//   saveCanvas('topgraphy', 'jpg');
+// }
 
 function draw(){
   noStroke()
@@ -27,10 +37,16 @@ function draw(){
     points[i].add(createVector(cos(angle),sin(angle)))
 
     if (angle > 200) {
-      fill('#393E41')
+      fill('#FED766')
     } else {
-      fill('#D3D0CB')
+      fill('#FED766')
     }
-    ellipse(points[i].x,points[i].y,1)
+    for (var y = 0; y < 5; y++) {
+      ellipse(points[i].x,points[i].y,1)
+      ellipse((points[i].x)+y,(points[i].y)+y,0.5)
+      ellipse((points[i].x)+y*2,(points[i].y)+y,0.25)
+    }
+
+
   }
 }
