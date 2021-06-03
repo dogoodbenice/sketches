@@ -1,11 +1,11 @@
 var points = []
-var mult = 0.005
+var mult = 0.01
 
 function setup() {
-  createCanvas(1000,1000)
-  background('#009FB7')
-  frameRate(15)
-  var density = 30
+  createCanvas(250,250)
+  background('#063C42')
+  frameRate(10)
+  var density = 12
   var space = width / density
 
   for (var x = 0; x < width; x += space) {
@@ -14,16 +14,16 @@ function setup() {
       points.push(p)
     }
   }
-  createLoop({
-    duration: 15,
-       gif: {
-           options: { quality: 30},
-           fileName: "topgraphy.gif",
-           download: true,
-           startLoop: 1,
-           endLoop: 2
-       }
-   })
+  // createLoop({
+  //   duration: 6,
+  //      gif: {
+  //          options: { quality: 30},
+  //          fileName: "topgraphy.gif",
+  //          download: true,
+  //          startLoop: 0,
+  //          endLoop: 2
+  //      }
+  //  })
 }
 
 // function keyPressed() {
@@ -33,18 +33,18 @@ function setup() {
 function draw(){
   noStroke()
   for (var i = 0; i < points.length; i++) {
-    var angle = map(noise(points[i].x * mult,points[i].y * mult),0, 1, 0, 720)
+    var angle = map(noise(points[i].x * mult,points[i].y * mult),0, 1, 0, height)
     points[i].add(createVector(cos(angle),sin(angle)))
 
-    if (angle > 200) {
-      fill('#FED766')
+    if (angle > 0.1) {
+      fill('#BD6157')
     } else {
-      fill('#FED766')
+      fill('#73D2DF')
     }
     for (var y = 0; y < 5; y++) {
       ellipse(points[i].x,points[i].y,1)
       ellipse((points[i].x)+y,(points[i].y)+y,0.5)
-      ellipse((points[i].x)+y*2,(points[i].y)+y,0.25)
+      //ellipse((points[i].x)+y*2,(points[i].y)+y,0.25)
     }
 
 
