@@ -37,7 +37,7 @@ function motion() {
       translate(x * size, y * size);
       //fill(255, 250, 255, 20);
       stroke(255, 10);
-      rotateZ((frameCount / speed + x / 0.01 + y / 1));
+      rotateZ((frameCount / x / 0.001 + y / 1));
       rect(size/20, size/20, 10)
       strokeWeight(3);
       stroke(255);
