@@ -3,26 +3,25 @@ var speed;
 function setup() {
   createCanvas(1000, 1000);
   speed = random(10,20)
-  // createLoop({
-  //   duration: 6,
-  //      gif: {
-  //          options: { quality: 30},
-  //          fileName: "topgraphy.gif",
-  //          download: true,
-  //          startLoop: 0,
-  //          endLoop: 2
-  //      }
-  //  })
+  createLoop({
+    duration: 3,
+       gif: {
+           options: { quality: 30},
+           fileName: "topgraphy.gif",
+           download: true,
+           startLoop: 0,
+           endLoop: 2
+       }
+   })
 }
 
-function keyPressed() {
-  saveCanvas('movement', 'jpg');
-}
+// function keyPressed() {
+//   saveCanvas('movement', 'jpg');
+// }
 
 function draw() {
   background(30);
   motion();
-  console.log(speed);
 }
 
 function motion() {
