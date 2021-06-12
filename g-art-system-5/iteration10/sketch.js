@@ -1,18 +1,18 @@
 var speed;
 
 function setup() {
-  createCanvas(500, 500);
+  createCanvas(300, 300);
   speed = 60
-  // createLoop({
-  //   duration: 6,
-  //      gif: {
-  //          options: { quality: 30},
-  //          fileName: "topgraphy.gif",
-  //          download: true,
-  //          startLoop: 0,
-  //          endLoop: 2
-  //      }
-  //  })
+  createLoop({
+    duration: 6,
+       gif: {
+           options: { quality: 30},
+           fileName: "topgraphy.gif",
+           download: true,
+           startLoop: 1,
+           endLoop: 2
+       }
+   })
 }
 
 // function keyPressed() {
@@ -20,27 +20,31 @@ function setup() {
 // }
 
 function draw() {
-  background('#D980FA');
+  background(30);
   motion();
-  console.log(speed);
 }
 
 function motion() {
   var size = 40;
-  var count = 10;
-  translate(20, 20);
-  for (var x = 3; x < 9; x++) {
-    for (var y = 3; y < 9; y++) {
+  var count = 13;
+
+  for (var x = 0; x < count; x++) {
+    for (var y = 0; y < count; y++) {
       push();
       translate(x * size, y * size);
-      fill(255, 250, 255, 20);
-      stroke('#1289A7');
-      rotate((frameCount / speed + x / 0.01 + y / 1));
-      rect(size/3, size/3, 20)
+      fill(255);
+      stroke(255);
+      rotate((frameCount / speed + x / 0.001 + y / 5));
+      //ellipse(size/3, size/3, 20)
       strokeWeight(3);
-      stroke(255,30);
-      rotate((frameCount / speed + x / 0.01 + y / 2));
-      rect(size/3, size/3, 10)
+
+      rotate((frameCount / speed + x / 0.01 + y / 1));
+      ellipse((size/3)-20, size/3, 5)
+      line((size/3)-20,(size/3),size/3,size/3)
+      ellipse(size/3, size/3, 5)
+
+
+      //rect(size/3, size/3, 10)
       pop();
     }
   }
