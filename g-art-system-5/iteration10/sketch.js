@@ -1,18 +1,18 @@
 var speed;
 
 function setup() {
-  createCanvas(300, 300);
+  createCanvas(500, 500);
   speed = 60
-  createLoop({
-    duration: 6,
-       gif: {
-           options: { quality: 30},
-           fileName: "topgraphy.gif",
-           download: true,
-           startLoop: 1,
-           endLoop: 2
-       }
-   })
+  // createLoop({
+  //   duration: 6,
+  //      gif: {
+  //          options: { quality: 30},
+  //          fileName: "topgraphy.gif",
+  //          download: true,
+  //          startLoop: 1,
+  //          endLoop: 2
+  //      }
+  //  })
 }
 
 // function keyPressed() {
@@ -35,7 +35,7 @@ function motion() {
       fill(255);
       stroke(255);
       rotate((frameCount / speed + x / 0.001 + y / 5));
-      //ellipse(size/3, size/3, 20)
+
       strokeWeight(3);
 
       rotate((frameCount / speed + x / 0.01 + y / 1));
@@ -44,7 +44,7 @@ function motion() {
       ellipse(size/3, size/3, 5)
 
 
-      //rect(size/3, size/3, 10)
+
       pop();
     }
   }
