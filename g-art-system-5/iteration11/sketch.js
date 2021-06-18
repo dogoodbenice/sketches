@@ -38,7 +38,7 @@ function motion() {
       translate(x * space, y * space);
       fill('#8F2D56');
       noStroke();
-      rotate((frameCount / speed + (y+x) / 0.00005));
+      rotate((frameCount / (speed) + ((y/0.1)) / 0.0209));
       triangle(60, 20, 100, 60, 60, 60);
       fill("#D81159");
       triangle(100, 20, 100, 60, 60, 20);
