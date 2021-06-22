@@ -16,9 +16,9 @@ function setup() {
   }
 }
 
-function keyPressed() {
-  saveCanvas('topgraphy', 'jpg');
-}
+// function keyPressed() {
+//   saveCanvas('topgraphy', 'jpg');
+// }
 
 function draw(){
   noStroke()
