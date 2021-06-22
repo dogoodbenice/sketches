@@ -34,3 +34,8 @@ function constellation(x,y) {
     line(random(0,width),random(0,height),random(0,width),random(0,height),)
   }
 }
+
+// //point((size/3), (size/3), 1, 1 );
+// stroke(255,60);
+// strokeWeight(0.5);
+// line((size/3), (size/3), 1, 1 );
