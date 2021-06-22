@@ -3,34 +3,34 @@ var mult = 0.005
 
 function setup() {
   createCanvas(1000,1000)
-  background('#E7E5DF')
+  constellation();
 
-  var density = 20
-  var space = width / density
+  // var density = 20
+  // var space = width / density
+  //
+  // for (var x = 0; x < width; x += space) {
+  //   for (var y = 0; y < height; y += space) {
+  //     var p = createVector(x,y)
+  //     points.push(p)
+  //   }
+  // }
+}
 
-  for (var x = 0; x < width; x += space) {
-    for (var y = 0; y < height; y += space) {
-      var p = createVector(x,y)
-      points.push(p)
-    }
-  }
+function mousePressed() {
+constellation();
 }
 
 // function keyPressed() {
 //   saveCanvas('topgraphy', 'jpg');
 // }
 
-function draw(){
-  noStroke()
-  for (var i = 0; i < points.length; i++) {
-    var angle = map(noise(points[i].x * mult,points[i].y * mult),0, 1, 0, 720)
-    points[i].add(createVector(cos(angle),sin(angle)))
-
-    if (angle > 200) {
-      fill('#393E41')
-    } else {
-      fill('#D3D0CB')
-    }
-    ellipse(points[i].x,points[i].y,1)
+function constellation(x,y) {
+  background(30);
+  stroke(255);
+  strokeWeight(4);
+  let stars = random(1,20)
+  for (var i = 0; i < stars; i++) {
+    ellipse(random(0,width),random(0,height),random(25,50))
+    line(random(0,width),random(0,height),random(0,width),random(0,height),)
   }
 }
