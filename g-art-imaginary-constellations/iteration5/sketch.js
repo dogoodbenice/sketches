@@ -29,17 +29,26 @@ function constellation(x, y) {
   stroke(255);
 
   //Main constellation
-  let xpos1 = random(0, width);
-  let ypos1 = random(0, height);
-  let xpos2 = random(0, width);
-  let ypos2 = random(0, height);
-  let xpos3 = random(0, width);
-  let ypos3 = random(0, height);
-  let xpos4 = random(0, width);
-  let ypos4 = random(0, height);
+  let inital = 150
+  let xpos1 = random(inital, width-inital);
+  let ypos1 = random(inital, height-inital);
+  let xpos2 = random(inital, width-inital);
+  let ypos2 = random(inital, height-inital);
+  let xpos3 = random(inital, width-inital);
+  let ypos3 = random(inital, height-inital);
+  let xpos4 = random(inital, width-inital);
+  let ypos4 = random(inital, height-inital);
+
+  let axpos = []
+  let ypos = []
+
+  for (var i = 0; i < 20; i++) {
+    
+  }
+
   beginShape();
   vertex(xpos1, ypos1);
-  vertex(xpos1, ypos1);
+  vertex(xpos1, ypos3);
   vertex(xpos1, ypos2);
   vertex(xpos2, ypos2);
   vertex(xpos2, ypos2);
@@ -58,7 +67,7 @@ function constellation(x, y) {
   circle(xpos4, ypos2,10);
   circle(xpos3, ypos4,10);
 
-  let stars = random(1, 100)
+  let stars = random(80, 200)
   for (var i = 0; i < stars; i++) {
     strokeWeight(2);
     let xpos5 = random(0, width);
