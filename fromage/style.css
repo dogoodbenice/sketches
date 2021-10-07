@@ -1,0 +1,113 @@
+/* Universal Styles */
+
+html {
+  font-size: 16px;
+}
+
+body {
+  background-color: white;
+}
+
+.image-container {
+  overflow: hidden;
+}
+
+.image-container img {
+  max-width: 100%;
+   height: auto;
+   display: block;
+}
+
+/* Banner Section */
+
+p {
+  min-width: 200px;
+  min-height: 200px;
+}
+
+#banner {
+  height: 46rem;
+  background-image: url('https://images.unsplash.com/photo-1633108199105-d1964ad7f0f0?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1740&q=80');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+#banner h1 {
+  font-size: 3.75rem;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  color: white;
+}
+
+/* Blog Post */
+
+#blog {
+  width: 86%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#blog .post {
+  width: 52%;
+  margin-top: 12.5%;
+  margin-bottom: 7.5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Merriweather', serif;
+  font-weight: 300;
+  font-size: 1rem;
+  text-align: center;
+  line-height: 1.8;
+  color: #444444;
+}
+
+.post h2 {
+  font-size: 1.875rem;
+
+}
+
+.post h3 {
+  font-size: 1.125rem;
+  color: #999999;
+}
+
+.post .opening-line {
+  margin-top: 4.1875rem;
+  margin-bottom: 1.5rem;
+  color: black;
+  font-weight: bold;
+}
+
+.post .image-container {
+  width: 100%;
+}
+
+/* Blog Images */
+
+.images {
+  margin-bottom: 20%;
+}
+
+.images .image-container {
+  display: inline-block;
+  width: 50%;
+}
+
+/* Footer */
+
+footer {
+  padding: 4rem 0;
+  border-top: 1px solid #999999;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.125rem;
+  color: #999999;
+  text-align: center;
+}
