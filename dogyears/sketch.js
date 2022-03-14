@@ -3,7 +3,7 @@ let earlyYears, laterYears;
 
 function setup() {
   createCanvas(1000, 450);
-  slider = createSlider(1,250,0);
+  slider = createSlider(0,250,1);
   slider.position(40, 150);
   slider.style('width','300px');
   noStroke();
@@ -26,5 +26,5 @@ function draw() {
 
   text('You are ' + myAge + ' years old in human years',200,100);
   text('Which is ' + myAgeInDogYears + ' in dog years',200,180);
-  text('🦮🐕🐩🐕‍🦺',200,260);
+  text('🦮🐕🐩🐕‍🦺',200,300);
 }
