@@ -26,5 +26,5 @@ function draw() {
 
   text('You are ' + myAge + ' years old in human years',200,100);
   text('Which is ' + myAgeInDogYears + ' in dog years',200,180);
-  text('🦮🐕🐩🐕‍🦺',200,200);
+  text('🦮🐕🐩🐕‍🦺',200,260);
 }
