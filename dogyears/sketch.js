@@ -3,9 +3,9 @@ let earlyYears, laterYears;
 
 function setup() {
   createCanvas(1000, 450);
-  slider = createSlider(0,250,0);
+  slider = createSlider(1,250,0);
   slider.position(40, 150);
-  slider.style('width','250px');
+  slider.style('width','300px');
   noStroke();
 }
 
