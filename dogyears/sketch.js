@@ -1,56 +1,30 @@
-function setup() {
-  createCanvas(600, 300);
-  noStroke();
-  //To set a nice background
-  let bgcolor = ['#2980b9','#16a085','#341f97','#c0392b','#34495e'];
-  background(random(bgcolor));
-  //fortune time
-  textSize(20);
-  let textpos = 50;
-  let texth = 150;
-  fill(255);
-  let randomNumber = Math.floor(Math.random() * 8);
-  let fortune = '';
+let slider;
+let earlyYears, laterYears;
 
-  switch (randomNumber) {
-    case 1:
-      fortune = 'Know Where You’re Going';
-      text(`${fortune}`, textpos, texth);
-      break;
-    case 2:
-      fortune = 'Take Action';
-      text(`${fortune}`, textpos, texth);
-      break;
-    case 3:
-      fortune = 'Successes Are Built On Failures';
-      text(`${fortune}`, textpos, texth);
-      break;
-    case 4:
-      fortune = 'Good Friends Are Better Than Lots Of Friends';
-      text(`${fortune}`, textpos, texth);
-      break;
-    case 5:
-      fortune = 'Believe In Yourself';
-      text(`${fortune}`, textpos, texth);
-      break;
-    case 6:
-      fortune = 'Track What You’re Doing';
-      text(`${fortune}`, textpos, texth);
-      break;
-    case 7:
-      fortune = 'Do The Truly Important Things First';
-      text(`${fortune}`, textpos, texth);
-      break;
-    case 8:
-      fortune = 'Don’t Be Afraid To Experiment';
-      break;
-      text(`${fortune}`, textpos, texth);
-    default:
-      fortune = 'Do ask questions'
-      text(`${fortune}`, textpos, texth);
-  }
+function setup() {
+  createCanvas(1000, 450);
+  slider = createSlider(0,250,1);
+  slider.position(40, 150);
+  slider.style('width','300px');
+  noStroke();
 }
 
-function mouseClicked() {
-  setup();
+function draw() {
+  textSize(40);
+  fill(255);
+
+  let myAge = slider.value();
+  background(myAge/2,20,255);
+
+  earlyYears = 2;
+  earlyYears *= 10.5;
+
+  laterYears = myAge-2;
+  laterYears *= 4;
+
+  myAgeInDogYears = earlyYears+laterYears
+
+  text('You are ' + myAge + ' years old in human years',200,100);
+  text('Which is ' + myAgeInDogYears + ' in dog years',200,180);
+  text('🦮🐕🐩🐕‍🦺',200,300);
 }
