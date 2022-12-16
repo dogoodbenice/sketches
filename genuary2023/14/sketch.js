@@ -1,7 +1,6 @@
 // An array to store the positions of the letters and have the letters
 let positions = [];
-let items = ['🌑', '🌒', '🌓', '🌔','🌕','🌖','🌗','🌘'];
-
+let items = ['L', 'O', 'V', 'E'];
 let letterSize = 30;
 
 function random_item(items) {
