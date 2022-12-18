@@ -29,7 +29,9 @@ function setup() {
   }
 }
 
-function mouseClicked() {
-  // Save as an image
-  save("letters.jpg");
+function keyPressed() {
+  // this will download the first 6 seconds of the animation!
+  if (key === 's') {
+    saveCanvas('mymadein10', 'jpg');
+  }
 }
