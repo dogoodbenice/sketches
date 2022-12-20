@@ -1,55 +1,51 @@
-// An array to store the positions of the letters and have the letters
-let positions = [];
-let items = ['L', 'O', 'V', 'E'];
-let letterSize = 30;
+let glitch;
 
-function random_item(items) {
-  return items[Math.floor(Math.random() * items.length)];
-}
+//select a random number to be used to select a random gif
+function getRandomInt() {
+	return Math.floor(Math.random() * 4);
+  }
 
 function setup() {
-  createCanvas(400, 400);
-  background(255, 50, 25);
-  textSize(letterSize);
-  // Draw lots of letters
-  for (let i = 0; i < 500; i++) {
-    fill(255);
-    // Set a random rotation angle
-    let angle = random(-180, 180);
-    rotate(angle);
-    // Set a random position on the canvas
-    let x = random(letterSize*2, width-letterSize);
-    let y = random(letterSize*2, height-letterSize);
-    // Check if the new position overlaps with any existing letters
-    let overlaps = false;
-    for (let i = 0; i < positions.length; i++) {
-      let p = positions[i];
-      let d = dist(x, y, p.x, p.y);
-      if (d < textWidth("L")) {
-        overlaps = true;
-        break;
-      } else if (d < textWidth("O")){
-        overlaps = true;
-        break;
-      } else if (d < textWidth("V")){
-        overlaps = true;
-        break;
-      } else if (d < textWidth("E")){
-        overlaps = true;
-        break;
-      }  
-    }
-    // If the position does not overlap, draw the letter and store the position
-    if (!overlaps) {
-      text(random_item(items), x, y);
-      positions.push({ x, y });
-    }
-    // Reset the rotation
-    rotate(-angle);
-  }
+	createCanvas(window.innerWidth-200, window.innerHeight-300);
+	glitch = new Glitch();
+	glitch.loadType('jpg')
+	let randomGifslection = getRandomInt()
+	console.log(randomGifslection)
+
+	if (randomGifslection === 0){
+		glitch.loadImage('./gifs/A.gif')
+	} else if (randomGifslection === 1){
+		glitch.loadImage('./gifs/A.jpg')
+	} else if (randomGifslection === 2){
+		glitch.loadImage('./gifs/C.gif')
+	} else if (randomGifslection === 3){ 
+		glitch.loadImage('./gifs/A.jpg')
+	}
+	imageMode(CENTER)
 }
 
-function mouseClicked() {
-  // Save as an image
-  save("letters.jpg");
+function draw() {
+	glitch.resetBytes(); // reset bytes to original each draw cycle
+
+	// see w/ 10 random bytes
+	glitch.randomBytes(10);
+	glitch.buildImage(function(img) {
+		background(0); // background on demand of first image ready
+		image(img, width / 2, height * .25)
+	});
+
+
+	// see w/ additional 100 random bytes
+	glitch.randomBytes(100);
+	glitch.buildImage(function(img) {
+		image(img, width / 2, height * .5)
+	});
+
+	// reset + swap hex strings
+	glitch.resetBytes();
+	glitch.replaceHex('ffdb00430001', 'ffdb004300ff');
+	glitch.buildImage(function(img) {
+		image(img, width / 2, height * .5)
+	});
+
 }
