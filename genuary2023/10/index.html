@@ -9,6 +9,27 @@
   <script src="sketch.js"></script>
   <title>1.</title>
 </head>
+<script src="http://unpkg.com/tone"></script>
+<script>
+  function playTune1() {
+    // create a synth
+    const synth = new Tone.Synth().toDestination();
+    const seq = new Tone.Sequence((time, note) => {
+      synth.triggerAttackRelease(note, 0.1, time);
+      // subdivisions are given as subarrays
+    }, ["C4", ["E4", "D4", "E4"], "G4", ["B5", "C6"], ["A4", "G4"], "B5", "D2"]).start(0);
+    Tone.Transport.start();
+  }
+  function playTune2() {
+    // create a synth
+    const synth = new Tone.Synth().toDestination();
+    const seq = new Tone.Sequence((time, note) => {
+      synth.triggerAttackRelease(note, 0.1, time);
+      // subdivisions are given as subarrays
+    }, ["D4", ["E4", "D4", "E4"], "D4", ["B5", "D6"], ["A4", "G4"], "B5", "D2","D5"]).start(0);
+    Tone.Transport.start();
+  }
+</script>
 <style>
   p,
   h1 {
@@ -23,8 +44,10 @@
 </style>
 
 <body>
-  <h1>Jan 9 Plants</h1>
-  <p>Click your mouse to save an image.</p>
+  <h1>Jan 10 Generative music</h1>
+  <p>Makes use of </p>
+  <button onclick="playTune1()">Click me to play something!</button>
+  <button onclick="playTune2()">Click me to play the bass!</button>
 </body>
 
 </html>
