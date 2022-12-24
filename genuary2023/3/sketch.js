@@ -1,51 +1,78 @@
-let glitch;
+let glitch, glitch2;
+let xpos = 155;
 
-//select a random number to be used to select a random gif
+//select a random number to be used to select sampling
 function getRandomInt() {
-	return Math.floor(Math.random() * 4);
-  }
-
-function setup() {
-	createCanvas(window.innerWidth-200, window.innerHeight-300);
-	glitch = new Glitch();
-	glitch.loadType('jpg')
-	let randomGifslection = getRandomInt()
-	console.log(randomGifslection)
-
-	if (randomGifslection === 0){
-		glitch.loadImage('./gifs/A.gif')
-	} else if (randomGifslection === 1){
-		glitch.loadImage('./gifs/A.jpg')
-	} else if (randomGifslection === 2){
-		glitch.loadImage('./gifs/C.gif')
-	} else if (randomGifslection === 3){ 
-		glitch.loadImage('./gifs/A.jpg')
-	}
-	imageMode(CENTER)
+	return Math.floor(Math.random() * 100);
 }
 
-function draw() {
+function setup() {
+	createCanvas(window.innerWidth - 200, window.innerHeight - 300);
+	glitch = new Glitch();
+	glitch.loadType('jpg')
+	glitch.loadImage('https://picsum.photos/200/300')
+
+	glitch2 = new Glitch();
+	glitch2.loadType('jpg');
+	glitch2.loadType('jpg'); // specify jpeg file glitching, default
+	glitch2.loadQuality(.25); // optionally crunch to low quality
+
+	glitch2.loadImage(`https://picsum.photos/200/200`);
+
+	imageMode(CENTER)
+	//noLoop();
+}
+
+function g2(){
+	glitch2.resetBytes(); // reset bytes to original each draw cycle
+
+	glitch2.randomBytes(getRandomInt());
+	glitch2.buildImage(function (img) {
+		image(img, xpos*4, height * .5)
+	});
+}
+
+//glitch set
+function g1() {
 	glitch.resetBytes(); // reset bytes to original each draw cycle
 
-	// see w/ 10 random bytes
-	glitch.randomBytes(10);
-	glitch.buildImage(function(img) {
-		background(0); // background on demand of first image ready
-		image(img, width / 2, height * .25)
+	glitch.randomBytes(getRandomInt());
+	glitch.buildImage(function (img) {
+		background(0);
+		image(img, xpos, height * .5)
 	});
-
-
-	// see w/ additional 100 random bytes
-	glitch.randomBytes(100);
-	glitch.buildImage(function(img) {
-		image(img, width / 2, height * .5)
+	glitch.randomBytes(getRandomInt());
+	glitch.buildImage(function (img) {
+		image(img, xpos * 2.5, height * .5)
 	});
-
-	// reset + swap hex strings
-	glitch.resetBytes();
-	glitch.replaceHex('ffdb00430001', 'ffdb004300ff');
-	glitch.buildImage(function(img) {
-		image(img, width / 2, height * .5)
+	// glitch.randomBytes(getRandomInt());
+	// glitch.buildImage(function (img) {
+	// 	image(img, xpos * 4, height * .5)
+	// });
+	glitch.randomBytes(getRandomInt());
+	glitch.buildImage(function (img) {
+		image(img, xpos * 5.5, height * .5)
 	});
+	glitch.randomBytes(getRandomInt());
+	glitch.buildImage(function (img) {
+		image(img, xpos * 7, height * .5)
+		glitch.replaceHex('ffdb00430101', 'ffdb00430155');
+	});
+}
 
+
+function draw() {
+	g1();
+	g2();
+}
+
+function keyPressed() {
+	// this will download the canvas
+	if (key === 's') {
+		saveCanvas('myglitchsketch', 'jpg');
+	}
+}
+
+function mousePressed() {
+	noLoop();
 }
