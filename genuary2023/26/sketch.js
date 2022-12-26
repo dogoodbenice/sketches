@@ -1,55 +1,83 @@
-// An array to store the positions of the letters and have the letters
-let positions = [];
-let items = ['L', 'O', 'V', 'E'];
-let letterSize = 30;
-
-function random_item(items) {
-  return items[Math.floor(Math.random() * items.length)];
-}
+let lines = [];
 
 function setup() {
-  createCanvas(400, 400);
-  background(255, 50, 25);
-  textSize(letterSize);
-  // Draw lots of letters
-  for (let i = 0; i < 500; i++) {
-    fill(255);
-    // Set a random rotation angle
-    let angle = random(-180, 180);
-    rotate(angle);
-    // Set a random position on the canvas
-    let x = random(letterSize*2, width-letterSize);
-    let y = random(letterSize*2, height-letterSize);
-    // Check if the new position overlaps with any existing letters
-    let overlaps = false;
-    for (let i = 0; i < positions.length; i++) {
-      let p = positions[i];
-      let d = dist(x, y, p.x, p.y);
-      if (d < textWidth("L")) {
-        overlaps = true;
-        break;
-      } else if (d < textWidth("O")){
-        overlaps = true;
-        break;
-      } else if (d < textWidth("V")){
-        overlaps = true;
-        break;
-      } else if (d < textWidth("E")){
-        overlaps = true;
-        break;
-      }  
+  createCanvas(800, 500);
+
+  // Generate 10 random lines
+  for (let i = 0; i < 25; i++) {
+    lines.push(new Line());
+  }
+
+  background(255);
+
+  // Draw the lines
+  for (let line of lines) {
+    line.display();
+  }
+
+  //frameandtext
+  push();
+  noStroke();
+  fill(0);
+  rect(615, 415, 155, 50);
+  fill(255);
+  strokeWeight();
+  textSize(30);
+  textFont('Georgia');
+  text(`${randomName()}, ${randomAge()}`,625,450)
+  pop();
+
+  push();
+  noFill();
+  rectMode(CENTER)
+  strokeWeight(30);
+  rect(800 / 2, 500 / 2, 800, 500);
+  pop();
+}
+
+//select a random name
+function randomName() {
+  let names = ['Oli', 'Alex', 'Rylie', 'Jordan', 'Dennis', 'Talia', 'Cael', 'Jess', 'Nat', 'Walter', 'Marlee', 'Lester', 'Alex', 'Nelly', 'Hollie'];
+  const random = Math.floor(Math.random() * names.length);
+  return names[random];
+}
+
+//select a random age
+function randomAge() {
+  let age = Math.floor(random(9)+1)
+  return age
+}
+
+// Line class
+class Line {
+  constructor() {
+    this.x1 = random(width);
+    this.y1 = random(height);
+    this.x2 = random(width);
+    this.y2 = random(height);
+    this.segments = random(10, 20);
+    this.color = color(random(255), random(255), random(255));
+  }
+
+  display() {
+    stroke(this.color);
+    strokeWeight(5);
+    noFill();
+
+    beginShape();
+    for (let i = 0; i < this.segments; i++) {
+      let x = map(i, 0, this.segments - 1, this.x1, this.x2);
+      let y = map(i, 0, this.segments - 1, this.y1, this.y2);
+      let offset = random(-25, 25);
+      vertex(x, y + offset);
     }
-    // If the position does not overlap, draw the letter and store the position
-    if (!overlaps) {
-      text(random_item(items), x, y);
-      positions.push({ x, y });
-    }
-    // Reset the rotation
-    rotate(-angle);
+    endShape();
   }
 }
 
-function mouseClicked() {
-  // Save as an image
-  save("letters.jpg");
+function keyPressed() {
+  // this will download the canvas
+  if (key === 's') {
+    saveCanvas('mysketch', 'jpg');
+  }
 }
