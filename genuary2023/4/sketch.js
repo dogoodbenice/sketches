@@ -1,55 +1,68 @@
-// An array to store the positions of the letters and have the letters
-let positions = [];
-let items = ['L', 'O', 'V', 'E'];
-let letterSize = 30;
+const canvasWidth = 1380;
+const canvasHeight = 550;
 
-function random_item(items) {
-  return items[Math.floor(Math.random() * items.length)];
+let randomGen = getRandomInt() // to get a random non whole number for fun spin
+
+function getRandomInt() {
+  return Math.floor(Math.random() * 4);
 }
 
 function setup() {
-  createCanvas(400, 400);
-  background(255, 50, 25);
-  textSize(letterSize);
-  // Draw lots of letters
-  for (let i = 0; i < 500; i++) {
-    fill(255);
-    // Set a random rotation angle
-    let angle = random(-180, 180);
-    rotate(angle);
-    // Set a random position on the canvas
-    let x = random(letterSize*2, width-letterSize);
-    let y = random(letterSize*2, height-letterSize);
-    // Check if the new position overlaps with any existing letters
-    let overlaps = false;
-    for (let i = 0; i < positions.length; i++) {
-      let p = positions[i];
-      let d = dist(x, y, p.x, p.y);
-      if (d < textWidth("L")) {
-        overlaps = true;
-        break;
-      } else if (d < textWidth("O")){
-        overlaps = true;
-        break;
-      } else if (d < textWidth("V")){
-        overlaps = true;
-        break;
-      } else if (d < textWidth("E")){
-        overlaps = true;
-        break;
-      }  
+  createCanvas(canvasWidth, canvasHeight);
+  background(25);
+  //base grid
+  gridPaper();
+  //funky grid
+  grid();
+}
+
+function grid() {
+  stroke(255);
+  strokeWeight(2);
+  //Mini grid inside
+  for (let i = 0; i < height; i += 10) {
+    if (randomGen == 0) {
+      line(100, canvasHeight, canvasWidth, i);
+      line(100, i, i, i);
+    } else if (randomGen == 1) {
+      line(0, i, canvasHeight, 0);
+      line(200, canvasHeight, i, 0);
+    } else if (randomGen == 2) {
+      line(100, i, i, canvasHeight);
+    } else if (randomGen == 3) {
+      line(100, canvasHeight, canvasWidth, i);
+      line(100, i, i, i);
+    } else {
+      line(i, i, i, canvasHeight);
+      line(100, canvasHeight, canvasWidth, i);
     }
-    // If the position does not overlap, draw the letter and store the position
-    if (!overlaps) {
-      text(random_item(items), x, y);
-      positions.push({ x, y });
-    }
-    // Reset the rotation
-    rotate(-angle);
+
   }
+  console.log(randomGen)
 }
 
 function mouseClicked() {
-  // Save as an image
-  save("letters.jpg");
+  setup();
 }
+
+function gridPaper() {
+  stroke(255);
+  strokeWeight(2);
+  // draw horizontal lines
+  for (let i = 0; i < height; i += 20) {
+    line(0, i, width, i);
+  }
+  // draw vertical lines
+  for (let i = 0; i < width; i += 20) {
+    line(i, 0, i, height);
+  }
+}
+
+function keyPressed() {
+  // this will download the canvas
+  if (key === 's') {
+    saveCanvas('myglitchsketch', 'jpg');
+  }
+}
+
+
