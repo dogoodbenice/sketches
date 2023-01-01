@@ -6,8 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0>
   <script src="../libraries/p5.min.js"></script>
+  <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Silkscreen">
   <script src="sketch.js"></script>
-  <title>1.</title>
+  <title>5.</title>
 </head>
 <style>
   p,
@@ -16,15 +18,34 @@
   }
 
   body {
-    padding: 10px;
-    margin-top: 5px;
-    margin-left: 20px;
+    color: #ffffff;
+    font-family: Arial;
+    font-size: 13px;
+    text-align: left;
+    background-color: #ffffff;
+    margin: 0px;
+    overflow: hidden;
+  }
+
+  canvas {
+    vertical-align: top;
+  }
+
+  #info {
+    color: #ffffff;
+    position: absolute;
+    width: 100%;
+    padding: 15px;
   }
 </style>
 
 <body>
-  <h1>Jan 5 Debug view</h1>
-  <p>Click your mouse to save an image.</p>
+  <div id="info">
+    <h1>Jan 5 Debug view</h1>
+    <p>Try to find the date amongst the console logs.</p>
+    <p>Press the S key to save the sketch. Other <a href="/index.html"> genuary sketches</a>.</p>
+  </div>
+  <div id="container"></div>
 </body>
 
 </html>
