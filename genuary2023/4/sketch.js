@@ -1,48 +1,49 @@
 const canvasWidth = 1380;
 const canvasHeight = 550;
 
-let randomGen = getRandomInt() // to get a random non whole number for fun spin
-
+let randomGen = getRandomInt() // to get a random whole number for a fun intersection selection
+// to get a random whole number for a fun intersection selection
 function getRandomInt() {
   return Math.floor(Math.random() * 4);
 }
 
 function setup() {
   createCanvas(canvasWidth, canvasHeight);
-  background(25);
+  background(random(10));
   //base grid
   gridPaper();
-  //funky grid
+  //funky intersection grid
   grid();
 }
 
 function grid() {
   stroke(255);
   strokeWeight(2);
-  //Mini grid inside
   for (let i = 0; i < height; i += 10) {
     if (randomGen == 0) {
-      line(100, canvasHeight, canvasWidth, i);
-      line(100, i, i, i);
+      for (let j = 0; j < canvasWidth; j += (random(1,100))) {
+        fill(0);
+        ellipse(j, i, 4+(random(1,5)));
+        line(i+canvasHeight/2, i, i, i+canvasHeight/2);
+      }
     } else if (randomGen == 1) {
-      line(0, i, canvasHeight, 0);
-      line(200, canvasHeight, i, 0);
+      for (let j = 0; j < canvasWidth; j += (random(1,100))) {
+        line(canvasWidth, i, 0, i);
+        ellipse(j, i, 4+(random(1,10)));
+        line(canvasHeight, i, i+2, i);
+      }
     } else if (randomGen == 2) {
-      line(100, i, i, canvasHeight);
-    } else if (randomGen == 3) {
-      line(100, canvasHeight, canvasWidth, i);
-      line(100, i, i, i);
+      for (let j = 0; j < canvasWidth; j += (random(1,100))) {
+        fill(0);
+        ellipse(j, i, 4+(random(1,5)));
+        line(i+10, i, i+canvasWidth/2, i);
+      }
     } else {
-      line(i, i, i, canvasHeight);
-      line(100, canvasHeight, canvasWidth, i);
+      for (let j = 0; j < canvasWidth; j += (random(1,50))) {
+        ellipse(j, i, 1+(random(1,5)));
+      }
     }
-
   }
-  console.log(randomGen)
-}
-
-function mouseClicked() {
-  setup();
 }
 
 function gridPaper() {
@@ -61,7 +62,7 @@ function gridPaper() {
 function keyPressed() {
   // this will download the canvas
   if (key === 's') {
-    saveCanvas('myglitchsketch', 'jpg');
+    saveCanvas('myIntersection', 'jpg');
   }
 }
 
