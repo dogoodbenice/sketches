@@ -7,6 +7,8 @@ function random_item(items) {
   return items[Math.floor(Math.random() * items.length)];
 }
 
+https://upload.wikimedia.org/wikipedia/en/2/23/Phoebe_Bridgers_Punisher_%282020%29.png?20200520165712
+
 function setup() {
   createCanvas(400, 400);
   background(255, 50, 25);
