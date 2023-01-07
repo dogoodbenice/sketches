@@ -1,57 +1,55 @@
-// An array to store the positions of the letters and have the letters
-let positions = [];
-let items = ['L', 'O', 'V', 'E'];
-let letterSize = 30;
-
-function random_item(items) {
-  return items[Math.floor(Math.random() * items.length)];
-}
-
-https://upload.wikimedia.org/wikipedia/en/2/23/Phoebe_Bridgers_Punisher_%282020%29.png?20200520165712
+let circleRadius;
+let stripeCount;
+let stripeThickness;
+let stripeColors;
 
 function setup() {
-  createCanvas(400, 400);
-  background(255, 50, 25);
-  textSize(letterSize);
-  // Draw lots of letters
-  for (let i = 0; i < 500; i++) {
-    fill(255);
-    // Set a random rotation angle
-    let angle = random(-180, 180);
-    rotate(angle);
-    // Set a random position on the canvas
-    let x = random(letterSize*2, width-letterSize);
-    let y = random(letterSize*2, height-letterSize);
-    // Check if the new position overlaps with any existing letters
-    let overlaps = false;
-    for (let i = 0; i < positions.length; i++) {
-      let p = positions[i];
-      let d = dist(x, y, p.x, p.y);
-      if (d < textWidth("L")) {
-        overlaps = true;
-        break;
-      } else if (d < textWidth("O")){
-        overlaps = true;
-        break;
-      } else if (d < textWidth("V")){
-        overlaps = true;
-        break;
-      } else if (d < textWidth("E")){
-        overlaps = true;
-        break;
-      }  
-    }
-    // If the position does not overlap, draw the letter and store the position
-    if (!overlaps) {
-      text(random_item(items), x, y);
-      positions.push({ x, y });
-    }
-    // Reset the rotation
-    rotate(-angle);
-  }
+  createCanvas(600, 600);
+  circleRadius = 150;
+  stripeCount = 8;
+  rectMode(CENTER);
+  frameRate(1);
+  stripeThickness = circleRadius / stripeCount;
+  stripeLength = circleRadius - stripeThickness / 2;
+  stripeColors = [color(213, 131, 91), color(214, 121, 103), color(184, 106, 93), color(210, 116, 134), color(171, 98, 125), color(163, 109, 143), color(119, 108, 138), color(51, 62, 84)];
 }
 
-function mouseClicked() {
-  // Save as an image
-  save("letters.jpg");
+function draw(){
+  background(220, 217, 200);
+  // Draw the circle
+  stroke([Math.floor(Math.random() * stripeColors.length)]);
+  noFill();
+  strokeWeight(10);
+  //ellipse(width / 2, height / 2, circleRadius * 3.8);
+
+  // Draw the circles
+  for (let i = 0; i < stripeCount; i++) {
+    let shapeChoice = Math.floor(random(0, 3))
+
+    let angle = 2 * PI / stripeCount * i;
+    let x = width / 2 + circleRadius * cos(angle);
+    let y = height / 2 + circleRadius * sin(angle);
+    let c = stripeColors[i];
+    fill(c);
+    noStroke();
+
+    if (shapeChoice == 0) {
+      ellipse(x, y, stripeThickness * 10);
+    } else if (shapeChoice == 1) {
+      rect(x, y, stripeThickness * 9);
+    } else if (shapeChoice == 2) {
+      let triangleSize = 100
+      triangle(x, y-triangleSize, x-(triangleSize-15), y+(triangleSize-15), x+(triangleSize-15), y+(triangleSize-15))
+    } else {
+      ellipse(x, y, stripeThickness * 50);
+    }
+  }
+
+}
+
+function keyPressed() {
+  // this will download the first 6 seconds of the animation!
+  if (key === 's') {
+    saveGif('sampled', 6);
+  }
 }
