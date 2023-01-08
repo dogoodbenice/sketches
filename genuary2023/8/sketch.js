@@ -1,55 +1,34 @@
-// An array to store the positions of the letters and have the letters
-let positions = [];
-let items = ['L', 'O', 'V', 'E'];
-let letterSize = 30;
 
-function random_item(items) {
-  return items[Math.floor(Math.random() * items.length)];
-}
 
 function setup() {
-  createCanvas(400, 400);
-  background(255, 50, 25);
-  textSize(letterSize);
-  // Draw lots of letters
-  for (let i = 0; i < 500; i++) {
-    fill(255);
-    // Set a random rotation angle
-    let angle = random(-180, 180);
-    rotate(angle);
-    // Set a random position on the canvas
-    let x = random(letterSize*2, width-letterSize);
-    let y = random(letterSize*2, height-letterSize);
-    // Check if the new position overlaps with any existing letters
-    let overlaps = false;
-    for (let i = 0; i < positions.length; i++) {
-      let p = positions[i];
-      let d = dist(x, y, p.x, p.y);
-      if (d < textWidth("L")) {
-        overlaps = true;
-        break;
-      } else if (d < textWidth("O")){
-        overlaps = true;
-        break;
-      } else if (d < textWidth("V")){
-        overlaps = true;
-        break;
-      } else if (d < textWidth("E")){
-        overlaps = true;
-        break;
-      }  
+  createCanvas(600, 600);
+  background(255);
+  
+  textAlign(CENTER, CENTER);
+  let fonts = ["Helvetica", "Palatino", "Times New Roman", "Courier New", "Georgia", "Baskerville"]
+  let w = 5, h = 5, s = 80;
+  
+  translate(width / 6, height / 6);
+  for(let x = 0; x < w; x++) {
+    for(let y = 0; y < h; y++) {
+      textFont(fonts[(x + y) % 6]);
+      textStyle((x + y) % (random (0,6)) ? BOLD : BOLDITALIC);
+      push(); 
+      // move and then rotate
+      translate(x * s + s / 2, y * s + s / 2);
+      rotate(x * 0.5 + y * 0.6 + 1);
+      fill(random(0,255),random(0,255),random(0,255));
+      textSize(random(10,40))
+      text("SDF", 0, 0);
+      pop(); // load last position and rotation (reset)
     }
-    // If the position does not overlap, draw the letter and store the position
-    if (!overlaps) {
-      text(random_item(items), x, y);
-      positions.push({ x, y });
-    }
-    // Reset the rotation
-    rotate(-angle);
   }
 }
 
-function mouseClicked() {
-  // Save as an image
-  save("letters.jpg");
+
+function keyPressed() {
+  // this will download the canvas
+  if (key === 's') {
+    saveCanvas('sdf', 'jpg');
+  }
 }
