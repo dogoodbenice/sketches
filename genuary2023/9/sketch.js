@@ -14,7 +14,6 @@ function preload() {
 }
 
 function setup() {
-
   createCanvas(800, 800);
   background(255);
   let cellNum = 8
@@ -28,7 +27,6 @@ function setup() {
   for (let y = 0; y < height; y += cellSize) {
     line(0, y, width, y);
   }
-
   // Add the unique leaves into the grid
   for (let i = 0; i < cellNum; i++) {
     for (let j = 0; j < cellNum; j++) {
@@ -52,7 +50,6 @@ function setup() {
           image(img3, cellSize * i + cellSize * 0.1, cellSize * j + cellSize * 0.1, cellSize * 0.8, cellSize * 0.8);
           break;
         case 3:
-
           image(img4, cellSize * i + cellSize * 0.1, cellSize * j + cellSize * 0.1, cellSize * 0.8, cellSize * 0.8);
           break;
         case 4:
