@@ -5,31 +5,51 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0>
-  <script src="../libraries/p5.min.js"></script>
-  <script src="sketch.js"></script>
-  <title>1.</title>
+  <script src="http://unpkg.com/tone"></script>
+  <title>10.</title>
 </head>
-<script src="http://unpkg.com/tone"></script>
 <script>
-  function playTune1() {
-    // create a synth
-    const synth = new Tone.Synth().toDestination();
-    const seq = new Tone.Sequence((time, note) => {
-      synth.triggerAttackRelease(note, 0.1, time);
-      // subdivisions are given as subarrays
-    }, ["C4", ["E4", "D4", "E4"], "G4", ["B5", "C6"], ["A4", "G4"], "B5", "D2"]).start(0);
-    Tone.Transport.start();
+  function c() {
+    const synth = new Tone.Synth().toDestination()
+    synth.triggerAttackRelease('C4', '8n')
   }
-  function playTune2() {
-    // create a synth
+  function d() {
     const synth = new Tone.Synth().toDestination();
-    const seq = new Tone.Sequence((time, note) => {
-      synth.triggerAttackRelease(note, 0.1, time);
-      // subdivisions are given as subarrays
-    }, ["D4", ["E4", "D4", "E4"], "D4", ["B5", "D6"], ["A4", "G4"], "B5", "D2","D5"]).start(0);
-    Tone.Transport.start();
+    synth.triggerAttackRelease('D4', '8n')
   }
+
+  function e() {
+    const synth = new Tone.Synth().toDestination();
+    synth.triggerAttackRelease('E4', '8n')
+  }
+
+  function f() {
+    const synth = new Tone.Synth().toDestination()
+    synth.triggerAttackRelease('F4', '8n')
+  }
+
+  function g() {
+    const synth = new Tone.Synth().toDestination()
+    synth.triggerAttackRelease('G4', '8n')
+  }
+
+  function a() {
+    const synth = new Tone.Synth().toDestination()
+    synth.triggerAttackRelease('A4', '8n')
+  }
+
+  function b() {
+    const synth = new Tone.Synth().toDestination()
+    synth.triggerAttackRelease('B4', '8n')
+  }
+
+  function c9() {
+    const synth = new Tone.Synth().toDestination()
+    synth.triggerAttackRelease('C5', '8n')
+  }
+
 </script>
+
 <style>
   p,
   h1 {
@@ -40,14 +60,40 @@
     padding: 10px;
     margin-top: 5px;
     margin-left: 20px;
+    cursor:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAAPCAMAAAAxmgQeAAAACVBMVEX///8AAAD///9+749PAAAAAXRSTlMAQObYZgAAAD5JREFUGNN1j9EKADAIAnP//9GjFq6w7iU4DNRsB06cb44TJ+UzYUcniqnqoA6ag/62JhjKIU0rxx1lKveuXJ5UAQs/G/2vAAAAAElFTkSuQmCC),auto;
   }
+
+  button {
+    background-color: aquamarine;
+    padding: 10px;
+    display: flex;
+  }
+
+  button:hover{
+    background-color: teal;
+    cursor:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAAPCAMAAAAxmgQeAAAACVBMVEX///8AAAD///9+749PAAAAAXRSTlMAQObYZgAAAD5JREFUGNN1j9EKADAIAnP//9GjFq6w7iU4DNRsB06cb44TJ+UzYUcniqnqoA6ag/62JhjKIU0rxx1lKveuXJ5UAQs/G/2vAAAAAElFTkSuQmCC),auto;
+  }
+
 </style>
 
 <body>
   <h1>Jan 10 Generative music</h1>
-  <p>Makes use of </p>
-  <button onclick="playTune1()">Click me to play something!</button>
-  <button onclick="playTune2()">Click me to play the bass!</button>
+  <p>Makes use of <a href="https://tonejs.github.io/">Tone.js</a>, hover over the buttons to strum a few notes.
+    Other <a href="/index.html"> genuary sketches</a>.</p>
+  <br>
+  <button onmouseover="c()">Hover over me  to play a C!</button>
+  <button onmouseover="d()">Hover over me  to play a D!</button>
+  <button onmouseover="e()">Hover over me  to play a E!</button>
+  <button onmouseover="e()">Hover over me  to play a E!</button>
+  <button onmouseover="f()">Hover over me  to play a F!</button>
+  <button onmouseover="g()">Hover over me  to play a G!</button>
+  <button onmouseover="a()">Hover over me  to play a A!</button>
+  <button onmouseover="b()">Hover over me to play a B!</button>
+  <button onmouseover="c9()">Hover over me to play a C!</button>
+  <br>
+  <br>
+  
+
 </body>
 
 </html>
