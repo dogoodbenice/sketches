@@ -11,11 +11,11 @@
 <script>
 
   //attach a click listener to a play button
-document.querySelector('button')?.addEventListener('click', async () => {
-	await Tone.start()
-	console.log('audio is ready')
-})
-  
+  document.querySelector('button')?.addEventListener('click', async () => {
+    await Tone.start()
+    console.log('audio is ready')
+  })
+
   function c() {
     const synth = new Tone.Synth().toDestination()
     synth.triggerAttackRelease('C4', '8n')
@@ -67,7 +67,7 @@ document.querySelector('button')?.addEventListener('click', async () => {
     padding: 10px;
     margin-top: 5px;
     margin-left: 20px;
-    cursor:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAAPCAMAAAAxmgQeAAAACVBMVEX///8AAAD///9+749PAAAAAXRSTlMAQObYZgAAAD5JREFUGNN1j9EKADAIAnP//9GjFq6w7iU4DNRsB06cb44TJ+UzYUcniqnqoA6ag/62JhjKIU0rxx1lKveuXJ5UAQs/G/2vAAAAAElFTkSuQmCC),auto;
+    cursor: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAAPCAMAAAAxmgQeAAAACVBMVEX///8AAAD///9+749PAAAAAXRSTlMAQObYZgAAAD5JREFUGNN1j9EKADAIAnP//9GjFq6w7iU4DNRsB06cb44TJ+UzYUcniqnqoA6ag/62JhjKIU0rxx1lKveuXJ5UAQs/G/2vAAAAAElFTkSuQmCC), auto;
   }
 
   button {
@@ -76,31 +76,93 @@ document.querySelector('button')?.addEventListener('click', async () => {
     display: flex;
   }
 
-  button:hover{
+  button:hover {
     background-color: teal;
-    cursor:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAAPCAMAAAAxmgQeAAAACVBMVEX///8AAAD///9+749PAAAAAXRSTlMAQObYZgAAAD5JREFUGNN1j9EKADAIAnP//9GjFq6w7iU4DNRsB06cb44TJ+UzYUcniqnqoA6ag/62JhjKIU0rxx1lKveuXJ5UAQs/G/2vAAAAAElFTkSuQmCC),auto;
+    cursor: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAAPCAMAAAAxmgQeAAAACVBMVEX///8AAAD///9+749PAAAAAXRSTlMAQObYZgAAAD5JREFUGNN1j9EKADAIAnP//9GjFq6w7iU4DNRsB06cb44TJ+UzYUcniqnqoA6ag/62JhjKIU0rxx1lKveuXJ5UAQs/G/2vAAAAAElFTkSuQmCC), auto;
   }
 
+  table,
+  td {
+    border: 1px solid #333;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  thead,
+  tfoot {
+    background-color: #333;
+    color: #fff;
+  }
 </style>
 
 <body>
   <h1>Jan 10 Generative music</h1>
-  <p>Makes use of <a href="https://tonejs.github.io/">Tone.js</a>, hover over the buttons to strum a few notes.
+  <p>Makes use of <a href="https://tonejs.github.io/">Tone.js</a>, and hover icons from <a
+      href="https://codepen.io/cubeghost/pen/dPeQqR">cairo cursors by Alex Baldwin</a>
+  </p>
+  <p> Press start and the hover over the buttons to strum a few notes.
     Other <a href="/index.html"> genuary sketches</a>.</p>
-    <button>Click me to setup the notes.</button>
+  <button>Click me to setup the notes.</button>
   <br>
-  <button onmouseover="c()">Hover over me  to play a C!</button>
-  <button onmouseover="d()">Hover over me  to play a D!</button>
-  <button onmouseover="e()">Hover over me  to play a E!</button>
-  <button onmouseover="e()">Hover over me  to play a E!</button>
-  <button onmouseover="f()">Hover over me  to play a F!</button>
-  <button onmouseover="g()">Hover over me  to play a G!</button>
-  <button onmouseover="a()">Hover over me  to play a A!</button>
-  <button onmouseover="b()">Hover over me to play a B!</button>
-  <button onmouseover="c9()">Hover over me to play a C!</button>
+  <table>
+    <thead>
+      <tr>
+        <th colspan="3">The notes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><button onmouseover="c()">Hover over me to play a C!</button></td>
+        <td><button onmouseover="c()">Hover over me to play a C!</button></td>
+        <td><button onmouseover="c()">Hover over me to play a C!</button></td>
+      </tr>
+      <tr>
+        <td><button onmouseover="d()">Hover over me to play a D!</button></td>
+        <td><button onmouseover="d()">Hover over me to play a D!</button></td>
+        <td><button onmouseover="d()">Hover over me to play a D!</button></td>
+      </tr>
+      <tr>
+        <td><button onmouseover="e()">Hover over me to play a E!</button></td>
+        <td><button onmouseover="e()">Hover over me to play a E!</button></td>
+        <td><button onmouseover="e()">Hover over me to play a E!</button></td>
+      </tr>
+      <tr>
+        <td><button onmouseover="f()">Hover over me to play a F!</button></td>
+        <td><button onmouseover="f()">Hover over me to play a F!</button></td>
+        <td><button onmouseover="f()">Hover over me to play a F!</button></td>
+      </tr>
+      <tr>
+        <td><button onmouseover="f()">Hover over me to play a F!</button></td>
+        <td><button onmouseover="f()">Hover over me to play a F!</button></td>
+        <td><button onmouseover="f()">Hover over me to play a F!</button></td>
+      </tr>
+      <tr>
+        <td><button onmouseover="g()">Hover over me to play a G!</button></td>
+        <td><button onmouseover="g()">Hover over me to play a G!</button></td>
+        <td><button onmouseover="g()">Hover over me to play a G!</button></td>
+      </tr>
+      <tr>
+        <td><button onmouseover="a()">Hover over me to play a A!</button></td>
+        <td><button onmouseover="a()">Hover over me to play a A!</button></td>
+        <td><button onmouseover="a()">Hover over me to play a A!</button></td>
+      </tr>
+      <tr>
+        <td><button onmouseover="b()">Hover over me to play a B!</button></td>
+        <td><button onmouseover="b()">Hover over me to play a B!</button></td>
+        <td><button onmouseover="b()">Hover over me to play a B!</button></td>
+      </tr>
+      <tr>
+        <td><button onmouseover="c9()">Hover over me to play a C!</button></td>
+        <td><button onmouseover="c9()">Hover over me to play a C!</button></td>
+        <td><button onmouseover="c9()">Hover over me to play a C!</button></td>
+      </tr>      
+      
+      
+    </tbody>
+  </table>
+
   <br>
   <br>
-  
+
 
 </body>
 
