@@ -5,10 +5,17 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0>
-  <script src="http://unpkg.com/tone"></script>
+  <script src="https://unpkg.com/tone"></script>
   <title>10.</title>
 </head>
 <script>
+
+  //attach a click listener to a play button
+document.querySelector('button')?.addEventListener('click', async () => {
+	await Tone.start()
+	console.log('audio is ready')
+})
+  
   function c() {
     const synth = new Tone.Synth().toDestination()
     synth.triggerAttackRelease('C4', '8n')
@@ -80,6 +87,7 @@
   <h1>Jan 10 Generative music</h1>
   <p>Makes use of <a href="https://tonejs.github.io/">Tone.js</a>, hover over the buttons to strum a few notes.
     Other <a href="/index.html"> genuary sketches</a>.</p>
+    <button>Click me to setup the notes.</button>
   <br>
   <button onmouseover="c()">Hover over me  to play a C!</button>
   <button onmouseover="d()">Hover over me  to play a D!</button>
