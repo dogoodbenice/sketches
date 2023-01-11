@@ -1,55 +1,67 @@
-// An array to store the positions of the letters and have the letters
-let positions = [];
-let items = ['L', 'O', 'V', 'E'];
-let letterSize = 30;
-
-function random_item(items) {
-  return items[Math.floor(Math.random() * items.length)];
-}
+let shapeColors = [color(250,252,132), color(48,69,180),color(175,2,0),color(65,50,249),color(31,112,29)];
 
 function setup() {
-  createCanvas(400, 400);
-  background(255, 50, 25);
-  textSize(letterSize);
-  // Draw lots of letters
-  for (let i = 0; i < 500; i++) {
-    fill(255);
-    // Set a random rotation angle
-    let angle = random(-180, 180);
-    rotate(angle);
-    // Set a random position on the canvas
-    let x = random(letterSize*2, width-letterSize);
-    let y = random(letterSize*2, height-letterSize);
-    // Check if the new position overlaps with any existing letters
-    let overlaps = false;
-    for (let i = 0; i < positions.length; i++) {
-      let p = positions[i];
-      let d = dist(x, y, p.x, p.y);
-      if (d < textWidth("L")) {
-        overlaps = true;
-        break;
-      } else if (d < textWidth("O")){
-        overlaps = true;
-        break;
-      } else if (d < textWidth("V")){
-        overlaps = true;
-        break;
-      } else if (d < textWidth("E")){
-        overlaps = true;
-        break;
-      }  
-    }
-    // If the position does not overlap, draw the letter and store the position
-    if (!overlaps) {
-      text(random_item(items), x, y);
-      positions.push({ x, y });
-    }
-    // Reset the rotation
-    rotate(-angle);
-  }
+  noStroke();
+  createCanvas(600, 600);
+  background(250, 250, 250);
+
+  //   let shapeChoice = Math.floor(random(0, 3))
+  //   let c = shapeColors[i];
+  //   fill(c);
+  blueCross(200,20)
+  rotatedRects(250,20)
+  blueCross(200,200)
+  singularSquare(100,20)
+  singularCircle(random(width)+100,random(height)+100);
 }
 
-function mouseClicked() {
-  // Save as an image
-  save("letters.jpg");
+function singularCircle(x,y){
+  fill(167, 34, 2)
+  noStroke();
+  circle(x, y, 100);
+}
+
+function singularSquare(x,y){
+  fill(8, 6, 26)
+  noStroke();
+  rect(x, y, 100, 100)
+}
+
+function rotatedRects(x,y){
+  push();
+  rotate(0.25)
+  fill(151, 30, 5)
+  noStroke();
+  rect(x, y+30, 350, 55, 0);
+  
+  fill(100)
+  noStroke();
+  rect(x, y, 140, 20)
+  rect(x, y+50, 140, 20)
+  pop();
+}
+
+function blueCross(x,y){
+  push()
+  rotate(0.30)
+  noStroke();
+  fill(2, 4, 114)
+  rect(x, y, 10, 450);
+  rect(x-20, y+40, 60, 10)
+  pop()
+}
+
+function rects(){
+  fill(196, 149, 1)
+  noStroke();
+  rect(50, 250, 290, 17)
+  fill(138, 51, 25)
+  rect(180, 300, 160, 17)
+}
+
+function keyPressed() {
+  // this will download the canvas
+  if (key === 's') {
+    saveCanvas('mySuprematism', 'jpg');
+  }
 }
