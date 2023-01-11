@@ -1,18 +1,16 @@
-let shapeColors = [color(250,252,132), color(48,69,180),color(175,2,0),color(65,50,249),color(31,112,29)];
-
 function setup() {
   noStroke();
   createCanvas(600, 600);
-  background(250, 250, 250);
 
-  //   let shapeChoice = Math.floor(random(0, 3))
-  //   let c = shapeColors[i];
-  //   fill(c);
-  blueCross(200,20)
-  rotatedRects(250,20)
-  blueCross(200,200)
-  singularSquare(100,20)
-  singularCircle(random(width)+100,random(height)+100);
+  //Shapes
+  background(250, 250, 250);
+  blueCross(random(100,500),random(100,500))
+  rotatedRects(random(100,500),random(100,500))
+  rotatedRects(random(100,500),random(100,500))
+  blueCross(random(10,300),random(100,300))
+  singularSquare(random(100,500),random(100,500))
+  singularSquare(random(100,500),random(100,500))
+  singularCircle(random(100,500),random(100,500));
 }
 
 function singularCircle(x,y){
@@ -23,18 +21,21 @@ function singularCircle(x,y){
 
 function singularSquare(x,y){
   fill(8, 6, 26)
+  push();
+  rotate(random(1))
   noStroke();
   rect(x, y, 100, 100)
+  pop();
 }
 
 function rotatedRects(x,y){
   push();
-  rotate(0.25)
-  fill(151, 30, 5)
+  rotate(random(1))
+  fill(151, 30, random(50))
   noStroke();
   rect(x, y+30, 350, 55, 0);
   
-  fill(100)
+  fill(185)
   noStroke();
   rect(x, y, 140, 20)
   rect(x, y+50, 140, 20)
@@ -43,10 +44,11 @@ function rotatedRects(x,y){
 
 function blueCross(x,y){
   push()
-  rotate(0.30)
+  rotate(random(1))
   noStroke();
   fill(2, 4, 114)
   rect(x, y, 10, 450);
+  fill(2, 40, 114)
   rect(x-20, y+40, 60, 10)
   pop()
 }
