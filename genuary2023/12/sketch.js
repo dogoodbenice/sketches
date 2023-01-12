@@ -1,55 +1,58 @@
-// An array to store the positions of the letters and have the letters
-let positions = [];
-let items = ['L', 'O', 'V', 'E'];
-let letterSize = 30;
+function setup() {
+  w = 650
+  createCanvas(w, w)
+  gridWidth = w
+  gridHeight = w
+  hexagonSize = w / random(15, 20)
 
-function random_item(items) {
-  return items[Math.floor(Math.random() * items.length)];
+  let pattern = int(random(3));
+  
+  switch (pattern) {
+    case 0:
+      background(250);
+      stroke(20);
+      strokeWeight(1)
+      hexagonSize = w / random(15, 20)
+      break;
+    case 1:
+      background(0);
+      stroke(20);
+      strokeWeight(5)
+      hexagonSize = w / random(15, 20)
+      break;
+    case 2:
+      background(100);
+      stroke(50);
+      strokeWeight(3)
+      hexagonSize = w / random(15, 20)
+      break;
+  }
+  noFill();
+  makeGrid()
+  noLoop()
 }
 
-function setup() {
-  createCanvas(400, 400);
-  background(255, 50, 25);
-  textSize(letterSize);
-  // Draw lots of letters
-  for (let i = 0; i < 500; i++) {
-    fill(255);
-    // Set a random rotation angle
-    let angle = random(-180, 180);
-    rotate(angle);
-    // Set a random position on the canvas
-    let x = random(letterSize*2, width-letterSize);
-    let y = random(letterSize*2, height-letterSize);
-    // Check if the new position overlaps with any existing letters
-    let overlaps = false;
-    for (let i = 0; i < positions.length; i++) {
-      let p = positions[i];
-      let d = dist(x, y, p.x, p.y);
-      if (d < textWidth("L")) {
-        overlaps = true;
-        break;
-      } else if (d < textWidth("O")){
-        overlaps = true;
-        break;
-      } else if (d < textWidth("V")){
-        overlaps = true;
-        break;
-      } else if (d < textWidth("E")){
-        overlaps = true;
-        break;
-      }  
+function drawHexagon(cX, cY, r) {
+  beginShape()
+  for (let a = 0; a < TAU; a += TAU / 9) {
+    vertex(cX + r * cos(a), cY + r * sin(a))
+  }
+  endShape(CLOSE)
+}
+
+function makeGrid() {
+  count = 0
+  for (y = 0; y < gridHeight; y += hexagonSize / 2.3) {
+    for (x = 0; x < gridWidth; x += hexagonSize * 1.5) {
+      drawHexagon(x + hexagonSize * (count % 2 == 0) * 0.75, y, hexagonSize / 2)
     }
-    // If the position does not overlap, draw the letter and store the position
-    if (!overlaps) {
-      text(random_item(items), x, y);
-      positions.push({ x, y });
-    }
-    // Reset the rotation
-    rotate(-angle);
+    count++
   }
 }
 
-function mouseClicked() {
-  // Save as an image
-  save("letters.jpg");
+function keyPressed() {
+  // this will download the canvas
+  if (key === 's') {
+    saveCanvas('myTesselation', 'jpg');
+  }
 }
