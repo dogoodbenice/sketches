@@ -1,13 +1,10 @@
-var blobs;
-var gridSz;
+let blobs, gridSz;
 
 function setup() {
   createCanvas(600, 600);
   angleMode(DEGREES);
   background(255);
-  noLoop();
-
-  gridSz = 100; // Each grid size will be 100 px w/h
+  gridSz = 75; // Each grid size will be 100 px w/h
   blobs = [];
 
   for (var i = 0; i < width; i += gridSz) {
@@ -21,6 +18,12 @@ function setup() {
   }
 }
 
+function keyPressed() {
+  if (key === 's') {
+    saveCanvas('blobs', 'png');
+  }
+}
+
 class Blob {
   constructor(x, y, rad) {
     this.x = x;
@@ -29,7 +32,7 @@ class Blob {
     this.szDelta = this.rad * 0.35;
     this.blobObj = [];
     // constants
-    this.res = random(3, 15); // the number of points 
+    this.res = random(10, 20); // the number of points 
     this.angle = 360 / this.res; // angular distance between each point
   }
 
@@ -39,12 +42,11 @@ class Blob {
     noStroke();
     translate(this.x, this.y);
     beginShape(); // start to draw custom shape
-    stroke(random(5, 200));
+    stroke(50);
     var d = dist(this.x, this.y, width * 0.5, height * 0.5);
-    strokeWeight(5);
+    strokeWeight(8);
     for (var i = 0; i < this.res; i++) {
       var randRad = min(this.rad, this.rad + random(-this.szDelta, this.szDelta));
-
       var nRad = this.rad + randRad;
       this.blobObj.push({
         "rad": randRad,
@@ -53,17 +55,10 @@ class Blob {
       });
       curveVertex(this.blobObj[i].x, this.blobObj[i].y);
     }
-    curveVertex(this.blobObj[0].x, this.blobObj[0].y);
     curveVertex(this.blobObj[1].x, this.blobObj[1].y);
     curveVertex(this.blobObj[2].x, this.blobObj[2].y);
     endShape();
     pop();
   }
 
-}
-
-function keyPressed() {
-  if (key === 's') {
-    saveCanvas('somethingtolearn', 'jpg');
-  }
 }
