@@ -1,55 +1,69 @@
-// An array to store the positions of the letters and have the letters
-let positions = [];
-let items = ['L', 'O', 'V', 'E'];
-let letterSize = 30;
-
-function random_item(items) {
-  return items[Math.floor(Math.random() * items.length)];
-}
+var blobs;
+var gridSz;
 
 function setup() {
-  createCanvas(400, 400);
-  background(255, 50, 25);
-  textSize(letterSize);
-  // Draw lots of letters
-  for (let i = 0; i < 500; i++) {
-    fill(255);
-    // Set a random rotation angle
-    let angle = random(-180, 180);
-    rotate(angle);
-    // Set a random position on the canvas
-    let x = random(letterSize*2, width-letterSize);
-    let y = random(letterSize*2, height-letterSize);
-    // Check if the new position overlaps with any existing letters
-    let overlaps = false;
-    for (let i = 0; i < positions.length; i++) {
-      let p = positions[i];
-      let d = dist(x, y, p.x, p.y);
-      if (d < textWidth("L")) {
-        overlaps = true;
-        break;
-      } else if (d < textWidth("O")){
-        overlaps = true;
-        break;
-      } else if (d < textWidth("V")){
-        overlaps = true;
-        break;
-      } else if (d < textWidth("E")){
-        overlaps = true;
-        break;
-      }  
+  createCanvas(600, 600);
+  angleMode(DEGREES);
+  background(255);
+  noLoop();
+
+  gridSz = 100; // Each grid size will be 100 px w/h
+  blobs = [];
+
+  for (var i = 0; i < width; i += gridSz) {
+    for (var j = 0; j < height; j += gridSz) {
+      var obj = new Blob(gridSz * 0.5 + i, gridSz * 0.5 + j, 25);
+      blobs.push(obj);
     }
-    // If the position does not overlap, draw the letter and store the position
-    if (!overlaps) {
-      text(random_item(items), x, y);
-      positions.push({ x, y });
-    }
-    // Reset the rotation
-    rotate(-angle);
+  }
+  for (var i = 0; i < blobs.length; i++) {
+    blobs[i].display();
   }
 }
 
-function mouseClicked() {
-  // Save as an image
-  save("letters.jpg");
+class Blob {
+  constructor(x, y, rad) {
+    this.x = x;
+    this.y = y;
+    this.rad = rad;
+    this.szDelta = this.rad * 0.35;
+    this.blobObj = [];
+    // constants
+    this.res = random(3, 15); // the number of points 
+    this.angle = 360 / this.res; // angular distance between each point
+  }
+
+  display() {
+    this.blobObj = [];
+    push();
+    noStroke();
+    translate(this.x, this.y);
+    beginShape(); // start to draw custom shape
+    stroke(random(5, 200));
+    var d = dist(this.x, this.y, width * 0.5, height * 0.5);
+    strokeWeight(5);
+    for (var i = 0; i < this.res; i++) {
+      var randRad = min(this.rad, this.rad + random(-this.szDelta, this.szDelta));
+
+      var nRad = this.rad + randRad;
+      this.blobObj.push({
+        "rad": randRad,
+        "x": randRad * cos(this.angle * i),
+        "y": randRad * sin(this.angle * i)
+      });
+      curveVertex(this.blobObj[i].x, this.blobObj[i].y);
+    }
+    curveVertex(this.blobObj[0].x, this.blobObj[0].y);
+    curveVertex(this.blobObj[1].x, this.blobObj[1].y);
+    curveVertex(this.blobObj[2].x, this.blobObj[2].y);
+    endShape();
+    pop();
+  }
+
+}
+
+function keyPressed() {
+  if (key === 's') {
+    saveCanvas('somethingtolearn', 'jpg');
+  }
 }
