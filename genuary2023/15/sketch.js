@@ -21,19 +21,24 @@ function draw(){
   let y5 = offset + sin(angle + 0.75) * scalar;
 
   for (let i = 0; i < 600; i+=10) {
+    //larger circle set
     ellipse(0,y2,(sin(i)*amplitude)*3)
-    ellipse(100,y1,(sin(i)*amplitude)*2)
-    ellipse(300,y3,(sin(i)*amplitude)*3)
-    ellipse(350,y3,(sin(i)*amplitude)*2)
-    ellipse(500,y4,(sin(i)*amplitude)*3)
-    ellipse(600,y5,(sin(i)*amplitude)*2)
+    ellipse(300,y4,(sin(i)*amplitude)*3)
+    ellipse(600,y5,(sin(i)*amplitude)*3)
+
+    //smaller circle set
+    ellipse(0,y1,(sin(i)*amplitude))
+    ellipse(150,y3,(sin(i)*amplitude))
+    ellipse(300,y1,(sin(i)*amplitude))
+    ellipse(450,y3,(sin(i)*amplitude))
+    ellipse(600,y1,(sin(i)*amplitude))
   }
   angle += speed; //increment the angle each time through draw(), see what happens if you change this!
 }
 
 function keyPressed() {
-  // this will download the first 6 seconds of the animation!
+  // this will download the first 3 seconds of the animation!
   if (key === 's') {
-    saveGif('mySketch', 2.5);
+    saveGif('mySketch', 3.5);
   }
 }
