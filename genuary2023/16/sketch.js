@@ -1,55 +1,32 @@
-// An array to store the positions of the letters and have the letters
-let positions = [];
-let items = ['L', 'O', 'V', 'E'];
-let letterSize = 30;
-
-function random_item(items) {
-  return items[Math.floor(Math.random() * items.length)];
-}
+let angles = [];
+let angleV = [];
+let r = 4;
 
 function setup() {
-  createCanvas(400, 400);
-  background(255, 50, 25);
-  textSize(letterSize);
-  // Draw lots of letters
-  for (let i = 0; i < 500; i++) {
-    fill(255);
-    // Set a random rotation angle
-    let angle = random(-180, 180);
-    rotate(angle);
-    // Set a random position on the canvas
-    let x = random(letterSize*2, width-letterSize);
-    let y = random(letterSize*2, height-letterSize);
-    // Check if the new position overlaps with any existing letters
-    let overlaps = false;
-    for (let i = 0; i < positions.length; i++) {
-      let p = positions[i];
-      let d = dist(x, y, p.x, p.y);
-      if (d < textWidth("L")) {
-        overlaps = true;
-        break;
-      } else if (d < textWidth("O")){
-        overlaps = true;
-        break;
-      } else if (d < textWidth("V")){
-        overlaps = true;
-        break;
-      } else if (d < textWidth("E")){
-        overlaps = true;
-        break;
-      }  
-    }
-    // If the position does not overlap, draw the letter and store the position
-    if (!overlaps) {
-      text(random_item(items), x, y);
-      positions.push({ x, y });
-    }
-    // Reset the rotation
-    rotate(-angle);
+  createCanvas(600, 400);
+  let total = floor(width / (r * 2));
+  for (let i = 0; i < total + 1; i++) {
+    angles[i] = map(i, 0, total, 0, 2 * TWO_PI);
+    // angleV[i] = 0.01 + i / 100;
   }
 }
 
-function mouseClicked() {
-  // Save as an image
-  save("letters.jpg");
+function draw() {
+  background(0);
+  translate(300, 200);
+  fill(252, 238, 33);
+  stroke(252, 238, 33);
+  beginShape();
+
+  for (let i = 0; i < angles.length; i++) {
+    let y = map(sin(angles[i]), -1, 1, -200, 200);
+    strokeWeight(4);
+    let x = map(i, 0, angles.length, -300, 300);
+    // line(x, 0, x, y);
+    circle(x, y, r * 2);
+    // vertex(x,y);
+    angles[i] += 0.02;
+    // angles[i] += angleV[i];
+  }
+  endShape();
 }

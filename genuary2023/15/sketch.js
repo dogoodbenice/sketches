@@ -1,55 +1,39 @@
-// An array to store the positions of the letters and have the letters
-let positions = [];
-let items = ['L', 'O', 'V', 'E'];
-let letterSize = 30;
-
-function random_item(items) {
-  return items[Math.floor(Math.random() * items.length)];
-}
+let amplitude, offset, scalar, speed
+let angle = 0;
 
 function setup() {
-  createCanvas(400, 400);
-  background(255, 50, 25);
-  textSize(letterSize);
-  // Draw lots of letters
-  for (let i = 0; i < 500; i++) {
-    fill(255);
-    // Set a random rotation angle
-    let angle = random(-180, 180);
-    rotate(angle);
-    // Set a random position on the canvas
-    let x = random(letterSize*2, width-letterSize);
-    let y = random(letterSize*2, height-letterSize);
-    // Check if the new position overlaps with any existing letters
-    let overlaps = false;
-    for (let i = 0; i < positions.length; i++) {
-      let p = positions[i];
-      let d = dist(x, y, p.x, p.y);
-      if (d < textWidth("L")) {
-        overlaps = true;
-        break;
-      } else if (d < textWidth("O")){
-        overlaps = true;
-        break;
-      } else if (d < textWidth("V")){
-        overlaps = true;
-        break;
-      } else if (d < textWidth("E")){
-        overlaps = true;
-        break;
-      }  
-    }
-    // If the position does not overlap, draw the letter and store the position
-    if (!overlaps) {
-      text(random_item(items), x, y);
-      positions.push({ x, y });
-    }
-    // Reset the rotation
-    rotate(-angle);
-  }
+  createCanvas(600, 600);
+  scalar = random(10,50); //effects the amplitude of the sine wave (how far from the offset)
+  offset = 300; ; //provides a constant value that offsets the y position
+  speed = random(0.05,0.1); //effects the speed of the motion
+  amplitude = random(100,150); // Height of wave
 }
 
-function mouseClicked() {
-  // Save as an image
-  save("letters.jpg");
+function draw(){
+  background(230);
+  noFill();
+  strokeWeight(1.1)
+
+  let y1 = offset + sin(angle) * scalar; 
+  let y2 = offset + sin(angle + 0.5) * scalar;
+  let y3 = offset + sin(angle + 0.65) * scalar;
+  let y4 = offset + sin(angle + 0.25) * scalar;
+  let y5 = offset + sin(angle + 0.75) * scalar;
+
+  for (let i = 0; i < 600; i+=10) {
+    ellipse(0,y2,(sin(i)*amplitude)*3)
+    ellipse(100,y1,(sin(i)*amplitude)*2)
+    ellipse(300,y3,(sin(i)*amplitude)*3)
+    ellipse(350,y3,(sin(i)*amplitude)*2)
+    ellipse(500,y4,(sin(i)*amplitude)*3)
+    ellipse(600,y5,(sin(i)*amplitude)*2)
+  }
+  angle += speed; //increment the angle each time through draw(), see what happens if you change this!
+}
+
+function keyPressed() {
+  // this will download the first 6 seconds of the animation!
+  if (key === 's') {
+    saveGif('mySketch', 2.5);
+  }
 }
