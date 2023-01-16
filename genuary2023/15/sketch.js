@@ -33,7 +33,7 @@ function draw(){
     ellipse(450,y3,(sin(i)*amplitude))
     ellipse(600,y1,(sin(i)*amplitude))
   }
-  angle += speed; //increment the angle each time through draw(), see what happens if you change this!
+  angle += speed; 
 }
 
 function keyPressed() {
