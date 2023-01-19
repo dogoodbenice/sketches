@@ -56,5 +56,7 @@ In the future, we can expect to see even more content noise as the barriers to c
 Other thoughts that explore similar ideas: 
 - [Drowning in AI garbage](https://ploum.net/2022-12-05-drowning-in-ai-generated-garbage.html)
 - [@pkedrosky](https://twitter.com/pkedrosky/status/1600889992103895041?s=46&t=paUihTYhvL9UO5CWYKnfvQ)
+- [Tech Utopia](https://news.ycombinator.com/item?id=34230902)
+- [Overlords](https://danielbmarkham.com/the-overlords-finally-showed-up/)
 
 - Useful [Doomscroll bot](https://twitter.com/doomscroll_bot) 
