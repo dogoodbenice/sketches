@@ -18,9 +18,64 @@ function setup() {
   color5 = color(random(0,255), random(0,128), random(0,255));
   color6 = color(random(0,255), random(0,128), random(0,255));
   rectMode(CENTER)
+  noLoop();
 }
 
 function draw() {
+  background(240);
+  let pattern = int(random(2));
+  switch (pattern) {
+    case 0:
+      drawRug1()
+    break
+    case 1:
+      drawRug2()
+    break
+  }
+}
+
+function drawRug2() {
+  background(190);
+  // Draw the tiles
+  for (let i = 0; i < rows; i++) {
+    for (let j = 0; j < cols; j++) {
+      let x = j * tileSize;
+      let y = i * tileSize;
+      
+      let e = (i + j) % 2 === 0 ? color5 : color6;
+      fill(e);
+      ellipse(x, y+10, 20);
+      let c = (i + j) % 2 === 0 ? color1 : color2;
+      fill(c);
+      noStroke();
+      triangle(x-20,y,x,y+10,x+20,y);      
+    }
+  }
+  //cover the other areas
+  fill(240);
+  noStroke();
+  rect(width/2, 0, 600, 160);
+  rect(width/2, 600, 600, 140);
+  rect(50, height/2, 200, 600);
+  rect(550, height/2, 200, 600);
+
+  //draw the border
+  strokeWeight(10);
+  stroke(50);
+  noFill();
+  //rect(width/2, height/2, 400, 550);
+  
+  // Draw the rug hem
+  fill(245)
+  rect(width/2, 85, 300, 20);
+  rect(width/2, 515, 300, 20);
+  
+  // Draw the rug 
+  noFill();
+  rect(width/2, height/2, 300, 450);
+}
+
+function drawRug1() {
   background(240);
   
   // Draw the tiles
@@ -68,6 +123,7 @@ function draw() {
   rect(width/2, height/2, 300, 450);
   ellipse(width/2, height/2, circleRadius*2);
 }
+
 
 function keyPressed() {
   if (key === 's') {
