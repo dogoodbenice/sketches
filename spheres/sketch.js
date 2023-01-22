@@ -24,18 +24,6 @@ function draw() {
     sphere(60,12,i);
   }
   pop();
-  push();
-  for (var i = 0; i < 20; i++){
-    translate(0,i,i*10);
-    sphere(60,i,160/sdetail);
-  }
-  pop();
-  push();
-  for (var i = 0; i < 20; i++){
-    translate(i,10,180/i);
-    sphere(60,160/sdetail,i);
-  }
-  pop();
 }
 
 function mousePressed(){
