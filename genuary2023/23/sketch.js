@@ -17,8 +17,11 @@ function draw() {
   circlePattern(width/2,height/2);
   let ang2 = radians(angle2);
   let y2 = height / 2 + scalar * sin(ang2);
+  let x1 = width / 2 + scalar * cos(ang2);
   squarePattern(width/2,height/2)
+
   circlePattern(width/2,y2);
+  circlePattern(x1,y2);
   for (var i = 0; i < count; i++){    
     circlePattern(width/2*i,height/2)
   }
