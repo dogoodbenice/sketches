@@ -7,12 +7,10 @@ function setup() {
   fill(random(0, 255), random(0, 255), random(0, 255));
   noStroke();
   rect(width / 2, height / 2, 600)
-  gradient()
+  textile()
 }
 
-function gradient() {
-
-  
+function textile() {
   fill(random(0, 255), random(0, 255), random(0, 255));
   noStroke();
   rect(width / 2, height / 2, 400)
