@@ -3,8 +3,8 @@ let lines = [];
 function setup() {
   createCanvas(800, 500);
 
-  // Generate 10 random lines
-  for (let i = 0; i < 25; i++) {
+  // Generate random lines
+  for (let i = 0; i < 30; i++) {
     lines.push(new Line());
   }
 
@@ -44,7 +44,7 @@ function randomName() {
 
 //select a random age
 function randomAge() {
-  let age = Math.floor(random(9)+1)
+  let age = Math.floor(random(5)+1)
   return age
 }
 
@@ -61,14 +61,14 @@ class Line {
 
   display() {
     stroke(this.color);
-    strokeWeight(5);
+    strokeWeight(random(8));
     noFill();
 
     beginShape();
     for (let i = 0; i < this.segments; i++) {
       let x = map(i, 0, this.segments - 1, this.x1, this.x2);
       let y = map(i, 0, this.segments - 1, this.y1, this.y2);
-      let offset = random(-25, 25);
+      let offset = random(-45, 45);
       vertex(x, y + offset);
     }
     endShape();
