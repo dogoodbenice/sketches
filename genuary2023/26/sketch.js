@@ -55,7 +55,7 @@ class Line {
     this.y1 = random(height);
     this.x2 = random(width);
     this.y2 = random(height);
-    this.segments = random(10, 20);
+    this.segments = random(10, 30);
     this.color = color(random(255), random(255), random(255));
   }
 
@@ -76,7 +76,6 @@ class Line {
 }
 
 function keyPressed() {
-  // this will download the canvas
   if (key === 's') {
     saveCanvas('mysketch', 'jpg');
   }
