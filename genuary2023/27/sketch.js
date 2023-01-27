@@ -1,55 +1,52 @@
-// An array to store the positions of the letters and have the letters
-let positions = [];
-let items = ['L', 'O', 'V', 'E'];
-let letterSize = 30;
-
-function random_item(items) {
-  return items[Math.floor(Math.random() * items.length)];
-}
+let circleRadius;
+let stripeCount;
+let stripeThickness;
+let stripeLength;
+let stripeColors;
 
 function setup() {
-  createCanvas(400, 400);
-  background(255, 50, 25);
-  textSize(letterSize);
-  // Draw lots of letters
-  for (let i = 0; i < 500; i++) {
-    fill(255);
-    // Set a random rotation angle
-    let angle = random(-180, 180);
-    rotate(angle);
-    // Set a random position on the canvas
-    let x = random(letterSize*2, width-letterSize);
-    let y = random(letterSize*2, height-letterSize);
-    // Check if the new position overlaps with any existing letters
-    let overlaps = false;
-    for (let i = 0; i < positions.length; i++) {
-      let p = positions[i];
-      let d = dist(x, y, p.x, p.y);
-      if (d < textWidth("L")) {
-        overlaps = true;
-        break;
-      } else if (d < textWidth("O")){
-        overlaps = true;
-        break;
-      } else if (d < textWidth("V")){
-        overlaps = true;
-        break;
-      } else if (d < textWidth("E")){
-        overlaps = true;
-        break;
-      }  
-    }
-    // If the position does not overlap, draw the letter and store the position
-    if (!overlaps) {
-      text(random_item(items), x, y);
-      positions.push({ x, y });
-    }
-    // Reset the rotation
-    rotate(-angle);
+  createCanvas(600, 600);
+  ellipseMode(CENTER);
+  circleRadius = 150;
+  stripeCount = int(random(6,15));
+  stripeThickness = 20;
+  stripeLength = circleRadius - stripeThickness / 15;
+  stripeColors = [color(212, 164, 178), color(251,250,240), color(30,48,124), color(143,133,197), color(39,105,56), color(240,227,99), color(232,186,62), color(213,122,43), color(2,1,8), color(127,125,142), color(222,211,205), color(0, 255, 255), color(0, 0, 255), color(255, 0, 255), color(255, 0, 0), color(255, 255, 255), color(255, 200, 99), color(255, 255, 0), color(90, 255, 240), color(99, 227, 255), color(240,227,99)];
+}
+
+function draw() {
+  background(176, 60, 39);
+
+  // Draw one of the semicircle
+  fill(0)
+  ellipse(width / 2, height / 2, 300);
+  stroke(255);
+  fill(255);
+  arc(width/2, height/2, 300, 300, PI + PI, PI, CHORD);
+  
+  stroke(230);
+  fill(145);
+  ellipse(width / 2, height / 2, 200);
+  fill(145);
+  arc(width/2, height/2, 250, 250, PI + PI, PI, CHORD);
+  
+  // Draw the stripes
+  for (let i = 0; i < stripeCount; i++) {
+    let angle = 2 * PI / stripeCount * i;
+    let x1 = width / 2 + stripeLength / 2 * cos(angle);
+    let y1 = height / 2 + stripeLength / 2 * sin(angle);
+    let x2 = width / 2 - stripeLength / 2 * cos(angle);
+    let y2 = height / 2 - stripeLength / 2 * sin(angle);
+    let c = stripeColors[i];
+    stroke(c);
+    strokeCap(PROJECT);
+    strokeWeight(stripeThickness);
+    line(x1, y1, x2, y2);
   }
 }
 
-function mouseClicked() {
-  // Save as an image
-  save("letters.jpg");
+function keyPressed() {
+  if (key === 's') {
+    saveCanvas('hilma', 'jpg');
+  }
 }
