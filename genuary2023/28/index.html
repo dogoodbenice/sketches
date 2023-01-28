@@ -16,15 +16,34 @@
   }
 
   body {
-    padding: 10px;
-    margin-top: 5px;
-    margin-left: 20px;
+        color: #000000;
+        font-family:Arial;
+        font-size:13px;
+        text-align:left;
+        background-color: #ffffff;
+        margin: 0px;
+        overflow: hidden;
+  }
+
+  canvas {
+    vertical-align: top;
+  }
+
+  #info {
+    color: #000000;
+    position: absolute;
+    width: 100%;
+    padding: 15px;
   }
 </style>
 
 <body>
-  <h1>Jan 28 Generative poetry</h1>
-  <p>Click your mouse to save an image.</p>
+  <div id="info">
+    <h1>Jan 28 Generative poetry</h1>
+    <p>Refresh the page for another poem, press the S key to save your poetry. Other <a href="/index.html"> genuary
+        sketches</a>.</p>
+  </div>
+  <div id="container"></div>
 </body>
 
 </html>

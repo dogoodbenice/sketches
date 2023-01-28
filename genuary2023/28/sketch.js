@@ -1,55 +1,52 @@
-// An array to store the positions of the letters and have the letters
-let positions = [];
-let items = ['L', 'O', 'V', 'E'];
-let letterSize = 30;
-
-function random_item(items) {
-  return items[Math.floor(Math.random() * items.length)];
-}
+let poetry = [];
+var verse = ['I got the juice','Look upon thee','',"you just don't know the words",'','I would like to be the air','NO,no,no','rocky rocket launcher','','You do not have to be good','Love at the lips was touch','','I was wrong','','I have no time to stop and stare','My cup runeth over','Wu tang clan forever','Queens baby','nothing better than falling in love','rolling in green pastures','','','Of a surf-tormented shore,','Two roads diverged in a yellow wood','Now you understand', "They think Im telling lies", 'To cool in the peppermint wind','If you think it long and mad','but here alone', 'you want a better story','Cool face of the river','I am beating all my wings'];
+var moveup;
 
 function setup() {
-  createCanvas(400, 400);
-  background(255, 50, 25);
-  textSize(letterSize);
-  // Draw lots of letters
-  for (let i = 0; i < 500; i++) {
-    fill(255);
-    // Set a random rotation angle
-    let angle = random(-180, 180);
-    rotate(angle);
-    // Set a random position on the canvas
-    let x = random(letterSize*2, width-letterSize);
-    let y = random(letterSize*2, height-letterSize);
-    // Check if the new position overlaps with any existing letters
-    let overlaps = false;
-    for (let i = 0; i < positions.length; i++) {
-      let p = positions[i];
-      let d = dist(x, y, p.x, p.y);
-      if (d < textWidth("L")) {
-        overlaps = true;
-        break;
-      } else if (d < textWidth("O")){
-        overlaps = true;
-        break;
-      } else if (d < textWidth("V")){
-        overlaps = true;
-        break;
-      } else if (d < textWidth("E")){
-        overlaps = true;
-        break;
-      }  
-    }
-    // If the position does not overlap, draw the letter and store the position
-    if (!overlaps) {
-      text(random_item(items), x, y);
-      positions.push({ x, y });
-    }
-    // Reset the rotation
-    rotate(-angle);
+  createCanvas(window.innerWidth,window.innerHeight);
+  background(random(200,255), random(0,255), random(0,255));
+  moveup = 200;
+  noStroke();
+  noLoop();
+}
+
+function mousePressed() {
+  background(random(200,255), random(0,255), random(0,255));
+  let p = new poem;
+  poetry.push(p);
+  moveup += 100;
+  for (var i = 0; i < poetry.length; i++) {
+    poetry[i].show();
+  }
+  redraw();
+}
+
+function draw() {
+  if (moveup > windowHeight) {
+    clearpage();
   }
 }
 
-function mouseClicked() {
-  // Save as an image
-  save("letters.jpg");
+function clearpage() {
+  moveup = 200;
+  background(random(200,255), random(0,255), random(0,255));
+  poetry.splice(0,poetry.length);
+}
+
+class poem {
+  constructor() {
+    this.x = windowWidth/2;
+    this.y = moveup;
+    this.versecount1 = random(verse);
+    this.versecount2 = random(verse);
+    this.versecount3 = random(verse);
+  }
+  show(){
+    textSize(23);
+    textAlign(CENTER);
+    textFont('Georgia');
+    text(this.versecount1, this.x, this.y);
+    text(this.versecount2, this.x, this.y+25);
+    text(this.versecount3, this.x, this.y+45);
+  }
 }
