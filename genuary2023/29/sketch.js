@@ -1,4 +1,5 @@
 let colors = ['#FDA7DF', '#F79F1F', '#009432', '#B53471', '#A3CB38', '#12CBC4', '#D980FA', '#0652DD'];
+let framecolors = ['#0B0105','#2C221D']
 
 function random_item(items) {
   return items[Math.floor(Math.random() * items.length)];
@@ -19,14 +20,14 @@ function setup() {
   frame1(330, 340, 250);
 
   frame3(100, 500, 130);
-  frame3(400, 540, 90);
+  frame4(400, 540, 90);
 
   frame2(540, 280, 100);
   frame4(540, 420, 100);
 }
 
-//love
 function frame1(xpos, ypos, dimensions) {
+  noStroke();
   //shadow
   fill(100);
   rect(xpos - 10, ypos - 10, dimensions + 5)
@@ -39,22 +40,25 @@ function frame1(xpos, ypos, dimensions) {
   noFill();
   stroke(255);
   textSize(letterSize);
+  
   for (let i = 0; i < 28; i++) {
     fill(255);
     let x = random(xpos - (dimensions / 2.5), xpos + (dimensions / 2.5));
     let y = random(ypos - (dimensions / 2.5), ypos + (dimensions / 2.5));
+    textStyle((i) % (random (0,6)) ? BOLD : BOLDITALIC);
     text(random_item(items), x, y);
   }
   strokeWeight(15);
   //frame
   noFill();
-  stroke('#5758BB');
+  stroke(random_item(framecolors));
   rect(xpos, ypos, dimensions)
 
   strokeWeight(1);
 }
-//xyz
+
 function frame2(xpos, ypos, dimensions) {
+  noStroke();
   //shadow
   fill(100);
   rect(xpos - 10, ypos - 10, dimensions + 5)
@@ -72,17 +76,18 @@ function frame2(xpos, ypos, dimensions) {
     ellipse(xpos, ypos, dimensions / 2)
   }
   //frame
-  strokeWeight(15);
+  strokeWeight(random(10,15));
   noFill();
-  stroke('#5758BB');
+  stroke(random_item(framecolors));
   rect(xpos, ypos, dimensions)
   strokeWeight(1);
 }
 
-//shapes
+
 function frame3(xpos, ypos, dimensions) {
+  noStroke();
   //shadow
-  fill(100);
+  fill(85);
   rect(xpos - 10, ypos - 10, dimensions + 5)
 
   let items = ['X', 'O', 'X'];
@@ -93,23 +98,24 @@ function frame3(xpos, ypos, dimensions) {
   noFill();
   stroke(255);
   textSize(letterSize);
-  for (let i = 0; i < 5; i++) {
+  for (let i = 0; i < 20; i++) {
     fill(255);
-    let x = random(xpos - (dimensions / 2.5), xpos + (dimensions / 2.5));
-    let y = random(ypos - (dimensions / 2.5), ypos + (dimensions / 2.5));
+    let x = random(xpos - (dimensions / 3), xpos + (dimensions / 2.5));
+    let y = random(ypos - (dimensions / 3), ypos + (dimensions / 2.5));
     text(random_item(items), x, y);
   }
-  strokeWeight(15);
+  strokeWeight(random(10,15));
   //frame
   noFill();
-  stroke('#5758BB');
+  stroke(random_item(framecolors));
   rect(xpos, ypos, dimensions)
   strokeWeight(1);
 }
 
 function frame4(xpos, ypos, dimensions) {
+  noStroke();
   //shadow
-  fill(100);
+  fill(85);
   rect(xpos - 10, ypos - 10, dimensions + 5)
 
   fill(random_item(colors))
@@ -121,9 +127,9 @@ function frame4(xpos, ypos, dimensions) {
     rect(xpos, ypos , (dimensions /3)+i*3  )
   }
   //frame
-  strokeWeight(15);
+  strokeWeight(random(10,15));
   noFill();
-  stroke('#5758BB');
+  stroke(random_item(framecolors));
   rect(xpos, ypos, dimensions)
   strokeWeight(1);
 }
