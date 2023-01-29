@@ -8,7 +8,7 @@ function random_item(items) {
 }
 
 function setup() {
-  createCanvas(400, 400);
+  createCanvas(600, 600);
   background(255, 50, 25);
   textSize(letterSize);
   // Draw lots of letters
