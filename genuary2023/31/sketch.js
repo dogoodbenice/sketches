@@ -1,55 +1,77 @@
-// An array to store the positions of the letters and have the letters
-let positions = [];
-let items = ['L', 'O', 'V', 'E'];
-let letterSize = 30;
+let motionSpeed = 65; //this dampens the frame rate along with changing the rotation speed.
+let spacing = 40; // the higher the spacing the higher the distance between items inside the motion function
 
-function random_item(items) {
-  return items[Math.floor(Math.random() * items.length)];
-}
+let shapeNumber, funspinfloatNumber, r, g, b;
 
 function setup() {
-  createCanvas(400, 400);
-  background(255, 50, 25);
-  textSize(letterSize);
-  // Draw lots of letters
-  for (let i = 0; i < 500; i++) {
-    fill(255);
-    // Set a random rotation angle
-    let angle = random(-180, 180);
-    rotate(angle);
-    // Set a random position on the canvas
-    let x = random(letterSize*2, width-letterSize);
-    let y = random(letterSize*2, height-letterSize);
-    // Check if the new position overlaps with any existing letters
-    let overlaps = false;
-    for (let i = 0; i < positions.length; i++) {
-      let p = positions[i];
-      let d = dist(x, y, p.x, p.y);
-      if (d < textWidth("L")) {
-        overlaps = true;
-        break;
-      } else if (d < textWidth("O")){
-        overlaps = true;
-        break;
-      } else if (d < textWidth("V")){
-        overlaps = true;
-        break;
-      } else if (d < textWidth("E")){
-        overlaps = true;
-        break;
-      }  
+  createCanvas(600, 600);
+  shapeNumber = int(random(1,5));
+  funspinfloatNumber = (random(1,5));
+  r = random(0,150);
+  g = random(100,160);
+  b = 255;
+  console.log(r,g)
+  
+}
+
+function draw() {
+  background(r,g,b);
+  translate(100,80);
+  motion1();
+  translate(200,8);
+  motion3();
+  translate(200,0.8);
+  motion2();
+}
+
+function motion1() {
+  for (var x = 1; x < 10; x++) {
+    for (var y = 1; y < 10; y++) {
+      let funSpin = (x/funspinfloatNumber + y/funspinfloatNumber);
+      push();
+      translate(x, y * spacing*1.1);
+      noFill();
+      stroke(255);
+      rotate((frameCount / motionSpeed + funSpin));
+      text('Thanks',spacing,spacing)
+      pop();
     }
-    // If the position does not overlap, draw the letter and store the position
-    if (!overlaps) {
-      text(random_item(items), x, y);
-      positions.push({ x, y });
-    }
-    // Reset the rotation
-    rotate(-angle);
   }
 }
 
-function mouseClicked() {
-  // Save as an image
-  save("letters.jpg");
+function motion2() {
+  for (var x = 1; x < 10; x++) {
+    for (var y = 1; y < 10; y++) {
+      let funSpin = (x/funspinfloatNumber + y/funspinfloatNumber);
+      push();
+      translate(x, y * spacing*1.1);
+      noFill();
+      stroke(255);
+      rotate((frameCount / motionSpeed - funSpin));
+      text('Thanks',spacing,spacing)
+      pop();
+    }
+  }
+}
+
+function motion3(){
+  for (var x = 1; x < 20; x++) {
+    for (var y = 1; y < 10; y++) {
+      let funSpin = (x/funspinfloatNumber + y/funspinfloatNumber);
+      push();
+      translate(x, y * spacing*1.1);
+      fill(255);
+      //stroke(255);
+      rotate((frameCount / motionSpeed + (funSpin+funSpin)));
+      text('Thanks',spacing,spacing)
+      pop();
+    }
+  }
+}
+
+function keyPressed() {
+  // this will download the first 6 seconds of the animation!
+  if (key === 's') {
+    saveGif('mySketch', 5.5);
+  }
 }
