@@ -58,5 +58,7 @@ Other thoughts that explore similar ideas:
 - [@pkedrosky](https://twitter.com/pkedrosky/status/1600889992103895041?s=46&t=paUihTYhvL9UO5CWYKnfvQ)
 - [Tech Utopia](https://news.ycombinator.com/item?id=34230902)
 - [Overlords](https://danielbmarkham.com/the-overlords-finally-showed-up/)
+- [Paul Graham AI](https://news.ycombinator.com/item?id=34510536)
+- [New Cognitive Skills in the Age of AI](https://safjan.com/pros-and-cons-of-reliance-on-ai-generating-models/#pros-and-cons-of-reliance-on-ai-generating-models)
 
 - Useful [Doomscroll bot](https://twitter.com/doomscroll_bot) 

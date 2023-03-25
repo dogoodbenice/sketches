@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Sketches</title>
+  <meta name="description" content="Knock Knock">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="js/SplitTextJS.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+  <link rel="icon" type="image/png" href="https://logikblok.github.io/images/favicon.png">
+</head>
+<style>
+  p {
+    font-size: 7rem;
+    text-align: center;
+    color: tomato;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    line-height: 0;
+  }
+
+  body {
+    background-color: aliceblue;
+  }
+</style>
+<script>
+  // Select the DOM element wich contains the target text
+  const text = document.querySelector('.text');
+
+  // Split the text and store the result
+  const splittedText = new SplitTextJS(text);
+
+  // Now you can access your splitted text in the returned object
+
+  // Acces words :
+  const textWords = splittedText.words;
+
+  // Acces letters :
+  const textChars = splittedText.chars;
+
+  // Acces spaces :
+  const textSpaces = splittedText.spaces;
+
+  // Acces original text :
+  const textOriginal = splittedText.originalText;
+</script>
+
+<body>
+  <p class="text">This is my cool text!</p>
+  <div class="container">
+    <div class="text-wrapper">
+      <p>Knock knock.</p>
+      <p>Who's there?</p>
+      <p>Juno.</p>
+      <p>Juno who?</p>
+      <p>Juno I love you right?</p>
+    </div>
+  </div>
+</body>
+
+</html>
