@@ -60,5 +60,5 @@ Other thoughts that explore similar ideas:
 - [Overlords](https://danielbmarkham.com/the-overlords-finally-showed-up/)
 - [Paul Graham AI](https://news.ycombinator.com/item?id=34510536)
 - [New Cognitive Skills in the Age of AI](https://safjan.com/pros-and-cons-of-reliance-on-ai-generating-models/#pros-and-cons-of-reliance-on-ai-generating-models)
-
+- [NY times noise](https://www.nytimes.com/2023/03/22/business/media/ai-chatbots-right-wing-conservative.html?smid=tw-nytimesbusiness&smtyp=cur)
 - Useful [Doomscroll bot](https://twitter.com/doomscroll_bot) 
