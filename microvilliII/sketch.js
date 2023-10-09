@@ -1,9 +1,8 @@
 let tileWidth;
 let tileHeight;
+let colors = ["#FBAF42","#F6E8CF","#15AA8E","#131314","#DA4626","#F7E8D3","#F9F0E6","#FFEB3B","#F44336","#03A9F4","#009688"]
 
-//Increments of 5 starting from 10 for villus appear to work well up to 50, pehaps.
 let villus = 25
-let colors = ["#FBAF42","#F6E8CF","#15AA8E","#DA4626","#F7E8D3","#F9F0E6","#9E9E9E","#F44336","#8BC34A","#009688"]
 
 function setup() {
   createCanvas(555, 555);
@@ -14,17 +13,34 @@ function setup() {
 }
 
 function draw() {
+  let randomGen = Math.floor(Math.random() * 5);
   for (let y = 0; y < height; y += tileHeight) {
     for (let x = 0; x < width; x += tileWidth) {
+      let randomGen = Math.floor(Math.random() * 5);
       // Create a unique fill color for each tile
       fill(random(colors));
-      //future iteraitons
-      //square(x, y, 55, 20, 15, 10, 5);
-      rect(x, y, tileWidth, tileHeight);
-      ellipse(x,y,tileWidth, tileHeight);
+      
+      if (randomGen == 0) {
+        ellipse(x,y,tileWidth, tileHeight);
+      } else if (randomGen == 1) {
+        ellipse(x,y,tileWidth, tileHeight+2);
+        //triangle(x + 25, y + 75, x + 50, y + 25, x + 75, y + 75);
+      } else if (randomGen == 2) {
+        //ellipse(x + 50, y + 50, 20);
+        rect(x, y, tileWidth, tileHeight);
+        ellipse(x,y,tileWidth+20, tileHeight+5);
+      } else if (randomGen == 3) {
+        rect(x, y, tileWidth, tileHeight);
+        ellipse(x,y,tileWidth, tileHeight);
+      } else {
+        rect(x, y, tileWidth, tileHeight);
+        ellipse(x,y,tileWidth, tileHeight);
+        rect(x, y, tileWidth, tileHeight);
+      }
     }
   }
 }
+
 
 
 function keyPressed() {
