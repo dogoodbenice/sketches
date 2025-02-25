@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta property="og:title" content="Is this an AI Model?" />
+    <meta property="og:description" content="Test your knowledge of AI models!" />
+    <meta property="og:image" content="isthispeakAI.png" />
+    <title>Is this an AI Model?</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+    <style>
+      body {
+        margin: 0;
+        font-family: system-ui, -apple-system, sans-serif;
+        background: linear-gradient(135deg, #f5f7fa 0%, #e4e9f2 100%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+      }
+      #quiz-container {
+        background: rgba(255, 255, 255, 0.95);
+        padding: 2rem;
+        border-radius: 1rem;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        position: relative;
+        z-index: 10;
+        max-width: 600px;
+        width: 90%;
+      }
+      .model-name {
+        font-size: 2rem;
+        font-weight: bold;
+        margin: 1rem 0;
+        font-family: monospace;
+      }
+      .button-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+        margin: 2rem 0;
+      }
+      button {
+        padding: 1rem 2rem;
+        font-size: 1.1rem;
+        border: none;
+        border-radius: 0.5rem;
+        cursor: pointer;
+        transition: all 0.2s;
+      }
+      button:hover {
+        transform: translateY(-2px);
+      }
+      .real-btn {
+        background: #4ade80;
+        color: white;
+      }
+      .fake-btn {
+        background: #f87171;
+        color: white;
+      }
+      .progress {
+        height: 4px;
+        background: #e2e8f0;
+        margin: 2rem 0;
+        border-radius: 2px;
+      }
+      .progress-bar {
+        height: 100%;
+        background: #1f2937;
+        border-radius: 2px;
+        transition: width 0.3s ease;
+      }
+      .score {
+        font-size: 3rem;
+        font-weight: bold;
+        margin: 1rem 0;
+      }
+      canvas {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 20;
+        pointer-events: none;
+      }
+      .feedback-text {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 4rem;
+        font-weight: bold;
+        z-index: 30;
+        opacity: 0;
+        transition: opacity 0.3s;
+        pointer-events: none;
+      }
+      .feedback-text.correct {
+        color: #4ade80;
+      }
+      .feedback-text.wrong {
+        color: #f87171;
+      }
+      .feedback-text.show {
+        opacity: 1;
+      }
+      .score-tracker {
+        position: fixed;
+        top: 1rem;
+        right: 1rem;
+        background: rgba(255, 255, 255, 0.95);
+        padding: 1rem;
+        border-radius: 0.5rem;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        font-size: 1.1rem;
+        z-index: 25;
+      }
+      .score-tracker span {
+        font-weight: bold;
+        margin: 0 0.5rem;
+      }
+      .score-tracker .correct {
+        color: #4ade80;
+      }
+      .score-tracker .wrong {
+        color: #f87171;
+      }
+      .meme-container {
+        text-align: center;
+        margin: 2rem 0;
+        max-width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .meme-image {
+        max-width: 100%;
+        height: auto;
+        border-radius: 0.5rem;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="score-tracker">
+      <span class="correct">✓ <span id="correct-count">0</span></span>
+      <span class="wrong">✗ <span id="wrong-count">0</span></span>
+    </div>
+
+    <div id="quiz-container">
+      <h1>Is this an AI Model?</h1>
+      <div class="meme-container">
+        <img src="isthispeakAI.png" alt="Is this an AI model meme" class="meme-image" />
+      </div>
+      <div id="progress" class="progress">
+        <div class="progress-bar"></div>
+      </div>
+      <div id="question-container">
+        <div class="model-name" id="model-name"></div>
+        <p>Is this a real or made-up AI model?</p>
+        <div class="button-container">
+          <button class="real-btn" onclick="handleAnswer(true)">Real</button>
+          <button class="fake-btn" onclick="handleAnswer(false)">Made Up</button>
+        </div>
+      </div>
+      <div id="score-container" style="display: none">
+        <h2>Quiz Complete!</h2>
+        <div class="score"><span id="final-score"></span>/20</div>
+        <p id="score-message" style="font-size: 1.25rem; margin: 1rem 0; color: #4b5563;"></p>
+        <button onclick="restartQuiz()" style="background: #1f2937; color: white">
+          Try Again
+        </button>
+      </div>
+    </div>
+
+    <div id="feedback" class="feedback-text"></div>
+
+    <script>
+      const models = [
+        { name: "GPT-4", isReal: true },
+        { name: "BERT", isReal: true },
+        { name: "RoBERTa", isReal: true },
+        { name: "AI-9000X", isReal: false },
+        { name: "DALL-E", isReal: true },
+        { name: "ChatGPT", isReal: true },
+        { name: "UltraBrain-2000", isReal: false },
+        { name: "LLaMA", isReal: true },
+        { name: "NeuralMaster-X", isReal: false },
+        { name: "Midjourney", isReal: true },
+        { name: "BrainForge-X", isReal: false },
+        { name: "Claude", isReal: true },
+        { name: "MindWeaver-Pro", isReal: false },
+        { name: "Stable Diffusion", isReal: true },
+        { name: "SynthBrain-Elite", isReal: false },
+        { name: "PaLM", isReal: true },
+        { name: "QuantumAI-X", isReal: false },
+        { name: "Anthropic-2", isReal: false },
+        { name: "CogniSphere-9", isReal: false },
+        { name: "Gemini", isReal: true }
+      ];
+
+      let currentQuestion = 0;
+      let score = 0;
+      let particles = [];
+      let correctCount = 0;
+      let wrongCount = 0;
+
+      function setup() {
+        createCanvas(windowWidth, windowHeight);
+        noStroke();
+        updateQuestion();
+      }
+
+      function draw() {
+        clear();
+        for (let i = particles.length - 1; i >= 0; i--) {
+          particles[i].update();
+          particles[i].display();
+          if (particles[i].isDead()) {
+            particles.splice(i, 1);
+          }
+        }
+      }
+
+      class Particle {
+        constructor(x, y, isCorrect) {
+          this.pos = createVector(x, y);
+          this.vel = p5.Vector.random2D().mult(random(2, 5));
+          this.acc = createVector(0, 0.1);
+          this.life = 255;
+          this.color = isCorrect ? color(74, 222, 128) : color(248, 113, 113);
+        }
+
+        update() {
+          this.vel.add(this.acc);
+          this.pos.add(this.vel);
+          this.life -= 5;
+        }
+
+        display() {
+          fill(this.color.levels[0], this.color.levels[1], this.color.levels[2], this.life);
+          circle(this.pos.x, this.pos.y, 8);
+        }
+
+        isDead() {
+          return this.life <= 0;
+        }
+      }
+
+      function createParticles(isCorrect) {
+        for (let i = 0; i < 50; i++) {
+          particles.push(new Particle(windowWidth / 2, windowHeight / 2, isCorrect));
+        }
+      }
+
+      function windowResized() {
+        resizeCanvas(windowWidth, windowHeight);
+      }
+
+      function updateQuestion() {
+        document.getElementById('model-name').textContent = models[currentQuestion].name;
+        document.querySelector('.progress-bar').style.width = 
+          `${((currentQuestion + 1) / models.length) * 100}%`;
+      }
+
+      function showFeedback(isCorrect) {
+        const feedback = document.getElementById('feedback');
+        feedback.textContent = isCorrect ? 'CORRECT!' : 'WRONG!';
+        feedback.className = `feedback-text ${isCorrect ? 'correct' : 'wrong'} show`;
+        
+        setTimeout(() => {
+          feedback.className = 'feedback-text';
+        }, 500);
+      }
+
+      function handleAnswer(answer) {
+        const correct = answer === models[currentQuestion].isReal;
+        createParticles(correct);
+        showFeedback(correct);
+        updateScoreTracker(correct);
+        
+        if (correct) score++;
+
+        setTimeout(() => {
+          currentQuestion++;
+          
+          if (currentQuestion >= models.length) {
+            showResults();
+          } else {
+            updateQuestion();
+          }
+        }, 500);
+      }
+
+      function showResults() {
+        document.getElementById('question-container').style.display = 'none';
+        document.getElementById('score-container').style.display = 'block';
+        document.getElementById('progress').style.display = 'none';
+        document.getElementById('final-score').textContent = score;
+        
+        const scoreMessage = document.getElementById('score-message');
+        if (score === 20) {
+          scoreMessage.textContent = "You're a complete model genius! 🎯";
+        } else if (score >= 16) {
+          scoreMessage.textContent = "Not bad at all! You know your AI models! 🌟";
+        } else if (score >= 8) {
+          scoreMessage.textContent = "Meh, could be better... Keep learning! 📚";
+        } else {
+          scoreMessage.textContent = "Well, you are only human after all! 🤖";
+        }
+      }
+
+      function restartQuiz() {
+        currentQuestion = 0;
+        score = 0;
+        correctCount = 0;
+        wrongCount = 0;
+        particles = [];
+        document.getElementById('correct-count').textContent = '0';
+        document.getElementById('wrong-count').textContent = '0';
+        document.getElementById('question-container').style.display = 'block';
+        document.getElementById('score-container').style.display = 'none';
+        document.getElementById('progress').style.display = 'block';
+        updateQuestion();
+      }
+
+      function updateScoreTracker(isCorrect) {
+        if (isCorrect) {
+          correctCount++;
+          document.getElementById('correct-count').textContent = correctCount;
+        } else {
+          wrongCount++;
+          document.getElementById('wrong-count').textContent = wrongCount;
+        }
+      }
+    </script>
+  </body>
+</html>
