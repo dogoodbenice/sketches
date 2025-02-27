@@ -3,8 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta property="og:title" content="Is this an AI Model?" />
-    <meta property="og:description" content="Test your knowledge of AI models!" />
+    <meta property="og:title" content="Is this peak AI?" />
+    <meta property="og:description" content="Test your perception of peak AI!" />
+    <meta property="og:image" content="/lovable-uploads/96bfd6f1-9110-45aa-8b4f-4984b929a402.png" />
     <meta property="og:image" content="isthispeakAI.png" />
     <title>Is this an AI Model?</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
@@ -84,6 +85,19 @@
         z-index: 20;
         pointer-events: none;
       }
+      canvas.cursor-canvas {
+        position: fixed;
+        top: 0;
+        left: 0;
+        pointer-events: none;
+        z-index: 1000;
+      }
+      body {
+        cursor: none;
+      }
+      a, button {
+        cursor: none;
+      }
       .feedback-text {
         position: fixed;
         top: 50%;
@@ -108,7 +122,7 @@
       .score-tracker {
         position: fixed;
         top: 1rem;
-        right: 1rem;
+        right: 8.5rem;
         background: rgba(255, 255, 255, 0.95);
         padding: 1rem;
         border-radius: 0.5rem;
@@ -139,18 +153,41 @@
         border-radius: 0.5rem;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
       }
+      .nav-links {
+        position: fixed;
+        top: 1rem;
+        right: 1rem;
+        z-index: 30;
+      }
+      .about-link {
+        display: inline-block;
+        padding: 0.75rem 1.5rem;
+        background: #1f2937;
+        color: white;
+        text-decoration: none;
+        border-radius: 0.5rem;
+        font-family: system-ui, -apple-system, sans-serif;
+        transition: background-color 0.2s;
+        margin-left: 1rem;
+      }
+      .about-link:hover {
+        background: #374151;
+      }
     </style>
   </head>
   <body>
+    <div class="nav-links">
+      <a href="about.html" class="about-link">About</a>
+    </div>
     <div class="score-tracker">
       <span class="correct">✓ <span id="correct-count">0</span></span>
       <span class="wrong">✗ <span id="wrong-count">0</span></span>
     </div>
 
     <div id="quiz-container">
-      <h1>Is this an AI Model?</h1>
+      <h1>Is this peak AI?</h1>
       <div class="meme-container">
-        <img src="isthispeakAI.png" alt="Is this an AI model meme" class="meme-image" />
+        <img src="isthispeakAI.png" alt="Is this an AI meme" class="meme-image"/>
       </div>
       <div id="progress" class="progress">
         <div class="progress-bar"></div>
@@ -167,6 +204,11 @@
         <h2>Quiz Complete!</h2>
         <div class="score"><span id="final-score"></span>/20</div>
         <p id="score-message" style="font-size: 1.25rem; margin: 1rem 0; color: #4b5563;"></p>
+        <p style="margin-bottom: 1rem;">
+          <a href="about.html#references" style="color: #1f2937; text-decoration: underline;">
+            View all real AI model references
+          </a>
+        </p>
         <button onclick="restartQuiz()" style="background: #1f2937; color: white">
           Try Again
         </button>
@@ -174,6 +216,8 @@
     </div>
 
     <div id="feedback" class="feedback-text"></div>
+
+    <canvas class="cursor-canvas"></canvas>
 
     <script>
       const models = [
@@ -194,52 +238,60 @@
         { name: "SynthBrain-Elite", isReal: false },
         { name: "PaLM", isReal: true },
         { name: "QuantumAI-X", isReal: false },
-        { name: "Anthropic-2", isReal: false },
+        { name: "Falcon", isReal: true },
         { name: "CogniSphere-9", isReal: false },
-        { name: "Gemini", isReal: true }
+        { name: "Gemini", isReal: true },
+        { name: "Mistral", isReal: true },
+        { name: "Yi", isReal: true },
+        { name: "BLOOM", isReal: true },
+        { name: "Jurassic", isReal: true }
       ];
 
+      function shuffleArray(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [array[i], array[j]] = [array[j], array[i]];
+        }
+        return array;
+      }
+
+      const selectedModels = shuffleArray([...models]).slice(0, 20);
       let currentQuestion = 0;
       let score = 0;
       let particles = [];
       let correctCount = 0;
       let wrongCount = 0;
-
-      function setup() {
-        createCanvas(windowWidth, windowHeight);
-        noStroke();
-        updateQuestion();
-      }
-
-      function draw() {
-        clear();
-        for (let i = particles.length - 1; i >= 0; i--) {
-          particles[i].update();
-          particles[i].display();
-          if (particles[i].isDead()) {
-            particles.splice(i, 1);
-          }
-        }
-      }
+      let mouseX = 0;
+      let mouseY = 0;
 
       class Particle {
         constructor(x, y, isCorrect) {
           this.pos = createVector(x, y);
-          this.vel = p5.Vector.random2D().mult(random(2, 5));
+          this.vel = p5.Vector.random2D().mult(random(2, 8));
           this.acc = createVector(0, 0.1);
           this.life = 255;
           this.color = isCorrect ? color(74, 222, 128) : color(248, 113, 113);
+          this.emoji = isCorrect ? random(['🎉', '✨', '🌟', '💫', '🎊']) : random(['😢', '😭', '💔', '😿', '😓']);
+          this.isEmoji = random() > 0.7; // 30% chance of being an emoji
         }
 
         update() {
           this.vel.add(this.acc);
           this.pos.add(this.vel);
-          this.life -= 5;
+          this.life -= 3;
         }
 
         display() {
-          fill(this.color.levels[0], this.color.levels[1], this.color.levels[2], this.life);
-          circle(this.pos.x, this.pos.y, 8);
+          if (this.isEmoji) {
+            push();
+            textSize(16);
+            textAlign(CENTER, CENTER);
+            text(this.emoji, this.pos.x, this.pos.y);
+            pop();
+          } else {
+            fill(this.color.levels[0], this.color.levels[1], this.color.levels[2], this.life);
+            circle(this.pos.x, this.pos.y, 8);
+          }
         }
 
         isDead() {
@@ -248,19 +300,69 @@
       }
 
       function createParticles(isCorrect) {
-        for (let i = 0; i < 50; i++) {
+        for (let i = 0; i < 200; i++) {
+          const x = random(windowWidth);
+          const y = random(windowHeight);
+          particles.push(new Particle(x, y, isCorrect));
+        }
+
+        for (let i = 0; i < 100; i++) {
           particles.push(new Particle(windowWidth / 2, windowHeight / 2, isCorrect));
         }
       }
 
-      function windowResized() {
-        resizeCanvas(windowWidth, windowHeight);
+      const cursorCanvas = document.createElement('canvas');
+      cursorCanvas.className = 'cursor-canvas';
+      document.body.appendChild(cursorCanvas);
+      const cursorCtx = cursorCanvas.getContext('2d');
+
+      function updateCursorCanvas() {
+        cursorCanvas.width = window.innerWidth;
+        cursorCanvas.height = window.innerHeight;
+      }
+
+      function drawCursor(x, y) {
+        cursorCtx.clearRect(0, 0, cursorCanvas.width, cursorCanvas.height);
+        cursorCtx.font = '24px serif';
+        cursorCtx.textAlign = 'center';
+        cursorCtx.textBaseline = 'middle';
+        cursorCtx.fillText('🤖', x, y);
+      }
+
+      window.addEventListener('resize', updateCursorCanvas);
+      updateCursorCanvas();
+
+      document.addEventListener('mousemove', (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+        drawCursor(mouseX, mouseY);
+      });
+
+      function setup() {
+        const canvas = createCanvas(windowWidth, windowHeight);
+        canvas.style('z-index', '20');
+        noStroke();
+        updateQuestion();
+      }
+
+      function draw() {
+        clear();
+        
+        for (let i = particles.length - 1; i >= 0; i--) {
+          particles[i].update();
+          particles[i].display();
+          if (particles[i].isDead()) {
+            particles.splice(i, 1);
+          }
+        }
+        
+        requestAnimationFrame(draw);
       }
 
       function updateQuestion() {
-        document.getElementById('model-name').textContent = models[currentQuestion].name;
+        document.getElementById('model-name').textContent = selectedModels[currentQuestion].name;
         document.querySelector('.progress-bar').style.width = 
-          `${((currentQuestion + 1) / models.length) * 100}%`;
+          `${((currentQuestion + 1) / selectedModels.length) * 100}%`;
       }
 
       function showFeedback(isCorrect) {
@@ -274,7 +376,7 @@
       }
 
       function handleAnswer(answer) {
-        const correct = answer === models[currentQuestion].isReal;
+        const correct = answer === selectedModels[currentQuestion].isReal;
         createParticles(correct);
         showFeedback(correct);
         updateScoreTracker(correct);
@@ -284,7 +386,7 @@
         setTimeout(() => {
           currentQuestion++;
           
-          if (currentQuestion >= models.length) {
+          if (currentQuestion >= selectedModels.length) {
             showResults();
           } else {
             updateQuestion();
