@@ -54,21 +54,23 @@
         <div class="flex flex-col gap-2 bg-slate-50 p-3.5 rounded-xl border border-slate-100">
           <label class="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Quick Presets</label>
           <div class="grid grid-cols-2 gap-2">
-            <button onclick="loadScenario('pure_grant')" class="px-2 py-1.5 bg-white hover:bg-slate-50 active:bg-slate-100 text-slate-700 rounded-lg text-xs font-bold transition-colors border border-slate-200 shadow-sm">
+            <button type="button" data-preset="pure_grant" onclick="loadScenario('pure_grant')" class="preset-btn px-2 py-1.5 bg-white hover:bg-slate-50 active:bg-slate-100 text-slate-700 rounded-lg text-xs font-bold transition-colors border border-slate-200 shadow-sm">
               Pure Grant Spend
             </button>
-            <button onclick="loadScenario('larger_si')" class="px-2 py-1.5 bg-white hover:bg-slate-50 active:bg-slate-100 text-slate-700 rounded-lg text-xs font-bold transition-colors border border-slate-200 shadow-sm">
+            <button type="button" data-preset="larger_si" onclick="loadScenario('larger_si')" class="preset-btn px-2 py-1.5 bg-white hover:bg-slate-50 active:bg-slate-100 text-slate-700 rounded-lg text-xs font-bold transition-colors border border-slate-200 shadow-sm">
               Larger Social Inv.
             </button>
-            <button onclick="loadScenario('high_loss')" class="px-2 py-1.5 bg-white hover:bg-slate-50 active:bg-slate-100 text-slate-700 rounded-lg text-xs font-bold transition-colors border border-slate-200 shadow-sm">
+            <button type="button" data-preset="high_loss" onclick="loadScenario('high_loss')" class="preset-btn px-2 py-1.5 bg-white hover:bg-slate-50 active:bg-slate-100 text-slate-700 rounded-lg text-xs font-bold transition-colors border border-slate-200 shadow-sm">
               High Loss Recyc.
             </button>
-            <button onclick="loadScenario('evergreen')" class="px-2 py-1.5 bg-indigo-50 hover:bg-indigo-100 active:bg-indigo-200 text-indigo-700 rounded-lg text-xs font-bold transition-colors border border-indigo-200 shadow-sm font-semibold">
+            <button type="button" data-preset="evergreen" onclick="loadScenario('evergreen')" class="preset-btn px-2 py-1.5 bg-white hover:bg-slate-50 active:bg-slate-100 text-slate-700 rounded-lg text-xs font-bold transition-colors border border-slate-200 shadow-sm">
               Evergreen Pool
             </button>
           </div>
-          <!-- Preset description that updates dynamically -->
-          <p id="preset-explainer" class="text-sm text-slate-600 mt-2">Select a preset to see its scenario description.</p>
+          <div id="preset-explainer" class="mt-2 rounded-lg bg-white border border-slate-200 px-3 py-2.5">
+            <p id="preset-explainer-name" class="text-xs font-bold text-slate-800">Starting mix</p>
+            <p id="preset-explainer-body" class="text-xs text-slate-600 leading-relaxed mt-1">Pick a preset above, or move the sliders. Each scenario is a different way of using the same £1m pool.</p>
+          </div>
         </div>
 
         <!-- 1. Initial Capital Pool -->
@@ -131,7 +133,7 @@
             <span id="default-rate-val" class="font-bold text-red-600 bg-red-50 px-2 py-0.5 rounded text-xs">80%</span>
           </div>
           <input type="range" id="default-rate" min="0" max="100" step="5" value="80" class="w-full">
-          <span class="text-xs text-slate-600 italic">How many of the businesses we invest in fail and return nothing.</span>
+          <span class="text-xs text-slate-600 italic">Share of invested businesses that fail and return nothing. Cutting this by 10 percentage points costs about 30% more in sourcing and deal friction (due diligence, structuring, origination).</span>
         </div>
 
         <!-- 7. Outperformance MOIC on Winners -->
@@ -152,8 +154,8 @@
             <label for="friction-cost" class="font-semibold text-slate-700">Sourcing & Deal Friction Cost</label>
             <span id="friction-cost-val" class="font-bold text-amber-600 bg-amber-50 px-2 py-0.5 rounded text-xs">5%</span>
           </div>
-          <input type="range" id="friction-cost" min="0" max="20" step="1" value="5" class="w-full">
-          <span class="text-xs text-slate-600 italic">The fee we pay to find, check, and set up these investments.</span>
+          <input type="range" id="friction-cost" min="0" max="40" step="0.1" value="5" class="w-full">
+          <span class="text-xs text-slate-600 italic">Share of the SI allocation spent to find, check, and structure deals. Spending more here is what buys a lower default / write-off rate.</span>
         </div>
 
         <!-- 9. Social Investment Impact Factor -->
@@ -270,11 +272,11 @@
           <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm text-slate-600">
             <div>
               <h4 class="font-semibold text-slate-800 mb-1">1. The Sourcing Friction</h4>
-              <p class="text-xs leading-relaxed">Sifting deals, structuring loans, and undertaking due diligence incurs initial "deal friction" costs. Even if capital is recyclable, sourcing and structuring is not cost-free.</p>
+              <p class="text-xs leading-relaxed">Sifting deals, structuring loans, and due diligence is not free. Lower write-offs are modelled as more origination spend: each 10 percentage-point drop in default raises sourcing / deal friction by about 30% from the 5% baseline.</p>
             </div>
             <div>
               <h4 class="font-semibold text-slate-800 mb-1">2. Acceptance of High Write-offs</h4>
-              <p class="text-xs leading-relaxed">Social investments carry high risk (e.g. 80% write-off). However, because successful winners return multiples, the portfolio can recover significant capital in aggregate.</p>
+              <p class="text-xs leading-relaxed">A cheap, light-touch book can still recycle capital if winners return multiples — but the default rate stays high. Paying for better sourcing is the lever that brings write-offs down.</p>
             </div>
             <div>
               <h4 class="font-semibold text-slate-800 mb-1">3. The Double Bottom Line (Social Return on Investment - SROI)</h4>

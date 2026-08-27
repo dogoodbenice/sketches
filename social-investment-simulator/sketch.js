@@ -11,6 +11,76 @@ window.addEventListener('DOMContentLoaded', () => {
   runSimulation();
 });
 
+// Baseline pair: 80% write-offs at 5% sourcing cost.
+// Each 10 percentage-point drop in default multiplies friction by 1.3 (30% more spend).
+const BASE_DEFAULT_RATE = 80;
+const BASE_FRICTION_COST = 5;
+const FRICTION_LIFT_PER_10PP = 1.3;
+const FRICTION_MIN = 0;
+const FRICTION_MAX = 40;
+
+let syncingLinkedSliders = false;
+let activePreset = null;
+
+function clamp(value, min, max) {
+  return Math.min(max, Math.max(min, value));
+}
+
+function frictionFromDefault(defaultRate) {
+  const ratio = Math.pow(FRICTION_LIFT_PER_10PP, (BASE_DEFAULT_RATE - defaultRate) / 10);
+  return clamp(Math.round(BASE_FRICTION_COST * ratio * 10) / 10, FRICTION_MIN, FRICTION_MAX);
+}
+
+function defaultFromFriction(frictionCost) {
+  if (frictionCost <= 0) return 100;
+  const defaultRate = BASE_DEFAULT_RATE - 10 * Math.log(frictionCost / BASE_FRICTION_COST) / Math.log(FRICTION_LIFT_PER_10PP);
+  return clamp(Math.round(defaultRate / 5) * 5, 0, 100);
+}
+
+const PRESET_COPY = {
+  pure_grant: {
+    name: 'Pure Grant Spend',
+    body: 'The control case: none of the pool is invested. The whole pot is given away as grants each year until it runs out. Use this as the spend-down runway you are comparing everything else against. Sourcing cost and write-offs do not bite here because nothing is being originated as social investment.'
+  },
+  larger_si: {
+    name: 'Larger Social Investment',
+    body: 'A bigger slice of the pool (60%) is placed into businesses, with a slightly lower annual grant so the grant book lasts. Write-offs are a notch better than the high-loss book, so sourcing spend steps up with that improvement. This is the “more capital at work in enterprises” scenario.'
+  },
+  high_loss: {
+    name: 'High Loss Recycling',
+    body: 'A typical first social-investment book: 30% of the pool is invested, 80% of deals are written off, and winners still return 2.5x. Cheap origination (5% friction) matches that high loss rate. Recycling still happens — just from a thin surviving slice of the portfolio.'
+  },
+  evergreen: {
+    name: 'Evergreen Pool',
+    body: 'An evergreen pool is capital that is meant to keep turning over rather than being spent once. Repayments (here, revenue share in years 2–5) go back into the same pot so grants and investments can continue. That only holds if write-offs are kept in check — so this preset buys a 30% default rate with much heavier sourcing and due-diligence spend, a moderate 40% SI allocation, and a 12-year watch window.'
+  }
+};
+
+function setPresetExplainer(preset, customized) {
+  const nameEl = document.getElementById('preset-explainer-name');
+  const bodyEl = document.getElementById('preset-explainer-body');
+  const copy = PRESET_COPY[preset];
+
+  if (!nameEl || !bodyEl) return;
+
+  if (!copy) {
+    nameEl.innerText = 'Custom mix';
+    bodyEl.innerText = 'Sliders have been moved off the presets. Lower default / write-off rates automatically raise sourcing & deal friction: about 30% more origination spend for each 10 percentage-point improvement in defaults.';
+    return;
+  }
+
+  nameEl.innerText = customized ? `${copy.name} (adjusted)` : copy.name;
+  bodyEl.innerText = customized
+    ? `${copy.body} You have moved sliders away from this preset’s starting points.`
+    : copy.body;
+}
+
+function highlightPreset(preset) {
+  document.querySelectorAll('.preset-btn').forEach(btn => {
+    btn.classList.toggle('preset-active', btn.dataset.preset === preset);
+  });
+}
+
 // Load quick scenario presets
 function loadScenario(preset) {
   const presets = {
@@ -22,7 +92,7 @@ function loadScenario(preset) {
       'strategy-type': 'debt_loans',
       'default-rate': 80,
       'winner-moic': 2.5,
-      'friction-cost': 5,
+      'friction-cost': frictionFromDefault(80),
       'impact-factor': 1.5
     },
     larger_si: {
@@ -33,7 +103,7 @@ function loadScenario(preset) {
       'strategy-type': 'debt_loans',
       'default-rate': 70,
       'winner-moic': 1.5,
-      'friction-cost': 5,
+      'friction-cost': frictionFromDefault(70),
       'impact-factor': 1.8
     },
     high_loss: {
@@ -44,7 +114,7 @@ function loadScenario(preset) {
       'strategy-type': 'debt_loans',
       'default-rate': 80,
       'winner-moic': 2.5,
-      'friction-cost': 5,
+      'friction-cost': frictionFromDefault(80),
       'impact-factor': 1.5
     },
     evergreen: {
@@ -55,35 +125,24 @@ function loadScenario(preset) {
       'strategy-type': 'revenue_share',
       'default-rate': 30,
       'winner-moic': 2.0,
-      'friction-cost': 3,
+      'friction-cost': frictionFromDefault(30),
       'impact-factor': 1.5
     }
-  };
-
-  // Human‑readable descriptions for each preset
-  const presetDescriptions = {
-    pure_grant: "All capital is spent as grants each year; no social investment. Shows the pure grant runway.",
-    larger_si: "Higher allocation to social investments with a lower annual grant, illustrating the impact of a larger SI allocation.",
-    high_loss: "Higher default rate leads to more capital loss, demonstrating the risk of poor investments.",
-    evergreen: "Extended time horizon with moderate SI allocation and low defaults, illustrating a sustainable evergreen pool."
   };
 
   const values = presets[preset];
   if (!values) return;
 
+  syncingLinkedSliders = true;
   Object.entries(values).forEach(([id, val]) => {
     const el = document.getElementById(id);
-    if (el) {
-      el.value = val;
-    }
+    if (el) el.value = val;
   });
+  syncingLinkedSliders = false;
 
-  // Update the on‑screen preset description
-  const explainer = document.getElementById('preset-explainer');
-  if (explainer) {
-    explainer.innerText = presetDescriptions[preset] || '';
-  }
-
+  activePreset = preset;
+  setPresetExplainer(preset, false);
+  highlightPreset(preset);
   updateLabels();
   runSimulation();
 }
@@ -102,58 +161,49 @@ function setupUI() {
     'impact-factor'
   ];
 
-  // Track previous default rate for friction adjustment
-  let prevDefaultRate = parseFloat(document.getElementById('default-rate').value);
-
   inputs.forEach(id => {
     const el = document.getElementById(id);
     if (!el) return;
 
     el.addEventListener('input', () => {
-      if (id === 'default-rate') {
-        // Adjust friction cost proportionally: 30% more friction for each 10% default reduction
-        const newDefault = parseFloat(el.value);
-        const frictionEl = document.getElementById('friction-cost');
-        const currentFriction = parseFloat(frictionEl.value);
-        const reduction = prevDefaultRate - newDefault;
-        if (reduction > 0) {
-          const increase = currentFriction * (reduction / 10) * 0.30;
-          frictionEl.value = Math.min(100, Math.round((currentFriction + increase) * 100) / 100);
+      if (!syncingLinkedSliders) {
+        if (id === 'default-rate') {
+          syncingLinkedSliders = true;
+          const frictionEl = document.getElementById('friction-cost');
+          frictionEl.value = frictionFromDefault(parseFloat(el.value));
+          syncingLinkedSliders = false;
+        } else if (id === 'friction-cost') {
+          syncingLinkedSliders = true;
+          const defaultEl = document.getElementById('default-rate');
+          defaultEl.value = defaultFromFriction(parseFloat(el.value));
+          syncingLinkedSliders = false;
         }
-        prevDefaultRate = newDefault;
+
+        if (activePreset) {
+          setPresetExplainer(activePreset, true);
+        } else {
+          setPresetExplainer(null, true);
+        }
+        highlightPreset(null);
       }
 
       updateLabels();
       runSimulation();
     });
-    'initial-capital',
-    'time-horizon',
-    'annual-grant',
-    'si-allocation',
-    'strategy-type',
-    'default-rate',
-    'winner-moic',
-    'friction-cost',
-    'impact-factor'
-  ];
-
-  inputs.forEach(id => {
-    const el = document.getElementById(id);
-    if (!el) return;
-
-    // Attach listeners for range inputs to update their labels and trigger simulation
-    el.addEventListener('input', () => {
-      updateLabels();
-      runSimulation();
-    });
   });
+
+  updateLabels();
 }
 
 // Update value labels next to sliders
 function updateLabels() {
   // Formatters
   const formatCurrency = (val) => new Intl.NumberFormat('en-GB', { style: 'currency', currency: 'GBP', maximumFractionDigits: 0 }).format(val);
-  const formatPercent = (val) => `${val}%`;
+  const formatPercent = (val) => {
+    const n = parseFloat(val);
+    const shown = Number.isInteger(n) ? String(n) : n.toFixed(1);
+    return `${shown}%`;
+  };
   const formatMOIC = (val) => `${val}x`;
   const formatYears = (val) => `${val} Years`;
 
