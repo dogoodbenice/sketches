@@ -61,3 +61,52 @@ input[type="range"]::-moz-range-thumb:hover {
   transform: translateY(-2px);
   box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.08);
 }
+
+#verdict-banner.win-aligned {
+  background: linear-gradient(180deg, #ecfdf5 0%, #f0fdf4 100%);
+  border-color: #6ee7b7;
+  color: #064e3b;
+}
+
+#verdict-banner.win-mixed {
+  background: #fffbeb;
+  border-color: #fcd34d;
+  color: #78350f;
+}
+
+#verdict-banner.win-miss {
+  background: #f8fafc;
+  border-color: #e2e8f0;
+  color: #334155;
+}
+
+#sensitivity-body tr.sensitivity-current {
+  background: #eef2ff;
+  font-weight: 600;
+}
+
+@media print {
+  .no-print,
+  aside input[type="range"],
+  aside select,
+  .preset-btn,
+  #reset-preset-btn {
+    display: none !important;
+  }
+
+  body {
+    background: #fff;
+  }
+
+  aside {
+    break-inside: avoid;
+  }
+
+  #verdict-banner {
+    break-inside: avoid;
+  }
+
+  canvas {
+    max-height: 260px !important;
+  }
+}

@@ -30,8 +30,11 @@
         <p class="text-sm text-slate-500 mt-1">A board-level modeling tool comparing standard grant decay curves against recyclable capital structures.</p>
       </div>
       <div class="flex items-center gap-3">
-        <span class="inline-flex items-center rounded-full bg-blue-50 px-2.5 py-0.5 text-xs font-medium text-blue-700 ring-1 ring-inset ring-blue-700/10">Interactive Model</span>
-        <span class="text-xs text-slate-400">v1.0 (Static SPA)</span>
+        <div class="flex flex-wrap items-center gap-2 no-print">
+          <button type="button" id="copy-link-btn" class="px-3 py-1.5 bg-white hover:bg-slate-50 text-slate-700 rounded-lg text-xs font-semibold border border-slate-200 shadow-sm">Copy scenario link</button>
+          <button type="button" id="print-pack-btn" class="px-3 py-1.5 bg-slate-900 hover:bg-slate-800 text-white rounded-lg text-xs font-semibold shadow-sm">Print board pack</button>
+          <span class="inline-flex items-center rounded-full bg-blue-50 px-2.5 py-0.5 text-xs font-medium text-blue-700 ring-1 ring-inset ring-blue-700/10">Interactive Model</span>
+        </div>
       </div>
     </div>
   </header>
@@ -68,9 +71,10 @@
             </button>
           </div>
           <div id="preset-explainer" class="mt-2 rounded-lg bg-white border border-slate-200 px-3 py-2.5">
-            <p id="preset-explainer-name" class="text-xs font-bold text-slate-800">Starting mix</p>
-            <p id="preset-explainer-body" class="text-xs text-slate-600 leading-relaxed mt-1">Pick a preset above, or move the sliders. Each scenario is a different way of using the same £1m pool.</p>
+            <p id="preset-explainer-name" class="text-xs font-bold text-slate-800">High Loss Recycling</p>
+            <p id="preset-explainer-body" class="text-xs text-slate-600 leading-relaxed mt-1">A typical first social-investment book: 30% of the pool is invested, 80% of deals are written off, and winners still return 2.5x. Cheap origination (5% friction) matches that high loss rate. Recycling still happens — just from a thin surviving slice of the portfolio.</p>
           </div>
+          <button type="button" id="reset-preset-btn" class="hidden mt-1 px-2 py-1.5 bg-indigo-50 hover:bg-indigo-100 text-indigo-800 rounded-lg text-xs font-semibold border border-indigo-200">Reset to this preset</button>
         </div>
 
         <!-- 1. Initial Capital Pool -->
@@ -165,8 +169,38 @@
             <span id="impact-factor-val" class="font-bold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded text-xs">1.5x</span>
           </div>
           <input type="range" id="impact-factor" min="0.5" max="5.0" step="0.1" value="1.5" class="w-full">
-          <span class="text-xs text-slate-600 italic">How much good a business does compared to a regular gift (e.g., 1.5x means it does 1.5x more good because the business keeps running).</span>
+          <span class="text-xs text-slate-600 italic">How much good a business does compared to a regular gift (e.g., 1.5x means it does 1.5x more good because the business keeps running). Treated as an illustrative factor, not an audited result.</span>
         </div>
+
+        <div class="border-t border-slate-100 my-0.5"></div>
+
+        <div class="flex flex-col gap-1.5">
+          <div class="flex justify-between items-center text-sm">
+            <label for="treasury-rate" class="font-semibold text-slate-700">Treasury / cash return (Track C)</label>
+            <span id="treasury-rate-val" class="font-bold text-slate-600 bg-slate-100 px-2 py-0.5 rounded text-xs">3%</span>
+          </div>
+          <input type="range" id="treasury-rate" min="0" max="6" step="0.5" value="3" class="w-full">
+          <span class="text-xs text-slate-600 italic">Interest assumed if the whole pool stays in cash and only pays grants. Default 3%.</span>
+        </div>
+
+        <div class="flex flex-col gap-1.5">
+          <div class="flex justify-between items-center text-sm">
+            <label for="annual-origination" class="font-semibold text-slate-700">Ongoing origination / stewardship</label>
+            <span id="annual-origination-val" class="font-bold text-amber-600 bg-amber-50 px-2 py-0.5 rounded text-xs">£0</span>
+          </div>
+          <input type="range" id="annual-origination" min="0" max="100000" step="5000" value="0" class="w-full">
+          <span class="text-xs text-slate-600 italic">Optional staff / DD cost taken from the hybrid pool each year, on top of the one-off sourcing % at deployment.</span>
+        </div>
+
+        <label class="flex items-start gap-2.5 text-xs text-slate-700 bg-slate-50 border border-slate-100 rounded-xl px-3 py-2.5 cursor-pointer">
+          <input type="checkbox" id="reinvest-returns" class="mt-0.5 rounded border-slate-300">
+          <span><span class="font-semibold">Reinvest repayments into new deals.</span> After each year’s grants, leftover recycled cash above one year of committee funding is originated again (friction and write-offs apply to each vintage). That is what lets an evergreen pool keep turning over without skipping the grants round.</span>
+        </label>
+
+        <label class="flex items-start gap-2.5 text-xs text-slate-700 bg-slate-50 border border-slate-100 rounded-xl px-3 py-2.5 cursor-pointer">
+          <input type="checkbox" id="unlink-friction" class="mt-0.5 rounded border-slate-300">
+          <span><span class="font-semibold">Stress-test write-offs without extra DD spend.</span> Unlocks Default and Sourcing so you can raise losses without paying more to originate — a naive book, not the linked rule.</span>
+        </label>
 
       </aside>
 
@@ -214,7 +248,7 @@
 
           <!-- KPI 5: SROI Multiplier -->
           <div class="bg-white border border-slate-200 p-4 rounded-xl shadow-sm kpi-card flex flex-col justify-between col-span-2 md:col-span-1">
-            <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Net SROI (Social Return on Investment)</span>
+            <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Illustrative SROI</span>
             <div>
               <div id="kpi-sroi" class="text-xl font-bold text-emerald-600 mt-2">1.28x</div>
               <p id="kpi-sroi-sub" class="text-[10px] text-slate-500 mt-1">vs 1.00x in Control</p>
@@ -223,12 +257,20 @@
 
         </section>
 
+        <section id="verdict-banner" class="rounded-2xl border p-5 shadow-sm win-miss">
+          <p id="win-kicker" class="text-[10px] font-bold uppercase tracking-wider">Scenario verdict</p>
+          <h2 id="win-title" class="text-lg font-bold mt-1">Waiting for model…</h2>
+          <p id="verdict-line" class="text-sm mt-2 leading-relaxed">Move a slider or pick a preset.</p>
+          <p id="win-footnote" class="text-xs mt-2 opacity-80"></p>
+        </section>
+
         <!-- CHART 1: CAPITAL DECAY CURVE (FULL WIDTH) -->
         <section class="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm">
           <div class="flex justify-between items-center mb-4">
             <div>
               <h3 class="font-bold text-slate-900 text-lg">Capital Pool Decay Curve</h3>
-              <p class="text-xs text-slate-400 mt-0.5">Year-by-year comparison of ending pool balance: Pure Grant vs Hybrid Model.</p>
+              <p class="text-xs text-slate-400 mt-0.5">Year-by-year ending pool balance. Markers show the first year each track can no longer pay the full grants committee.</p>
+              <p id="exhaustion-caption" class="text-xs text-slate-500 mt-1"></p>
             </div>
           </div>
           <div class="h-80 w-full relative">
@@ -261,6 +303,31 @@
             </div>
           </div>
 
+        </section>
+
+        <section class="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm">
+          <h3 class="font-bold text-slate-900 text-base mb-1">Write-off sensitivity</h3>
+          <p class="text-xs text-slate-500 mb-4">Other sliders held as they are now. Sourcing cost follows the rule: each 10 percentage-point drop in default costs about 30% more origination from the 5% baseline.</p>
+          <div class="overflow-x-auto">
+            <table class="w-full text-left text-xs">
+              <thead>
+                <tr class="text-slate-400 uppercase tracking-wider border-b border-slate-100">
+                  <th class="py-2 pr-3 font-semibold">Write-offs</th>
+                  <th class="py-2 pr-3 font-semibold">Sourcing</th>
+                  <th class="py-2 pr-3 font-semibold">Recycled</th>
+                  <th class="py-2 pr-3 font-semibold">Committee runway</th>
+                  <th class="py-2 pr-3 font-semibold">vs pure grants</th>
+                  <th class="py-2 font-semibold">Illustrative SROI</th>
+                </tr>
+              </thead>
+              <tbody id="sensitivity-body"></tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm print-assumptions">
+          <h3 class="font-bold text-slate-900 text-base mb-3">Assumptions in this pack</h3>
+          <dl id="assumptions-list" class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2 text-xs text-slate-600"></dl>
         </section>
 
         <!-- BOARD NARRATIVE & CONTEXT CARD -->
